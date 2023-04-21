@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 158
+max-complexity = 10
+exclude =
+    .git,
+    __pycache__,
+    .env,
+    venv,
+    */migrations

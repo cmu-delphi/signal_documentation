@@ -1,0 +1,11 @@
+.env
+/.vscode/
+/src/media/
+/src/static/
+*.mo
+*.pyc
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
