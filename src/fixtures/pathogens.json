@@ -1,0 +1,23 @@
+[
+    {
+      "model": "datasources.Pathogen",
+      "pk": 1,
+      "fields": {
+        "name": "covid"
+      }
+    },
+    {
+      "model": "datasources.Pathogen",
+      "pk": 2,
+      "fields": {
+        "name": "flu"
+      }
+    },
+    {
+      "model": "datasources.Pathogen",
+      "pk": 3,
+      "fields": {
+        "name": "pneumonia"
+      }
+    }
+  ]
