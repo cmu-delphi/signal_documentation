@@ -1,3 +1,4 @@
+from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -123,14 +124,6 @@ class Signal(models.Model):
         max_length=128,
         unique=True
     )
-    base_is_other = models.BooleanField(
-        help_text=_('Base is other'),
-        default=False
-    )
-    compute_from_base = models.BooleanField(
-        help_text=_('Compute From Base'),
-        default=False
-    )
     active = models.BooleanField(
         help_text=_('Active'),
         default=False
@@ -163,7 +156,7 @@ class Signal(models.Model):
         choices=FormatChoices.choices
     )
     category = models.CharField(
-        help_text=_('Format'),
+        help_text=_('Category'),
         max_length=128,
         choices=CategoryChoices.choices
     )
@@ -172,13 +165,41 @@ class Signal(models.Model):
         max_length=128,
         choices=HighValuesAreChoices.choices
     )
-    link = models.URLField(
-        help_text=_('Link'),
-        max_length=256
+    links = ArrayField(
+        help_text=_('Links'),
+        base_field=models.URLField(max_length=256),
+        blank=True
     )
     available_geography = models.ManyToManyField(
         'Geography',
         help_text=_('Available geography')
+    )
+    pathogen = models.ForeignKey(
+        'Pathogen',
+        related_name='pathogen',
+        help_text=_('Pathogen/Disease Area'),
+        on_delete=models.SET_NULL,
+        null=True
+    )
+    is_smoothed = models.BooleanField(
+        help_text=_('Is Smoothed'),
+        default=False
+    )
+    is_weighted = models.BooleanField(
+        help_text=_('Is Weighted'),
+        default=False
+    )
+    is_cumulative = models.BooleanField(
+        help_text=_('Is Cumulative'),
+        default=False
+    )
+    has_stderr = models.BooleanField(
+        help_text=_('Has StdErr'),
+        default=False
+    )
+    has_sample_size = models.BooleanField(
+        help_text=_('Has Sample Size'),
+        default=False
     )
 
     def __str__(self) -> str:
@@ -243,10 +264,10 @@ class DataSource(models.Model):
         help_text=_('Reference Signal'),
         on_delete=models.PROTECT
     )
-    pathogen = models.ForeignKey(
-        'Pathogen',
-        related_name='pathogen',
-        help_text=_('Pathogen/Disease Area'),
+    signal_type = models.ForeignKey(
+        'SignalType',
+        related_name='data_sources',
+        help_text=_('Signal Type'),
         on_delete=models.SET_NULL,
         null=True
     )
