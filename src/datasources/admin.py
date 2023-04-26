@@ -52,7 +52,7 @@ class SignalAdmin(admin.ModelAdmin):
     Admin interface for managing signal objects.
     """
     list_display = ('name',)
-    search_fields = ('name',)
+    search_fields = ('name', 'description', 'short_description')
 
 
 @admin.register(DataSource)
@@ -62,3 +62,14 @@ class DataSourceAdmin(admin.ModelAdmin):
     """
     list_display = ('name', 'db_source')
     search_fields = ('name', 'db_source', 'source_subdivision', 'description')
+    list_filter = (
+        'reference_signal__pathogen',
+        'reference_signal__available_geography',
+        'signal_type',
+        'reference_signal__format',
+        'reference_signal__is_smoothed',
+        'reference_signal__is_weighted',
+        'reference_signal__is_cumulative',
+        'reference_signal__has_stderr',
+        'reference_signal__has_sample_size',
+    )
