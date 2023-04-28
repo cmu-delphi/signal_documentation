@@ -1,4 +1,3 @@
-from django.contrib.postgres.fields import ArrayField
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -48,6 +47,15 @@ class HighValuesAreChoices(models.TextChoices):
     BAD = 'bad', _('Bad')
     GOOD = 'good', _('Good')
     NEUTRAL = 'neutral', _('Neutral')
+
+
+class LinkTypeChoices(models.TextChoices):
+    """
+    A class representing choices for link types.
+    """
+    API_DOCUMENTATION = 'api_documentation', _('API Documentation')
+    DUA = 'dua', _('DUA')
+    OTHER = 'other', _('other')
 
 
 class SignalType(models.Model):
@@ -110,6 +118,52 @@ class Geography(models.Model):
         return self.name
 
 
+class SignalBaseName(models.Model):
+    """
+    A model representing a signal BaseName.
+    """
+    name = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the signal BaseName as a string.
+
+        :return: The name of the signal BaseName as a string.
+        :rtype: str
+        """
+        return self.name
+
+
+class Link(models.Model):
+    """
+    A model representing a Link.
+    """
+    link_type = models.CharField(
+        help_text=_('Link type'),
+        choices=LinkTypeChoices.choices,
+        max_length=128,
+        unique=True
+    )
+    url = models.URLField(
+        help_text=_('Link url'),
+        max_length=256,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the link as a string.
+
+        :return: The name of link as a string.
+        :rtype: str
+        """
+        return self.url
+
+
 class Signal(models.Model):
     """
     A model representing a signal.
@@ -119,10 +173,17 @@ class Signal(models.Model):
         max_length=128,
         unique=True
     )
-    base_name = models.CharField(
+    base_name = models.ForeignKey(
+        'SignalBaseName',
         help_text=_('Signal BaseName'),
-        max_length=128,
-        unique=True
+        on_delete=models.PROTECT
+    )
+    signal_type = models.ForeignKey(
+        'SignalType',
+        related_name='signal',
+        help_text=_('Signal Type'),
+        on_delete=models.SET_NULL,
+        null=True
     )
     active = models.BooleanField(
         help_text=_('Active'),
@@ -165,10 +226,10 @@ class Signal(models.Model):
         max_length=128,
         choices=HighValuesAreChoices.choices
     )
-    links = ArrayField(
-        help_text=_('Links'),
-        base_field=models.URLField(max_length=256),
-        blank=True
+    links = models.ManyToManyField(
+        'Link',
+        help_text=_('Signal links'),
+        related_name="signals"
     )
     available_geography = models.ManyToManyField(
         'Geography',
@@ -264,22 +325,14 @@ class DataSource(models.Model):
         help_text=_('Reference Signal'),
         on_delete=models.PROTECT
     )
-    signal_type = models.ForeignKey(
-        'SignalType',
-        related_name='data_sources',
-        help_text=_('Signal Type'),
-        on_delete=models.SET_NULL,
-        null=True
-    )
     source_license = models.CharField(
         help_text=_('License'),
         max_length=128
     )
-    dua = models.URLField(
-        help_text=_('DUA'),
-        max_length=256,
-        null=True,
-        blank=True
+    links = models.ManyToManyField(
+        'Link',
+        help_text=_('DataSource links'),
+        related_name="datasources"
     )
 
     def __str__(self) -> str:

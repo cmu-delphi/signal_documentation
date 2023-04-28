@@ -53,6 +53,17 @@ class SignalAdmin(admin.ModelAdmin):
     """
     list_display = ('name',)
     search_fields = ('name', 'description', 'short_description')
+    list_filter = (
+        'pathogen',
+        'available_geography',
+        'signal_type',
+        'format',
+        'is_smoothed',
+        'is_weighted',
+        'is_cumulative',
+        'has_stderr',
+        'has_sample_size',
+    )
 
 
 @admin.register(DataSource)
@@ -65,7 +76,7 @@ class DataSourceAdmin(admin.ModelAdmin):
     list_filter = (
         'reference_signal__pathogen',
         'reference_signal__available_geography',
-        'signal_type',
+        'reference_signal__signal_type',
         'reference_signal__format',
         'reference_signal__is_smoothed',
         'reference_signal__is_weighted',
