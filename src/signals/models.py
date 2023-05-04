@@ -242,7 +242,7 @@ class Signal(models.Model):
         choices=HighValuesAreChoices.choices
     )
     source = models.ForeignKey(
-        'signals.Signal',
+        'datasources.SourceSubdivision',
         related_name='signals',
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT
