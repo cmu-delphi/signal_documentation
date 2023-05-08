@@ -29,8 +29,15 @@ class SourceSubdivision(models.Model):
     )
     links = models.ManyToManyField(
         'base.Link',
-        help_text=_('DataSource links'),
+        help_text=_('Source Subdivision links'),
         related_name="source_subdivisions"
+    )
+    data_source = models.ForeignKey(
+        'datasources.DataSource',
+        related_name='source_subdivisions',
+        help_text=_('Source Subdivision'),
+        on_delete=models.SET_NULL,
+        null=True
     )
 
     def __str__(self) -> str:
@@ -72,12 +79,6 @@ class DataSource(models.Model):
         'base.Link',
         help_text=_('DataSource links'),
         related_name="data_sources"
-    )
-    source_subdivision = models.ForeignKey(
-        'datasources.SourceSubdivision',
-        related_name='data_sources',
-        help_text=_('Source Subdivision'),
-        on_delete=models.PROTECT
     )
 
     def __str__(self) -> str:
