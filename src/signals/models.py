@@ -143,12 +143,10 @@ class Signal(models.Model):
         on_delete=models.SET_NULL,
         null=True
     )
-    signal_type = models.ForeignKey(
+    signal_type = models.ManyToManyField(
         'signals.SignalType',
         related_name='signals',
         help_text=_('Signal Type'),
-        on_delete=models.SET_NULL,
-        null=True
     )
     active = models.BooleanField(
         help_text=_('Active'),
