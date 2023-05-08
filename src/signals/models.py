@@ -146,7 +146,7 @@ class Signal(models.Model):
     signal_type = models.ManyToManyField(
         'signals.SignalType',
         related_name='signals',
-        help_text=_('Signal Type'),
+        help_text=_('Signal Type')
     )
     active = models.BooleanField(
         help_text=_('Active'),
