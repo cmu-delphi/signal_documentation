@@ -4,18 +4,8 @@ from signals.models import (
     Geography,
     Pathogen,
     Signal,
-    SignalBaseName,
     SignalType,
 )
-
-
-@admin.register(SignalBaseName)
-class SignalBaseNameAdmin(admin.ModelAdmin):
-    """
-    Admin interface for managing geography objects.
-    """
-    list_display = ('name',)
-    search_fields = ('name',)
 
 
 @admin.register(Geography)

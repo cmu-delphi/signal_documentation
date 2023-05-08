@@ -15,7 +15,7 @@ class TimeLabelChoices(models.TextChoices):
     A class representing choices for time labels.
     """
     DAY = 'day', _('Day')
-    DATE = 'date', _('Date')
+    DATE = 'week', _('Week')
 
 
 class FormatChoices(models.TextChoices):
@@ -78,26 +78,6 @@ class SignalType(models.Model):
         return self.name
 
 
-class SignalBaseName(models.Model):
-    """
-    A model representing a signal BaseName.
-    """
-    name = models.CharField(
-        help_text=_('Name'),
-        max_length=128,
-        unique=True
-    )
-
-    def __str__(self) -> str:
-        """
-        Returns the name of the signal BaseName as a string.
-
-        :return: The name of the signal BaseName as a string.
-        :rtype: str
-        """
-        return self.name
-
-
 class Pathogen(models.Model):
     """
     A model representing a pathogen.
@@ -150,10 +130,11 @@ class Signal(models.Model):
         max_length=128,
         unique=True
     )
-    base_name = models.ForeignKey(
-        'signals.SignalBaseName',
-        help_text=_('Signal BaseName'),
-        on_delete=models.PROTECT
+    base = models.ForeignKey(
+        'signals.Signal',
+        help_text=_('Signal base'),
+        on_delete=models.SET_NULL,
+        null=True
     )
     pathogen = models.ForeignKey(
         'signals.Pathogen',
