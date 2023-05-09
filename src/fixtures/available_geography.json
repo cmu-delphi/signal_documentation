@@ -1,0 +1,51 @@
+[
+    {
+      "model": "signals.Geography",
+      "pk": 1,
+      "fields": {
+        "name": "county"
+      }
+    },
+    {
+      "model": "signals.Geography",
+      "pk": 2,
+      "fields": {
+        "name": "hhs"
+      }
+    },
+    {
+      "model": "signals.Geography",
+      "pk": 3,
+      "fields": {
+        "name": "hrr"
+      }
+    },
+    {
+      "model": "signals.Geography",
+      "pk": 4,
+      "fields": {
+        "name": "msa"
+      }
+    },
+    {
+      "model": "signals.Geography",
+      "pk": 5,
+      "fields": {
+        "name": "nation"
+      }
+    },
+    {
+      "model": "signals.Geography",
+      "pk": 6,
+      "fields": {
+        "name": "state"
+      }
+    },
+    {
+      "model": "signals.Geography",
+      "pk": 7,
+      "fields": {
+        "name": "dma"
+      }
+    }
+  ]

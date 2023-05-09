@@ -25,6 +25,10 @@ services:
     container_name: signal_documentation-web
     command: sh -c "python /usr/src/signal_documentation/src/manage.py migrate --noinput &&
                     python /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
+                    python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/available_geography.json &&
+                    python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/pathogens.json &&
+                    python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_types.json &&
+                    python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_categories.json &&
                     python /usr/src/signal_documentation/src/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/signal_documentation

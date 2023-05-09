@@ -1,0 +1,79 @@
+[
+    {
+      "model": "signals.SignalType",
+      "pk": 1,
+      "fields": {
+        "name": "Public Behavior"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 2,
+      "fields": {
+        "name": "Inpatient insurance claims"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 3,
+      "fields": {
+        "name": "Outpatient insurance claims"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 4,
+      "fields": {
+        "name": "Testing"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 5,
+      "fields": {
+        "name": "Vaccines"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 6,
+      "fields": {
+        "name": "Self-reported (survey)"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 7,
+      "fields": {
+        "name": "Cases"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 8,
+      "fields": {
+        "name": "Deaths"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 9,
+      "fields": {
+        "name": "Prescription/pharmacy"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 10,
+      "fields": {
+        "name": "EMR"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 11,
+      "fields": {
+        "name": "Health department-sourced information"
+      }
+    }
+  ]
