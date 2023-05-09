@@ -15,7 +15,8 @@ class TimeLabelChoices(models.TextChoices):
     A class representing choices for time labels.
     """
     DAY = 'day', _('Day')
-    DATE = 'week', _('Week')
+    DATE = 'date', _('Date')
+    WEEK = 'week', _('Week')
 
 
 class FormatChoices(models.TextChoices):
@@ -132,9 +133,9 @@ class Signal(models.Model):
     )
     base = models.ForeignKey(
         'signals.Signal',
+        related_name='base_for',
         help_text=_('Signal base'),
-        on_delete=models.SET_NULL,
-        null=True
+        on_delete=models.PROTECT
     )
     pathogen = models.ForeignKey(
         'signals.Pathogen',

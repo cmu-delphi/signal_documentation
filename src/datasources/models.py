@@ -36,8 +36,7 @@ class SourceSubdivision(models.Model):
         'datasources.DataSource',
         related_name='source_subdivisions',
         help_text=_('Source Subdivision'),
-        on_delete=models.SET_NULL,
-        null=True
+        on_delete=models.PROTECT
     )
 
     def __str__(self) -> str:
