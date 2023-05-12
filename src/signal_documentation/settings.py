@@ -63,6 +63,8 @@ EXTERNAL_APPS = [
     'health_check.cache',
     'health_check.storage',
     'health_check.contrib.migrations',
+    'phonenumber_field',
+    'solo',
 ]
 
 LOCAL_APPS = [

@@ -135,7 +135,9 @@ class Signal(models.Model):
         'signals.Signal',
         related_name='base_for',
         help_text=_('Signal base'),
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True
     )
     pathogen = models.ForeignKey(
         'signals.Pathogen',

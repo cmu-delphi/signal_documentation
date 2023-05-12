@@ -16,6 +16,10 @@ django-health-check = "*"
 django-cors-headers = "*"
 django-debug-toolbar = "*"
 gunicorn = "*"
+pygraphviz = "*"
+django-bootstrap-v5 = "*"
+django-solo = "*"
+django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
 
 [dev-packages]
 flake8 = "*"

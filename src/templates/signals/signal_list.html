@@ -1,0 +1,234 @@
+{% extends "index.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="pagetitle">
+  <h1>Signals</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'signals' %}">Home</a></li>
+      <li class="breadcrumb-item active">Signals</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <div class="row">
+
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <h5 class="card-title">Signals</h5>
+
+              <table class="table table-borderless datatable">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Signal name</th>
+                    <th scope="col">Is active</th>
+                    <th scope="col">Time type</th>
+                    <th scope="col">Time label</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">High values</th>
+                    <th scope="col">Available geography</th>
+                    <th scope="col">Pathogen</th>
+                    <th scope="col">Is smoothed</th>
+                    <th scope="col">Is weighted</th>
+                    <th scope="col">Is cumulative</th>
+                    <th scope="col">Has stderr</th>
+                    <th scope="col">Has sample size</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for signal in signals %}
+                  <tr>
+                    <th scope="row"><a href="#">{{ signal.id }}</a></th>
+                    <td>{{ signal.name }}</td>
+                    <td>
+                      {% if signal.active %}
+                        <span class="badge rounded-pill bg-success">{{ signal.active }}</span>
+                      {% elif not signal.active %}
+                        <span class="badge rounded-pill bg-danger">{{ signal.active }}</span>
+                      {% endif %}
+                    </td>
+                    <td>{{ signal.time_type }}</td>
+                    <td>{{ signal.time_label }}</td>
+                    <td>{{ signal.format }}</td>
+                    <td>{{ signal.category }}</td>
+                    <td>{{ signal.high_values_are }}</td>
+                    <td>
+                      {% for geography in signal.available_geography.all %}
+                        <span class="badge rounded-pill bg-dark">{{ geography }}</span>
+                      {% endfor %}
+                    </td>
+                    <td>{{ signal.pathogen }}</td>
+                    <td>
+                        {% if signal.is_smoothed %}
+                          <span class="badge rounded-pill bg-success">{{ signal.is_smoothed }}</span>
+                        {% elif not signal.is_smoothed %}
+                          <span class="badge rounded-pill bg-danger">{{ signal.is_smoothed }}</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if signal.is_weighted %}
+                          <span class="badge rounded-pill bg-success">{{ signal.is_weighted }}</span>
+                        {% elif not signal.is_weighted %}
+                          <span class="badge rounded-pill bg-danger">{{ signal.is_weighted }}</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if signal.is_cumulative %}
+                          <span class="badge rounded-pill bg-success">{{ signal.is_cumulative }}</span>
+                        {% elif not signal.is_cumulative %}
+                          <span class="badge rounded-pill bg-danger">{{ signal.is_cumulative }}</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if signal.has_stderr %}
+                          <span class="badge rounded-pill bg-success">{{ signal.has_stderr }}</span>
+                        {% elif not signal.has_stderr %}
+                          <span class="badge rounded-pill bg-danger">{{ signal.has_stderr }}</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if signal.has_sample_size %}
+                          <span class="badge rounded-pill bg-success">{{ signal.has_sample_size }}</span>
+                        {% elif not signal.has_sample_size %}
+                          <span class="badge rounded-pill bg-danger">{{ signal.has_sample_size }}</span>
+                        {% endif %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+            </div>
+
+          </div>
+        </div><!-- End Recent Sales -->
+
+      </div>
+    </div><!-- End Left side columns -->
+
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+      <!-- Filters -->
+      <div class="card">
+        <form method="GET">
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.pathogen.label }}</h5>
+              <select name="{{ filter.form.pathogen.name }}" class="form-select">
+                {% for choice in filter.form.pathogen.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.available_geography.label }}</h5>
+              <select
+                name="{{ filter.form.available_geography.name }}" class="form-select" multiple
+                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
+              >
+                {% for choice in filter.form.available_geography.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.signal_type.label }}</h5>
+              <select
+                name="{{ filter.form.signal_type.name }}" class="form-select" multiple
+                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
+              >
+                {% for choice in filter.form.signal_type.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.format.label }}</h5>
+              <select name="{{ filter.form.format.name }}" class="form-select">
+                {% for choice in filter.form.format.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.is_smoothed.label }}</h5>
+              <select name="{{ filter.form.is_smoothed.name }}" class="form-select">
+                <option value="">{% trans "Unknown" %}</option>
+                <option value="true">{% trans "Yes" %}</option>
+                <option value="false">{% trans "No" %}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.is_weighted.label }}</h5>
+              <select name="{{ filter.form.is_weighted.name }}" class="form-select">
+                <option value="">{% trans "Unknown" %}</option>
+                <option value="true">{% trans "Yes" %}</option>
+                <option value="false">{% trans "No" %}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.is_cumulative.label }}</h5>
+              <select name="{{ filter.form.is_cumulative.name }}" class="form-select">
+                <option value="">{% trans "Unknown" %}</option>
+                <option value="true">{% trans "Yes" %}</option>
+                <option value="false">{% trans "No" %}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.has_stderr.label }}</h5>
+              <select name="{{ filter.form.has_stderr.name }}" class="form-select">
+                <option value="">{% trans "Unknown" %}</option>
+                <option value="true">{% trans "Yes" %}</option>
+                <option value="false">{% trans "No" %}</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.has_sample_size.label }}</h5>
+              <select name="{{ filter.form.has_sample_size.name }}" class="form-select">
+                <option value="">{% trans "Unknown" %}</option>
+                <option value="true">{% trans "Yes" %}</option>
+                <option value="false">{% trans "No" %}</option>
+              </select>
+            </div>
+        <div class="card-body">
+        <div class="d-grid gap-2 mt-3">
+          <button type="submit" class="btn btn-primary">{% trans "Apply Filters" %}</button>
+        </div>
+        </div>
+        </form>
+      </div><!-- End Filters -->
+
+    </div><!-- End Right side columns -->
+
+  </div>
+</section>
+
+{% endblock %}
