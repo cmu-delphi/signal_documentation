@@ -18,17 +18,9 @@ class LinkAdmin(admin.ModelAdmin):
     list_display = ('url', 'link_type')
     search_fields = ('url',)
 
-# @admin.register(ContactLink)
-#     """
-#     Admin interface for managing contact link objects.
-#     """
-#     list_display = ('name', 'url')
-#     search_fields = ('name', 'url')
-
 
 class ContactLinkInline(admin.TabularInline):
     """
-# class ContactLinkAdmin(admin.ModelAdmin):
     Inline admin interface for managing contacts link objects.
     """
     model = ContactLink
