@@ -2,6 +2,7 @@
 /.vscode/
 /src/media/
 /src/static/
+/src/staticfiles/
 *.mo
 *.pyc
 htmlcov/
