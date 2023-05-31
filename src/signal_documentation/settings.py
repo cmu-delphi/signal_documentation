@@ -54,6 +54,7 @@ DEFAULT_APPS = [
 ]
 
 EXTERNAL_APPS = [
+    'bootstrap5',
     'corsheaders',
     'debug_toolbar',
     'django_extensions',
@@ -63,8 +64,6 @@ EXTERNAL_APPS = [
     'health_check.cache',
     'health_check.storage',
     'health_check.contrib.migrations',
-    'phonenumber_field',
-    'solo',
 ]
 
 LOCAL_APPS = [

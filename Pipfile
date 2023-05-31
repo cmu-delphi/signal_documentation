@@ -18,8 +18,7 @@ django-debug-toolbar = "*"
 gunicorn = "*"
 pygraphviz = "*"
 django-bootstrap-v5 = "*"
-django-solo = "*"
-django-phonenumber-field = {extras = ["phonenumbers"], version = "*"}
+factory-boy = "*"
 
 [dev-packages]
 flake8 = "*"
