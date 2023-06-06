@@ -69,6 +69,9 @@ class SignalType(models.Model):
         unique=True
     )
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self) -> str:
         """
         Returns the name of the signal type as a string.
@@ -111,6 +114,7 @@ class Geography(models.Model):
 
     class Meta:
         verbose_name_plural = "geographies"
+        ordering = ["name"]
 
     def __str__(self) -> str:
         """
