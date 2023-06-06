@@ -64,7 +64,9 @@
                     <td>{{ signal.base }}</td>
                     <td>
                       {% for link in signal.links.all %}
-                        {{link.link_type}} - <a href="{{ link.url }}">{{ link.url }}</a>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="badge rounded-pill bg-dark">{{ link.link_type }}</span> - <a href="{{ link.url }}">{{ link.url }}</a></li>
+                      </ul>
                       {% endfor %}
                     </td>
                   </tr>
@@ -73,30 +75,9 @@
               </table>
 
             </div>
-            <!-- Pagination -->
-            <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                {% if previous_page_number %}
-                  <li class="page-item"><a class="page-link" href="?page=1">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="?page={{ previous_page_number }}">{{ previous_page_number }}</a></li>
-                {% else %}
-                  <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
-                {% endif %}
-                {% for num in page_obj.paginator.page_range %}
-                  {% if page_obj.number == num %}
-                    <li class="page-item active"><span class="page-link">{{ num }}</span></li>
-                  {% elif num > page_obj.number|add:'-1' and num < page_obj.number|add:'1' %}
-                    <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-                  {% endif %}
-                {% endfor %}
-                {% if next_page_number %}
-                  <li class="page-item"><a class="page-link" href="?page={{ next_page_number }}">{{ next_page_number }}</a></li>
-                  <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a></li>
-                {% else %}
-                  <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
-                {% endif %}
-              </ul>
-            </nav>
+            {% block pagination %}
+              {%include 'pagination.html'%}
+            {% endblock %}
           </div>
         </div>
 
