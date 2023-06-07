@@ -1,5 +1,7 @@
 {% extends "index.html" %}
 
+{% load bootstrap5 %}
+
 {% load i18n %}
 
 {% block content %}
@@ -44,7 +46,7 @@
                 <tbody>
                   {% for signal in signals %}
                   <tr>
-                    <th scope="row"><a href="#">{{ signal.id }}</a></th>
+                    <th scope="row"><a href="{% url 'signal' pk=signal.id %}">{{ signal.id }}</a></th>
                     <td>{{ signal.name }}</td>
                     <td>{{ signal.source }}</td>
                     <td>{{ signal.description }}</td>
