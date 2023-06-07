@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -242,3 +243,13 @@ class Signal(models.Model):
         :rtype: str
         """
         return self.name
+
+    def clean(self) -> None:
+        """
+        Validate that the signal has a base if any other signals exist.
+
+        Raises:
+            ValidationError: If there are other signals and this signal doesn't have a base.
+        """
+        if Signal.objects.exists() and not self.base:
+            raise ValidationError(_("Signal should have base."))
