@@ -112,8 +112,14 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                    <div class="col-lg-3 col-md-4 label">Smoothing:</div>
+                    <div class="col-lg-9 col-md-8">
+                      {% if signal.is_smoothed %}
+                        <input class="form-check-label" type="checkbox" checked disabled>
+                      {% else %}
+                        <input class="form-check-label" type="checkbox"disabled>
+                      {% endif %}
+                    </div>
                   </div>
 
                 </div>
