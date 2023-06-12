@@ -19,6 +19,9 @@ gunicorn = "*"
 pygraphviz = "*"
 django-bootstrap-v5 = "*"
 factory-boy = "*"
+linkpreview = "*"
+pymemcache = "*"
+django-redis = "*"
 
 [dev-packages]
 flake8 = "*"
