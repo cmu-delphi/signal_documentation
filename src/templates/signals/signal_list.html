@@ -1,0 +1,192 @@
+{% extends "index.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="pagetitle">
+  <h1>Signals</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'signals' %}">Home</a></li>
+      <li class="breadcrumb-item active">Signals</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
+
+<section class="section dashboard">
+  <div class="row">
+
+    <!-- Left side columns -->
+    <div class="col-lg-8">
+      <div class="row">
+
+        <div class="col-12">
+          <div class="card recent-sales overflow-auto">
+            <div class="card-body">
+              <h5 class="card-title">Signals</h5>
+
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Data Source</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Pathogen/Disease Area</th>
+                    <th scope="col">Available geography</th>
+                    <th scope="col">Signal Type</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Temporal Resolution</th>
+                    <th scope="col">Signal</th>
+                    <th scope="col">Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for signal in signals %}
+                  <tr>
+                    <th scope="row"><a href="#">{{ signal.id }}</a></th>
+                    <td>{{ signal.name }}</td>
+                    <td>{{ signal.source }}</td>
+                    <td>{{ signal.description }}</td>
+                    <td>{{ signal.pathogen }}</td>
+                    <td>
+                      {% for geography in signal.available_geography.all %}
+                        <span class="badge rounded-pill bg-dark">{{ geography }}</span>
+                      {% endfor %}
+                    </td>
+                    <td>
+                      {% for signal_type in signal.signal_type.all %}
+                        <span class="badge rounded-pill bg-dark">{{ signal_type }}</span>
+                      {% endfor %}
+                    </td>
+                    <td>{{ signal.format }}</td>
+                    <td>{{ signal.time_label }}</td>
+                    <td>{{ signal.base }}</td>
+                    <td>
+                      {% for link in signal.links.all %}
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="badge rounded-pill bg-dark">{{ link.link_type }}</span> - <a href="{{ link.url }}">{{ link.url }}</a></li>
+                      </ul>
+                      {% endfor %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+            </div>
+            {% block pagination %}
+              {%include 'pagination.html'%}
+            {% endblock %}
+          </div>
+        </div>
+
+      </div>
+    </div><!-- End Left side columns -->
+
+    <!-- Right side columns -->
+    <div class="col-lg-4">
+      <!-- Filters -->
+      <div class="card">
+        <form method="GET">
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">Search</h5>
+              <input class="form-control" type="text" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
+            </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.pathogen.label }}</h5>
+              <select name="{{ filter.form.pathogen.name }}" class="form-select">
+                {% for choice in filter.form.pathogen.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.available_geography.label }}</h5>
+              <select
+                name="{{ filter.form.available_geography.name }}" class="form-select" multiple
+                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
+              >
+                {% for choice in filter.form.available_geography.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.signal_type.label }}</h5>
+              <select
+                name="{{ filter.form.signal_type.name }}" class="form-select" multiple
+                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
+              >
+                {% for choice in filter.form.signal_type.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.category.label }}</h5>
+              <select
+                name="{{ filter.form.category.name }}" class="form-select" multiple
+                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
+              >
+                {% for choice in filter.form.category.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.format.label }}</h5>
+              <select name="{{ filter.form.format.name }}" class="form-select">
+                {% for choice in filter.form.format.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">{{ filter.form.source.label }}</h5>
+              <select name="{{ filter.form.source.name }}" class="selectpicker form-select" multiple>
+                {% for choice in filter.form.source.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="card-body">
+              <h5 class="card-title">Temporal resolution</h5>
+              <select name="{{ filter.form.time_label.name }}" class="selectpicker form-select">
+                {% for choice in filter.form.time_label.field.choices %}
+                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+        <div class="card-body">
+          <div class="d-grid gap-2 mt-3">
+            <button type="submit" class="btn btn-primary">{% trans "Apply Filters" %}</button>
+          </div>
+        </div>
+        </form>
+      </div><!-- End Filters -->
+
+    </div><!-- End Right side columns -->
+
+  </div>
+</section>
+
+{% endblock %}

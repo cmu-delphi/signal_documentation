@@ -6,7 +6,6 @@ from base.models import Link
 @admin.register(Link)
 class LinkAdmin(admin.ModelAdmin):
     """
-    Admin interface for managing geography objects.
+    Admin interface for managing link objects.
     """
     list_display = ('url', 'link_type')
-    search_fields = ('url',)

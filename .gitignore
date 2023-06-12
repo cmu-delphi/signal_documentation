@@ -1,7 +1,8 @@
 .env
 /.vscode/
 /src/media/
-/src/static/
+/src/assets/
+/src/staticfiles/
 *.mo
 *.pyc
 htmlcov/

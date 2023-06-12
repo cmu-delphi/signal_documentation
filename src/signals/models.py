@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -69,6 +70,9 @@ class SignalType(models.Model):
         unique=True
     )
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self) -> str:
         """
         Returns the name of the signal type as a string.
@@ -111,6 +115,7 @@ class Geography(models.Model):
 
     class Meta:
         verbose_name_plural = "geographies"
+        ordering = ["name"]
 
     def __str__(self) -> str:
         """
@@ -135,7 +140,9 @@ class Signal(models.Model):
         'signals.Signal',
         related_name='base_for',
         help_text=_('Signal base'),
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        null=True,
+        blank=True
     )
     pathogen = models.ForeignKey(
         'signals.Pathogen',
@@ -236,3 +243,13 @@ class Signal(models.Model):
         :rtype: str
         """
         return self.name
+
+    def clean(self) -> None:
+        """
+        Validate that the signal has a base if any other signals exist.
+
+        Raises:
+            ValidationError: If there are other signals and this signal doesn't have a base.
+        """
+        if Signal.objects.exists() and not self.base:
+            raise ValidationError(_("Signal should have base."))

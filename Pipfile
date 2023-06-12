@@ -16,6 +16,9 @@ django-health-check = "*"
 django-cors-headers = "*"
 django-debug-toolbar = "*"
 gunicorn = "*"
+pygraphviz = "*"
+django-bootstrap-v5 = "*"
+factory-boy = "*"
 
 [dev-packages]
 flake8 = "*"

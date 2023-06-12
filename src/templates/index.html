@@ -1,0 +1,191 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Signals</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Include Bootstrap CSS and JS files -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="{% static 'https://fonts.gstatic.com' %}" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.snow.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/quill/quill.bubble.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/simple-datatables/style.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Mar 09 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="{% url 'signals' %}" class="logo d-flex align-items-center">
+        <img assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Signal Documentation</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="{% url 'signals' %}">
+          <i class="ri-stack-line"></i>
+          <span>Signals</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="https://delphi.cmu.edu/covid19/">
+          <i class="bi bi-globe"></i>
+          <span>About COVIDcast</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="https://delphi.cmu.edu/covidcast/">
+          <i class="bx bx-line-chart"></i>
+          <span>COVIDcast Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="https://cmu-delphi.github.io/delphi-epidata/">
+          <i class="bi bi-braces"></i>
+          <span>Epidata API</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="https://delphi.cmu.edu/covidcast/indicator-status/">
+          <i class="bx bxs-bar-chart-alt-2"></i>
+          <span>Indicator Status</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="https://docs.google.com/forms/d/e/1FAIpQLScqgT1fKZr5VWBfsaSp-DNaN03aV6EoZU4YljIzHJ1Wl_zmtg/viewform">
+          <i class="bi bi-envelope"></i>
+          <span>Contact Delphi</span>
+        </a>
+      </li>
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+    {% block content %}{% endblock %}
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="fw-bold">COVIDcast</p>
+          <a href="https://delphi.cmu.edu/covidcast/"><i class="bx bx-bar-chart-alt"></i> Overview</a><br>
+          <a href="https://delphi.cmu.edu/forecast-eval/"><i class="bx bx-line-chart"></i> Forecast Evaluation</a><br>
+          <a href="https://delphi.cmu.edu/covid19/ctis/"><i class="bx bxs-check-shield"></i> CTIS</a><br>
+          <a href="https://delphi.cmu.edu/covidcast/survey-results/"><i class="bx bxs-dashboard"></i> CTIS Results Dashboard</a><br>
+        </div>
+        <div class="col">
+          <p class="fw-bold">Resources</p>
+          <a href="https://delphi.cmu.edu/about/publications/"><i class="bx bxs-info-circle"></i> Research & Publications</a><br>
+          <a href="https://delphi.cmu.edu/tools/"><i class="bi bi-tools"></i> Tools</a><br>
+          <a href="https://cmu-delphi.github.io/delphi-epidata/"><i class="bi bi-braces"></i> API</a><br>
+          <a href="https://github.com/cmu-delphi/"><i class="bi bi-github"></i> GitHub</a><br>
+        </div>
+        <div class="col">
+          <p class="fw-bold">About</p>
+          <a href="https://delphi.cmu.edu/about/"><i class="bi bi-globe"></i> Delphi</a><br>
+          <a href="https://delphi.cmu.edu/blog/"><i class="bi bi-book-half"></i> Delphi Blog</a><br>
+          <a href="https://www.cmu.edu/"><i class="bi bi-house-fill"></i> CMU</a><br>
+          <a href="https://delphi.cmu.edu/covid19/terms-of-use/"><i class="bi bi-ui-checks"></i> Terms</a><br>
+          <a href="https://delphi.cmu.edu/about/careers/"><i class="bi bi-person-plus-fill"></i> Careers</a><br>
+        </div>
+        <div class="col">
+          <p class="fw-bold">Contacts</p>
+          <a href="https://twitter.com/CmuDelphi/"><i class="bi bi-twitter"></i> Twitter</a><br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIeOJtrAhdOriEyiRY7LkpQX8DZBY19dl6De8l56Q9CZhmxw/viewform?entry.1245962748="><i class="bx bxs-message-rounded-add"></i> Website Feedback</a><br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScqgT1fKZr5VWBfsaSp-DNaN03aV6EoZU4YljIzHJ1Wl_zmtg/viewform"><i class="bx bxs-message-detail"></i> All other inquiries</a><br>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/apexcharts/apexcharts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/chart.js/chart.umd.js' %}"></script>
+  <script src="{% static 'assets/vendor/echarts/echarts.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/quill/quill.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/simple-datatables/simple-datatables.js' %}"></script>
+  <script src="{% static 'assets/vendor/tinymce/tinymce.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
