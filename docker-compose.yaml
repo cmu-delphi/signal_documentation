@@ -37,6 +37,13 @@ services:
     depends_on:
       - db
 
+  redis:
+    image: redis
+    container_name: signal_documentation-redis
+    restart: always
+    ports:
+      - "6379:6379"
+
 volumes:
   postgres:
   webapp:
