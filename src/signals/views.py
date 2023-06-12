@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.views.generic import ListView
+from django.views.generic import DetailView, ListView
 
 from signals.filters import SignalFilter
 from signals.models import Signal
@@ -24,3 +24,8 @@ class SignalsListView(ListView):
         page_obj = paginator.get_page(page_number)
         context['signals'] = page_obj
         return context
+
+
+class SignalsDetailView(DetailView):
+
+    model = Signal
