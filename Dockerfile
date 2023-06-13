@@ -3,6 +3,9 @@ FROM python:3.10.8-alpine
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 RUN addgroup -S python && adduser -S python -G python
+RUN apk update
+RUN apk add musl-dev mariadb-dev gcc
+RUN apk add graphviz-dev
 RUN pip install -U pipenv
 USER python
 WORKDIR /home/python
