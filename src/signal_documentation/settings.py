@@ -116,12 +116,12 @@ WSGI_APPLICATION = 'signal_documentation.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('POSTGRES_DB', None),
-        'USER': os.environ.get('POSTGRES_USER', None),
-        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', None),
-        'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
-        'PORT': os.environ.get('POSTGRES_PORT', 5432),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('MYSQL_DATABASE', None),
+        'USER': os.environ.get('MYSQL_USER', None),
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD', None),
+        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
+        'PORT': os.environ.get('MYSQL_PORT', 3306),
     }
 }
 
