@@ -1,0 +1,17 @@
+{% extends "error.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+
+    <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+      <h1>400</h1>
+      <h2>Bad Request.</h2>
+      <a class="btn" href="{% url 'signals' %}">Back to home</a>
+      <img src="{% static 'assets/img/not-found.svg' %}" class="img-fluid py-5" alt="Bad Request.">
+    </section>
+
+  </div>
+{% endblock %}

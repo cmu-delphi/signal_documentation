@@ -19,6 +19,18 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
+from base.views import (
+    BadRequestErrorView,
+    ForbiddenErrorView,
+    InternalServerErrorView,
+    NotFoundErrorView,
+)
+
+handler400 = BadRequestErrorView.as_view()
+handler403 = ForbiddenErrorView.as_view()
+handler404 = NotFoundErrorView.as_view()
+handler500 = InternalServerErrorView.as_view()
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
