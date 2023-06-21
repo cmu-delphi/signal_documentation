@@ -3,20 +3,20 @@ version: '3.8'
 services:
 
   db:
-    image: postgres:latest
+    image: mysql:latest
     container_name: signal_documentation-db
     restart: always
     env_file:
      - ./.env
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_HOST: ${POSTGRES_HOST}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - mysql:/var/lib/mysql/
     ports:
-      - "5432:5432"
+      - "3306:3306"
 
   webapp:
     build: .
@@ -37,6 +37,13 @@ services:
     depends_on:
       - db
 
+  redis:
+    image: redis
+    container_name: signal_documentation-redis
+    restart: always
+    ports:
+      - "6379:6379"
+
 volumes:
-  postgres:
+  mysql:
   webapp:

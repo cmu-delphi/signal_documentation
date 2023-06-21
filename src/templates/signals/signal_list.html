@@ -27,10 +27,9 @@
             <div class="card-body">
               <h5 class="card-title">Signals</h5>
 
-              <table class="table table-borderless">
+              <table class="table table-borderless table-hover">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Data Source</th>
                     <th scope="col">Description</th>
@@ -45,8 +44,7 @@
                 </thead>
                 <tbody>
                   {% for signal in signals %}
-                  <tr>
-                    <th scope="row"><a href="{% url 'signal' pk=signal.id %}">{{ signal.id }}</a></th>
+                  <tr class="clickable-table-row" onClick="location.href='{% url 'signal' pk=signal.id %}';">
                     <td>{{ signal.name }}</td>
                     <td>{{ signal.source }}</td>
                     <td>{{ signal.description }}</td>
@@ -161,7 +159,10 @@
           <div class="form-group">
             <div class="card-body">
               <h5 class="card-title">{{ filter.form.source.label }}</h5>
-              <select name="{{ filter.form.source.name }}" class="selectpicker form-select" multiple>
+              <select name="{{ filter.form.source.name }}" class="selectpicker form-select" multiple
+                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
+              >
                 {% for choice in filter.form.source.field.choices %}
                   <option value="{{ choice.0 }}">{{ choice.1 }}</option>
                 {% endfor %}
@@ -187,7 +188,11 @@
       </div><!-- End Filters -->
 
     </div><!-- End Right side columns -->
-
+    <style>
+      .clickable-table-row{
+        cursor:pointer;
+      }
+    </style>
   </div>
 </section>
 

@@ -1,4 +1,6 @@
 from django.core.paginator import Paginator
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from django.views.generic import DetailView, ListView
 
 from signals.filters import SignalFilter
@@ -26,6 +28,7 @@ class SignalsListView(ListView):
         return context
 
 
+@method_decorator(cache_page(60 * 5), name='dispatch')
 class SignalsDetailView(DetailView):
 
     model = Signal

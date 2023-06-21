@@ -6,7 +6,6 @@ name = "pypi"
 [packages]
 django = "*"
 django-filter = "*"
-psycopg2-binary = "*"
 django-extensions = "*"
 pillow = "*"
 pre-commit = "*"
@@ -19,6 +18,9 @@ gunicorn = "*"
 pygraphviz = "*"
 django-bootstrap-v5 = "*"
 factory-boy = "*"
+linkpreview = "*"
+django-redis = "*"
+mysqlclient = "*"
 
 [dev-packages]
 flake8 = "*"
