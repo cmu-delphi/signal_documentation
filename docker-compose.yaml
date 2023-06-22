@@ -50,7 +50,7 @@ services:
     image: nginx
     volumes:
       - ./nginx/default.conf.template:/etc/nginx/conf.d/default.conf
-      - static:/staticfiles
+      - ./src/staticfiles:/staticfiles
     ports:
       - "80:80"
     depends_on:
