@@ -29,7 +29,7 @@ services:
                     python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/pathogens.json &&
                     python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_types.json &&
                     python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_categories.json &&
-                    python /usr/src/signal_documentation/src/manage.py runserver 0.0.0.0:8000"
+                    gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - .:/usr/src/signal_documentation
     ports:
@@ -44,6 +44,19 @@ services:
     ports:
       - "6379:6379"
 
+  nginx:
+    container_name: signal_documentation-nginx
+    restart: on-failure
+    image: nginx
+    volumes:
+      - ./nginx/default.conf.template:/etc/nginx/conf.d/default.conf
+      - ./src/staticfiles:/staticfiles
+    ports:
+      - "80:80"
+    depends_on:
+      - webapp
+
 volumes:
   mysql:
   webapp:
+  static:
