@@ -25,7 +25,6 @@ class SourceSubdivision(models.Model):
     db_source = models.CharField(
         help_text=_('DB Source'),
         max_length=128,
-        unique=True
     )
     links = models.ManyToManyField(
         'base.Link',

@@ -232,7 +232,7 @@ class Signal(models.Model):
         'datasources.SourceSubdivision',
         related_name='signals',
         help_text=_('Source Subdivision'),
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
     )
 
     def __str__(self) -> str:
