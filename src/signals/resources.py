@@ -7,6 +7,7 @@ from import_export.fields import Field, widgets
 from base.models import Link, LinkTypeChoices
 from datasources.models import SourceSubdivision
 from signals.models import (
+    Geography,
     Pathogen,
     Signal,
     SignalCategory,
@@ -20,13 +21,13 @@ class SignalResource(resources.ModelResource):
     name = Field(attribute='name', column_name='Name')
     pathogen = Field(
         attribute='pathogen',
-        column_name='Pathogen/Disease Area',
-        widget=widgets.ForeignKeyWidget(Pathogen, field='name'),
+        column_name='Pathogen/ Disease Area',
+        widget=widgets.ManyToManyWidget(Pathogen, field='name', separator=','),
     )
     signal_type = Field(
         attribute='signal_type',
         column_name='Signal Type',
-        widget=widgets.ManyToManyWidget(SignalType, field='name'),
+        widget=widgets.ManyToManyWidget(SignalType, field='name', separator=','),
     )
     active = Field(attribute='active', column_name='Active')
     short_description = Field(attribute='short_description', column_name='Short Description')
@@ -36,13 +37,13 @@ class SignalResource(resources.ModelResource):
     time_label = Field(attribute='time_label', column_name='Time Label')
     category = Field(
         attribute='category',
-        column_name='Category Type',
+        column_name='Category',
         widget=widgets.ForeignKeyWidget(SignalCategory, field='name'),
     )
     available_geography = Field(
         attribute='available_geography',
         column_name='Available Geography',
-        widget=widgets.ManyToManyWidget(SignalType, field='name', separator=','),
+        widget=widgets.ManyToManyWidget(Geography, field='name', separator=','),
     )
     is_smoothed = Field(attribute='is_smoothed', column_name='Is Smoothed')
     is_weighted = Field(attribute='is_weighted', column_name='Is Weighted')
@@ -87,12 +88,28 @@ class SignalResource(resources.ModelResource):
 
     def before_import_row(self, row, **kwargs):
         """Pre-processes each row before importing."""
+        self.fix_boolean_fields(row, ['Active', 'Is Smoothed', 'Is Weighted', 'Is Cumulative', 'Has StdErr', 'Has Sample Size'])
+        self.process_links(row)
+        self.process_pathogen(row)
 
-        for k in row.keys():
+    def is_url_in_domain(self, url, domain):
+        """Checks if a URL belongs to a specific domain."""
+
+        parsed_url = urlparse(url)
+        return parsed_url.netloc == domain
+
+    def fix_boolean_fields(self, row, fields: list):
+        """Fixes boolean fields."""
+
+        for k in fields:
             if row[k] == 'TRUE':
                 row[k] = True
             if row[k] == 'FALSE' or row[k] == '':
                 row[k] = False
+        return row
+
+    def process_links(self, row):
+        """Processes links."""
 
         row['Links'] = ''
         if row['Link']:
@@ -113,9 +130,12 @@ class SignalResource(resources.ModelResource):
                     link, created = Link.objects.get_or_create(url=link_url, defaults={'link_type': link_type})
                     if f'|{link.url}' not in row['Links']:
                         row['Links'] += row['Links'] + f'|{link.url}'
+        return row
 
-    def is_url_in_domain(self, url, domain):
-        """Checks if a URL belongs to a specific domain."""
+    def process_pathogen(self, row):
+        """Processes pathogen."""
 
-        parsed_url = urlparse(url)
-        return parsed_url.netloc == domain
+        if row['Pathogen/ Disease Area']:
+            pathogens = row['Pathogen/ Disease Area'].split(',')
+            for pathogen in pathogens:
+                Pathogen.objects.get_or_create(name=pathogen.strip())

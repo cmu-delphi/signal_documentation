@@ -144,12 +144,10 @@ class Signal(models.Model):
         null=True,
         blank=True
     )
-    pathogen = models.ForeignKey(
+    pathogen = models.ManyToManyField(
         'signals.Pathogen',
         related_name='signals',
         help_text=_('Pathogen/Disease Area'),
-        on_delete=models.SET_NULL,
-        null=True
     )
     signal_type = models.ManyToManyField(
         'signals.SignalType',
