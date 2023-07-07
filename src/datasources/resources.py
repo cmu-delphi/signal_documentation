@@ -36,6 +36,23 @@ class DataSourceResource(resources.ModelResource):
         Hook called before importing each row. Modifies 'Links' column to include
         any additional links specified in 'DUA' or 'Link' columns.
         """
+        self.process_links(row)
+        self.process_subdivisions(row)
+
+    def process_subdivisions(self, row):
+        if row['Source Subdivision']:
+            data_source = DataSource.objects.get(name=row['Name'])
+            source_subdivision, created = SourceSubdivision.objects.get_or_create(
+                name=row['Source Subdivision'],
+                defaults={
+                    'display_name': row['Source Subdivision'],
+                    'description': row['Description'],
+                    'db_source': row['DB Source'],
+                    'data_source': data_source
+                }
+            )
+
+    def process_links(self, row):
         row['Links'] = ''
         if row['DUA']:
             link, created = Link.objects.get_or_create(url=row['DUA'], defaults={'link_type': LinkTypeChoices.DUA})
@@ -49,18 +66,6 @@ class DataSourceResource(resources.ModelResource):
             link_url = pattern_match.group(2)
             link, created = Link.objects.get_or_create(url=link_url, link_type=link_type)
             row['Links'] += row['Links'] + f'|{link.url}'
-
-        if row['Source Subdivision']:
-            data_source = DataSource.objects.get(name=row['Name'])
-            source_subdivision, created = SourceSubdivision.objects.get_or_create(
-                name=row['Source Subdivision'],
-                defaults={
-                    'display_name': row['Source Subdivision'],
-                    'description': row['Description'],
-                    'db_source': row['DB Source'],
-                    'data_source': data_source
-                }
-            )
 
 
 class SourceSubdivisionResource(resources.ModelResource):
