@@ -50,7 +50,7 @@
                     <td>{{ signal.description }}</td>
                     <td>
                       {% for pathogen in signal.pathogen.all %}
-                        <span class="badge rounded-pill bg-dark">{{ pathogen }}</span>
+                        <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
                       {% endfor %}
                     </td>
                     <td>
