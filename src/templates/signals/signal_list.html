@@ -48,7 +48,11 @@
                     <td>{{ signal.name }}</td>
                     <td>{{ signal.source }}</td>
                     <td>{{ signal.description }}</td>
-                    <td>{{ signal.pathogen }}</td>
+                    <td>
+                      {% for pathogen in signal.pathogen.all %}
+                        <span class="badge rounded-pill bg-dark">{{ pathogen }}</span>
+                      {% endfor %}
+                    </td>
                     <td>
                       {% for geography in signal.available_geography.all %}
                         <span class="badge rounded-pill bg-dark">{{ geography }}</span>
