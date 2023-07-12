@@ -144,12 +144,10 @@ class Signal(models.Model):
         null=True,
         blank=True
     )
-    pathogen = models.ForeignKey(
+    pathogen = models.ManyToManyField(
         'signals.Pathogen',
         related_name='signals',
         help_text=_('Pathogen/Disease Area'),
-        on_delete=models.SET_NULL,
-        null=True
     )
     signal_type = models.ManyToManyField(
         'signals.SignalType',
@@ -232,7 +230,7 @@ class Signal(models.Model):
         'datasources.SourceSubdivision',
         related_name='signals',
         help_text=_('Source Subdivision'),
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
     )
 
     def __str__(self) -> str:

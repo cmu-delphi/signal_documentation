@@ -37,7 +37,13 @@
                   <br>
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Pathogen:</div>
-                    <div class="col-lg-9 col-md-8">{{ signal.pathogen|title }}</div>
+                    <div class="col-lg-9 col-md-8">
+                      <ul>
+                      {% for pathogen in signal.pathogen.all %}
+                        <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
+                      {% endfor %}
+                      </ul>
+                  </div>
                   </div>
 
                   <br>
@@ -80,9 +86,9 @@
                     <div class="col-lg-3 col-md-4 label">Smoothing:</div>
                     <div class="col-lg-9 col-md-8">
                       {% if signal.is_smoothed %}
-                        <span class="badge rounded-pill bg-success">{{ signal.is_smoothed }}</span>
+                        <span class="badge rounded-pill bg-success">Yes</span>
                       {% else %}
-                        <span class="badge rounded-pill bg-danger">{{ signal.is_smoothed }}</span>
+                        <span class="badge rounded-pill bg-danger">No</span>
                       {% endif %}
                     </div>
                   </div>
@@ -91,9 +97,9 @@
                     <div class="col-lg-3 col-md-4 label">Cumulative:</div>
                     <div class="col-lg-9 col-md-8">
                       {% if signal.is_cumulative %}
-                        <span class="badge rounded-pill bg-success">{{ signal.is_cumulative }}</span>
+                        <span class="badge rounded-pill bg-success">Yes</span>
                       {% else %}
-                        <span class="badge rounded-pill bg-danger">{{ signal.is_cumulative }}</span>
+                        <span class="badge rounded-pill bg-danger">No</span>
                       {% endif %}
                     </div>
                   </div>
@@ -102,9 +108,9 @@
                     <div class="col-lg-3 col-md-4 label">Standard error:</div>
                     <div class="col-lg-9 col-md-8">
                       {% if signal.has_stderr %}
-                        <span class="badge rounded-pill bg-success">{{ signal.has_stderr }}</span>
+                        <span class="badge rounded-pill bg-success">Yes</span>
                       {% else %}
-                        <span class="badge rounded-pill bg-danger">{{ signal.has_stderr }}</span>
+                        <span class="badge rounded-pill bg-danger">No</span>
                       {% endif %}
                     </div>
                   </div>
@@ -113,9 +119,9 @@
                     <div class="col-lg-3 col-md-4 label">Sample Size:</div>
                     <div class="col-lg-9 col-md-8">
                       {% if signal.has_sample_size %}
-                        <span class="badge rounded-pill bg-success">{{ signal.has_sample_size }}</span>
+                        <span class="badge rounded-pill bg-success">Yes</span>
                       {% else %}
-                        <span class="badge rounded-pill bg-danger">{{ signal.has_sample_size }}</span>
+                        <span class="badge rounded-pill bg-danger">No</span>
                       {% endif %}
                     </div>
                     <br>

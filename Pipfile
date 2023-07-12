@@ -21,6 +21,7 @@ factory-boy = "*"
 linkpreview = "*"
 django-redis = "*"
 mysqlclient = "*"
+django-import-export = "*"
 
 [dev-packages]
 flake8 = "*"

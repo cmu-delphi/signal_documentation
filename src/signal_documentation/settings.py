@@ -64,6 +64,7 @@ EXTERNAL_APPS = [
     'health_check.cache',
     'health_check.storage',
     'health_check.contrib.migrations',
+    'import_export',
 ]
 
 LOCAL_APPS = [

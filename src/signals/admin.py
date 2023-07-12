@@ -1,4 +1,5 @@
 from django.contrib import admin
+from import_export.admin import ImportExportModelAdmin
 
 from signals.models import (
     Geography,
@@ -6,6 +7,7 @@ from signals.models import (
     Signal,
     SignalType,
 )
+from signals.resources import SignalResource
 
 
 @admin.register(Geography)
@@ -36,7 +38,7 @@ class SignalTypeAdmin(admin.ModelAdmin):
 
 
 @admin.register(Signal)
-class SignalAdmin(admin.ModelAdmin):
+class SignalAdmin(ImportExportModelAdmin):
     """
     Admin interface for managing signal objects.
     """
@@ -53,3 +55,4 @@ class SignalAdmin(admin.ModelAdmin):
         'has_stderr',
         'has_sample_size',
     )
+    resource_classes = [SignalResource]
