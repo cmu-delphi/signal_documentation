@@ -2,6 +2,26 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+class ReferenceSignalType(models.Model):
+    """
+    A model representing a reference signal.
+    """
+    name = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the reference signal as a string.
+
+        :return: The name of the reference signal as a string.
+        :rtype: str
+        """
+        return self.name
+
+
 class SourceSubdivision(models.Model):
     """
     A model representing a source subdivision.
@@ -19,8 +39,14 @@ class SourceSubdivision(models.Model):
     description = models.TextField(
         help_text=_('Source description'),
         max_length=1000,
-        null=True,
         blank=True
+    )
+    reference_signal = models.ForeignKey(
+        'datasources.ReferenceSignalType',
+        help_text=_('Reference Signal'),
+        related_name='source_subdivisions',
+        on_delete=models.PROTECT,
+        null=True
     )
     db_source = models.CharField(
         help_text=_('DB Source'),
@@ -66,7 +92,6 @@ class DataSource(models.Model):
     description = models.TextField(
         help_text=_('Source description'),
         max_length=1000,
-        null=True,
         blank=True
     )
     source_license = models.CharField(

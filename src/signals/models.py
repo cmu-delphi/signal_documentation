@@ -1,4 +1,3 @@
-from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -136,14 +135,6 @@ class Signal(models.Model):
         max_length=128,
         unique=True
     )
-    base = models.ForeignKey(
-        'signals.Signal',
-        related_name='base_for',
-        help_text=_('Signal base'),
-        on_delete=models.PROTECT,
-        null=True,
-        blank=True
-    )
     pathogen = models.ManyToManyField(
         'signals.Pathogen',
         related_name='signals',
@@ -161,13 +152,11 @@ class Signal(models.Model):
     short_description = models.TextField(
         help_text=_('Short Description'),
         max_length=500,
-        null=True,
         blank=True
     )
     description = models.TextField(
         help_text=_('Description'),
         max_length=1000,
-        null=True,
         blank=True
     )
     format = models.CharField(
@@ -233,6 +222,10 @@ class Signal(models.Model):
         on_delete=models.PROTECT,
     )
 
+    @property
+    def base(self) -> str:
+        return self.source.reference_signal
+
     def __str__(self) -> str:
         """
         Returns the name of the signal as a string.
@@ -241,13 +234,3 @@ class Signal(models.Model):
         :rtype: str
         """
         return self.name
-
-    def clean(self) -> None:
-        """
-        Validate that the signal has a base if any other signals exist.
-
-        Raises:
-            ValidationError: If there are other signals and this signal doesn't have a base.
-        """
-        if Signal.objects.exists() and not self.base:
-            raise ValidationError(_("Signal should have base."))
