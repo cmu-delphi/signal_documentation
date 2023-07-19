@@ -6,7 +6,7 @@ from import_export.fields import Field, widgets
 from base.models import Link, LinkTypeChoices
 from datasources.models import (
     DataSource,
-    ReferenceSignalType,
+    ReferenceSignal,
     SourceSubdivision,
 )
 
@@ -24,7 +24,7 @@ class SourceSubdivisionResource(resources.ModelResource):
     reference_signal = Field(
         attribute='reference_signal',
         column_name='Reference Signal',
-        widget=widgets.ForeignKeyWidget(ReferenceSignalType, field='name'),
+        widget=widgets.ForeignKeyWidget(ReferenceSignal, field='name'),
     )
     links = Field(
         attribute='links',
@@ -76,4 +76,4 @@ class SourceSubdivisionResource(resources.ModelResource):
 
     def process_reference_signal(self, row):
         if row['Reference Signal']:
-            ReferenceSignalType.objects.get_or_create(name=row['Reference Signal'])
+            ReferenceSignal.objects.get_or_create(name=row['Reference Signal'])

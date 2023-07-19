@@ -2,9 +2,10 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class ReferenceSignalType(models.Model):
+class ReferenceSignal(models.Model):
     """
     A model representing a reference signal.
+    is the representative signal for the entire subdivision
     """
     name = models.CharField(
         help_text=_('Name'),
@@ -42,7 +43,7 @@ class SourceSubdivision(models.Model):
         blank=True
     )
     reference_signal = models.ForeignKey(
-        'datasources.ReferenceSignalType',
+        'datasources.ReferenceSignal',
         help_text=_('Reference Signal'),
         related_name='source_subdivisions',
         on_delete=models.PROTECT,

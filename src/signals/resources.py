@@ -11,6 +11,7 @@ from signals.models import (
     Pathogen,
     Signal,
     SignalCategory,
+    SignalGroup,
     SignalType,
 )
 
@@ -61,6 +62,11 @@ class SignalResource(resources.ModelResource):
         column_name='Links',
         widget=widgets.ManyToManyWidget(Link, field='url', separator='|'),
     )
+    base = Field(
+        attribute='base',
+        column_name='Signal BaseName',
+        widget=widgets.ForeignKeyWidget(SignalGroup, field='name'),
+    )
 
     class Meta:
         model = Signal
@@ -82,7 +88,8 @@ class SignalResource(resources.ModelResource):
             'has_sample_size',
             'high_values_are',
             'source',
-            'links'
+            'links',
+            'base',
         ]
         import_id_fields = ['name']
 
@@ -91,6 +98,7 @@ class SignalResource(resources.ModelResource):
         self.fix_boolean_fields(row, ['Active', 'Is Smoothed', 'Is Weighted', 'Is Cumulative', 'Has StdErr', 'Has Sample Size'])
         self.process_links(row)
         self.process_pathogen(row)
+        self.process_base(row)
 
     def is_url_in_domain(self, url, domain):
         """Checks if a URL belongs to a specific domain."""
@@ -139,3 +147,11 @@ class SignalResource(resources.ModelResource):
             pathogens = row['Pathogen/ Disease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
+
+    def process_base(self, row):
+        """Processes base."""
+
+        if row['Signal BaseName']:
+            subdivision = SourceSubdivision.objects.get(name=row['Source Subdivision'])
+            signal_group, created = SignalGroup.objects.get_or_create(name=row['Signal BaseName'])
+            signal_group.subdivisions.add(subdivision)

@@ -126,6 +126,32 @@ class Geography(models.Model):
         return self.name
 
 
+class SignalGroup(models.Model):
+    """
+    A model representing a signal group.
+    Is a representative group for a small group of signals
+    """
+    name = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+    subdivisions = models.ManyToManyField(
+        'datasources.SourceSubdivision',
+        related_name='signal_groups',
+        help_text=_('Source Subdivisions'),
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the signal group as a string.
+
+        :return: The name of the signal group as a string.
+        :rtype: str
+        """
+        return self.name
+
+
 class Signal(models.Model):
     """
     A model representing a signal.
@@ -221,10 +247,12 @@ class Signal(models.Model):
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT,
     )
-
-    @property
-    def base(self) -> str:
-        return self.source.reference_signal
+    base = models.ForeignKey(
+        'signals.SignalGroup',
+        related_name='signals',
+        help_text=_('Base'),
+        on_delete=models.PROTECT,
+    )
 
     def __str__(self) -> str:
         """

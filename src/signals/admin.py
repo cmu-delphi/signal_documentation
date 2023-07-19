@@ -5,6 +5,7 @@ from signals.models import (
     Geography,
     Pathogen,
     Signal,
+    SignalGroup,
     SignalType,
 )
 from signals.resources import SignalResource
@@ -35,6 +36,15 @@ class SignalTypeAdmin(admin.ModelAdmin):
     """
     list_display = ('name',)
     search_fields = ('name',)
+
+
+@admin.register(SignalGroup)
+class SignalGroupAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing signal group objects.
+    """
+    list_display = ('name',)
+    search_fields = ('name', 'subdivisions__name')
 
 
 @admin.register(Signal)
