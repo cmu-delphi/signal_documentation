@@ -10,6 +10,7 @@ RUN pip install -U pipenv
 USER python
 WORKDIR /home/python
 COPY --chown=python:python Pipfile Pipfile.lock ./
+RUN pipenv lock
 RUN pipenv install --system --deploy
 COPY --chown=python:python /src .
 COPY --chown=python:python /gunicorn/gunicorn.py .
