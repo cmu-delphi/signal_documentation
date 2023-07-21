@@ -141,6 +141,13 @@ class SignalGroup(models.Model):
         related_name='signal_groups',
         help_text=_('Source Subdivisions'),
     )
+    base = models.ForeignKey(
+        'signals.Signal',
+        help_text=_('Base Signal'),
+        related_name='base_for',
+        on_delete=models.PROTECT,
+        null=True
+    )
 
     def __str__(self) -> str:
         """
@@ -247,10 +254,10 @@ class Signal(models.Model):
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT,
     )
-    base = models.ForeignKey(
+    group = models.ForeignKey(
         'signals.SignalGroup',
         related_name='signals',
-        help_text=_('Base'),
+        help_text=_('Group'),
         on_delete=models.PROTECT,
     )
 

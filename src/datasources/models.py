@@ -43,9 +43,9 @@ class SourceSubdivision(models.Model):
         blank=True
     )
     reference_signal = models.ForeignKey(
-        'datasources.ReferenceSignal',
+        'signals.Signal',
         help_text=_('Reference Signal'),
-        related_name='source_subdivisions',
+        related_name='subdivision_reference',
         on_delete=models.PROTECT,
         null=True
     )
