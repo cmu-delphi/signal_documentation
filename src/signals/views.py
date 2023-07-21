@@ -16,6 +16,8 @@ class SignalsListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         f = SignalFilter(self.request.GET, queryset=queryset)
+        for i in queryset:
+            i.get_base_diffs()
         return f.qs
 
     def get_context_data(self, **kwargs):

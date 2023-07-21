@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from linkpreview import link_preview
+from linkpreview import LinkPreview, link_preview
 
 
 class LinkTypeChoices(models.TextChoices):
@@ -43,7 +43,7 @@ class Link(models.Model):
         """
         return self.url
 
-    def get_preview(self):
+    def get_preview(self) -> LinkPreview:
         """
         Returns a preview of the link using the link_preview library.
 
