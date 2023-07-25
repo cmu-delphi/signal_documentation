@@ -33,10 +33,17 @@ jobs:
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
       - name: Copy CI env to .env
         run: cp .ci.env .env
-      - name: docker-compose build and push images
+      - name: docker-compose build images
         uses: sudo-bot/action-docker-compose@latest
         with:
             cli-args: "build webapp nginx"
+        env:
+          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+          REGISTRY: "ghcr.io/${{ github.repository }}/"
+      - name: docker-compose push images
+        uses: sudo-bot/action-docker-compose@latest
+        with:
+            cli-args: "push webapp nginx"
         env:
           TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
           REGISTRY: "ghcr.io/${{ github.repository }}/"
