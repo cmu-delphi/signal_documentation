@@ -31,6 +31,8 @@ jobs:
             ;;
           esac
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
+      - name: Copy CI env to .env
+        run: cp .ci.env .env
       - name: docker-compose build and push images
         uses: sudo-bot/action-docker-compose@latest
         with:
