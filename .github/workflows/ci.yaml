@@ -1,0 +1,54 @@
+name: CI
+on:
+  push:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: >
+      github.ref == 'refs/heads/main' ||
+      github.ref == 'refs/heads/develop' ||
+      github.ref == 'refs/heads/test-container-ci'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: cmu-delphi-deploy-machine
+          password: ${{ secrets.CMU_DELPHI_DEPLOY_MACHINE_PAT }}
+      - name: Create image tags
+        id: image
+        run: |
+          baseRef="${GITHUB_REF#*/}"
+          baseRef="${baseRef#*/}"
+          case "${baseRef}" in
+          main)
+            image_tag="latest"
+            ;;
+          *)
+            image_tag="${baseRef//\//_}" # replace `/` with `_` in branch name
+            ;;
+          esac
+          echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
+      - name: Build and push images to registry with docker-compose
+        id: compose
+        uses: sudo-bot/action-docker-compose@latest
+        with:
+            # https://docs.docker.com/compose/reference/overview/
+            cli-args: "build --push webapp nginx"
+        env:
+          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+          REGISTRY: "ghcr.io/${{ github.repository }}/"
+#      - name: Build images and start the compose stack
+#        uses: isbang/compose-action@v1.5.0
+#        with:
+#          up-flags: "--build"
+#          # But will this actually build images with the static files in the? I think maybe this is not the way.
+#        env:
+      - name: Trigger smee.io webhook to deploy new container image
+        run: |
+          curl -H "Authorization: Bearer ${{ secrets.DELPHI_DEPLOY_WEBHOOK_TOKEN }}" \
+               -X POST ${{ secrets.DELPHI_DEPLOY_WEBHOOK_URL }} \
+               -H "Content-Type: application/x-www-form-urlencoded" \
+               -d "repository=ghcr.io/${{ github.repository }}&tag=${{ steps.image.outputs.IMAGE_TAG }}"
