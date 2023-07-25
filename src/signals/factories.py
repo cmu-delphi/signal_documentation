@@ -30,7 +30,7 @@ class GeographyFactory(DjangoModelFactory):
     class Meta:
         model = Geography
 
-    name = Sequence(lambda n: f'{n}')
+    name = Sequence(lambda n: f'geography_name_{n}')
 
 
 class PathogenFactory(DjangoModelFactory):
@@ -40,7 +40,7 @@ class PathogenFactory(DjangoModelFactory):
     class Meta:
         model = Pathogen
 
-    name = Sequence(lambda n: f'{n}')
+    name = Sequence(lambda n: f'pathogen_name_{n}')
 
 
 class SignalCategoryFactory(DjangoModelFactory):
@@ -50,7 +50,7 @@ class SignalCategoryFactory(DjangoModelFactory):
     class Meta:
         model = SignalCategory
 
-    name = Sequence(lambda n: f'{n}')
+    name = Sequence(lambda n: f'category_name_{n}')
 
 
 class SignalTypeFactory(DjangoModelFactory):
@@ -60,14 +60,14 @@ class SignalTypeFactory(DjangoModelFactory):
     class Meta:
         model = SignalType
 
-    name = Sequence(lambda n: f'{n}')
+    name = Sequence(lambda n: f'signal_type_name_{n}')
 
 
 class SignalFactory(DjangoModelFactory):
     """
     A factory for the Signal model.
     """
-    name = Sequence(lambda n: f'{n}')
+    name = Sequence(lambda n: f'signal_name_{n}')
     active = fake.boolean()
     short_description = fake.text(max_nb_chars=500)
     description = fake.text(max_nb_chars=500)

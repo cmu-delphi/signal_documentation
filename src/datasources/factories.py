@@ -14,8 +14,8 @@ class DataSourceFactory(DjangoModelFactory):
     class Meta:
         model = DataSource
 
-    name = Sequence(lambda n: f'{n}')
-    display_name = Sequence(lambda n: f'{n}')
+    name = Sequence(lambda n: f'datasource_name_{n}')
+    display_name = Sequence(lambda n: f'datasource_display_name_{n}')
 
 
 class SourceSubdivisionFactory(DjangoModelFactory):
@@ -25,8 +25,8 @@ class SourceSubdivisionFactory(DjangoModelFactory):
     class Meta:
         model = SourceSubdivision
 
-    name = Sequence(lambda n: f'{n}')
-    display_name = Sequence(lambda n: f'{n}')
-    description = fake.text()
+    name = Sequence(lambda n: f'subdicision_name_{n}')
+    display_name = Sequence(lambda n: f'subdicision_display_name_{n}')
+    description = fake.text(max_nb_chars=250)
     db_source = fake.word()
     data_source = SubFactory(DataSourceFactory)
