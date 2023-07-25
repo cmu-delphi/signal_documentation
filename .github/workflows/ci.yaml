@@ -31,14 +31,20 @@ jobs:
             ;;
           esac
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
-      - name: Build and push images to registry with docker-compose
-        id: compose
+      - name: docker-compose build and push images
         uses: sudo-bot/action-docker-compose@latest
         with:
             cli-args: "build --push webapp nginx"
         env:
           TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
           REGISTRY: "ghcr.io/${{ github.repository }}/"
+      # - name: docker-compose push
+      #   uses: sudo-bot/action-docker-compose@latest
+      #   with:
+      #       cli-args: "push"
+      #   env:
+      #     TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+      #     REGISTRY: "ghcr.io/${{ github.repository }}/"
       - name: Trigger smee.io webhook to deploy new container image
         run: |
           curl -H "Authorization: Bearer ${{ secrets.DELPHI_DEPLOY_WEBHOOK_TOKEN }}" \
