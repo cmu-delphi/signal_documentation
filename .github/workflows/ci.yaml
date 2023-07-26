@@ -33,21 +33,31 @@ jobs:
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
       - name: Copy env file
         run: cp ./.ci.env ./.env
-      - name: docker-compose build images
-        uses: sudo-bot/action-docker-compose@latest
+      - name: docker-compose up --build
+        uses: isbang/compose-action@v1.5.0
         with:
-            cli-args: "build webapp nginx"
+          compose-flags: "build --push"
+          services: |
+            webapp
+            nginx
         env:
           TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
           REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
-      - name: docker-compose push images
-        uses: sudo-bot/action-docker-compose@latest
-        with:
-            cli-args: "push webapp nginx"
-        env:
-          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
-
+#      - name: docker-compose build images
+#        uses: sudo-bot/action-docker-compose@latest
+#        with:
+#            cli-args: "build webapp nginx"
+#        env:
+#          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+#          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
+#      - name: docker-compose push images
+#        uses: sudo-bot/action-docker-compose@latest
+#        with:
+#            cli-args: "push webapp nginx"
+#        env:
+#          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+#          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
+#
       # - name: docker-compose push
       #   uses: sudo-bot/action-docker-compose@latest
       #   with:
