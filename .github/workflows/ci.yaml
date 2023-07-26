@@ -39,14 +39,15 @@ jobs:
             cli-args: "build webapp nginx"
         env:
           TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-          REGISTRY: "ghcr.io/${{ github.repository }}/"
+          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
       - name: docker-compose push images
         uses: sudo-bot/action-docker-compose@latest
         with:
             cli-args: "push webapp nginx"
         env:
           TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-          REGISTRY: "ghcr.io/${{ github.repository }}/"
+          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
+
       # - name: docker-compose push
       #   uses: sudo-bot/action-docker-compose@latest
       #   with:
@@ -54,7 +55,7 @@ jobs:
       #   env:
       #     TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
       #     REGISTRY: "ghcr.io/${{ github.repository }}/"
-      - name: Trigger smee.io webhook to pull new container image
+      - name: Trigger smee.io webhook to refresh application
         run: |
           curl -H "Authorization: Bearer ${{ secrets.DELPHI_DEPLOY_WEBHOOK_TOKEN }}" \
                -X POST ${{ secrets.DELPHI_DEPLOY_WEBHOOK_URL }} \
