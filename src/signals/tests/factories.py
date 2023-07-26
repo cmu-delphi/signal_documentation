@@ -6,8 +6,8 @@ from factory import (
 from factory.django import DjangoModelFactory
 from faker import Faker
 
-from base.factories import LinkFactory
-from datasources.factories import SourceSubdivisionFactory
+from base.tests.factories import LinkFactory
+from datasources.tests.factories import SourceSubdivisionFactory
 from signals.models import (
     FormatChoices,
     Geography,

@@ -5,8 +5,8 @@ from django.urls import reverse
 from faker import Faker
 
 from base.models import Link
-from signals.factories import SignalFactory
 from signals.models import Signal
+from signals.tests.factories import SignalFactory
 
 fake = Faker()
 
