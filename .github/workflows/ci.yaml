@@ -1,23 +1,23 @@
-name: CI
+name: 'Build and deploy application containers'
 on:
   push:
 jobs:
-  deploy:
+  build-push-deploy:
     runs-on: ubuntu-latest
     if: >
       github.ref == 'refs/heads/main' ||
       github.ref == 'refs/heads/develop' ||
       github.ref == 'refs/heads/test-container-ci'
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
-      - name: Login to GitHub Container Registry
+      - name: Login to GitHub container registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: cmu-delphi-deploy-machine
           password: ${{ secrets.CMU_DELPHI_DEPLOY_MACHINE_PAT }}
-      - name: Create image tags
+      - name: Create container image tags
         id: image
         run: |
           baseRef="${GITHUB_REF#*/}"
@@ -31,8 +31,8 @@ jobs:
             ;;
           esac
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
-      - name: Copy CI env to .env
-        run: cp .ci.env .env
+      - name: Copy env file
+        run: cp ./.ci.env ./.env
       - name: docker-compose build images
         uses: sudo-bot/action-docker-compose@latest
         with:
@@ -54,7 +54,7 @@ jobs:
       #   env:
       #     TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
       #     REGISTRY: "ghcr.io/${{ github.repository }}/"
-      - name: Trigger smee.io webhook to deploy new container image
+      - name: Trigger smee.io webhook to pull new container image
         run: |
           curl -H "Authorization: Bearer ${{ secrets.DELPHI_DEPLOY_WEBHOOK_TOKEN }}" \
                -X POST ${{ secrets.DELPHI_DEPLOY_WEBHOOK_URL }} \
