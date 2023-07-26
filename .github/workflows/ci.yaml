@@ -38,7 +38,7 @@ jobs:
         uses: isbang/compose-action@v1.5.0
         with:
           compose-file: "./docker-compose.yaml"
-          compose-flags: "build"
+          up-flags: "--build"
           services: |
             webapp
             nginx
