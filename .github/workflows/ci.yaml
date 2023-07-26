@@ -40,6 +40,9 @@ jobs:
         env:
           TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
           REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
+      # debug
+      - name: test env
+        run: env
       - name: docker-compose push images
         uses: sudo-bot/action-docker-compose@latest
         with:
