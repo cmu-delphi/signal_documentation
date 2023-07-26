@@ -32,10 +32,12 @@ jobs:
           esac
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
       - name: Copy env file
-        run: cp ./.ci.env ./.env
+        run: |
+          cp ./.ci.env ./.env
       - name: docker-compose up --build
         uses: isbang/compose-action@v1.5.0
         with:
+          compose-file: "./docker-compose.yaml"
           compose-flags: "build --push"
           services: |
             webapp
