@@ -36,6 +36,15 @@ jobs:
           cp ./.ci.env ./.env
       - name: Set up docker-compose
         uses: ndeloof/install-compose-action@v0.0.1
+      - name: docker-compose build --push
+        run: |
+          docker-compose build --push webapp nginx
+        env:
+          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
+      - name: docker-compose down
+        run: |
+          docker-compose down
       # - name: docker-compose up --build
       #   uses: isbang/compose-action@v1.5.0
       #   with:
