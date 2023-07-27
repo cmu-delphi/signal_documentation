@@ -15,10 +15,43 @@ from signals.models import (
 )
 
 
+class SignalBaseResource(resources.ModelResource):
+    name = Field(attribute='name', column_name='Signal')
+    display_name = Field(attribute='display_name', column_name='Name')
+    base = Field(
+        attribute='base',
+        column_name='base',
+        widget=widgets.ForeignKeyWidget(Signal, field='id'),
+    )
+    source = Field(
+        attribute='source',
+        column_name='Source Subdivision',
+        widget=widgets.ForeignKeyWidget(SourceSubdivision, field='name'),
+    )
+
+    class Meta:
+        model = Signal
+        fields = ['base']
+        import_id_fields = ['name', 'source', 'display_name']
+
+    def before_import_row(self, row, **kwargs):
+        """Post-processes each row after importing."""
+        self.process_base(row)
+
+    def process_base(self, row):
+        """Processes base."""
+
+        if row['Signal BaseName']:
+            source = SourceSubdivision.objects.get(name=row['Source Subdivision'])
+            base_signal = Signal.objects.get(name=row['Signal BaseName'], source=source)
+            row['base'] = base_signal.id
+
+
 class SignalResource(resources.ModelResource):
     """Resource class for importing and exporting Signal models."""
 
-    name = Field(attribute='name', column_name='Name')
+    name = Field(attribute='name', column_name='Signal')
+    display_name = Field(attribute='display_name', column_name='Name')
     pathogen = Field(
         attribute='pathogen',
         column_name='Pathogen/ Disease Area',
@@ -66,6 +99,7 @@ class SignalResource(resources.ModelResource):
         model = Signal
         fields = [
             'name',
+            'display_name',
             'pathogen',
             'signal_type',
             'active',
@@ -84,7 +118,7 @@ class SignalResource(resources.ModelResource):
             'source',
             'links'
         ]
-        import_id_fields = ['name']
+        import_id_fields = ['name', 'source', 'display_name']
 
     def before_import_row(self, row, **kwargs):
         """Pre-processes each row before importing."""
