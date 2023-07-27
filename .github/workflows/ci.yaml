@@ -34,17 +34,19 @@ jobs:
       - name: Copy env file
         run: |
           cp ./.ci.env ./.env
-      - name: docker-compose up --build
-        uses: isbang/compose-action@v1.5.0
-        with:
-          compose-file: "./docker-compose.yaml"
-          up-flags: "--build"
-          services: |
-            webapp
-            nginx
-        env:
-          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
+      - name: Set up docker-compose
+        uses: ndeloof/install-compose-action@v0.0.1
+      # - name: docker-compose up --build
+      #   uses: isbang/compose-action@v1.5.0
+      #   with:
+      #     compose-file: "./docker-compose.yaml"
+      #     up-flags: "--build"
+      #     services: |
+      #       webapp
+      #       nginx
+      #   env:
+      #     TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+      #     REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
 #      - name: docker-compose build images
 #        uses: sudo-bot/action-docker-compose@latest
 #        with:
