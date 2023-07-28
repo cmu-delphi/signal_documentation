@@ -4,7 +4,7 @@ services:
 
   db:
     image: mysql:latest
-    container_name: signal-documentation-db
+    container_name: signal_documentation-db
     restart: always
     env_file:
       - ./.env
@@ -19,11 +19,11 @@ services:
       - "3306:3306"
 
   webapp:
-    image: ${REGISTRY}signal-documentation-webapp${TAG}
+    image: ${REGISTRY}signal_documentation-webapp${TAG}
     build: .
     env_file:
       - ./.env
-    container_name: signal-documentation-webapp
+    container_name: signal_documentation-webapp
     command: sh -c "python /usr/src/signal_documentation/src/manage.py migrate --noinput &&
                     python /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
                     python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/available_geography.json &&
@@ -40,17 +40,17 @@ services:
 
   redis:
     image: redis
-    container_name: signal-documentation-redis
+    container_name: signal_documentation-redis
     restart: always
     ports:
       - "6379:6379"
 
   nginx:
-    image: ${REGISTRY}signal-documentation-nginx${TAG}
+    image: ${REGISTRY}signal_documentation-nginx${TAG}
     build: ./nginx
     env_file:
       - ./.env
-    container_name: signal-documentation-nginx
+    container_name: signal_documentation-nginx
     restart: on-failure
     volumes:
       - ./src/staticfiles:/staticfiles
