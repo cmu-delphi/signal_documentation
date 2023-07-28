@@ -2,12 +2,15 @@ name: 'Build and deploy application containers'
 on:
   push:
 jobs:
-  build-push-deploy:
+  build-tag-push-deploy:
     runs-on: ubuntu-latest
     if: >
       github.ref == 'refs/heads/main' ||
       github.ref == 'refs/heads/develop' ||
       github.ref == 'refs/heads/test-container-ci'
+    strategy:
+      matrix:
+        service: [webapp, nginx]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -18,7 +21,7 @@ jobs:
           username: cmu-delphi-deploy-machine
           password: ${{ secrets.CMU_DELPHI_DEPLOY_MACHINE_PAT }}
       - name: Create container image tags
-        id: image
+        id: image-tag
         run: |
           baseRef="${GITHUB_REF#*/}"
           baseRef="${baseRef#*/}"
@@ -38,49 +41,16 @@ jobs:
         uses: ndeloof/install-compose-action@v0.0.1
       - name: docker-compose build --push
         run: |
-          docker-compose build --push webapp nginx
+          docker-compose build --push ${{ matrix.service }}
         env:
-          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
+          TAG: ":${{ steps.image-tag.outputs.IMAGE_TAG }}"
           REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
       - name: docker-compose down
         run: |
           docker-compose down
-      # - name: docker-compose up --build
-      #   uses: isbang/compose-action@v1.5.0
-      #   with:
-      #     compose-file: "./docker-compose.yaml"
-      #     up-flags: "--build"
-      #     services: |
-      #       webapp
-      #       nginx
-      #   env:
-      #     TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-      #     REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
-#      - name: docker-compose build images
-#        uses: sudo-bot/action-docker-compose@latest
-#        with:
-#            cli-args: "build webapp nginx"
-#        env:
-#          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-#          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
-#      - name: docker-compose push images
-#        uses: sudo-bot/action-docker-compose@latest
-#        with:
-#            cli-args: "push webapp nginx"
-#        env:
-#          TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-#          REGISTRY: "ghcr.io/${{ github.repository_owner }}/"
-#
-      # - name: docker-compose push
-      #   uses: sudo-bot/action-docker-compose@latest
-      #   with:
-      #       cli-args: "push"
-      #   env:
-      #     TAG: ":${{ steps.image.outputs.IMAGE_TAG }}"
-      #     REGISTRY: "ghcr.io/${{ github.repository }}/"
-      - name: Trigger smee.io webhook to refresh application
+      - name: Trigger smee.io webhook to pull new container images
         run: |
           curl -H "Authorization: Bearer ${{ secrets.DELPHI_DEPLOY_WEBHOOK_TOKEN }}" \
                -X POST ${{ secrets.DELPHI_DEPLOY_WEBHOOK_URL }} \
                -H "Content-Type: application/x-www-form-urlencoded" \
-               -d "repository=ghcr.io/${{ github.repository }}&tag=${{ steps.image.outputs.IMAGE_TAG }}"
+               -d "repository=ghcr.io/${{ github.repository_owner }}-${{ matrix.service }}&tag=${{ steps.image-tag.outputs.IMAGE_TAG }}"
