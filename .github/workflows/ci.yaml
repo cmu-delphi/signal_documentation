@@ -53,4 +53,4 @@ jobs:
           curl -H "Authorization: Bearer ${{ secrets.DELPHI_DEPLOY_WEBHOOK_TOKEN }}" \
                -X POST ${{ secrets.DELPHI_DEPLOY_WEBHOOK_URL }} \
                -H "Content-Type: application/x-www-form-urlencoded" \
-               -d "repository=ghcr.io/${{ github.repository_owner }}-${{ matrix.service }}&tag=${{ steps.image-tag.outputs.IMAGE_TAG }}"
+               -d "repository=ghcr.io/${{ github.repository }}-${{ matrix.service }}&tag=${{ steps.image-tag.outputs.IMAGE_TAG }}"
