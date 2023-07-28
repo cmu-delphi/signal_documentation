@@ -34,9 +34,9 @@ jobs:
             ;;
           esac
           echo "IMAGE_TAG=${image_tag}" >> $GITHUB_OUTPUT
-      # - name: Copy env file
-      #   run: |
-      #     cp ./.ci.env ./.env
+      - name: Copy env file
+        run: |
+          cp ./.ci.env ./.env
       - name: Set up docker-compose
         uses: ndeloof/install-compose-action@v0.0.1
       - name: docker-compose build --push
