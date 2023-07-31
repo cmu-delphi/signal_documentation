@@ -57,7 +57,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - webapp
+      - signal_documentation_webapp
 
 volumes:
   mysql:
