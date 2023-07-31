@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from linkpreview import LinkPreview, link_preview
+from models_extensions.models import TimeStampedModel
 
 
 class LinkTypeChoices(models.TextChoices):
@@ -19,7 +20,7 @@ class LinkTypeChoices(models.TextChoices):
     OTHER = 'other', _('Other')
 
 
-class Link(models.Model):
+class Link(TimeStampedModel):
     """
     A model representing a Link.
     """

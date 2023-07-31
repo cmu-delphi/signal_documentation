@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from models_extensions.models import TimeStampedModel
 
 
 class TimeTypeChoices(models.TextChoices):
@@ -40,7 +41,7 @@ class HighValuesAreChoices(models.TextChoices):
     NEUTRAL = 'neutral', _('Neutral')
 
 
-class SignalCategory(models.Model):
+class SignalCategory(TimeStampedModel):
     """
     A model representing a signal category.
     """
@@ -63,7 +64,7 @@ class SignalCategory(models.Model):
         return self.name
 
 
-class SignalType(models.Model):
+class SignalType(TimeStampedModel):
     """
     A model representing a signal type.
     """
@@ -86,7 +87,7 @@ class SignalType(models.Model):
         return self.name
 
 
-class Pathogen(models.Model):
+class Pathogen(TimeStampedModel):
     """
     A model representing a pathogen.
     """
@@ -106,7 +107,7 @@ class Pathogen(models.Model):
         return self.name
 
 
-class Geography(models.Model):
+class Geography(TimeStampedModel):
     """
     A model representing a available geography.
     """
@@ -130,7 +131,7 @@ class Geography(models.Model):
         return self.name
 
 
-class Signal(models.Model):
+class Signal(TimeStampedModel):
     """
     A model representing a signal.
     """
@@ -241,6 +242,7 @@ class Signal(models.Model):
 
     class Meta:
         unique_together = ['name', 'source']
+        ordering: list[str] = ["modified"]
 
     def __str__(self) -> str:
         """
