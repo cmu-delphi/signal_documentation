@@ -4,7 +4,7 @@ services:
 
   db:
     image: mysql:latest
-    container_name: signal_documentation-db
+    container_name: signal_documentation_db
     restart: always
     env_file:
       - ./.env
@@ -18,8 +18,8 @@ services:
     ports:
       - "3306:3306"
 
-  sg-webapp:
-    image: ${REGISTRY}signal_documentation-webapp${TAG}
+  sd_webapp:
+    image: ${REGISTRY}signal_documentation_webapp${TAG}
     build: .
     env_file:
       - ./.env
@@ -40,17 +40,17 @@ services:
 
   redis:
     image: redis
-    container_name: signal_documentation-redis
+    container_name: signal_documentation_redis
     restart: always
     ports:
       - "6379:6379"
 
   nginx:
-    image: ${REGISTRY}signal_documentation-nginx${TAG}
+    image: ${REGISTRY}signal_documentation_nginx${TAG}
     build: ./nginx
     env_file:
       - ./.env
-    container_name: signal_documentation-nginx
+    container_name: signal_documentation_nginx
     restart: on-failure
     volumes:
       - ./src/staticfiles:/staticfiles
