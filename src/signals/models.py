@@ -50,6 +50,9 @@ class SignalCategory(models.Model):
         unique=True
     )
 
+    class Meta:
+        verbose_name_plural = "signal categories"
+
     def __str__(self) -> str:
         """
         Returns the name of the signal category as a string.
@@ -134,13 +137,16 @@ class Signal(models.Model):
     name = models.CharField(
         help_text=_('Name'),
         max_length=128,
-        unique=True
+    )
+    display_name = models.CharField(
+        help_text=_('Display Name'),
+        max_length=128,
     )
     base = models.ForeignKey(
         'signals.Signal',
         related_name='base_for',
         help_text=_('Signal base'),
-        on_delete=models.PROTECT,
+        on_delete=models.SET_NULL,
         null=True,
         blank=True
     )
@@ -232,6 +238,9 @@ class Signal(models.Model):
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT,
     )
+
+    class Meta:
+        unique_together = ['name', 'source']
 
     def __str__(self) -> str:
         """

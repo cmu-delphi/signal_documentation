@@ -5,9 +5,19 @@ from signals.models import (
     Geography,
     Pathogen,
     Signal,
+    SignalCategory,
     SignalType,
 )
-from signals.resources import SignalResource
+from signals.resources import SignalBaseResource, SignalResource
+
+
+@admin.register(SignalCategory)
+class SignalCategoryAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing signal category objects.
+    """
+    list_display = ('name',)
+    search_fields = ('name',)
 
 
 @admin.register(Geography)
@@ -55,4 +65,4 @@ class SignalAdmin(ImportExportModelAdmin):
         'has_stderr',
         'has_sample_size',
     )
-    resource_classes = [SignalResource]
+    resource_classes = [SignalResource, SignalBaseResource]

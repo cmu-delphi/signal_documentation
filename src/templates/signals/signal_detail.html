@@ -11,7 +11,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{% url 'signals' %}">Home</a></li>
           <li class="breadcrumb-item"><a href="{% url 'signals' %}">Signals</a></li>
-          <li class="breadcrumb-item active">{{ signal.name }}</li>
+          <li class="breadcrumb-item active">{{ signal.display_name }}</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -24,7 +24,7 @@
             <div class="card-body pt-3">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview" role="tabpanel">
-                  <h5 class="card-title">{{signal.name }}</h5>
+                  <h5 class="card-title">{{signal.display_name }}</h5>
                   <p class="small fst-italic">{{ signal.description }}</p>
 
                   <h5 class="card-title">Details</h5>
