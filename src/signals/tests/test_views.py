@@ -32,6 +32,9 @@ class SignalListViewTest(TestCase):
 
     def test_signal_list_view_filters(self):
         signal = SignalFactory()
+        response = self.client.get(reverse('signals'))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['filter'].qs.count(), Signal.objects.count())
         response = self.client.get(reverse('signals'), {'pathogen': signal.pathogen.first().id})
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['filter'].qs.count(), 1)
@@ -61,6 +64,9 @@ class SignalListViewTest(TestCase):
         name = fake.random_element(Signal.objects.all()).name
         description_word = fake.random_element(fake.random_element(Signal.objects.all()).description.split(' ')).strip()
         short_description_word = fake.random_element(fake.random_element(Signal.objects.all()).short_description.split(' ')).strip()
+        response = self.client.get(reverse('signals'),  {'search': ""})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.context['filter'].qs.count(), Signal.objects.count())
         response = self.client.get(reverse('signals'), {'search': name})
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['filter'].qs.count(), 1)

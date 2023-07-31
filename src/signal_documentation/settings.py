@@ -58,6 +58,7 @@ EXTERNAL_APPS = [
     'corsheaders',
     'debug_toolbar',
     'django_extensions',
+    'models_extensions',
     'django_filters',
     'health_check',
     'health_check.db',
@@ -99,6 +100,7 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': True,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
