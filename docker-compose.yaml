@@ -23,7 +23,7 @@ services:
     build: .
     env_file:
       - ./.env
-    container_name: signal_documentation-webapp
+    container_name: signal_documentation_webapp
     command: sh -c "python /usr/src/signal_documentation/src/manage.py migrate --noinput &&
                     python /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
                     python /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/available_geography.json &&
