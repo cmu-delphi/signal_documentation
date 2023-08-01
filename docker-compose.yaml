@@ -45,7 +45,7 @@ services:
     ports:
       - "6379:6379"
 
-  nginx:
+  signal_documentation_nginx:
     image: ${REGISTRY}signal_documentation_nginx${TAG}
     build: ./nginx
     env_file:
