@@ -18,7 +18,7 @@ services:
     ports:
       - "3306:3306"
 
-  signal-documentation-webapp:
+  sdwebapp:
     image: ${REGISTRY}signal-documentation-webapp${TAG}
     build: .
     env_file:
@@ -45,7 +45,7 @@ services:
     ports:
       - "6379:6379"
 
-  signal-documentation-nginx:
+  sdnginx:
     image: ${REGISTRY}signal-documentation-nginx${TAG}
     build: ./nginx
     env_file:
@@ -57,7 +57,7 @@ services:
     ports:
       - "80:80"
     depends_on:
-      - signal-documentation-webapp
+      - sdwebapp
 
 volumes:
   mysql:
