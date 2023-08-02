@@ -10,7 +10,7 @@ jobs:
       github.ref == 'refs/heads/test-container-ci'
     strategy:
       matrix:
-        service: [signal_documentation_webapp, signal_documentation_nginx]
+        service: [signal-documentation-webapp, signal-documentation-nginx]
     steps:
       - name: Checkout
         uses: actions/checkout@v3
