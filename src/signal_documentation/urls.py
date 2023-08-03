@@ -17,7 +17,11 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import (
+    URLResolver,
+    include,
+    path,
+)
 
 from base.views import (
     BadRequestErrorView,
@@ -31,11 +35,11 @@ handler403 = ForbiddenErrorView.as_view()
 handler404 = NotFoundErrorView.as_view()
 handler500 = InternalServerErrorView.as_view()
 
-urlpatterns = [
+urlpatterns: list[URLResolver] = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path('', include('signals.urls')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # type: ignore
