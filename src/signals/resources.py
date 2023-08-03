@@ -1,4 +1,5 @@
 import re
+from typing import Any
 from urllib.parse import urlparse
 
 from import_export import resources
@@ -31,19 +32,19 @@ class SignalBaseResource(resources.ModelResource):
 
     class Meta:
         model = Signal
-        fields = ['base']
-        import_id_fields = ['name', 'source', 'display_name']
+        fields: list[str] = ['base']
+        import_id_fields: list[str] = ['name', 'source', 'display_name']
 
-    def before_import_row(self, row, **kwargs):
+    def before_import_row(self, row, **kwargs) -> None:
         """Post-processes each row after importing."""
         self.process_base(row)
 
-    def process_base(self, row):
+    def process_base(self, row) -> None:
         """Processes base."""
 
         if row['Signal BaseName']:
-            source = SourceSubdivision.objects.get(name=row['Source Subdivision'])
-            base_signal = Signal.objects.get(name=row['Signal BaseName'], source=source)
+            source: SourceSubdivision = SourceSubdivision.objects.get(name=row['Source Subdivision'])
+            base_signal: Signal = Signal.objects.get(name=row['Signal BaseName'], source=source)
             row['base'] = base_signal.id
 
 
@@ -97,7 +98,7 @@ class SignalResource(resources.ModelResource):
 
     class Meta:
         model = Signal
-        fields = [
+        fields: list[str] = [
             'name',
             'display_name',
             'pathogen',
@@ -118,21 +119,21 @@ class SignalResource(resources.ModelResource):
             'source',
             'links'
         ]
-        import_id_fields = ['name', 'source', 'display_name']
+        import_id_fields: list[str] = ['name', 'source', 'display_name']
 
-    def before_import_row(self, row, **kwargs):
+    def before_import_row(self, row, **kwargs) -> None:
         """Pre-processes each row before importing."""
         self.fix_boolean_fields(row, ['Active', 'Is Smoothed', 'Is Weighted', 'Is Cumulative', 'Has StdErr', 'Has Sample Size'])
         self.process_links(row)
         self.process_pathogen(row)
 
-    def is_url_in_domain(self, url, domain):
+    def is_url_in_domain(self, url, domain) -> Any:
         """Checks if a URL belongs to a specific domain."""
 
-        parsed_url = urlparse(url)
+        parsed_url: Any = urlparse(url)
         return parsed_url.netloc == domain
 
-    def fix_boolean_fields(self, row, fields: list):
+    def fix_boolean_fields(self, row, fields: list) -> Any:
         """Fixes boolean fields."""
 
         for k in fields:
@@ -142,7 +143,7 @@ class SignalResource(resources.ModelResource):
                 row[k] = False
         return row
 
-    def process_links(self, row):
+    def process_links(self, row) -> Any:
         """Processes links."""
 
         row['Links'] = ''
@@ -152,24 +153,26 @@ class SignalResource(resources.ModelResource):
             links = row['Link'].split('\n')
             for raw_link in links:
                 if self.is_url_in_domain(raw_link, github_domain):
+                    link: Link
+                    created: bool
                     link, created = Link.objects.get_or_create(url=raw_link, defaults={'link_type': LinkTypeChoices.API_DOCUMENTATION})
                     if f'|{link.url}' not in row['Links']:
                         row['Links'] += row['Links'] + f'|{link.url}'
                 pattern = r'\[(.*?)\]\((.*?)\)'
                 pattern_match = re.search(pattern, raw_link)
                 if pattern_match:
-                    link_type_mapping = {choice.label: choice.value for choice in LinkTypeChoices}
-                    link_type = link_type_mapping[pattern_match.group(1)]
-                    link_url = pattern_match.group(2)
+                    link_type_mapping: dict[str, Any] = {choice.label: choice.value for choice in LinkTypeChoices}
+                    link_type: str = link_type_mapping[pattern_match.group(1)]
+                    link_url: str = pattern_match.group(2)
                     link, created = Link.objects.get_or_create(url=link_url, defaults={'link_type': link_type})
                     if f'|{link.url}' not in row['Links']:
                         row['Links'] += row['Links'] + f'|{link.url}'
         return row
 
-    def process_pathogen(self, row):
+    def process_pathogen(self, row) -> None:
         """Processes pathogen."""
 
         if row['Pathogen/ Disease Area']:
-            pathogens = row['Pathogen/ Disease Area'].split(',')
+            pathogens: str = row['Pathogen/ Disease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
