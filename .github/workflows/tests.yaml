@@ -1,0 +1,19 @@
+name: Django Tests
+on: [pull_request, push]
+jobs:
+  test_backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run:
+            name: Setup virtual environment
+            command: |
+              pip install pipenv
+              pipenv shell
+              pipenv install
+      - run: flake8 .
+      - run:
+          name: Run Django Tests
+          command: |
+            pipenv run python ./src/manage.py test
