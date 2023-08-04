@@ -1,19 +1,31 @@
 name: Django Tests
 on: [pull_request, push]
+
 jobs:
-  test_backend:
+  test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-      - run:
-            name: Setup virtual environment
-            command: |
-              pip install pipenv
-              pipenv shell
-              pipenv install
-      - run: flake8 .
-      - run:
-          name: Run Django Tests
-          command: |
-            pipenv run python ./src/manage.py test
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10
+
+      - name: Setup virtual environment
+        run: |
+          python3 -m pip install --upgrade pip
+          sudo apt-get update -y
+          sudo apt-get install graphviz graphviz-dev -y
+          pip install pygraphviz
+          pip install pipenv
+          pipenv install -dev
+
+      - name: Run linters
+        run: |
+          flake8 .
+
+      - name: Run tests
+        run: python3 ./src/manage.py test
