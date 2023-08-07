@@ -21,10 +21,12 @@ jobs:
           sudo apt-get install graphviz graphviz-dev -y
           pip install pygraphviz
           pip install pipenv
-          pipenv install -dev
+          pipenv requirements > requirements.txt
+          pip install -r requirements.txt
 
       - name: Run linters
         run: |
+          pip install flake8
           flake8 .
 
       - name: Run tests
