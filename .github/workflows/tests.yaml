@@ -76,4 +76,4 @@ jobs:
           MYSQL_PORT: ${{ env.MYSQL_PORT }}
 
         run: |
-          python3 ./src/manage.py test signals, datasources, base
+          python3 ./src/manage.py test base datasources signals
