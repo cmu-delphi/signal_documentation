@@ -10,7 +10,7 @@ jobs:
       MYSQL_DATABASE: mysql_database
       MYSQL_USER: mysql_user
       MYSQL_PASSWORD: mysql_password
-      MYSQL_HOST: 'localhost'
+      MYSQL_HOST: 127.0.0.1
       MYSQL_PORT: 3306
 
     services:
@@ -21,17 +21,13 @@ jobs:
           MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
           MYSQL_USER: ${{ env.MYSQL_USER }}
           MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
-          MySQL_HOST: ${{ env.MYSQL_HOST }}
-          MYSQL_PORT: ${{ env.MYSQL_PORT }}
         ports:
           - 3306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-
-      redis:
-        image: redis:latest
-        ports:
-          - 6379:6379
-
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
 
     steps:
       - name: Checkout code
@@ -42,35 +38,33 @@ jobs:
         with:
           python-version: "3.10"
 
-      # - name: Create envfile
-      #   uses: SpicyPizza/create-envfile@v2.0
-      #   with:
-      #     envkey_MYSQL_DATABASE: 'mysql_database'
-      #     envkey_MYSQL_USER: 'mysql_user'
-      #     envkey_MYSQL_PASSWORD: 'mysql_password'
-      #     envkey_MYSQL_PORT: 3306
-      #     envkey_MYSQL_ROOT_PASSWORD: 'mysql_root_password'
-      #     envkey_MYSQL_HOST: 'localhost'
-      #     envkey_DEBUG: 'True'
-      #     envkey_ALLOWED_HOSTS: '127.0.0.1,localhost'
-
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           sudo apt-get update -y
+          sudo apt-get install mysql-client -y
           sudo apt-get install graphviz graphviz-dev -y
-          pip install pygraphviz
           pip install pipenv
           pipenv requirements > requirements.txt
           pip install -r requirements.txt
 
-      # - name: Run migrations
-      #   run: python3 ./src/manage.py migrate
+      - name: Make migrations
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: ${{ env.MYSQL_PORT }}
 
-      # - name: Run linters
-      #   run: |
-      #     pip install flake8
-      #     flake8 .
+        run: |
+
+          python3 ./src/manage.py migrate
+
+      - name: Run linters
+        run: |
+          pip install flake8
+          flake8 .
 
       - name: Run tests
         env:
@@ -78,6 +72,8 @@ jobs:
           MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
           MYSQL_USER: ${{ env.MYSQL_USER }}
           MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
-          MySQL_HOST: ${{ env.MYSQL_HOST }}
+          MYSQL_HOST: ${{ env.MYSQL_HOST }}
           MYSQL_PORT: ${{ env.MYSQL_PORT }}
-        run: python3 ./src/manage.py test
+
+        run: |
+          python3 ./src/manage.py test signals, datasources, base
