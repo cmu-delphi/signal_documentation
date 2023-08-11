@@ -1,3 +1,5 @@
+from typing import Any
+
 import django_filters
 from django.db.models import Q
 from django_filters.filters import CharFilter
@@ -10,7 +12,7 @@ class SignalFilter(django_filters.FilterSet):
 
     class Meta:
         model = Signal
-        fields = [
+        fields: list[str] = [
             'search',
             'pathogen',
             'available_geography',
@@ -21,12 +23,12 @@ class SignalFilter(django_filters.FilterSet):
             'time_label',
         ]
 
-    def filter_search(self, queryset, name, value):
+    def filter_search(self, queryset, name, value) -> Any:
         if not value:
             return queryset
 
-        queries = [Q((f'{field}__icontains', value)) for field in ['name', 'description', 'short_description']]
-        query = queries.pop()
+        queries: list[Q] = [Q((f'{field}__icontains', value)) for field in ['name', 'description', 'short_description']]
+        query: Q = queries.pop()
 
         for item in queries:
             query |= item

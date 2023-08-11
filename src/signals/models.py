@@ -52,7 +52,7 @@ class SignalCategory(TimeStampedModel):
     )
 
     class Meta:
-        verbose_name_plural = "signal categories"
+        verbose_name_plural: str = "signal categories"
 
     def __str__(self) -> str:
         """
@@ -75,7 +75,7 @@ class SignalType(TimeStampedModel):
     )
 
     class Meta:
-        ordering = ["name"]
+        ordering: list[str] = ["name"]
 
     def __str__(self) -> str:
         """
@@ -118,8 +118,8 @@ class Geography(TimeStampedModel):
     )
 
     class Meta:
-        verbose_name_plural = "geographies"
-        ordering = ["name"]
+        verbose_name_plural: str = "geographies"
+        ordering: list[str] = ["name"]
 
     def __str__(self) -> str:
         """
