@@ -11,9 +11,10 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+from typing import Any
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -21,22 +22,20 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG: bool = True
 
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qp89p*uk4)e((599s)6p%q0ra_=j41994bge%4h)o4f=@g7s4g'
 # SECURITY WARNING: keep the secret key used in production secret!
 if DEBUG:
-    SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-qp89p*uk4)e((599s)6p%q0ra_=j41994bge%4h)o4f=@g7s4g')
+    SECRET_KEY: str = os.environ.get('SECRET_KEY', 'django-insecure-qp89p*uk4)e((599s)6p%q0ra_=j41994bge%4h)o4f=@g7s4g')
 else:
-    SECRET_KEY = os.environ.get('SECRET_KEY')
+    SECRET_KEY: str | None = os.environ.get('SECRET_KEY')   # type: ignore
     if not SECRET_KEY:
         raise RuntimeError('Could not find a SECRET_KEY in environment')
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',') if os.environ.get('ALLOWED_HOSTS') else []
+ALLOWED_HOSTS: list[str] = os.environ.get('ALLOWED_HOSTS').split(',') if os.environ.get('ALLOWED_HOSTS') else []  # type: ignore
 
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ORIGIN_WHITELIST').split(',') if os.environ.get('CORS_ORIGIN_WHITELIST') else []
+CORS_ALLOWED_ORIGINS: list[str] = os.environ.get('CORS_ORIGIN_WHITELIST').split(',') if os.environ.get('CORS_ORIGIN_WHITELIST') else []  # type: ignore
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
@@ -44,7 +43,7 @@ if DEBUG:
 
 # Application definition
 
-DEFAULT_APPS = [
+DEFAULT_APPS: list[str] = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,11 +52,12 @@ DEFAULT_APPS = [
     'django.contrib.staticfiles',
 ]
 
-EXTERNAL_APPS = [
+EXTERNAL_APPS: list[str] = [
     'bootstrap5',
     'corsheaders',
     'debug_toolbar',
     'django_extensions',
+    'models_extensions',
     'django_filters',
     'health_check',
     'health_check.db',
@@ -67,15 +67,15 @@ EXTERNAL_APPS = [
     'import_export',
 ]
 
-LOCAL_APPS = [
+LOCAL_APPS: list[str] = [
     'base',
     'datasources',
     'signals',
 ]
 
-INSTALLED_APPS = DEFAULT_APPS + EXTERNAL_APPS + LOCAL_APPS
+INSTALLED_APPS: list[str] = DEFAULT_APPS + EXTERNAL_APPS + LOCAL_APPS
 
-MIDDLEWARE = [
+MIDDLEWARE: list[str] = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -87,18 +87,19 @@ MIDDLEWARE = [
 ]
 
 
-INTERNAL_IPS = [
+INTERNAL_IPS: list[str] = [
     '127.0.0.1',
 ]
 
 ROOT_URLCONF = 'signal_documentation.urls'
 
-TEMPLATES = [
+TEMPLATES: list[dict[str, Any]] = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': True,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -109,13 +110,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'signal_documentation.wsgi.application'
+WSGI_APPLICATION: str = 'signal_documentation.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
+DATABASES: dict[str, dict[str, Any]] = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('MYSQL_DATABASE', None),
@@ -126,10 +127,9 @@ DATABASES = {
     }
 }
 
-
 # Django chache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
-CACHES = {
+CACHES: dict[str, dict[str, str]] = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
         'LOCATION': os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379'),
@@ -140,7 +140,7 @@ CACHES = {
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
+AUTH_PASSWORD_VALIDATORS: list[dict[str, str]] = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
@@ -159,26 +159,26 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE: str = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE: str = 'UTC'
 
-USE_I18N = True
+USE_I18N: bool = True
 
-USE_TZ = True
+USE_TZ: bool = True
 
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+LOCALE_PATHS: list[str] = [os.path.join(BASE_DIR, 'locale')]
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'assets'),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL: str = '/static/'
+STATICFILES_DIRS: tuple[str] = (os.path.join(BASE_DIR, 'assets'),)
+STATIC_ROOT: str = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL: str = '/media/'
+MEDIA_ROOT: str = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
@@ -187,7 +187,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-GRAPH_MODELS = {
+GRAPH_MODELS: dict[str, Any] = {
   'app_labels': ["datasources"],
   'group_models': True,
 }

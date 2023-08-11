@@ -22,6 +22,11 @@ linkpreview = "*"
 django-redis = "*"
 mysqlclient = "*"
 django-import-export = "*"
+coverage = "*"
+django-coverage-plugin = "*"
+django-extensions-models = "*"
+mypy = "*"
+django-stubs = "*"
 
 [dev-packages]
 flake8 = "*"

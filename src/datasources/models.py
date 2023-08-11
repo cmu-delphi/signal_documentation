@@ -1,8 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from models_extensions.models import TimeStampedModel
 
 
-class SourceSubdivision(models.Model):
+class SourceSubdivision(TimeStampedModel):
     """
     A model representing a source subdivision.
     """
@@ -48,7 +49,7 @@ class SourceSubdivision(models.Model):
         return self.name
 
 
-class DataSource(models.Model):
+class DataSource(TimeStampedModel):
     """
     A model representing a data source.
     """

@@ -1,0 +1,30 @@
+[run]
+plugins = django_coverage_plugin
+source = .
+branch = True
+omit =
+    *__init__*
+    *asgi.py*
+    *wsgi.py*
+    *apps.py
+    *manage.py
+    *__init__.py
+    *admin.py
+    *forms.py
+    *filters.py
+    *urls.py
+    *settings.py
+    *templates/*
+    templates/*
+    */manage.py
+    */resources.py
+    */tests/*
+    */assets/*
+    */staticfiles/*
+    */migrations/*
+
+[html]
+directory = htmlcov
+
+[report]
+fail_under = 90
