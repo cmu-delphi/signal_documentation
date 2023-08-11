@@ -3,49 +3,63 @@
       "model": "signals.Geography",
       "pk": 1,
       "fields": {
-        "name": "county"
+        "name": "county",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     },
     {
       "model": "signals.Geography",
       "pk": 2,
       "fields": {
-        "name": "hhs"
+        "name": "hhs",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     },
     {
       "model": "signals.Geography",
       "pk": 3,
       "fields": {
-        "name": "hrr"
+        "name": "hrr",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     },
     {
       "model": "signals.Geography",
       "pk": 4,
       "fields": {
-        "name": "msa"
+        "name": "msa",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     },
     {
       "model": "signals.Geography",
       "pk": 5,
       "fields": {
-        "name": "nation"
+        "name": "nation",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     },
     {
       "model": "signals.Geography",
       "pk": 6,
       "fields": {
-        "name": "state"
+        "name": "state",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     },
     {
       "model": "signals.Geography",
       "pk": 7,
       "fields": {
-        "name": "dma"
+        "name": "dma",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
       }
     }
   ]

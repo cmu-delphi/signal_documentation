@@ -1,0 +1,79 @@
+name: Django Tests
+on: [pull_request, push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    env:
+      MYSQL_ROOT_PASSWORD: mysql_root_password
+      MYSQL_DATABASE: mysql_database
+      MYSQL_USER: mysql_user
+      MYSQL_PASSWORD: mysql_password
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_PORT: 3306
+
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          sudo apt-get update -y
+          sudo apt-get install mysql-client -y
+          sudo apt-get install graphviz graphviz-dev -y
+          pip install pipenv
+          pipenv requirements > requirements.txt
+          pip install -r requirements.txt
+
+      - name: Make migrations
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_PORT: ${{ env.MYSQL_PORT }}
+
+        run: |
+          mysql -u root -p"${{ env.MYSQL_ROOT_PASSWORD }}" -e "GRANT ALL PRIVILEGES ON *.* TO '${{ env.MYSQL_USER }}'@'%';"
+          python3 ./src/manage.py migrate
+
+      - name: Run linters
+        run: |
+          pip install flake8
+          flake8 .
+
+      - name: Run tests
+        env:
+          MYSQL_ROOT_PASSWORD: ${{ env.MYSQL_ROOT_PASSWORD }}
+          MYSQL_DATABASE: ${{ env.MYSQL_DATABASE }}
+          MYSQL_USER: ${{ env.MYSQL_USER }}
+          MYSQL_PASSWORD: ${{ env.MYSQL_PASSWORD }}
+          MYSQL_HOST: ${{ env.MYSQL_HOST }}
+          MYSQL_PORT: ${{ env.MYSQL_PORT }}
+
+        run: |
+          python3 ./src/manage.py test

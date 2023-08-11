@@ -127,7 +127,6 @@ DATABASES: dict[str, dict[str, Any]] = {
     }
 }
 
-
 # Django chache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
 CACHES: dict[str, dict[str, str]] = {
