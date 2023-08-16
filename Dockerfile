@@ -1,19 +1,24 @@
-FROM python:3.10.8-alpine
+FROM ubuntu:latest
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-RUN addgroup -S python && adduser -S python -G python
-RUN apk update
-RUN apk add musl-dev mariadb-dev gcc
-RUN apk add graphviz-dev
-RUN pip install -U pipenv
-USER python
+COPY Pipfile Pipfile.lock ./
+
+RUN apt-get update -y
+RUN apt-get install -y gcc default-libmysqlclient-dev pkg-config
+RUN apt-get install mysql-client -y
+RUN apt-get install graphviz graphviz-dev -y
+RUN apt-get install python3 -y
+RUN apt-get install python3-pip -y
+RUN python3 -m pip install --upgrade pip
+RUN pip3 install pipenv
+RUN pipenv requirements > requirements.txt
+RUN pip3 install -r requirements.txt
+
 WORKDIR /home/python
-COPY --chown=python:python Pipfile Pipfile.lock ./
-RUN pipenv lock
-RUN pipenv install --system --deploy
-COPY --chown=python:python /src .
-COPY --chown=python:python /gunicorn/gunicorn.py .
+# RUN pipenv install --system --deploy
+COPY /src .
+COPY /gunicorn/gunicorn.py .
 ENV PATH="/home/python/.local/bin:${PATH}"
 EXPOSE 8000
 CMD ["gunicorn", "signal_documentation.wsgi:application", "-c", "gunicorn.py"]
