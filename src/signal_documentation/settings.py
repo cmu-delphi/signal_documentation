@@ -169,19 +169,17 @@ USE_TZ: bool = True
 
 LOCALE_PATHS: list[str] = [os.path.join(BASE_DIR, 'locale')]
 
+MAIN_PAGE = os.environ.get('MAIN_PAGE', '')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL: str = '/static/'
+STATIC_URL: str = f'{MAIN_PAGE}/static/'
 STATICFILES_DIRS: tuple[str] = (os.path.join(BASE_DIR, 'assets'),)
 STATIC_ROOT: str = os.path.join(BASE_DIR, 'staticfiles')
 
-MEDIA_URL: str = '/media/'
+MEDIA_URL: str = f'{MAIN_PAGE}/media/'
 MEDIA_ROOT: str = os.path.join(BASE_DIR, 'media')
-
-
-MAIN_PAGE = os.environ.get('MAIN_PAGE', '')
 
 
 # Default primary key field type
