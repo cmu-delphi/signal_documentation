@@ -7,7 +7,7 @@ services:
     container_name: signal_documentation-db
     restart: always
     env_file:
-     - ./.env
+      - ./.env
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
@@ -18,11 +18,13 @@ services:
     ports:
       - "3306:3306"
 
-  webapp:
+  sdwebapp:
+    image: ${REGISTRY}signal_documentation-webapp${TAG}
     build: .
     env_file:
-     - ./.env
-    container_name: signal_documentation-web
+      - ./.env
+    container_name: signal_documentation-webapp
+    restart: on-failure
     command: sh -c "python3 /usr/src/signal_documentation/src/manage.py migrate --noinput &&
                     python3 /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/available_geography.json &&
@@ -44,6 +46,20 @@ services:
     ports:
       - "6379:6379"
 
+  sdnginx:
+    image: ${REGISTRY}signal_documentation-nginx${TAG}
+    build: ./nginx
+    env_file:
+      - ./.env
+    container_name: signal_documentation-nginx
+    restart: on-failure
+    volumes:
+      - ./src/staticfiles:/staticfiles
+    ports:
+      - "80:80"
+    depends_on:
+      - sdwebapp
 volumes:
   mysql:
   webapp:
+  static:
