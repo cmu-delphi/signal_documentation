@@ -4,10 +4,10 @@ on:
 jobs:
   build-tag-push-deploy:
     runs-on: ubuntu-latest
-    # CI will run for these branches
+    # CI/CD will run on these branches
     if: >
-      github.ref == 'refs/heads/main' ||
-      github.ref == 'refs/heads/develop' ||
+      github.ref == 'refs/heads/master' ||
+      github.ref == 'refs/heads/development' ||
       github.ref == 'refs/heads/set-up-deployment'
     strategy:
       matrix:
@@ -28,7 +28,7 @@ jobs:
           baseRef="${GITHUB_REF#*/}"
           baseRef="${baseRef#*/}"
           case "${baseRef}" in
-          main)
+          master)
             image_tag="latest"
             ;;
           *)
