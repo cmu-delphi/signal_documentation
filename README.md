@@ -92,6 +92,8 @@ gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
 *(Essentially you'll replace just the last line of the command, switching out the "runserver" line)
 ```
 
+Open `http://localhost` to view it in the browser. In this usage your request will be serviced by Nginx instead of the application directly.
+
 The primary use case for this will be when making changes to the Nginx container image that runs in production and hosts the static file content, or also if making changes to the Gunicorn config.
 
 Changes of this sort should be carefully evaluated as they may require interaction with systems managed by devops/sysops folks.
