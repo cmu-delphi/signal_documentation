@@ -96,7 +96,7 @@ Open `http://localhost` to view it in the browser. In this usage your request wi
 
 The primary use case for this will be when making changes to the Nginx container image that runs in production and hosts the static file content, or also if making changes to the Gunicorn config.
 
-Changes of this sort should be carefully evaluated as they may require interaction with systems managed by devops/sysops folks.
+Changes of this sort should be carefully evaluated as they may require interaction with systems managed by devops folks.
 
 ## [Django admin](https://docs.djangoproject.com/en/4.1/ref/contrib/admin/) web interface (user should be `is_staff` or `is_superuser`)
 `http://localhost:8000/admin`
@@ -165,4 +165,4 @@ Each environment is essentially a bunch of different services all governed by `d
 
 ### Control of the deployed environment
 
-The environment and secrets used for deployment live in <https://github.com/cmu-delphi/delphi-ansible-web>. Any changes to the environment should be made there and then tested and validated by DevOps folks.
+The environment and secrets used for deployment live in <https://github.com/cmu-delphi/delphi-ansible-web>. Any changes to the environment should be made there and then tested and validated by devops folks.
