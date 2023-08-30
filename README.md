@@ -77,6 +77,25 @@ $ docker-compose up
 
 Open `http://localhost:8000` to view it in the browser
 
+### To run via docker and emulate production
+
+Though probably not necessary in most cases, if you want to test/modify/emulate how this will run in production you can:
+
+- In `.env` set:
+```
+DEBUG = 'False'
+```
+- Modify the app container's command in `docker-compose.yaml` to run:
+```
+gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
+
+*(Essentially you'll replace just the last line of the command, switching out the "runserver" line)
+```
+
+The primary use case for this will be when making changes to the Nginx container image that runs in production and hosts the static file content, or also if making changes to the Gunicorn config.
+
+Changes of this sort should be carefully evaluated as they may require interaction with systems managed by devops/sysops folks.
+
 ## [Django admin](https://docs.djangoproject.com/en/4.1/ref/contrib/admin/) web interface (user should be `is_staff` or `is_superuser`)
 `http://localhost:8000/admin`
 
@@ -126,3 +145,22 @@ Othervice you will receive Errors during import process:
 3. Import `Signal.base` fields with `SignalBaseResource` - [http://localhost:8000/admin/signals/signal/import/](http://localhost:8000/admin/signals/signal/import/)
 ![Import `Signal.base` field](./docs/image-5.png)
 ![Confirm importing `Signal.base` fields](./docs/image-6.png)
+
+## Deployment
+
+This application gets deployed (at a minimum) to two environmetns:
+
+Production - <https://delphi.cmu.edu/{app_name}>
+
+Staging - <https://staging.delphi.cmu.edu/{app_name}>
+
+Each environment is essentially a bunch of different services all governed by `docker-compose`, running across multiple hosts, with various layering of proxies and load balancers.
+
+### Basic workflow
+
+- A PR merged to either `development` or `master` will trigger CI to build container images that are then tagged (based on the branch name and ":latest" respectively) and stored in our GitHub Packages container image repository.
+- CI triggers a webhook that tells the host systems to pull and run new container images and restart any services that have been updated.
+
+### Control of the deployed environment
+
+The environment and secrets used for deployment live in <https://github.com/cmu-delphi/delphi-ansible-web>. Any changes to the environment should be made there and then tested and validated by DevOps folks.
