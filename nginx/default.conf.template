@@ -1,6 +1,6 @@
 server {
-	listen 80;
-	server_name sdnginx;
+    listen 80;
+    server_name sdnginx;
 
     location /static/ {
         autoindex on;
