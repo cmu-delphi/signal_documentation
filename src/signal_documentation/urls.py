@@ -38,7 +38,7 @@ handler500 = InternalServerErrorView.as_view()
 urlpatterns: list[URLResolver] = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
-    path(f'{settings.MAIN_PAGE}/', include('signals.urls')),
+    path(f'{settings.MAIN_PAGE}/' if settings.MAIN_PAGE else '', include('signals.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore
