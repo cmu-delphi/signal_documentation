@@ -12,11 +12,11 @@ RUN apt-get install python3 -y
 RUN apt-get install python3-pip -y
 RUN python3 -m pip install --upgrade pip
 RUN pip3 install pipenv
+RUN pipenv lock
 RUN pipenv requirements > requirements.txt
 RUN pip3 install -r requirements.txt
 
 WORKDIR /home/python
-# RUN pipenv install --system --deploy
 COPY /src .
 COPY /gunicorn/gunicorn.py .
 ENV PATH="/home/python/.local/bin:${PATH}"

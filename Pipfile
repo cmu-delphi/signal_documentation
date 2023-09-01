@@ -27,6 +27,7 @@ django-coverage-plugin = "*"
 django-extensions-models = "*"
 mypy = "*"
 django-stubs = "*"
+tzdata = "*"
 
 [dev-packages]
 flake8 = "*"
