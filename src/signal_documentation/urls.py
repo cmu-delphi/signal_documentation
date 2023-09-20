@@ -36,7 +36,7 @@ handler404 = NotFoundErrorView.as_view()
 handler500 = InternalServerErrorView.as_view()
 
 urlpatterns: list[URLResolver] = [
-    path('admin/', admin.site.urls),
+    path(f'{settings.MAIN_PAGE}/admin/' if settings.MAIN_PAGE else 'admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path(f'{settings.MAIN_PAGE}/' if settings.MAIN_PAGE else '', include('signals.urls')),
 ]
