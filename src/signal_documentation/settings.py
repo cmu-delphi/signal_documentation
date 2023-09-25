@@ -37,6 +37,8 @@ ALLOWED_HOSTS: list[str] = os.environ.get('ALLOWED_HOSTS').split(',') if os.envi
 
 CORS_ALLOWED_ORIGINS: list[str] = os.environ.get('CORS_ORIGIN_WHITELIST').split(',') if os.environ.get('CORS_ORIGIN_WHITELIST') else []  # type: ignore
 
+CSRF_TRUSTED_ORIGINS: list[str] = os.environ.get('CSRF_TRUSTED_ORIGINS').split(',') if os.environ.get('CSRF_TRUSTED_ORIGINS') else []  # type: ignore
+
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 
