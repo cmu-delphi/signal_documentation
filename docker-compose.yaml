@@ -62,7 +62,7 @@ services:
     depends_on:
       - sdwebapp
     healthcheck:
-      test: curl -f ghcr.io/cmu-delphi/signal_documentation-nginx || exit 1
+      test: curl -f localhost/signal-documentation || exit 1
       interval: 10s
       timeout: 10s
       start_period: 10s
