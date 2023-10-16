@@ -23,7 +23,7 @@ sentry_sdk.init(
     profiles_sample_rate = os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0),
     environment = os.environ.get('SENTRY_ENVIRONMENT', 'development'),
     debug = os.environ.get('SENTRY_DEBUG', 'True'),
-    attach_stacktrace = os.environ.get('SENTRY_ATTACH_STACK_TRACE', 'True')
+    attach_stacktrace = os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True')
 )
 
 
