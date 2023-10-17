@@ -15,16 +15,23 @@ from pathlib import Path
 from typing import Any
 
 # Sentry init and config:
-# - Specify the DSN via the env var of `SENTRY_DSN`.
+# - If you want to use Sentry, specify the DSN via the env var of `SENTRY_DSN`.
 # - Useful defaults for a development environment are set below. They can be
 #   changed by modifying env vars.
-sentry_sdk.init(
-    traces_sample_rate=os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0),
-    profiles_sample_rate=os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0),
-    environment=os.environ.get('SENTRY_ENVIRONMENT', 'development'),
-    debug=os.environ.get('SENTRY_DEBUG', 'True'),
-    attach_stacktrace=os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True')
-)
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.redis import RedisIntegration
+
+SENTRY_DSN = os.environ.get('SENTRY_DSN')
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration(), RedisIntegration(max_data_size=0)],
+        traces_sample_rate=os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0),
+        profiles_sample_rate=os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0),
+        environment=os.environ.get('SENTRY_ENVIRONMENT', 'development'),
+        debug=os.environ.get('SENTRY_DEBUG', 'True'),
+        attach_stacktrace=os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True')
+    )
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
