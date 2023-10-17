@@ -30,6 +30,7 @@
               <table class="table table-borderless table-hover">
                 <thead>
                   <tr>
+                    <th scope="col">id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Data Source</th>
                     <th scope="col">Description</th>
@@ -45,6 +46,7 @@
                 <tbody>
                   {% for signal in signals %}
                   <tr class="clickable-table-row" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                    <td>{{ signal.pk }}</td>
                     <td>{{ signal.display_name }}</td>
                     <td>{{ signal.source }}</td>
                     <td>{{ signal.description }}</td>
