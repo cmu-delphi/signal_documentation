@@ -10,8 +10,29 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import sentry_sdk
 from pathlib import Path
 from typing import Any
+
+# Sentry init and config:
+# - If you want to use Sentry, specify the DSN via the env var of `SENTRY_DSN`.
+# - Useful defaults for a development environment are set below. They can be
+#   changed by modifying env vars.
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.redis import RedisIntegration
+
+SENTRY_DSN = os.environ.get('SENTRY_DSN')
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration(), RedisIntegration(max_data_size=0)],
+        traces_sample_rate=os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0),
+        profiles_sample_rate=os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0),
+        environment=os.environ.get('SENTRY_ENVIRONMENT', 'development'),
+        debug=os.environ.get('SENTRY_DEBUG', 'True'),
+        attach_stacktrace=os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True')
+    )
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR: Path = Path(__file__).resolve().parent.parent
@@ -131,6 +152,7 @@ DATABASES: dict[str, dict[str, Any]] = {
 
 # Django chache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
+
 CACHES: dict[str, dict[str, str]] = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
