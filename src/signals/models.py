@@ -52,6 +52,7 @@ class SignalCategory(TimeStampedModel):
     )
 
     class Meta:
+        ordering: list[str] = ["name"]
         verbose_name_plural: str = "signal categories"
 
     def __str__(self) -> str:
