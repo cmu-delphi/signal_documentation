@@ -65,7 +65,13 @@
                     </td>
                     <td>{{ signal.format }}</td>
                     <td>{{ signal.time_label }}</td>
-                    <td><a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a></td>
+                    <td>
+                      {% if signal.base %}
+                        <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a>
+                      {% else %}
+                        --/--
+                      {% endif %}
+                    </td>
                     <td>
                       {% for link in signal.links.all %}
                       <ul class="list-group list-group-flush">
