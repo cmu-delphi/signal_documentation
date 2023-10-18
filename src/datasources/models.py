@@ -39,6 +39,9 @@ class SourceSubdivision(TimeStampedModel):
         on_delete=models.PROTECT
     )
 
+    class Meta:
+        ordering: list[str] = ["name"]
+
     def __str__(self) -> str:
         """
         Returns the name of the source subdivision as a string.
@@ -79,6 +82,9 @@ class DataSource(TimeStampedModel):
         help_text=_('DataSource links'),
         related_name="data_sources"
     )
+
+    class Meta:
+        ordering: list[str] = ["name"]
 
     def __str__(self) -> str:
         """
