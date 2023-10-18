@@ -38,8 +38,8 @@
                     <th scope="col">Signal Type</th>
                     <th scope="col">Format</th>
                     <th scope="col">Temporal Resolution</th>
-                    <th scope="col">Signal</th>
-                    <th scope="col">Link</th>
+                    <th scope="col">Base Signal</th>
+                    <th scope="col">Links</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,7 @@
                     </td>
                     <td>{{ signal.format }}</td>
                     <td>{{ signal.time_label }}</td>
-                    <td>{{ signal.base }}</td>
+                    <td><a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a></td>
                     <td>
                       {% for link in signal.links.all %}
                       <ul class="list-group list-group-flush">
