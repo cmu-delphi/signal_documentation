@@ -28,6 +28,8 @@ django-extensions-models = "*"
 mypy = "*"
 django-stubs = "*"
 tzdata = "*"
+sphinx = "*"
+sphinx-rtd-theme = "*"
 
 [dev-packages]
 flake8 = "*"
