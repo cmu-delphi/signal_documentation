@@ -1,40 +1,115 @@
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>datasources package &mdash; Signal Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
 
-    <title>datasources package &#8212; Signal Documentation 1.0.0 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=8d563738"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="datasources.migrations package" href="datasources.migrations.html" />
     <link rel="prev" title="base.tests package" href="base.tests.html" />
+</head>
 
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-
-
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
 
-          <div class="body" role="main">
+
+          <a href="index.html" class="icon icon-home">
+            Signal Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">base package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">datasources package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="datasources.migrations.html">datasources.migrations package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="datasources.tests.html">datasources.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.admin">datasources.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.admin.DataSourceAdmin"><code class="docutils literal notranslate"><span class="pre">DataSourceAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.admin.SourceSubdivisionAdmin"><code class="docutils literal notranslate"><span class="pre">SourceSubdivisionAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.apps">datasources.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.apps.DatasourcesConfig"><code class="docutils literal notranslate"><span class="pre">DatasourcesConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.models">datasources.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.models.DataSource"><code class="docutils literal notranslate"><span class="pre">DataSource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.models.SourceSubdivision"><code class="docutils literal notranslate"><span class="pre">SourceSubdivision</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.resources">datasources.resources module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.resources.SourceSubdivisionResource"><code class="docutils literal notranslate"><span class="pre">SourceSubdivisionResource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.views">datasources.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.html">signals package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_documentation.html">signal_documentation package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Signal Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">datasources package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/datasources.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
 
   <section id="datasources-package">
-<h1>datasources package<a class="headerlink" href="#datasources-package" title="Link to this heading">¶</a></h1>
+<h1>datasources package<a class="headerlink" href="#datasources-package" title="Link to this heading"></a></h1>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="datasources.migrations.html">datasources.migrations package</a><ul>
@@ -105,84 +180,84 @@
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
 </section>
 <section id="module-datasources.admin">
-<span id="datasources-admin-module"></span><h2>datasources.admin module<a class="headerlink" href="#module-datasources.admin" title="Link to this heading">¶</a></h2>
+<span id="datasources-admin-module"></span><h2>datasources.admin module<a class="headerlink" href="#module-datasources.admin" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="datasources.admin.DataSourceAdmin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.admin.</span></span><span class="sig-name descname"><span class="pre">DataSourceAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.admin.DataSourceAdmin" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.admin.</span></span><span class="sig-name descname"><span class="pre">DataSourceAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.admin.DataSourceAdmin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ImportExportModelAdmin</span></code></p>
 <p>Admin interface for managing data source objects.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.admin.DataSourceAdmin.list_display">
-<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#datasources.admin.DataSourceAdmin.list_display" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#datasources.admin.DataSourceAdmin.list_display" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="datasources.admin.DataSourceAdmin.media">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#datasources.admin.DataSourceAdmin.media" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#datasources.admin.DataSourceAdmin.media" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.admin.DataSourceAdmin.search_fields">
-<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'source_subdivision__db_source'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'source_subdivision__name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'description'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'source_subdivision__db_source',</span> <span class="pre">'source_subdivision__name',</span> <span class="pre">'description')</span></em><a class="headerlink" href="#datasources.admin.DataSourceAdmin.search_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'source_subdivision__db_source'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'source_subdivision__name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'description'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'source_subdivision__db_source',</span> <span class="pre">'source_subdivision__name',</span> <span class="pre">'description')</span></em><a class="headerlink" href="#datasources.admin.DataSourceAdmin.search_fields" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="datasources.admin.SourceSubdivisionAdmin">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.admin.</span></span><span class="sig-name descname"><span class="pre">SourceSubdivisionAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.admin.</span></span><span class="sig-name descname"><span class="pre">SourceSubdivisionAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ImportExportModelAdmin</span></code></p>
 <p>Admin interface for managing source subdivision objects.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.admin.SourceSubdivisionAdmin.list_display">
-<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'db_source'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'db_source')</span></em><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.list_display" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'db_source'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'db_source')</span></em><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.list_display" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="datasources.admin.SourceSubdivisionAdmin.media">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.media" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.media" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.admin.SourceSubdivisionAdmin.resource_classes">
-<span class="sig-name descname"><span class="pre">resource_classes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><span class="pre">type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#datasources.resources.SourceSubdivisionResource" title="datasources.resources.SourceSubdivisionResource"><span class="pre">SourceSubdivisionResource</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'datasources.resources.SourceSubdivisionResource'&gt;]</span></em><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.resource_classes" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">resource_classes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><span class="pre">type</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#datasources.resources.SourceSubdivisionResource" title="datasources.resources.SourceSubdivisionResource"><span class="pre">SourceSubdivisionResource</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'datasources.resources.SourceSubdivisionResource'&gt;]</span></em><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.resource_classes" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.admin.SourceSubdivisionAdmin.search_fields">
-<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'db_source'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'db_source')</span></em><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.search_fields" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'db_source'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'db_source')</span></em><a class="headerlink" href="#datasources.admin.SourceSubdivisionAdmin.search_fields" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-datasources.apps">
-<span id="datasources-apps-module"></span><h2>datasources.apps module<a class="headerlink" href="#module-datasources.apps" title="Link to this heading">¶</a></h2>
+<span id="datasources-apps-module"></span><h2>datasources.apps module<a class="headerlink" href="#module-datasources.apps" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="datasources.apps.DatasourcesConfig">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.apps.</span></span><span class="sig-name descname"><span class="pre">DatasourcesConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.apps.DatasourcesConfig" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.apps.</span></span><span class="sig-name descname"><span class="pre">DatasourcesConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.apps.DatasourcesConfig" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.apps.DatasourcesConfig.default_auto_field">
-<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#datasources.apps.DatasourcesConfig.default_auto_field" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#datasources.apps.DatasourcesConfig.default_auto_field" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.apps.DatasourcesConfig.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'datasources'</span></em><a class="headerlink" href="#datasources.apps.DatasourcesConfig.name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'datasources'</span></em><a class="headerlink" href="#datasources.apps.DatasourcesConfig.name" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-datasources.models">
-<span id="datasources-models-module"></span><h2>datasources.models module<a class="headerlink" href="#module-datasources.models" title="Link to this heading">¶</a></h2>
+<span id="datasources-models-module"></span><h2>datasources.models module<a class="headerlink" href="#module-datasources.models" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="datasources.models.DataSource">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.models.</span></span><span class="sig-name descname"><span class="pre">DataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.models.</span></span><span class="sig-name descname"><span class="pre">DataSource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
 <p>A model representing a data source.</p>
 <dl class="field-list simple">
@@ -212,104 +287,104 @@
 </dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="datasources.models.DataSource.DoesNotExist">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#datasources.models.DataSource.DoesNotExist" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#datasources.models.DataSource.DoesNotExist" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="datasources.models.DataSource.MultipleObjectsReturned">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#datasources.models.DataSource.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#datasources.models.DataSource.MultipleObjectsReturned" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.created">
-<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#datasources.models.DataSource.created" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#datasources.models.DataSource.created" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
 <p>Created</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.description">
-<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#datasources.models.DataSource.description" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#datasources.models.DataSource.description" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></a></p>
 <p>Description. Source description</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.display_name">
-<span class="sig-name descname"><span class="pre">display_name</span></span><a class="headerlink" href="#datasources.models.DataSource.display_name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">display_name</span></span><a class="headerlink" href="#datasources.models.DataSource.display_name" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Display name. Display Name</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.DataSource.get_next_by_created">
-<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_next_by_created" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_next_by_created" title="Link to this definition"></a></dt>
 <dd><p>Finds next instance based on <a class="reference internal" href="#datasources.models.DataSource.created" title="datasources.models.DataSource.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.DataSource.get_next_by_modified">
-<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_next_by_modified" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_next_by_modified" title="Link to this definition"></a></dt>
 <dd><p>Finds next instance based on <a class="reference internal" href="#datasources.models.DataSource.modified" title="datasources.models.DataSource.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.DataSource.get_previous_by_created">
-<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_previous_by_created" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_previous_by_created" title="Link to this definition"></a></dt>
 <dd><p>Finds previous instance based on <a class="reference internal" href="#datasources.models.DataSource.created" title="datasources.models.DataSource.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.DataSource.get_previous_by_modified">
-<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_previous_by_modified" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.DataSource.get_previous_by_modified" title="Link to this definition"></a></dt>
 <dd><p>Finds previous instance based on <a class="reference internal" href="#datasources.models.DataSource.modified" title="datasources.models.DataSource.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#datasources.models.DataSource.id" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#datasources.models.DataSource.id" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
 <p>Primary key: ID</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.links">
-<span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#datasources.models.DataSource.links" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#datasources.models.DataSource.links" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="base.html#base.models.Link" title="base.models.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a></p>
 <p>Links. DataSource links (related name: <a class="reference internal" href="base.html#base.models.Link.data_sources" title="base.models.Link.data_sources"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data_sources</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.modified">
-<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#datasources.models.DataSource.modified" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#datasources.models.DataSource.modified" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
 <p>Modified</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#datasources.models.DataSource.name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#datasources.models.DataSource.name" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Name. Name</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.objects">
-<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#datasources.models.DataSource.objects" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#datasources.models.DataSource.objects" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.source_license">
-<span class="sig-name descname"><span class="pre">source_license</span></span><a class="headerlink" href="#datasources.models.DataSource.source_license" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">source_license</span></span><a class="headerlink" href="#datasources.models.DataSource.source_license" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Source license. License</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.DataSource.source_subdivisions">
-<span class="sig-name descname"><span class="pre">source_subdivisions</span></span><a class="headerlink" href="#datasources.models.DataSource.source_subdivisions" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">source_subdivisions</span></span><a class="headerlink" href="#datasources.models.DataSource.source_subdivisions" title="Link to this definition"></a></dt>
 <dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#datasources.models.SourceSubdivision" title="datasources.models.SourceSubdivision"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceSubdivision</span></code></a></p>
 <p>All source subdivisions of this data source (related name of <a class="reference internal" href="#datasources.models.SourceSubdivision.data_source" title="datasources.models.SourceSubdivision.data_source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data_source</span></code></a>)</p>
 </dd></dl>
@@ -318,7 +393,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.models.</span></span><span class="sig-name descname"><span class="pre">SourceSubdivision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.models.</span></span><span class="sig-name descname"><span class="pre">SourceSubdivision</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
 <p>A model representing a source subdivision.</p>
 <dl class="field-list simple">
@@ -351,117 +426,117 @@
 </dl>
 <dl class="py exception">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.DoesNotExist">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.DoesNotExist" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.DoesNotExist" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
 </dd></dl>
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.MultipleObjectsReturned">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.MultipleObjectsReturned" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.MultipleObjectsReturned" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.created">
-<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.created" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.created" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
 <p>Created</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.data_source">
-<span class="sig-name descname"><span class="pre">data_source</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.data_source" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">data_source</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.data_source" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#datasources.models.DataSource" title="datasources.models.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a></p>
 <p>Data source. Source Subdivision (related name: <a class="reference internal" href="#datasources.models.DataSource.source_subdivisions" title="datasources.models.DataSource.source_subdivisions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source_subdivisions</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.data_source_id">
-<span class="sig-name descname"><span class="pre">data_source_id</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.data_source_id" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">data_source_id</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.data_source_id" title="Link to this definition"></a></dt>
 <dd><p>Internal field, use <a class="reference internal" href="#datasources.models.SourceSubdivision.data_source" title="datasources.models.SourceSubdivision.data_source"><code class="xref py py-class docutils literal notranslate"><span class="pre">data_source</span></code></a> instead.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.db_source">
-<span class="sig-name descname"><span class="pre">db_source</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.db_source" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">db_source</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.db_source" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Db source. DB Source</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.description">
-<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.description" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.description" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></a></p>
 <p>Description. Source description</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.display_name">
-<span class="sig-name descname"><span class="pre">display_name</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.display_name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">display_name</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.display_name" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Display name. Display Name</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.get_next_by_created">
-<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_next_by_created" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_next_by_created" title="Link to this definition"></a></dt>
 <dd><p>Finds next instance based on <a class="reference internal" href="#datasources.models.SourceSubdivision.created" title="datasources.models.SourceSubdivision.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.get_next_by_modified">
-<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_next_by_modified" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_next_by_modified" title="Link to this definition"></a></dt>
 <dd><p>Finds next instance based on <a class="reference internal" href="#datasources.models.SourceSubdivision.modified" title="datasources.models.SourceSubdivision.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.get_previous_by_created">
-<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_previous_by_created" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_previous_by_created" title="Link to this definition"></a></dt>
 <dd><p>Finds previous instance based on <a class="reference internal" href="#datasources.models.SourceSubdivision.created" title="datasources.models.SourceSubdivision.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.get_previous_by_modified">
-<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_previous_by_modified" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.models.SourceSubdivision.get_previous_by_modified" title="Link to this definition"></a></dt>
 <dd><p>Finds previous instance based on <a class="reference internal" href="#datasources.models.SourceSubdivision.modified" title="datasources.models.SourceSubdivision.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.id" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.id" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
 <p>Primary key: ID</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.links">
-<span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.links" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.links" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="base.html#base.models.Link" title="base.models.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a></p>
 <p>Links. Source Subdivision links (related name: <a class="reference internal" href="base.html#base.models.Link.source_subdivisions" title="base.models.Link.source_subdivisions"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source_subdivisions</span></code></a>)</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.modified">
-<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.modified" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.modified" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
 <p>Modified</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.name">
-<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.name" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.name" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Name. Name</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.objects">
-<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#datasources.models.SourceSubdivision.objects" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#datasources.models.SourceSubdivision.objects" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.models.SourceSubdivision.signals">
-<span class="sig-name descname"><span class="pre">signals</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.signals" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">signals</span></span><a class="headerlink" href="#datasources.models.SourceSubdivision.signals" title="Link to this definition"></a></dt>
 <dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="signals.html#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
 <p>All signals of this source subdivision (related name of <a class="reference internal" href="signals.html#signals.models.Signal.source" title="signals.models.Signal.source"><code class="xref py py-attr docutils literal notranslate"><span class="pre">source</span></code></a>)</p>
 </dd></dl>
@@ -470,119 +545,73 @@
 
 </section>
 <section id="module-datasources.resources">
-<span id="datasources-resources-module"></span><h2>datasources.resources module<a class="headerlink" href="#module-datasources.resources" title="Link to this heading">¶</a></h2>
+<span id="datasources-resources-module"></span><h2>datasources.resources module<a class="headerlink" href="#module-datasources.resources" title="Link to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="datasources.resources.SourceSubdivisionResource">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.resources.</span></span><span class="sig-name descname"><span class="pre">SourceSubdivisionResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource" title="Link to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.resources.</span></span><span class="sig-name descname"><span class="pre">SourceSubdivisionResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelResource</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.resources.SourceSubdivisionResource.before_import_row">
-<span class="sig-name descname"><span class="pre">before_import_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.before_import_row" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">before_import_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.before_import_row" title="Link to this definition"></a></dt>
 <dd><p>Hook called before importing each row. Modifies ‘Links’ column to include
 any additional links specified in ‘DUA’ or ‘Link’ columns.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="datasources.resources.SourceSubdivisionResource.fields">
-<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'data_source':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Name&gt;,</span> <span class="pre">'db_source':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">DB</span> <span class="pre">Source&gt;,</span> <span class="pre">'description':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Description&gt;,</span> <span class="pre">'display_name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Source</span> <span class="pre">Subdivision&gt;,</span> <span class="pre">'links':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Links&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Source</span> <span class="pre">Subdivision&gt;}</span></em><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.fields" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'data_source':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Name&gt;,</span> <span class="pre">'db_source':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">DB</span> <span class="pre">Source&gt;,</span> <span class="pre">'description':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Description&gt;,</span> <span class="pre">'display_name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Source</span> <span class="pre">Subdivision&gt;,</span> <span class="pre">'links':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Links&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Source</span> <span class="pre">Subdivision&gt;}</span></em><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.fields" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.resources.SourceSubdivisionResource.process_datasource">
-<span class="sig-name descname"><span class="pre">process_datasource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.process_datasource" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">process_datasource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.process_datasource" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="datasources.resources.SourceSubdivisionResource.process_links">
-<span class="sig-name descname"><span class="pre">process_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.process_links" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">process_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#datasources.resources.SourceSubdivisionResource.process_links" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="module-datasources.views">
-<span id="datasources-views-module"></span><h2>datasources.views module<a class="headerlink" href="#module-datasources.views" title="Link to this heading">¶</a></h2>
+<span id="datasources-views-module"></span><h2>datasources.views module<a class="headerlink" href="#module-datasources.views" title="Link to this heading"></a></h2>
 </section>
 <section id="module-datasources">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datasources" title="Link to this heading">¶</a></h2>
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datasources" title="Link to this heading"></a></h2>
 </section>
 </section>
 
 
+           </div>
           </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="base.tests.html" class="btn btn-neutral float-left" title="base.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datasources.migrations.html" class="btn btn-neutral float-right" title="datasources.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, cmu.edu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Signal Documentation</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="base.html">base package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">datasources package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="signals.html">signals package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="signal_documentation.html">signal_documentation package</a></li>
-</ul>
-</li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="modules.html">src</a><ul>
-      <li>Previous: <a href="base.tests.html" title="previous chapter">base.tests package</a></li>
-      <li>Next: <a href="datasources.migrations.html" title="next chapter">datasources.migrations package</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, cmu.edu.
-
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-
-      |
-      <a href="_sources/datasources.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-
-
-
-  </body>
+</body>
 </html>
