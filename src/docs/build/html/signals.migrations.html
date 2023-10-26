@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>signals.migrations package &#8212; Signal Documentation 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="signals.tests package" href="signals.tests.html" />
+    <link rel="prev" title="signals package" href="signals.html" />
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+
+
+          <div class="body" role="main">
+
+  <section id="signals-migrations-package">
+<h1>signals.migrations package<a class="headerlink" href="#signals-migrations-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-signals.migrations.0001_initial">
+<span id="signals-migrations-0001-initial-module"></span><h2>signals.migrations.0001_initial module<a class="headerlink" href="#module-signals.migrations.0001_initial" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.migrations.0001_initial.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.migrations.0001_initial.Migration" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('datasources',</span> <span class="pre">'0002_alter_sourcesubdivision_db_source'),</span> <span class="pre">('base',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#signals.migrations.0001_initial.Migration.dependencies" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#signals.migrations.0001_initial.Migration.initial" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Geography',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;)],</span> <span class="pre">options={'verbose_name_plural':</span> <span class="pre">'geographies',</span> <span class="pre">'ordering':</span> <span class="pre">['name']}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Pathogen',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='SignalCategory',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;)],</span> <span class="pre">options={'verbose_name_plural':</span> <span class="pre">'signal</span> <span class="pre">categories'}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='SignalType',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;)],</span> <span class="pre">options={'ordering':</span> <span class="pre">['name']}&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Signal',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.BigAutoField&gt;),</span> <span class="pre">('name',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('display_name',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('active',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('short_description',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('description',</span> <span class="pre">&lt;django.db.models.TextField&gt;),</span> <span class="pre">('format',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('time_type',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('time_label',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('is_smoothed',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('is_weighted',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('is_cumulative',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('has_stderr',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('has_sample_size',</span> <span class="pre">&lt;django.db.models.BooleanField&gt;),</span> <span class="pre">('high_values_are',</span> <span class="pre">&lt;django.db.models.CharField&gt;),</span> <span class="pre">('available_geography',</span> <span class="pre">&lt;django.db.models.ManyToManyField&gt;),</span> <span class="pre">('base',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('category',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;),</span> <span class="pre">('links',</span> <span class="pre">&lt;django.db.models.ManyToManyField&gt;),</span> <span class="pre">('pathogen',</span> <span class="pre">&lt;django.db.models.ManyToManyField&gt;),</span> <span class="pre">('signal_type',</span> <span class="pre">&lt;django.db.models.ManyToManyField&gt;),</span> <span class="pre">('source',</span> <span class="pre">&lt;django.db.models.ForeignKey&gt;)],</span> <span class="pre">options={'unique_together':</span> <span class="pre">{('name',</span> <span class="pre">'source')}}&gt;]</span></em><a class="headerlink" href="#signals.migrations.0001_initial.Migration.operations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.migrations.0002_alter_signal_options_geography_created_and_more">
+<span id="signals-migrations-0002-alter-signal-options-geography-created-and-more-module"></span><h2>signals.migrations.0002_alter_signal_options_geography_created_and_more module<a class="headerlink" href="#module-signals.migrations.0002_alter_signal_options_geography_created_and_more" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.migrations.0002_alter_signal_options_geography_created_and_more.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('signals',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration.dependencies" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterModelOptions</span>&#160; <span class="pre">name='signal',</span> <span class="pre">options={'ordering':</span> <span class="pre">['name']}&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='geography',</span> <span class="pre">name='created',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='geography',</span> <span class="pre">name='modified',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='pathogen',</span> <span class="pre">name='created',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='pathogen',</span> <span class="pre">name='modified',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='signal',</span> <span class="pre">name='created',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='signal',</span> <span class="pre">name='modified',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='signalcategory',</span> <span class="pre">name='created',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='signalcategory',</span> <span class="pre">name='modified',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='signaltype',</span> <span class="pre">name='created',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='signaltype',</span> <span class="pre">name='modified',</span> <span class="pre">field=&lt;django.db.models.DateTimeField&gt;&gt;]</span></em><a class="headerlink" href="#signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration.operations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.migrations.0003_alter_signal_options">
+<span id="signals-migrations-0003-alter-signal-options-module"></span><h2>signals.migrations.0003_alter_signal_options module<a class="headerlink" href="#module-signals.migrations.0003_alter_signal_options" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.migrations.0003_alter_signal_options.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.migrations.0003_alter_signal_options.</span></span><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.migrations.0003_alter_signal_options.Migration" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0003_alter_signal_options.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('signals',</span> <span class="pre">'0002_alter_signal_options_geography_created_and_more')]</span></em><a class="headerlink" href="#signals.migrations.0003_alter_signal_options.Migration.dependencies" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.migrations.0003_alter_signal_options.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterModelOptions</span>&#160; <span class="pre">name='signal',</span> <span class="pre">options={'ordering':</span> <span class="pre">['modified']}&gt;]</span></em><a class="headerlink" href="#signals.migrations.0003_alter_signal_options.Migration.operations" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-signals.migrations" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Signal Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">base package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="signals.html">signals package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_documentation.html">signal_documentation package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">src</a><ul>
+  <li><a href="signals.html">signals package</a><ul>
+      <li>Previous: <a href="signals.html" title="previous chapter">signals package</a></li>
+      <li>Next: <a href="signals.tests.html" title="next chapter">signals.tests package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, cmu.edu.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+
+      |
+      <a href="_sources/signals.migrations.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+
+
+
+  </body>
+</html>
