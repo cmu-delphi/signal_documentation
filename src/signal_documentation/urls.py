@@ -39,6 +39,7 @@ urlpatterns: list[URLResolver] = [
     path(f'{settings.MAIN_PAGE}/admin/' if settings.MAIN_PAGE else 'admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path(f'{settings.MAIN_PAGE}/' if settings.MAIN_PAGE else '', include('signals.urls')),
+    path(f'{settings.MAIN_PAGE}/docs/' if settings.MAIN_PAGE else 'docs/', include('docs.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore

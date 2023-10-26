@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
-import sentry_sdk
 from pathlib import Path
 from typing import Any
 
+import sentry_sdk
 # Sentry init and config:
 # - If you want to use Sentry, specify the DSN via the env var of `SENTRY_DSN`.
 # - Useful defaults for a development environment are set below. They can be
@@ -88,6 +88,7 @@ EXTERNAL_APPS: list[str] = [
     'health_check.storage',
     'health_check.contrib.migrations',
     'import_export',
+    'docs',
 ]
 
 LOCAL_APPS: list[str] = [
