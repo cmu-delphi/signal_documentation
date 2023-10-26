@@ -29,6 +29,8 @@ django-stubs = "*"
 tzdata = "*"
 pyparsing = "*"
 pydot = "*"
+django-docs = "*"
+sphinxcontrib-django = "*"
 
 [dev-packages]
 flake8 = "*"
