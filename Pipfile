@@ -31,6 +31,7 @@ pyparsing = "*"
 pydot = "*"
 django-docs = "*"
 sphinxcontrib-django = "*"
+sphinx-rtd-theme = "*"
 
 [dev-packages]
 flake8 = "*"
