@@ -22,6 +22,11 @@ from django.urls import (
     include,
     path,
 )
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 
 from base.views import (
     BadRequestErrorView,
@@ -39,6 +44,11 @@ urlpatterns: list[URLResolver] = [
     path(f'{settings.MAIN_PAGE}/admin/' if settings.MAIN_PAGE else 'admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
     path(f'{settings.MAIN_PAGE}/' if settings.MAIN_PAGE else '', include('signals.urls')),
+
+    # drf-spectacular
+    path("api/docs/schema/", SpectacularAPIView.as_view(), name="spectacular-schema"),
+    path("api/docs/swagger/", SpectacularSwaggerView.as_view(url_name="spectacular-schema"), name="swagger"),
+    path("api/docs/redoc/", SpectacularRedocView.as_view(url_name="spectacular-schema"), name="redoc"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore
