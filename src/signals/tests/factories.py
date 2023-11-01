@@ -71,7 +71,7 @@ class SignalFactory(DjangoModelFactory):
     active = fake.boolean()
     short_description = fake.text(max_nb_chars=500)
     description = fake.text(max_nb_chars=500)
-    format = fake.random_element(FormatChoices.values)
+    format_type = fake.random_element(FormatChoices.values)
     time_type = fake.random_element(TimeTypeChoices.values)
     time_label = fake.random_element(TimeLabelChoices.values)
     category = SubFactory(SignalCategoryFactory)

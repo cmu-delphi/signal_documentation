@@ -77,7 +77,7 @@ class SignalsListApiView(ListAPIView):
         'available_geography__name',
         'signal_type__name',
         'category__name',
-        'format',
+        'format_type',
         'base',
         'source__name',
         'time_label',
