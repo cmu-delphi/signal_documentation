@@ -19,7 +19,7 @@ class SignalFilter(django_filters.FilterSet):
             'available_geography',
             'signal_type',
             'category',
-            'format',
+            'format_type',
             'source',
             'time_label',
         ]
