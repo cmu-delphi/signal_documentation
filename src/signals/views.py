@@ -26,6 +26,7 @@ class SignalsListView(ListView):
         paginator = Paginator(self.get_queryset(), self.paginate_by)
         page_number: str | None = self.request.GET.get('page')
         page_obj: Page = paginator.get_page(page_number)
+        context["url_params"] = "&".join([f"{p}={self.request.GET[p]}" for p in context["filter"]._meta.fields if p in self.request.GET])
         context['signals'] = page_obj
         return context
 
