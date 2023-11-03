@@ -101,6 +101,10 @@ Changes of this sort should be carefully evaluated as they may require interacti
 ## [Django admin](https://docs.djangoproject.com/en/4.1/ref/contrib/admin/) web interface (user should be `is_staff` or `is_superuser`)
 `http://localhost:8000/admin`
 
+## Read the docs (Sphynx)
+`http://localhost:8000/<MAIN_PAGE>/docs/index.html`
+
+
 
 ## Import data from admin interface
 
