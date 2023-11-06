@@ -8,10 +8,3 @@ repos:
     -   id: trailing-whitespace
     -   id: flake8
         exclude: (migrations)
-# -   repo: https://github.com/thclark/pre-commit-sphinx
-#     rev: 0.0.1
-#     hooks:
-#     -   id: build-docs
-#         additional_dependencies: [sphinxcontrib-django]
-#         args: ['--cache-dir', 'src/docs/build/doctrees', '--html-dir', 'src/docs/build/html', '--source-dir', 'src/docs/source']
-#         language_version: python3
