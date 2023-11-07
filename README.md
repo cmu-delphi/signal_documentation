@@ -137,20 +137,20 @@ To import data from a CSV file must meet the requirements:
 * Colums should be saparateb by `","`
 
 Othervice you will receive Errors during import process:
-![Import errors](./docs/image-3.png)
+![Import errors](./src/docs/source/_static/import_errors.png)
 
 
 1. Import `SourceSubdivision` instances with `SourceSubdivisionResource` - [http://localhost:8000/admin/datasources/sourcesubdivision/import/](http://localhost:8000/admin/datasources/sourcesubdivision/import/)
-![Import `SourceSubdivision` instances](./docs/image.png)
-![Confirm importing `SourceSubdivision` instances](./docs/image-1.png)
+![Import `SourceSubdivision` instances](./src/docs/source/_static/import_source_subdivision.png)
+![Confirm importing `SourceSubdivision` instances](./src/docs/source/_static/import_confirm_source_subdivision.png)
 
 2. Import `Signal` instances with `SignalResource` - [http://localhost:8000/admin/signals/signal/import/](http://localhost:8000/admin/signals/signal/import/)
-![Import `Signal` instances](./docs/image-2.png)
-![Confirm importing `Signal` instances](./docs/image-4.png)
+![Import `Signal` instances](./src/docs/source/_static/import_signals.png)
+![Confirm importing `Signal` instances](./src/docs/source/_static/import_confirm_signals.png)
 
 3. Import `Signal.base` fields with `SignalBaseResource` - [http://localhost:8000/admin/signals/signal/import/](http://localhost:8000/admin/signals/signal/import/)
-![Import `Signal.base` field](./docs/image-5.png)
-![Confirm importing `Signal.base` fields](./docs/image-6.png)
+![Import `Signal.base` field](./src/docs/source/_static/import_signals_base.png)
+![Confirm importing `Signal.base` fields](./src/docs/source/_static/import_confirm_signals_base.png)
 
 ## Deployment
 
