@@ -1,5 +1,5 @@
-src
-====
+Signal Documentation Modules
+============================
 
 .. toctree::
    :maxdepth: 4
