@@ -5,6 +5,8 @@
 {% load i18n %}
 
 {% block content %}
+
+
 <div class="pagetitle">
   <h1>Signals</h1>
   <nav>
@@ -26,6 +28,9 @@
           <div class="card recent-sales overflow-auto">
             <div class="card-body">
               <h5 class="card-title">Signals</h5>
+              <a class="btn btn-primary" id="collapseButton" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Link with href
+              </a>
 
               <table class="table table-borderless table-hover">
                 <thead>
@@ -44,7 +49,7 @@
                 </thead>
                 <tbody>
                   {% for signal in signals %}
-                  <tr class="clickable-table-row" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                  <tr class="clickable-table-row" onClick="location.href='{% url 'signal' pk=signal.id %}' \;">
                     <td>{{ signal.display_name }}</td>
                     <td>{{ signal.source }}</td>
                     <td>{{ signal.description }}</td>
@@ -95,7 +100,7 @@
     </div><!-- End Left side columns -->
 
     <!-- Right side columns -->
-    <div class="col-lg-4">
+    <div class="col-lg-4 collapse" id="collapseExample">
       <!-- Filters -->
       <div class="card">
         <form method="GET">
@@ -112,7 +117,7 @@
                 {% for choice in filter.form.pathogen.field.choices %}
                   <option value="{{ choice.0 }}">{{ choice.1 }}</option>
                 {% endfor %}
-              </select>
+              </selectright>
             </div>
           </div>
           <div class="form-group">
@@ -211,9 +216,10 @@
     </div><!-- End Right side columns -->
     <style>
       .clickable-table-row{
-        cursor:pointer;
+          cursor:pointer;
       }
     </style>
+
   </div>
 </section>
 
