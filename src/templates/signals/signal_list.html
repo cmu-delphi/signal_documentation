@@ -96,14 +96,23 @@
           <div class="form-group">
             <div class="card-body">
               <h5 class="card-title">Search</h5>
-              <input class="form-control" type="text" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
+              <input class="form-control" type="text" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword"
+                {% if "search" in url_params_dict %}
+                    value="{{ url_params_dict.search }}"
+                {% endif %}>
             </div>
           <div class="form-group">
             <div class="card-body">
               <h5 class="card-title">{{ filter.form.pathogen.label }}</h5>
               <select name="{{ filter.form.pathogen.name }}" class="form-select">
                 {% for choice in filter.form.pathogen.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "pathogen" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.pathogen %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                  >{{ choice.1 }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -117,7 +126,13 @@
                 data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
               >
                 {% for choice in filter.form.available_geography.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "available_geography" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.available_geography %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                    >{{ choice.1 }}</option>
                   {% endfor %}
               </select>
             </div>
@@ -131,7 +146,13 @@
                 data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
               >
                 {% for choice in filter.form.signal_type.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "signal_type" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.signal_type %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                  >{{ choice.1 }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -145,7 +166,13 @@
                 data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
               >
                 {% for choice in filter.form.category.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "category" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.category %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                  >{{ choice.1 }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -155,7 +182,13 @@
               <h5 class="card-title">{{ filter.form.format.label }}</h5>
               <select name="{{ filter.form.format.name }}" class="form-select">
                 {% for choice in filter.form.format.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "format" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.format %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                  >{{ choice.1 }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -168,7 +201,13 @@
                 data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
               >
                 {% for choice in filter.form.source.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "source" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.source %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                  >{{ choice.1 }}</option>
                 {% endfor %}
               </select>
             </div>
@@ -178,7 +217,13 @@
               <h5 class="card-title">Temporal resolution</h5>
               <select name="{{ filter.form.time_label.name }}" class="selectpicker form-select">
                 {% for choice in filter.form.time_label.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  <option value="{{ choice.0 }}"
+                    {% if "time_label" in url_params_dict %}
+                        {% if choice.0 in url_params_dict.time_label %}
+                            selected
+                        {% endif %}
+                    {% endif %}
+                  >{{ choice.1 }}</option>
                 {% endfor %}
               </select>
             </div>
