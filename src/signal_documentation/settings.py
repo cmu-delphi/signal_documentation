@@ -13,6 +13,27 @@ import os
 from pathlib import Path
 from typing import Any
 
+import sentry_sdk
+# Sentry init and config:
+# - If you want to use Sentry, specify the DSN via the env var of `SENTRY_DSN`.
+# - Useful defaults for a development environment are set below. They can be
+#   changed by modifying env vars.
+from sentry_sdk.integrations.django import DjangoIntegration
+from sentry_sdk.integrations.redis import RedisIntegration
+
+SENTRY_DSN = os.environ.get('SENTRY_DSN')
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration(), RedisIntegration(max_data_size=0)],
+        traces_sample_rate=float(os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0)),
+        profiles_sample_rate=float(os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0)),
+        environment=str(os.environ.get('SENTRY_ENVIRONMENT', 'development')),
+        debug=str(os.environ.get('SENTRY_DEBUG', 'True')),
+        attach_stacktrace=str(os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True'))
+    )
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
@@ -66,6 +87,7 @@ EXTERNAL_APPS: list[str] = [
     'health_check.storage',
     'health_check.contrib.migrations',
     'import_export',
+    'docs',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -130,6 +152,7 @@ DATABASES: dict[str, dict[str, Any]] = {
 
 # Django chache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
+
 CACHES: dict[str, dict[str, str]] = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
@@ -193,3 +216,7 @@ GRAPH_MODELS: dict[str, Any] = {
   'app_labels': ["datasources"],
   'group_models': True,
 }
+
+# django docs
+# https://django-docs.readthedocs.io/en/latest/
+DOCS_ROOT = os.path.join(BASE_DIR, 'docs', 'build', 'html')
