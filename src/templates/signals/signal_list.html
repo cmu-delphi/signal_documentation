@@ -42,12 +42,7 @@
                     <th scope="col">Data Source</th>
                     <th scope="col">Description</th>
                     <th scope="col">Pathogen/Disease Area</th>
-                    <th scope="col">Available geography</th>
-                    <th scope="col">Signal Type</th>
-                    <th scope="col">Format</th>
-                    <th scope="col">Temporal Resolution</th>
                     <th scope="col">Base Signal</th>
-                    <th scope="col">Links</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -62,30 +57,11 @@
                       {% endfor %}
                     </td>
                     <td>
-                      {% for geography in signal.available_geography.all %}
-                        <span class="badge rounded-pill bg-dark">{{ geography }}</span>
-                      {% endfor %}
-                    </td>
-                    <td>
-                      {% for signal_type in signal.signal_type.all %}
-                        <span class="badge rounded-pill bg-dark">{{ signal_type }}</span>
-                      {% endfor %}
-                    </td>
-                    <td>{{ signal.format }}</td>
-                    <td>{{ signal.time_label }}</td>
-                    <td>
                       {% if signal.base %}
                         <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a>
                       {% else %}
                         --/--
                       {% endif %}
-                    </td>
-                    <td>
-                      {% for link in signal.links.all %}
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><span class="badge rounded-pill bg-dark">{{ link.link_type }}</span> - <a href="{{ link.url }}">{{ link.url }}</a></li>
-                      </ul>
-                      {% endfor %}
                     </td>
                   </tr>
                   {% endfor %}
