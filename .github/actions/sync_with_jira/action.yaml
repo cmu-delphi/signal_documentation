@@ -14,14 +14,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: restrict action to labelled issues and issue comments
+    - name: restrict action to labelled issues
       run: |
         set -eux
 
         echo "NeedsJiraUpdate=false" >> $GITHUB_ENV
 
-        if [ ${{ github.event_name }} != "issues" ] && [ ${{ github.event_name }} != "issue_comment" ]; then
-          echo "This action only work on issue events. Please use on: issues or issue_comment to use this action."
+        if [ ${{ github.event_name }} != "issues" ]; then
+          echo "This action only work on issue events. Please use on: issues to use this action."
           exit 1
         fi
 
@@ -67,8 +67,6 @@ runs:
         title: ${{ github.event.issue.title }}
         body: ${{ github.event.issue.body }}
         author: ${{ github.event.issue.user.login }}
-        commentAuthor: ${{ github.actor }}
-        comment: ${{ github.event.comment.body }}
       run: |
         set -eux
 
@@ -82,15 +80,15 @@ runs:
 
           sudo apt install -y python3-mistletoe
           echo ${body} > $TMPDIR/body.md
-          echo ${comment} > $TMPDIR/comment.md
           body=$(PYTHONPATH=/usr/share/doc/python3-mistletoe mistletoe -r examples.jira_renderer.JIRARenderer $TMPDIR/body.md)
-          comment=$(PYTHONPATH=/usr/share/doc/python3-mistletoe mistletoe -r examples.jira_renderer.JIRARenderer $TMPDIR/comment.md)
         fi
 
         description="${body}
 
+
+        GitHub URL: ${id}.
+
         Opened by ${author}."
-        commentContent=""
 
         # Choose Jira action based on event type and action.
         action=""
@@ -106,18 +104,9 @@ runs:
           elif [ ${{ github.event.action }} == "closed" ]; then
             action=Close
           fi
-        else
-          action=AddComment
-          if [ ${{ github.event.action }} == "deleted" ]; then
-            echo "Deleting comment on Jira is not supported ATM, skipping."
-            exit 0
-          fi
-          # For now, editing comments will add a new one on Jira.
-          commentContent="From ${commentAuthor}:
-        ${comment}"
         fi
 
-        echo "PUSHING: $id $action $title $description $commentContent"
+        echo "PUSHING: $id $action $title $description"
 
         # Push to Jira as a json data format.
         data=$(jq -n \
@@ -125,8 +114,7 @@ runs:
                   --arg action "$action" \
                   --arg title "$title" \
                   --arg description "$description" \
-                  --arg commentContent "$commentContent" \
-                  '{data: {id: $id, action: $action, title: $title, description: $description, commentContent: $commentContent}}')
+                  '{data: {id: $id, action: $action, title: $title, description: $description}}')
         curl -X POST -H 'Content-type: application/json' --data "${data}" '${{ inputs.webhook-url }}'
 
       shell: bash
