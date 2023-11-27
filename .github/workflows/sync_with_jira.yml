@@ -1,0 +1,12 @@
+name: Sync GitHub issues to Jira example
+on: [issues, issue_comment]
+
+jobs:
+  sync-issues:
+    name: Sync issues to Jira
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./github/actions/sync_with_jira/
+        with:
+          webhook-url: https://automation.atlassian.com/pro/hooks/01e3a9679be4d3e0e0fb7c1654d5bb603b0111a0
