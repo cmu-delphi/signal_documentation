@@ -90,6 +90,7 @@ EXTERNAL_APPS: list[str] = [
     'health_check.storage',
     'health_check.contrib.migrations',
     'import_export',
+    'docs',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -265,3 +266,7 @@ GRAPH_MODELS: dict[str, Any] = {
   'app_labels': ["datasources"],
   'group_models': True,
 }
+
+# django docs
+# https://django-docs.readthedocs.io/en/latest/
+DOCS_ROOT = os.path.join(BASE_DIR, 'docs', 'build', 'html')

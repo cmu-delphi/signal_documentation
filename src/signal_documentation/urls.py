@@ -1,19 +1,3 @@
-"""
-URL configuration for signal_documentation project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -45,10 +29,22 @@ urlpatterns: list[URLResolver] = [
     path('__debug__/', include('debug_toolbar.urls')),
     path(f'{settings.MAIN_PAGE}/' if settings.MAIN_PAGE else '', include('signals.urls')),
 
+    # sphinx docs
+    path(f'{settings.MAIN_PAGE}/docs/' if settings.MAIN_PAGE else 'docs/', include('docs.urls')),
+
     # drf-spectacular
-    path("api/docs/schema/", SpectacularAPIView.as_view(), name="spectacular-schema"),
-    path("api/docs/swagger/", SpectacularSwaggerView.as_view(url_name="spectacular-schema"), name="swagger"),
-    path("api/docs/redoc/", SpectacularRedocView.as_view(url_name="spectacular-schema"), name="redoc"),
+    path(
+        f'{settings.MAIN_PAGE}/api/docs/schema/' if settings.MAIN_PAGE else 'api/docs/schema/',
+        SpectacularAPIView.as_view(), name="spectacular-schema"
+    ),
+    path(
+        f'{settings.MAIN_PAGE}/api/docs/swagger/' if settings.MAIN_PAGE else 'api/docs/swagger/',
+        SpectacularSwaggerView.as_view(url_name="spectacular-schema"), name="swagger"
+    ),
+    path(
+        f'{settings.MAIN_PAGE}/api/docs/redoc/' if settings.MAIN_PAGE else 'api/docs/redoc/',
+        SpectacularRedocView.as_view(url_name="spectacular-schema"), name="redoc"
+    ),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # type: ignore
