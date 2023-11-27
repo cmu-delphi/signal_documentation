@@ -10,10 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
-import sentry_sdk
 from pathlib import Path
 from typing import Any
 
+import sentry_sdk
 # Sentry init and config:
 # - If you want to use Sentry, specify the DSN via the env var of `SENTRY_DSN`.
 # - Useful defaults for a development environment are set below. They can be
@@ -81,6 +81,8 @@ EXTERNAL_APPS: list[str] = [
     'debug_toolbar',
     'django_extensions',
     'models_extensions',
+    'rest_framework',
+    'drf_spectacular',
     'django_filters',
     'health_check',
     'health_check.db',
@@ -88,6 +90,7 @@ EXTERNAL_APPS: list[str] = [
     'health_check.storage',
     'health_check.contrib.migrations',
     'import_export',
+    'docs',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -149,6 +152,53 @@ DATABASES: dict[str, dict[str, Any]] = {
         'PORT': os.environ.get('MYSQL_PORT', 3306),
     }
 }
+
+
+PAGE_SIZE = os.environ.get('PAGE_SIZE', 10)
+
+
+# Django REST framework
+# https://www.django-rest-framework.org/
+REST_FRAMEWORK = {
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": os.environ.get('PAGE_SIZE', PAGE_SIZE),
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        'rest_framework.parsers.JSONParser',
+        'rest_framework.parsers.MultiPartParser',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
+
+
+# DRF Spectacular settings
+# https://drf-spectacular.readthedocs.io/en/latest/settings.html
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Signal Documentation',
+    'DESCRIPTION': 'Signal Documentation API',
+    'VERSION': '1.0.0',
+    "COMPONENT_SPLIT_PATCH": True,
+    "COMPONENT_SPLIT_REQUEST": True,
+    'SERVE_PUBLIC': True,
+    'SCHEMA_PATH_PREFIX': '/api/v[0-9]',
+    'SWAGGER_UI_SETTINGS': {
+        'docExpansion': 'list',
+        'filter': True,
+        'tagsSorter': 'alpha',
+    },
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
 
 # Django chache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
@@ -216,3 +266,7 @@ GRAPH_MODELS: dict[str, Any] = {
   'app_labels': ["datasources"],
   'group_models': True,
 }
+
+# django docs
+# https://django-docs.readthedocs.io/en/latest/
+DOCS_ROOT = os.path.join(BASE_DIR, 'docs', 'build', 'html')

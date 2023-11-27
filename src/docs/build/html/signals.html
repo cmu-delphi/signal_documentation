@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>signals package &mdash; Signal Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="signals.migrations package" href="signals.migrations.html" />
+    <link rel="prev" title="datasources.tests package" href="datasources.tests.html" />
+</head>
+
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+          <a href="index.html" class="icon icon-home">
+            Signal Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview and installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Import data from admin interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Signal Documentation Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">base package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">signals package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html">signals.migrations package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html">signals.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.admin">signals.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.admin.GeographyAdmin"><code class="docutils literal notranslate"><span class="pre">GeographyAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.admin.PathogenAdmin"><code class="docutils literal notranslate"><span class="pre">PathogenAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.admin.SignalAdmin"><code class="docutils literal notranslate"><span class="pre">SignalAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.admin.SignalCategoryAdmin"><code class="docutils literal notranslate"><span class="pre">SignalCategoryAdmin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.admin.SignalTypeAdmin"><code class="docutils literal notranslate"><span class="pre">SignalTypeAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.apps">signals.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.apps.SignalsConfig"><code class="docutils literal notranslate"><span class="pre">SignalsConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.filters">signals.filters module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.filters.SignalFilter"><code class="docutils literal notranslate"><span class="pre">SignalFilter</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.models">signals.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.FormatChoices"><code class="docutils literal notranslate"><span class="pre">FormatChoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.HighValuesAreChoices"><code class="docutils literal notranslate"><span class="pre">HighValuesAreChoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.Pathogen"><code class="docutils literal notranslate"><span class="pre">Pathogen</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.Signal"><code class="docutils literal notranslate"><span class="pre">Signal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.SignalCategory"><code class="docutils literal notranslate"><span class="pre">SignalCategory</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.SignalType"><code class="docutils literal notranslate"><span class="pre">SignalType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.TimeLabelChoices"><code class="docutils literal notranslate"><span class="pre">TimeLabelChoices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.models.TimeTypeChoices"><code class="docutils literal notranslate"><span class="pre">TimeTypeChoices</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.resources">signals.resources module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.resources.SignalBaseResource"><code class="docutils literal notranslate"><span class="pre">SignalBaseResource</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.resources.SignalResource"><code class="docutils literal notranslate"><span class="pre">SignalResource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.urls">signals.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.views">signals.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.views.SignalsDetailView"><code class="docutils literal notranslate"><span class="pre">SignalsDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.views.SignalsListView"><code class="docutils literal notranslate"><span class="pre">SignalsListView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signal_documentation.html">signal_documentation package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Signal Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Signal Documentation Modules</a></li>
+      <li class="breadcrumb-item active">signals package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/signals.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <section id="signals-package">
+<h1>signals package<a class="headerlink" href="#signals-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="signals.migrations.html">signals.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="signals.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signals.migrations.html#module-signals.migrations.0001_initial">signals.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signals.migrations.html#signals.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.migrations.html#module-signals.migrations.0002_alter_signal_options_geography_created_and_more">signals.migrations.0002_alter_signal_options_geography_created_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signals.migrations.html#signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0002_alter_signal_options_geography_created_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.migrations.html#module-signals.migrations.0003_alter_signal_options">signals.migrations.0003_alter_signal_options module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signals.migrations.html#signals.migrations.0003_alter_signal_options.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0003_alter_signal_options.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html#signals.migrations.0003_alter_signal_options.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.migrations.html#module-signals.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signals.tests.html">signals.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="signals.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signals.tests.html#module-signals.tests.factories">signals.tests.factories module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.factories.GeographyFactory"><code class="docutils literal notranslate"><span class="pre">GeographyFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.GeographyFactory.name"><code class="docutils literal notranslate"><span class="pre">GeographyFactory.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.factories.PathogenFactory"><code class="docutils literal notranslate"><span class="pre">PathogenFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.PathogenFactory.name"><code class="docutils literal notranslate"><span class="pre">PathogenFactory.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalCategoryFactory"><code class="docutils literal notranslate"><span class="pre">SignalCategoryFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalCategoryFactory.name"><code class="docutils literal notranslate"><span class="pre">SignalCategoryFactory.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory"><code class="docutils literal notranslate"><span class="pre">SignalFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.active"><code class="docutils literal notranslate"><span class="pre">SignalFactory.active</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.category"><code class="docutils literal notranslate"><span class="pre">SignalFactory.category</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.description"><code class="docutils literal notranslate"><span class="pre">SignalFactory.description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.format"><code class="docutils literal notranslate"><span class="pre">SignalFactory.format</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_available_geography"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_available_geography</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_links"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_links</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_pathogens"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_pathogens</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_signal_types"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_signal_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.has_stderr"><code class="docutils literal notranslate"><span class="pre">SignalFactory.has_stderr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.high_values_are"><code class="docutils literal notranslate"><span class="pre">SignalFactory.high_values_are</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.is_cumulative"><code class="docutils literal notranslate"><span class="pre">SignalFactory.is_cumulative</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.is_smoothed"><code class="docutils literal notranslate"><span class="pre">SignalFactory.is_smoothed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.is_weighted"><code class="docutils literal notranslate"><span class="pre">SignalFactory.is_weighted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.name"><code class="docutils literal notranslate"><span class="pre">SignalFactory.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.short_description"><code class="docutils literal notranslate"><span class="pre">SignalFactory.short_description</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.source"><code class="docutils literal notranslate"><span class="pre">SignalFactory.source</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.time_label"><code class="docutils literal notranslate"><span class="pre">SignalFactory.time_label</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.time_type"><code class="docutils literal notranslate"><span class="pre">SignalFactory.time_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalTypeFactory"><code class="docutils literal notranslate"><span class="pre">SignalTypeFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalTypeFactory.name"><code class="docutils literal notranslate"><span class="pre">SignalTypeFactory.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.tests.html#module-signals.tests.test_models">signals.tests.test_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.test_models.SignalModelTest"><code class="docutils literal notranslate"><span class="pre">SignalModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_models.SignalModelTest.setUp"><code class="docutils literal notranslate"><span class="pre">SignalModelTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_models.SignalModelTest.test_signal_base_validation"><code class="docutils literal notranslate"><span class="pre">SignalModelTest.test_signal_base_validation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_models.SignalModelTest.test_signal_str"><code class="docutils literal notranslate"><span class="pre">SignalModelTest.test_signal_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.tests.html#module-signals.tests.test_views">signals.tests.test_views module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalDetailViewTest"><code class="docutils literal notranslate"><span class="pre">SignalDetailViewTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalDetailViewTest.setUp"><code class="docutils literal notranslate"><span class="pre">SignalDetailViewTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalDetailViewTest.test_signal_detail_view"><code class="docutils literal notranslate"><span class="pre">SignalDetailViewTest.test_signal_detail_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalDetailViewTest.test_signal_detail_view_context"><code class="docutils literal notranslate"><span class="pre">SignalDetailViewTest.test_signal_detail_view_context()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalListViewTest"><code class="docutils literal notranslate"><span class="pre">SignalListViewTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalListViewTest.setUp"><code class="docutils literal notranslate"><span class="pre">SignalListViewTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalListViewTest.test_signal_list_view"><code class="docutils literal notranslate"><span class="pre">SignalListViewTest.test_signal_list_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalListViewTest.test_signal_list_view_context"><code class="docutils literal notranslate"><span class="pre">SignalListViewTest.test_signal_list_view_context()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalListViewTest.test_signal_list_view_filters"><code class="docutils literal notranslate"><span class="pre">SignalListViewTest.test_signal_list_view_filters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.test_views.SignalListViewTest.test_signal_list_view_search"><code class="docutils literal notranslate"><span class="pre">SignalListViewTest.test_signal_list_view_search()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signals.tests.html#module-signals.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-signals.admin">
+<span id="signals-admin-module"></span><h2>signals.admin module<a class="headerlink" href="#module-signals.admin" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.admin.GeographyAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.admin.</span></span><span class="sig-name descname"><span class="pre">GeographyAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.admin.GeographyAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>Admin interface for managing geography objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.GeographyAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.GeographyAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="signals.admin.GeographyAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#signals.admin.GeographyAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.GeographyAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.GeographyAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.admin.PathogenAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.admin.</span></span><span class="sig-name descname"><span class="pre">PathogenAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.admin.PathogenAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>Admin interface for managing pathogen objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.PathogenAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.PathogenAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="signals.admin.PathogenAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#signals.admin.PathogenAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.PathogenAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.PathogenAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.admin.SignalAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.admin.</span></span><span class="sig-name descname"><span class="pre">SignalAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.admin.SignalAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ImportExportModelAdmin</span></code></p>
+<p>Admin interface for managing signal objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.SignalAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalAdmin.list_filter">
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'pathogen'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'available_geography'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'signal_type'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'format'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_smoothed'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_weighted'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_cumulative'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'has_stderr'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'has_sample_size'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('pathogen',</span> <span class="pre">'available_geography',</span> <span class="pre">'signal_type',</span> <span class="pre">'format',</span> <span class="pre">'is_smoothed',</span> <span class="pre">'is_weighted',</span> <span class="pre">'is_cumulative',</span> <span class="pre">'has_stderr',</span> <span class="pre">'has_sample_size')</span></em><a class="headerlink" href="#signals.admin.SignalAdmin.list_filter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="signals.admin.SignalAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#signals.admin.SignalAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalAdmin.resource_classes">
+<span class="sig-name descname"><span class="pre">resource_classes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#type" title="(in Python v3.12)"><span class="pre">type</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'signals.resources.SignalResource'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'signals.resources.SignalBaseResource'&gt;]</span></em><a class="headerlink" href="#signals.admin.SignalAdmin.resource_classes" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'description'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'short_description'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'description',</span> <span class="pre">'short_description')</span></em><a class="headerlink" href="#signals.admin.SignalAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.admin.SignalCategoryAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.admin.</span></span><span class="sig-name descname"><span class="pre">SignalCategoryAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.admin.SignalCategoryAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>Admin interface for managing signal category objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalCategoryAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.SignalCategoryAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="signals.admin.SignalCategoryAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#signals.admin.SignalCategoryAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalCategoryAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.SignalCategoryAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.admin.SignalTypeAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.admin.</span></span><span class="sig-name descname"><span class="pre">SignalTypeAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.admin.SignalTypeAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>Admin interface for managing signal type objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalTypeAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.SignalTypeAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="signals.admin.SignalTypeAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#signals.admin.SignalTypeAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.admin.SignalTypeAdmin.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'name'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',)</span></em><a class="headerlink" href="#signals.admin.SignalTypeAdmin.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.apps">
+<span id="signals-apps-module"></span><h2>signals.apps module<a class="headerlink" href="#module-signals.apps" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.apps.SignalsConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.apps.</span></span><span class="sig-name descname"><span class="pre">SignalsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.apps.SignalsConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.apps.SignalsConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#signals.apps.SignalsConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.apps.SignalsConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'signals'</span></em><a class="headerlink" href="#signals.apps.SignalsConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.filters">
+<span id="signals-filters-module"></span><h2>signals.filters module<a class="headerlink" href="#module-signals.filters" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.filters.SignalFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.filters.</span></span><span class="sig-name descname"><span class="pre">SignalFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.filters.SignalFilter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FilterSet</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.filters.SignalFilter.base_filters">
+<span class="sig-name descname"><span class="pre">base_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'available_geography':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'category':</span> <span class="pre">&lt;django_filters.filters.ModelChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'format':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'pathogen':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'search':</span> <span class="pre">&lt;django_filters.filters.CharFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'signal_type':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'source':</span> <span class="pre">&lt;django_filters.filters.ModelChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'time_label':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#signals.filters.SignalFilter.base_filters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.filters.SignalFilter.declared_filters">
+<span class="sig-name descname"><span class="pre">declared_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'search':</span> <span class="pre">&lt;django_filters.filters.CharFilter</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#signals.filters.SignalFilter.declared_filters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.filters.SignalFilter.filter_search">
+<span class="sig-name descname"><span class="pre">filter_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.filters.SignalFilter.filter_search" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.models">
+<span id="signals-models-module"></span><h2>signals.models module<a class="headerlink" href="#module-signals.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.FormatChoices">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">FormatChoices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.FormatChoices" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextChoices</span></code></p>
+<p>A class representing choices for formats.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.FormatChoices.COUNT">
+<span class="sig-name descname"><span class="pre">COUNT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'count'</span></em><a class="headerlink" href="#signals.models.FormatChoices.COUNT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.FormatChoices.FRACTION">
+<span class="sig-name descname"><span class="pre">FRACTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fraction'</span></em><a class="headerlink" href="#signals.models.FormatChoices.FRACTION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.FormatChoices.PER100K">
+<span class="sig-name descname"><span class="pre">PER100K</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'per100k'</span></em><a class="headerlink" href="#signals.models.FormatChoices.PER100K" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.FormatChoices.PERCENT">
+<span class="sig-name descname"><span class="pre">PERCENT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'percent'</span></em><a class="headerlink" href="#signals.models.FormatChoices.PERCENT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.FormatChoices.RAW">
+<span class="sig-name descname"><span class="pre">RAW</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'raw'</span></em><a class="headerlink" href="#signals.models.FormatChoices.RAW" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.Geography">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">Geography</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Geography" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
+<p>A model representing a available geography.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>created</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Created</p></li>
+<li><p><strong>modified</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Modified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Name. Name</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>signal</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – All signals of this geography (related name of <a class="reference internal" href="#signals.models.Signal.available_geography" title="signals.models.Signal.available_geography"><code class="xref py py-attr docutils literal notranslate"><span class="pre">available_geography</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.Geography.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#signals.models.Geography.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.Geography.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#signals.models.Geography.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Geography.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#signals.models.Geography.created" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Created</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Geography.get_next_by_created">
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Geography.get_next_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.Geography.created" title="signals.models.Geography.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Geography.get_next_by_modified">
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Geography.get_next_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.Geography.modified" title="signals.models.Geography.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Geography.get_previous_by_created">
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Geography.get_previous_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.Geography.created" title="signals.models.Geography.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Geography.get_previous_by_modified">
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Geography.get_previous_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.Geography.modified" title="signals.models.Geography.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Geography.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#signals.models.Geography.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Geography.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#signals.models.Geography.modified" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Modified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Geography.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#signals.models.Geography.name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Name. Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Geography.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.models.Geography.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Geography.signal_set">
+<span class="sig-name descname"><span class="pre">signal_set</span></span><a class="headerlink" href="#signals.models.Geography.signal_set" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>All signals of this geography (related name of <a class="reference internal" href="#signals.models.Signal.available_geography" title="signals.models.Signal.available_geography"><code class="xref py py-attr docutils literal notranslate"><span class="pre">available_geography</span></code></a>)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.HighValuesAreChoices">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">HighValuesAreChoices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.HighValuesAreChoices" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextChoices</span></code></p>
+<p>A class representing choices for high values.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.HighValuesAreChoices.BAD">
+<span class="sig-name descname"><span class="pre">BAD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bad'</span></em><a class="headerlink" href="#signals.models.HighValuesAreChoices.BAD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.HighValuesAreChoices.GOOD">
+<span class="sig-name descname"><span class="pre">GOOD</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'good'</span></em><a class="headerlink" href="#signals.models.HighValuesAreChoices.GOOD" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.HighValuesAreChoices.NEUTRAL">
+<span class="sig-name descname"><span class="pre">NEUTRAL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'neutral'</span></em><a class="headerlink" href="#signals.models.HighValuesAreChoices.NEUTRAL" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.Pathogen">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">Pathogen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Pathogen" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
+<p>A model representing a pathogen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>created</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Created</p></li>
+<li><p><strong>modified</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Modified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Name. Name</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>signals</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – All signals of this pathogen (related name of <a class="reference internal" href="#signals.models.Signal.pathogen" title="signals.models.Signal.pathogen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pathogen</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.Pathogen.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#signals.models.Pathogen.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.Pathogen.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#signals.models.Pathogen.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Pathogen.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#signals.models.Pathogen.created" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Created</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Pathogen.get_next_by_created">
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Pathogen.get_next_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.Pathogen.created" title="signals.models.Pathogen.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Pathogen.get_next_by_modified">
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Pathogen.get_next_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.Pathogen.modified" title="signals.models.Pathogen.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Pathogen.get_previous_by_created">
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Pathogen.get_previous_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.Pathogen.created" title="signals.models.Pathogen.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Pathogen.get_previous_by_modified">
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Pathogen.get_previous_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.Pathogen.modified" title="signals.models.Pathogen.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Pathogen.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#signals.models.Pathogen.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Pathogen.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#signals.models.Pathogen.modified" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Modified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Pathogen.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#signals.models.Pathogen.name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Name. Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Pathogen.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.models.Pathogen.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Pathogen.signals">
+<span class="sig-name descname"><span class="pre">signals</span></span><a class="headerlink" href="#signals.models.Pathogen.signals" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>All signals of this pathogen (related name of <a class="reference internal" href="#signals.models.Signal.pathogen" title="signals.models.Signal.pathogen"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pathogen</span></code></a>)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.Signal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">Signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
+<p>A model representing a signal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>created</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Created</p></li>
+<li><p><strong>modified</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Modified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Name. Name</p></li>
+<li><p><strong>display_name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Display name. Display Name</p></li>
+<li><p><strong>active</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Active. Active</p></li>
+<li><p><strong>short_description</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><em>TextField</em></a>) – Short description. Short Description</p></li>
+<li><p><strong>description</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><em>TextField</em></a>) – Description. Description</p></li>
+<li><p><strong>format</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Format. Format</p></li>
+<li><p><strong>time_type</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Time type. Time type</p></li>
+<li><p><strong>time_label</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Time label. Time label</p></li>
+<li><p><strong>is_smoothed</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Is smoothed. Is Smoothed</p></li>
+<li><p><strong>is_weighted</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Is weighted. Is Weighted</p></li>
+<li><p><strong>is_cumulative</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Is cumulative. Is Cumulative</p></li>
+<li><p><strong>has_stderr</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Has stderr. Has StdErr</p></li>
+<li><p><strong>has_sample_size</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Has sample size. Has Sample Size</p></li>
+<li><p><strong>high_values_are</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – High values are. High values are</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – Base. Signal base (related name: <a class="reference internal" href="#signals.models.Signal.base_for" title="signals.models.Signal.base_for"><code class="xref py py-attr docutils literal notranslate"><span class="pre">base_for</span></code></a>)</p></li>
+<li><p><strong>category</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#signals.models.SignalCategory" title="signals.models.SignalCategory"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalCategory</span></code></a>) – Category. Signal Category (related name: <a class="reference internal" href="#signals.models.SignalCategory.signals" title="signals.models.SignalCategory.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p></li>
+<li><p><strong>source</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision" title="datasources.models.SourceSubdivision"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceSubdivision</span></code></a>) – Source. Source Subdivision (related name: <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision.signals" title="datasources.models.SourceSubdivision.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p></li>
+<li><p><strong>pathogen</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="#signals.models.Pathogen" title="signals.models.Pathogen"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pathogen</span></code></a>) – Pathogen. Pathogen/Disease Area (related name: <a class="reference internal" href="#signals.models.Pathogen.signals" title="signals.models.Pathogen.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p></li>
+<li><p><strong>signal_type</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="#signals.models.SignalType" title="signals.models.SignalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code></a>) – Signal type. Signal Type (related name: <a class="reference internal" href="#signals.models.SignalType.signals" title="signals.models.SignalType.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p></li>
+<li><p><strong>links</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="base.html#base.models.Link" title="base.models.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a>) – Links. Signal links (related name: <a class="reference internal" href="base.html#base.models.Link.signals" title="base.models.Link.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p></li>
+<li><p><strong>available_geography</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="#signals.models.Geography" title="signals.models.Geography"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geography</span></code></a>) – Available geography. Available geography (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">signal</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>base_for</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – All base for of this signal (related name of <a class="reference internal" href="#signals.models.Signal.base" title="signals.models.Signal.base"><code class="xref py py-attr docutils literal notranslate"><span class="pre">base</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.Signal.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#signals.models.Signal.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.Signal.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#signals.models.Signal.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.active">
+<span class="sig-name descname"><span class="pre">active</span></span><a class="headerlink" href="#signals.models.Signal.active" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Active. Active</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.available_geography">
+<span class="sig-name descname"><span class="pre">available_geography</span></span><a class="headerlink" href="#signals.models.Signal.available_geography" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="#signals.models.Geography" title="signals.models.Geography"><code class="xref py py-class docutils literal notranslate"><span class="pre">Geography</span></code></a></p>
+<p>Available geography. Available geography (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">signal</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.base">
+<span class="sig-name descname"><span class="pre">base</span></span><a class="headerlink" href="#signals.models.Signal.base" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>Base. Signal base (related name: <a class="reference internal" href="#signals.models.Signal.base_for" title="signals.models.Signal.base_for"><code class="xref py py-attr docutils literal notranslate"><span class="pre">base_for</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.base_for">
+<span class="sig-name descname"><span class="pre">base_for</span></span><a class="headerlink" href="#signals.models.Signal.base_for" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>All base for of this signal (related name of <a class="reference internal" href="#signals.models.Signal.base" title="signals.models.Signal.base"><code class="xref py py-attr docutils literal notranslate"><span class="pre">base</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.base_id">
+<span class="sig-name descname"><span class="pre">base_id</span></span><a class="headerlink" href="#signals.models.Signal.base_id" title="Link to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#signals.models.Signal.base" title="signals.models.Signal.base"><code class="xref py py-class docutils literal notranslate"><span class="pre">base</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.category">
+<span class="sig-name descname"><span class="pre">category</span></span><a class="headerlink" href="#signals.models.Signal.category" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#signals.models.SignalCategory" title="signals.models.SignalCategory"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalCategory</span></code></a></p>
+<p>Category. Signal Category (related name: <a class="reference internal" href="#signals.models.SignalCategory.signals" title="signals.models.SignalCategory.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.category_id">
+<span class="sig-name descname"><span class="pre">category_id</span></span><a class="headerlink" href="#signals.models.Signal.category_id" title="Link to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#signals.models.Signal.category" title="signals.models.Signal.category"><code class="xref py py-class docutils literal notranslate"><span class="pre">category</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.models.Signal.clean" title="Link to this definition"></a></dt>
+<dd><p>Validate that the signal has a base if any other signals exist.</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>ValidationError: If there are other signals and this signal doesn’t have a base.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#signals.models.Signal.created" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Created</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#signals.models.Signal.description" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></a></p>
+<p>Description. Description</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.display_name">
+<span class="sig-name descname"><span class="pre">display_name</span></span><a class="headerlink" href="#signals.models.Signal.display_name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Display name. Display Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.format">
+<span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#signals.models.Signal.format" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Format. Format</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">percent</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fraction</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">per100k</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_format_display">
+<span class="sig-name descname"><span class="pre">get_format_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">format&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_format_display" title="Link to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#signals.models.Signal.format" title="signals.models.Signal.format"><code class="xref py py-attr docutils literal notranslate"><span class="pre">format</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_high_values_are_display">
+<span class="sig-name descname"><span class="pre">get_high_values_are_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">high_values_are&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_high_values_are_display" title="Link to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#signals.models.Signal.high_values_are" title="signals.models.Signal.high_values_are"><code class="xref py py-attr docutils literal notranslate"><span class="pre">high_values_are</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_next_by_created">
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_next_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.Signal.created" title="signals.models.Signal.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_next_by_modified">
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_next_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.Signal.modified" title="signals.models.Signal.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_previous_by_created">
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_previous_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.Signal.created" title="signals.models.Signal.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_previous_by_modified">
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_previous_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.Signal.modified" title="signals.models.Signal.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_time_label_display">
+<span class="sig-name descname"><span class="pre">get_time_label_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">time_label&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_time_label_display" title="Link to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#signals.models.Signal.time_label" title="signals.models.Signal.time_label"><code class="xref py py-attr docutils literal notranslate"><span class="pre">time_label</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.Signal.get_time_type_display">
+<span class="sig-name descname"><span class="pre">get_time_type_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">time_type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_time_type_display" title="Link to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#signals.models.Signal.time_type" title="signals.models.Signal.time_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">time_type</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.has_sample_size">
+<span class="sig-name descname"><span class="pre">has_sample_size</span></span><a class="headerlink" href="#signals.models.Signal.has_sample_size" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Has sample size. Has Sample Size</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.has_stderr">
+<span class="sig-name descname"><span class="pre">has_stderr</span></span><a class="headerlink" href="#signals.models.Signal.has_stderr" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Has stderr. Has StdErr</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.high_values_are">
+<span class="sig-name descname"><span class="pre">high_values_are</span></span><a class="headerlink" href="#signals.models.Signal.high_values_are" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>High values are. High values are</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bad</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">good</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">neutral</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#signals.models.Signal.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.is_cumulative">
+<span class="sig-name descname"><span class="pre">is_cumulative</span></span><a class="headerlink" href="#signals.models.Signal.is_cumulative" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Is cumulative. Is Cumulative</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.is_smoothed">
+<span class="sig-name descname"><span class="pre">is_smoothed</span></span><a class="headerlink" href="#signals.models.Signal.is_smoothed" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Is smoothed. Is Smoothed</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.is_weighted">
+<span class="sig-name descname"><span class="pre">is_weighted</span></span><a class="headerlink" href="#signals.models.Signal.is_weighted" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BooleanField</span></code></a></p>
+<p>Is weighted. Is Weighted</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.links">
+<span class="sig-name descname"><span class="pre">links</span></span><a class="headerlink" href="#signals.models.Signal.links" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="base.html#base.models.Link" title="base.models.Link"><code class="xref py py-class docutils literal notranslate"><span class="pre">Link</span></code></a></p>
+<p>Links. Signal links (related name: <a class="reference internal" href="base.html#base.models.Link.signals" title="base.models.Link.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#signals.models.Signal.modified" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Modified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#signals.models.Signal.name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Name. Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.models.Signal.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.pathogen">
+<span class="sig-name descname"><span class="pre">pathogen</span></span><a class="headerlink" href="#signals.models.Signal.pathogen" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="#signals.models.Pathogen" title="signals.models.Pathogen"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pathogen</span></code></a></p>
+<p>Pathogen. Pathogen/Disease Area (related name: <a class="reference internal" href="#signals.models.Pathogen.signals" title="signals.models.Pathogen.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.short_description">
+<span class="sig-name descname"><span class="pre">short_description</span></span><a class="headerlink" href="#signals.models.Signal.short_description" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TextField</span></code></a></p>
+<p>Short description. Short Description</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.signal_type">
+<span class="sig-name descname"><span class="pre">signal_type</span></span><a class="headerlink" href="#signals.models.Signal.signal_type" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> to <a class="reference internal" href="#signals.models.SignalType" title="signals.models.SignalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">SignalType</span></code></a></p>
+<p>Signal type. Signal Type (related name: <a class="reference internal" href="#signals.models.SignalType.signals" title="signals.models.SignalType.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.source">
+<span class="sig-name descname"><span class="pre">source</span></span><a class="headerlink" href="#signals.models.Signal.source" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision" title="datasources.models.SourceSubdivision"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceSubdivision</span></code></a></p>
+<p>Source. Source Subdivision (related name: <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision.signals" title="datasources.models.SourceSubdivision.signals"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signals</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.source_id">
+<span class="sig-name descname"><span class="pre">source_id</span></span><a class="headerlink" href="#signals.models.Signal.source_id" title="Link to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#signals.models.Signal.source" title="signals.models.Signal.source"><code class="xref py py-class docutils literal notranslate"><span class="pre">source</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.time_label">
+<span class="sig-name descname"><span class="pre">time_label</span></span><a class="headerlink" href="#signals.models.Signal.time_label" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Time label. Time label</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">week</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.Signal.time_type">
+<span class="sig-name descname"><span class="pre">time_type</span></span><a class="headerlink" href="#signals.models.Signal.time_type" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Time type. Time type</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">week</span></code></p></li>
+</ul>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.SignalCategory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">SignalCategory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalCategory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
+<p>A model representing a signal category.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>created</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Created</p></li>
+<li><p><strong>modified</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Modified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Name. Name</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>signals</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – All signals of this signal category (related name of <a class="reference internal" href="#signals.models.Signal.category" title="signals.models.Signal.category"><code class="xref py py-attr docutils literal notranslate"><span class="pre">category</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#signals.models.SignalCategory.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#signals.models.SignalCategory.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#signals.models.SignalCategory.created" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Created</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.get_next_by_created">
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalCategory.get_next_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.SignalCategory.created" title="signals.models.SignalCategory.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.get_next_by_modified">
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalCategory.get_next_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.SignalCategory.modified" title="signals.models.SignalCategory.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.get_previous_by_created">
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalCategory.get_previous_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.SignalCategory.created" title="signals.models.SignalCategory.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.get_previous_by_modified">
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalCategory.get_previous_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.SignalCategory.modified" title="signals.models.SignalCategory.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#signals.models.SignalCategory.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#signals.models.SignalCategory.modified" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Modified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#signals.models.SignalCategory.name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Name. Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.models.SignalCategory.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalCategory.signals">
+<span class="sig-name descname"><span class="pre">signals</span></span><a class="headerlink" href="#signals.models.SignalCategory.signals" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>All signals of this signal category (related name of <a class="reference internal" href="#signals.models.Signal.category" title="signals.models.Signal.category"><code class="xref py py-attr docutils literal notranslate"><span class="pre">category</span></code></a>)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.SignalType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">SignalType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
+<p>A model representing a signal type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>created</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Created</p></li>
+<li><p><strong>modified</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><em>DateTimeField</em></a>) – Modified</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Name. Name</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>signals</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – All signals of this signal type (related name of <a class="reference internal" href="#signals.models.Signal.signal_type" title="signals.models.Signal.signal_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signal_type</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.SignalType.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#signals.models.SignalType.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="signals.models.SignalType.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#signals.models.SignalType.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalType.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#signals.models.SignalType.created" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Created</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalType.get_next_by_created">
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalType.get_next_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.SignalType.created" title="signals.models.SignalType.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalType.get_next_by_modified">
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalType.get_next_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#signals.models.SignalType.modified" title="signals.models.SignalType.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalType.get_previous_by_created">
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalType.get_previous_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.SignalType.created" title="signals.models.SignalType.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.models.SignalType.get_previous_by_modified">
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.SignalType.get_previous_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#signals.models.SignalType.modified" title="signals.models.SignalType.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalType.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#signals.models.SignalType.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalType.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#signals.models.SignalType.modified" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Modified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalType.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#signals.models.SignalType.name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Name. Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalType.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.models.SignalType.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.SignalType.signals">
+<span class="sig-name descname"><span class="pre">signals</span></span><a class="headerlink" href="#signals.models.SignalType.signals" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>All signals of this signal type (related name of <a class="reference internal" href="#signals.models.Signal.signal_type" title="signals.models.Signal.signal_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">signal_type</span></code></a>)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.TimeLabelChoices">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">TimeLabelChoices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.TimeLabelChoices" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextChoices</span></code></p>
+<p>A class representing choices for time labels.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.TimeLabelChoices.DATE">
+<span class="sig-name descname"><span class="pre">DATE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'date'</span></em><a class="headerlink" href="#signals.models.TimeLabelChoices.DATE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.TimeLabelChoices.DAY">
+<span class="sig-name descname"><span class="pre">DAY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'day'</span></em><a class="headerlink" href="#signals.models.TimeLabelChoices.DAY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.TimeLabelChoices.WEEK">
+<span class="sig-name descname"><span class="pre">WEEK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'week'</span></em><a class="headerlink" href="#signals.models.TimeLabelChoices.WEEK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.models.TimeTypeChoices">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.models.</span></span><span class="sig-name descname"><span class="pre">TimeTypeChoices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.TimeTypeChoices" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextChoices</span></code></p>
+<p>A class representing choices for time types.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.TimeTypeChoices.DAY">
+<span class="sig-name descname"><span class="pre">DAY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'day'</span></em><a class="headerlink" href="#signals.models.TimeTypeChoices.DAY" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.models.TimeTypeChoices.WEEK">
+<span class="sig-name descname"><span class="pre">WEEK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'week'</span></em><a class="headerlink" href="#signals.models.TimeTypeChoices.WEEK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.resources">
+<span id="signals-resources-module"></span><h2>signals.resources module<a class="headerlink" href="#module-signals.resources" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.resources.SignalBaseResource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.resources.</span></span><span class="sig-name descname"><span class="pre">SignalBaseResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.resources.SignalBaseResource" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelResource</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalBaseResource.before_import_row">
+<span class="sig-name descname"><span class="pre">before_import_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.resources.SignalBaseResource.before_import_row" title="Link to this definition"></a></dt>
+<dd><p>Post-processes each row after importing.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.resources.SignalBaseResource.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'base':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">base&gt;,</span> <span class="pre">'display_name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Name&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Signal&gt;,</span> <span class="pre">'source':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Source</span> <span class="pre">Subdivision&gt;}</span></em><a class="headerlink" href="#signals.resources.SignalBaseResource.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalBaseResource.process_base">
+<span class="sig-name descname"><span class="pre">process_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.resources.SignalBaseResource.process_base" title="Link to this definition"></a></dt>
+<dd><p>Processes base.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.resources.SignalResource">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.resources.</span></span><span class="sig-name descname"><span class="pre">SignalResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.resources.SignalResource" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelResource</span></code></p>
+<p>Resource class for importing and exporting Signal models.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalResource.before_import_row">
+<span class="sig-name descname"><span class="pre">before_import_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.resources.SignalResource.before_import_row" title="Link to this definition"></a></dt>
+<dd><p>Pre-processes each row before importing.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.resources.SignalResource.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'active':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Active&gt;,</span> <span class="pre">'available_geography':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Available</span> <span class="pre">Geography&gt;,</span> <span class="pre">'category':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Category&gt;,</span> <span class="pre">'description':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Description&gt;,</span> <span class="pre">'display_name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Name&gt;,</span> <span class="pre">'format':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Format&gt;,</span> <span class="pre">'has_sample_size':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Has</span> <span class="pre">Sample</span> <span class="pre">Size&gt;,</span> <span class="pre">'has_stderr':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Has</span> <span class="pre">StdErr&gt;,</span> <span class="pre">'high_values_are':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">High</span> <span class="pre">Values</span> <span class="pre">Are&gt;,</span> <span class="pre">'is_cumulative':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Is</span> <span class="pre">Cumulative&gt;,</span> <span class="pre">'is_smoothed':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Is</span> <span class="pre">Smoothed&gt;,</span> <span class="pre">'is_weighted':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Is</span> <span class="pre">Weighted&gt;,</span> <span class="pre">'links':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Links&gt;,</span> <span class="pre">'name':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Signal&gt;,</span> <span class="pre">'pathogen':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Pathogen/</span> <span class="pre">Disease</span> <span class="pre">Area&gt;,</span> <span class="pre">'short_description':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Short</span> <span class="pre">Description&gt;,</span> <span class="pre">'signal_type':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Signal</span> <span class="pre">Type&gt;,</span> <span class="pre">'source':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Source</span> <span class="pre">Subdivision&gt;,</span> <span class="pre">'time_label':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Time</span> <span class="pre">Label&gt;,</span> <span class="pre">'time_type':</span> <span class="pre">&lt;import_export.fields.Field:</span> <span class="pre">Time</span> <span class="pre">Type&gt;}</span></em><a class="headerlink" href="#signals.resources.SignalResource.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalResource.fix_boolean_fields">
+<span class="sig-name descname"><span class="pre">fix_boolean_fields</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.12)"><span class="pre">list</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.resources.SignalResource.fix_boolean_fields" title="Link to this definition"></a></dt>
+<dd><p>Fixes boolean fields.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalResource.is_url_in_domain">
+<span class="sig-name descname"><span class="pre">is_url_in_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">domain</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.resources.SignalResource.is_url_in_domain" title="Link to this definition"></a></dt>
+<dd><p>Checks if a URL belongs to a specific domain.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalResource.process_links">
+<span class="sig-name descname"><span class="pre">process_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.resources.SignalResource.process_links" title="Link to this definition"></a></dt>
+<dd><p>Processes links.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.resources.SignalResource.process_pathogen">
+<span class="sig-name descname"><span class="pre">process_pathogen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.resources.SignalResource.process_pathogen" title="Link to this definition"></a></dt>
+<dd><p>Processes pathogen.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.urls">
+<span id="signals-urls-module"></span><h2>signals.urls module<a class="headerlink" href="#module-signals.urls" title="Link to this heading"></a></h2>
+</section>
+<section id="module-signals.views">
+<span id="signals-views-module"></span><h2>signals.views module<a class="headerlink" href="#module-signals.views" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.views.SignalsDetailView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.views.</span></span><span class="sig-name descname"><span class="pre">SignalsDetailView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsDetailView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetailView</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.views.SignalsDetailView.dispatch">
+<span class="sig-name descname"><span class="pre">dispatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsDetailView.dispatch" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsDetailView.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#signals.views.SignalsDetailView.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.views.SignalsListView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.views.</span></span><span class="sig-name descname"><span class="pre">SignalsListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsListView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/generic-display/#django.views.generic.list.ListView" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListView</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.views.SignalsListView.get_context_data">
+<span class="sig-name descname"><span class="pre">get_context_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#signals.views.SignalsListView.get_context_data" title="Link to this definition"></a></dt>
+<dd><p>Get the context for this view.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.views.SignalsListView.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.views.SignalsListView.get_queryset" title="Link to this definition"></a></dt>
+<dd><p>Return the list of items for this view.</p>
+<p>The return value must be an iterable and may be an instance of
+<cite>QuerySet</cite> in which case <cite>QuerySet</cite> specific behavior will be enabled.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListView.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#signals.views.SignalsListView.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListView.paginate_by">
+<span class="sig-name descname"><span class="pre">paginate_by</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">10</span></em><a class="headerlink" href="#signals.views.SignalsListView.paginate_by" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'signals/signal_list.html'</span></em><a class="headerlink" href="#signals.views.SignalsListView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-signals" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datasources.tests.html" class="btn btn-neutral float-left" title="datasources.tests package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="signals.migrations.html" class="btn btn-neutral float-right" title="signals.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, cmu.edu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>
