@@ -152,9 +152,9 @@
           </div>
           <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.format.label }}</h5>
-              <select name="{{ filter.form.format.name }}" class="form-select">
-                {% for choice in filter.form.format.field.choices %}
+              <h5 class="card-title">{{ filter.form.format_type.label }}</h5>
+              <select name="{{ filter.form.format_type.name }}" class="form-select">
+                {% for choice in filter.form.format_type.field.choices %}
                   <option value="{{ choice.0 }}">{{ choice.1 }}</option>
                 {% endfor %}
               </select>

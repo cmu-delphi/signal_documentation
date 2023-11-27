@@ -17,6 +17,10 @@ from signals.models import (
 
 
 class SignalBaseResource(resources.ModelResource):
+    """
+    Resource class for importing Signals base.
+    """
+
     name = Field(attribute='name', column_name='Signal')
     display_name = Field(attribute='display_name', column_name='Name')
     base = Field(
@@ -49,7 +53,9 @@ class SignalBaseResource(resources.ModelResource):
 
 
 class SignalResource(resources.ModelResource):
-    """Resource class for importing and exporting Signal models."""
+    """
+    Resource class for importing and exporting Signal models
+    """
 
     name = Field(attribute='name', column_name='Signal')
     display_name = Field(attribute='display_name', column_name='Name')
@@ -122,19 +128,26 @@ class SignalResource(resources.ModelResource):
         import_id_fields: list[str] = ['name', 'source', 'display_name']
 
     def before_import_row(self, row, **kwargs) -> None:
-        """Pre-processes each row before importing."""
+        """
+        Pre-processes each row before importing.
+        """
+
         self.fix_boolean_fields(row, ['Active', 'Is Smoothed', 'Is Weighted', 'Is Cumulative', 'Has StdErr', 'Has Sample Size'])
         self.process_links(row)
         self.process_pathogen(row)
 
     def is_url_in_domain(self, url, domain) -> Any:
-        """Checks if a URL belongs to a specific domain."""
+        """
+        Checks if a URL belongs to a specific domain.
+        """
 
         parsed_url: Any = urlparse(url)
         return parsed_url.netloc == domain
 
     def fix_boolean_fields(self, row, fields: list) -> Any:
-        """Fixes boolean fields."""
+        """
+        Fixes boolean fields.
+        """
 
         for k in fields:
             if row[k] == 'TRUE':
@@ -144,7 +157,9 @@ class SignalResource(resources.ModelResource):
         return row
 
     def process_links(self, row) -> Any:
-        """Processes links."""
+        """
+        Processes links.
+        """
 
         row['Links'] = ''
         if row['Link']:
@@ -170,7 +185,9 @@ class SignalResource(resources.ModelResource):
         return row
 
     def process_pathogen(self, row) -> None:
-        """Processes pathogen."""
+        """
+        Processes pathogen.
+        """
 
         if row['Pathogen/ Disease Area']:
             pathogens: str = row['Pathogen/ Disease Area'].split(',')

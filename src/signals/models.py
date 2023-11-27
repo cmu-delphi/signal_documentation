@@ -177,7 +177,7 @@ class Signal(TimeStampedModel):
         null=True,
         blank=True
     )
-    format = models.CharField(
+    format_type = models.CharField(
         help_text=_('Format'),
         max_length=128,
         choices=FormatChoices.choices
