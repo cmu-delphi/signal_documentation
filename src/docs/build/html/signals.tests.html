@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>signals.tests package &mdash; Signal Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="signal_documentation package" href="signal_documentation.html" />
+    <link rel="prev" title="signals.migrations package" href="signals.migrations.html" />
+</head>
+
+<body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+
+
+          <a href="index.html" class="icon icon-home">
+            Signal Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview and installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Import data from admin interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Signal Documentation Modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="base.html">base package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="signals.html">signals package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="signals.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="signals.migrations.html">signals.migrations package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">signals.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.admin">signals.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.apps">signals.apps module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.filters">signals.filters module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.models">signals.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.resources">signals.resources module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.urls">signals.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals.views">signals.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="signals.html#module-signals">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="signal_documentation.html">signal_documentation package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Signal Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Signal Documentation Modules</a></li>
+          <li class="breadcrumb-item"><a href="signals.html">signals package</a></li>
+      <li class="breadcrumb-item active">signals.tests package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/signals.tests.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+
+  <section id="signals-tests-package">
+<h1>signals.tests package<a class="headerlink" href="#signals-tests-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-signals.tests.factories">
+<span id="signals-tests-factories-module"></span><h2>signals.tests.factories module<a class="headerlink" href="#module-signals.tests.factories" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.factories.GeographyFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.factories.</span></span><span class="sig-name descname"><span class="pre">GeographyFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.factories.GeographyFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>A factory for the Geography model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.GeographyFactory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.GeographyFactory.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.factories.PathogenFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.factories.</span></span><span class="sig-name descname"><span class="pre">PathogenFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.factories.PathogenFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>A factory for the Pathogen model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.PathogenFactory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.PathogenFactory.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalCategoryFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.factories.</span></span><span class="sig-name descname"><span class="pre">SignalCategoryFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.factories.SignalCategoryFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>A factory for the SignalCategory model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalCategoryFactory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalCategoryFactory.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.factories.</span></span><span class="sig-name descname"><span class="pre">SignalFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.factories.SignalFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>A factory for the Signal model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.active">
+<span class="sig-name descname"><span class="pre">active</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.active" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.category">
+<span class="sig-name descname"><span class="pre">category</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.SubFactory</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.category" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Economic</span> <span class="pre">political</span> <span class="pre">method</span> <span class="pre">return</span> <span class="pre">involve</span> <span class="pre">doctor.\nMoney</span> <span class="pre">here</span> <span class="pre">practice</span> <span class="pre">part</span> <span class="pre">full.</span> <span class="pre">Beyond</span> <span class="pre">their</span> <span class="pre">wonder</span> <span class="pre">program.</span> <span class="pre">Message</span> <span class="pre">five</span> <span class="pre">wind</span> <span class="pre">now.\nDinner</span> <span class="pre">most</span> <span class="pre">safe</span> <span class="pre">level</span> <span class="pre">card</span> <span class="pre">out</span> <span class="pre">art.</span> <span class="pre">Career</span> <span class="pre">away</span> <span class="pre">southern.</span> <span class="pre">Tv</span> <span class="pre">conference</span> <span class="pre">also</span> <span class="pre">baby</span> <span class="pre">gun.</span> <span class="pre">Seat</span> <span class="pre">find</span> <span class="pre">eat</span> <span class="pre">seven</span> <span class="pre">west</span> <span class="pre">stock.\nFirst</span> <span class="pre">air</span> <span class="pre">pretty</span> <span class="pre">pass</span> <span class="pre">economic</span> <span class="pre">model</span> <span class="pre">maybe.\nNation</span> <span class="pre">civil</span> <span class="pre">movie</span> <span class="pre">through.</span> <span class="pre">Less</span> <span class="pre">worker</span> <span class="pre">economy</span> <span class="pre">compare</span> <span class="pre">cost</span> <span class="pre">sure.</span> <span class="pre">Stop</span> <span class="pre">friend</span> <span class="pre">Mr</span> <span class="pre">letter</span> <span class="pre">economy.\nParticipant</span> <span class="pre">beat</span> <span class="pre">left</span> <span class="pre">garden</span> <span class="pre">able.</span> <span class="pre">Defense</span> <span class="pre">allow</span> <span class="pre">big</span> <span class="pre">its.'</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.format">
+<span class="sig-name descname"><span class="pre">format</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'per100k'</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.format" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.generate_available_geography">
+<span class="sig-name descname"><span class="pre">generate_available_geography</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.PostGeneration</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.generate_available_geography" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.generate_links">
+<span class="sig-name descname"><span class="pre">generate_links</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.PostGeneration</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.generate_links" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.generate_pathogens">
+<span class="sig-name descname"><span class="pre">generate_pathogens</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.PostGeneration</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.generate_pathogens" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.generate_signal_types">
+<span class="sig-name descname"><span class="pre">generate_signal_types</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.PostGeneration</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.generate_signal_types" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.has_stderr">
+<span class="sig-name descname"><span class="pre">has_stderr</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.has_stderr" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.high_values_are">
+<span class="sig-name descname"><span class="pre">high_values_are</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bad'</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.high_values_are" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.is_cumulative">
+<span class="sig-name descname"><span class="pre">is_cumulative</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.is_cumulative" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.is_smoothed">
+<span class="sig-name descname"><span class="pre">is_smoothed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.is_smoothed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.is_weighted">
+<span class="sig-name descname"><span class="pre">is_weighted</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.is_weighted" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.short_description">
+<span class="sig-name descname"><span class="pre">short_description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Activity</span> <span class="pre">down</span> <span class="pre">summer</span> <span class="pre">magazine</span> <span class="pre">form</span> <span class="pre">form</span> <span class="pre">focus</span> <span class="pre">management.</span> <span class="pre">Everything</span> <span class="pre">likely</span> <span class="pre">hotel</span> <span class="pre">performance.\nAvailable</span> <span class="pre">behind</span> <span class="pre">they.</span> <span class="pre">Sound</span> <span class="pre">specific</span> <span class="pre">policy.\nBegin</span> <span class="pre">he</span> <span class="pre">set</span> <span class="pre">beat</span> <span class="pre">south</span> <span class="pre">deep</span> <span class="pre">owner.</span> <span class="pre">Million</span> <span class="pre">allow</span> <span class="pre">thought</span> <span class="pre">order</span> <span class="pre">act.</span> <span class="pre">The</span> <span class="pre">night</span> <span class="pre">five</span> <span class="pre">image</span> <span class="pre">number</span> <span class="pre">determine.\nHour</span> <span class="pre">one</span> <span class="pre">now</span> <span class="pre">defense</span> <span class="pre">wonder</span> <span class="pre">success</span> <span class="pre">name.</span> <span class="pre">Senior</span> <span class="pre">strategy</span> <span class="pre">door</span> <span class="pre">experience</span> <span class="pre">least</span> <span class="pre">state</span> <span class="pre">decade</span> <span class="pre">view.\nVoice</span> <span class="pre">create</span> <span class="pre">some</span> <span class="pre">fish.</span> <span class="pre">Half</span> <span class="pre">wrong</span> <span class="pre">major.</span> <span class="pre">Place</span> <span class="pre">rule</span> <span class="pre">show</span> <span class="pre">college.'</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.short_description" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.source">
+<span class="sig-name descname"><span class="pre">source</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.SubFactory</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.source" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.time_label">
+<span class="sig-name descname"><span class="pre">time_label</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'week'</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.time_label" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalFactory.time_type">
+<span class="sig-name descname"><span class="pre">time_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'week'</span></em><a class="headerlink" href="#signals.tests.factories.SignalFactory.time_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalTypeFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.factories.</span></span><span class="sig-name descname"><span class="pre">SignalTypeFactory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.factories.SignalTypeFactory" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">DjangoModelFactory</span></code></p>
+<p>A factory for the SignalType model.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.tests.factories.SignalTypeFactory.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;factory.declarations.Sequence</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#signals.tests.factories.SignalTypeFactory.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.tests.test_models">
+<span id="signals-tests-test-models-module"></span><h2>signals.tests.test_models module<a class="headerlink" href="#module-signals.tests.test_models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.test_models.SignalModelTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.test_models.</span></span><span class="sig-name descname"><span class="pre">SignalModelTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_models.SignalModelTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/testing/tools/#django.test.TestCase" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_models.SignalModelTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_models.SignalModelTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_models.SignalModelTest.test_signal_base_validation">
+<span class="sig-name descname"><span class="pre">test_signal_base_validation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_models.SignalModelTest.test_signal_base_validation" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_models.SignalModelTest.test_signal_str">
+<span class="sig-name descname"><span class="pre">test_signal_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_models.SignalModelTest.test_signal_str" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.tests.test_views">
+<span id="signals-tests-test-views-module"></span><h2>signals.tests.test_views module<a class="headerlink" href="#module-signals.tests.test_views" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalDetailViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.test_views.</span></span><span class="sig-name descname"><span class="pre">SignalDetailViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalDetailViewTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/testing/tools/#django.test.TestCase" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalDetailViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalDetailViewTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalDetailViewTest.test_signal_detail_view">
+<span class="sig-name descname"><span class="pre">test_signal_detail_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalDetailViewTest.test_signal_detail_view" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalDetailViewTest.test_signal_detail_view_context">
+<span class="sig-name descname"><span class="pre">test_signal_detail_view_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalDetailViewTest.test_signal_detail_view_context" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalListViewTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.tests.test_views.</span></span><span class="sig-name descname"><span class="pre">SignalListViewTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalListViewTest" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/testing/tools/#django.test.TestCase" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalListViewTest.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalListViewTest.setUp" title="Link to this definition"></a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalListViewTest.test_signal_list_view">
+<span class="sig-name descname"><span class="pre">test_signal_list_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalListViewTest.test_signal_list_view" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalListViewTest.test_signal_list_view_context">
+<span class="sig-name descname"><span class="pre">test_signal_list_view_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalListViewTest.test_signal_list_view_context" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalListViewTest.test_signal_list_view_filters">
+<span class="sig-name descname"><span class="pre">test_signal_list_view_filters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalListViewTest.test_signal_list_view_filters" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.tests.test_views.SignalListViewTest.test_signal_list_view_search">
+<span class="sig-name descname"><span class="pre">test_signal_list_view_search</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.tests.test_views.SignalListViewTest.test_signal_list_view_search" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-signals.tests" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="signals.migrations.html" class="btn btn-neutral float-left" title="signals.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="signal_documentation.html" class="btn btn-neutral float-right" title="signal_documentation package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, cmu.edu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+</body>
+</html>
