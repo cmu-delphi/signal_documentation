@@ -76,7 +76,6 @@ DEFAULT_APPS: list[str] = [
 ]
 
 EXTERNAL_APPS: list[str] = [
-    'bootstrap5',
     'corsheaders',
     'debug_toolbar',
     'django_extensions',
