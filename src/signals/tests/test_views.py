@@ -14,7 +14,7 @@ fake = Faker()
 class SignalListViewTest(TestCase):
 
     def setUp(self):
-        for i in range(fake.random_int(min=1, max=100)):
+        for _ in range(fake.random_int(min=1, max=100)):
             SignalFactory()
 
     def test_signal_list_view(self):
