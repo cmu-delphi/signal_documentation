@@ -112,7 +112,6 @@ The project documentation is generated and served using the following tools:
 5. [drf-spectacular](https://drf-spectacular.readthedocs.io/en/latest/>).
 
 ### Read the docs (Sphynx)
-
 Auto generated documentation for the project web appplication is available at the following URL.
 
 ``http://localhost:8000/<MAIN_PAGE>/docs/index.html``
@@ -132,13 +131,11 @@ To generate the documentation, run the following commands:
 ```
 
 ### Swagger
-
 Auto generated swagger documentation for the project web appplication is available at the following URL.
 
 ``http://localhost:8000/<MAIN_PAGE>/api/docs/swagger/``
 
 ### Redoc
-
 Auto generated redoc documentation for the project web appplication is available at the following URL.
 
 ``http://localhost:8000/<MAIN_PAGE>/api/docs/redoc/``
