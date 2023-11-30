@@ -1,4 +1,4 @@
-name: Sync GitHub issues to Jira example
+name: Sync GitHub issues to Jira
 on: [issues]
 
 jobs:
@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/sync_with_jira/
         with:
-          webhook-url: https://automation.atlassian.com/pro/hooks/01e3a9679be4d3e0e0fb7c1654d5bb603b0111a0
+          webhook-url: ${{ secrets.JIRA_WEBHOOK }}
