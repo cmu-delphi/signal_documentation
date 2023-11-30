@@ -35,7 +35,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -91,7 +91,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6776f4;
+  background: #D3D4D8;
   color: #F0F1F3;
 }
 
