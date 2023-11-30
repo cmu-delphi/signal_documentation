@@ -19,6 +19,7 @@ class SignalFilter(django_filters.FilterSet):
         fields: list[str] = [
             'search',
             'pathogen',
+            'active',
             'available_geography',
             'signal_type',
             'category',
