@@ -55,7 +55,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#django-admin-web-interface">Django admin web interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#read-the-docs-sphynx">Read the docs (Sphynx)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#read-the-docs-sphynx">Read the docs (Sphynx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#swagger">Swagger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#redoc">Redoc</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data_import.html">Import data from admin interface</a></li>
@@ -195,8 +200,18 @@ interaction with systems managed by devops folks.</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/admin</span></code></p>
 <p>The user should have <code class="docutils literal notranslate"><span class="pre">is_staff</span></code> or <code class="docutils literal notranslate"><span class="pre">is_superuser</span></code> permissions to access the admin interface.</p>
 </section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>The project documentation is generated and served using the following tools:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphynx</a>.</p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-django.readthedocs.io/en/latest/">sphinxcontrib-django</a>.</p></li>
+<li><p><a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">sphinx_rtd_theme</a>.</p></li>
+<li><p><a class="reference external" href="https://django-docs.readthedocs.io/en/latest/">django-docs</a>.</p></li>
+<li><p><a class="reference external" href="https://drf-spectacular.readthedocs.io/en/latest/">drf-spectacular</a>.</p></li>
+</ol>
 <section id="read-the-docs-sphynx">
-<h2>Read the docs (Sphynx)<a class="headerlink" href="#read-the-docs-sphynx" title="Link to this heading"></a></h2>
+<h3>Read the docs (Sphynx)<a class="headerlink" href="#read-the-docs-sphynx" title="Link to this heading"></a></h3>
 <p>Auto generated documentation for the project web appplication is available at the following URL.</p>
 <p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/&lt;MAIN_PAGE&gt;/docs/index.html</span></code></p>
 <p>To clean the documentation, run the following commands:</p>
@@ -209,6 +224,17 @@ $<span class="w"> </span>make<span class="w"> </span>clean
 $<span class="w"> </span>make<span class="w"> </span>html
 </pre></div>
 </div>
+</section>
+<section id="swagger">
+<h3>Swagger<a class="headerlink" href="#swagger" title="Link to this heading"></a></h3>
+<p>Auto generated swagger documentation for the project web appplication is available at the following URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/&lt;MAIN_PAGE&gt;/api/docs/swagger/</span></code></p>
+</section>
+<section id="redoc">
+<h3>Redoc<a class="headerlink" href="#redoc" title="Link to this heading"></a></h3>
+<p>Auto generated redoc documentation for the project web appplication is available at the following URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/&lt;MAIN_PAGE&gt;/api/docs/redoc/</span></code></p>
+</section>
 </section>
 </section>
 

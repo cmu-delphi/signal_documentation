@@ -101,8 +101,44 @@ Changes of this sort should be carefully evaluated as they may require interacti
 ## [Django admin](https://docs.djangoproject.com/en/4.1/ref/contrib/admin/) web interface (user should be `is_staff` or `is_superuser`)
 `http://localhost:8000/admin`
 
-## Read the docs (Sphynx)
-`http://localhost:8000/<MAIN_PAGE>/docs/index.html`
+## Documentation
+
+The project documentation is generated and served using the following tools:
+
+1. [Sphynx](https://www.sphinx-doc.org/en/master/).
+2. [sphinxcontrib-django](https://sphinxcontrib-django.readthedocs.io/en/latest/>).
+3. [sphinx_rtd_theme](https://sphinx-rtd-theme.readthedocs.io/en/stable/).
+4. [django-docs](https://django-docs.readthedocs.io/en/latest/>).
+5. [drf-spectacular](https://drf-spectacular.readthedocs.io/en/latest/>).
+
+### Read the docs (Sphynx)
+Auto generated documentation for the project web appplication is available at the following URL.
+
+``http://localhost:8000/<MAIN_PAGE>/docs/index.html``
+
+To clean the documentation, run the following commands:
+
+```sh
+   $ cd ./docs
+   $ make clean
+```
+
+To generate the documentation, run the following commands:
+
+```sh
+   $ cd ./docs
+   $ make html
+```
+
+### Swagger
+Auto generated swagger documentation for the project web appplication is available at the following URL.
+
+``http://localhost:8000/<MAIN_PAGE>/api/docs/swagger/``
+
+### Redoc
+Auto generated redoc documentation for the project web appplication is available at the following URL.
+
+``http://localhost:8000/<MAIN_PAGE>/api/docs/redoc/``
 
 
 
