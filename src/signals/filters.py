@@ -2,7 +2,7 @@ from typing import Any
 
 import django_filters
 from django.db.models import Q
-from django_filters.filters import CharFilter
+from django_filters.filters import CharFilter, BooleanFilter
 
 from signals.models import Signal
 
@@ -44,7 +44,10 @@ class SignalFilter(django_filters.FilterSet):
         if not value:
             return queryset
 
-        queries: list[Q] = [Q((f'{field}__icontains', value)) for field in ['name', 'description', 'short_description']]
+        if self.data.get("match_substring"):
+            queries: list[Q] = [Q((f'{field}__icontains', value)) for field in ['name', 'description', 'short_description']]
+        else:
+            queries: list[Q] = [Q((f'{field}__iregex', fr"\b{value}\b")) for field in ['name', 'description', 'short_description']]
         query: Q = queries.pop()
 
         for item in queries:

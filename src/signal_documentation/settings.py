@@ -144,10 +144,10 @@ WSGI_APPLICATION: str = 'signal_documentation.wsgi.application'
 DATABASES: dict[str, dict[str, Any]] = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_DATABASE', None),
-        'USER': os.environ.get('MYSQL_USER', None),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD', None),
-        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
+        'NAME': os.environ.get('MYSQL_DATABASE', "mysql_database"),
+        'USER': os.environ.get('MYSQL_USER', "mysql_user"),
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD', "mysql_password"),
+        'HOST': "docker.for.win.localhost",
         'PORT': os.environ.get('MYSQL_PORT', 3306),
     }
 }

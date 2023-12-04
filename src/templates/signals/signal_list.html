@@ -86,7 +86,14 @@
           <div class="form-group">
             <div class="card-body">
               <h5 class="card-title">Search</h5>
-              <input class="form-control" type="text" id="search" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
+              <input class="form-control" type="text" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
+
+              <div class="form-check mt-3">
+                <input class="form-check-input" type="checkbox" id="match_substring" name="match_substring">
+                <label class="form-check-label" for="match_substring">
+                  match substring
+                </label>
+              </div>
             </div>
           <div class="form-group">
             <div class="card-body">
