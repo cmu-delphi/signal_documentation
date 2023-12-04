@@ -2,7 +2,7 @@ from typing import Any
 
 import django_filters
 from django.db.models import Q
-from django_filters.filters import CharFilter, BooleanFilter
+from django_filters.filters import CharFilter
 
 from signals.models import Signal
 
