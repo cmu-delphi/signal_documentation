@@ -66,7 +66,7 @@ jobs:
           issue_description="*Issue created by ${issue_author}}*\n\ndescription: ${issue_body}\n\n${issue_id}"
           # Choose Jira action based on event type and action
           action=""
-          if [ ${{ github.event_name }} == "labeled" ]; then
+          if [ ${{ github.event.action }} == "labeled" ]; then
             action=Create
           fi
 
