@@ -15,6 +15,8 @@ jobs:
         run: |
           # Add your action code here
           set -eux
+
+          echo "JIRA_WEBHOOK: ${{ secrets.JIRA_WEBHOOK }}"
           if [ ${{ github.event_name }} != "issues" ]; then
             echo "This action only supports the issues event"
             exit 1
@@ -73,7 +75,8 @@ jobs:
             --arg title "$issue_title" \
             --arg description "$issue_description" \
             --arg action "$action" \
-            '{data: {id: $id, title: $title, description: $description, action: $action}}')
+            --arg project "${{ github.repository }} | cut -d '/' -f 2)" \
+            '{data: {id: $id, title: $title, description: $description, action: $action, project: $project}}')
           curl -X POST -H "Content-Type: application/json" -d "${data}" '${{ secrets.JIRA_WEBHOOK }}'
         shell: bash  
 
