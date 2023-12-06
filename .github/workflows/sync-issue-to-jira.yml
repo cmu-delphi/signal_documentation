@@ -73,7 +73,7 @@ jobs:
             --arg title "$issue_title" \
             --arg description "$issue_description" \
             --arg action "$action" \
-            '{data: {id: $issue_id, title: $issue_title, description: $issue_description, action: $action}}')
+            '{data: {id: $id, title: $title, description: $description, action: $action}}')
           curl -X POST -H "Content-Type: application/json" -d "${data}" '${{ secrets.JIRA_WEBHOOK }}'
         shell: bash  
 
