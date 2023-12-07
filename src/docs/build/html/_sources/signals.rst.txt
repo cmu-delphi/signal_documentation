@@ -37,6 +37,14 @@ signals.filters module
    :undoc-members:
    :show-inheritance:
 
+signals.forms module
+--------------------
+
+.. automodule:: signals.forms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 signals.models module
 ---------------------
 
