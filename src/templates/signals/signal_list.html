@@ -199,14 +199,34 @@
         //  */
 
         if (select('#toggle-search-panel-btn')) {
-            on('click', '#toggle-search-panel-btn', function (e) {
-                select('body').classList.toggle('is-search-panel-visible')
-                select('body').classList.add('animated');
-                setTimeout(function () {
-                    select('body').classList.remove('animated');
-                }, 400);
-            })
+          on('click', '#toggle-search-panel-btn', function (e) {
+            var body = select('body');
+            body.classList.toggle('is-search-panel-visible');
+
+            // Only add the 'animated' class when manually toggling
+            if (!body.classList.contains('animated')) {
+              body.classList.add('animated');
+              setTimeout(function () {
+                body.classList.remove('animated');
+              }, 400);
+            }
+
+            // Save the state to localStorage
+            localStorage.setItem('searchPanelState', body.classList.contains('is-search-panel-visible'));
+          })
         }
+
+        // Call this function when the page loads
+        (function loadSearchPanelState() {
+          var body = select('body');
+          var savedState = localStorage.getItem('searchPanelState');
+          // If there's a saved state, apply it
+          if (savedState === 'true') {
+            body.classList.add('is-search-panel-visible');
+          } else if (savedState === 'false') {
+            body.classList.remove('is-search-panel-visible');
+          }
+        })();
       })()
     </script>
   </div>
