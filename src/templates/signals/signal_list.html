@@ -87,7 +87,8 @@
           <div class="form-group">
             <br>
             <div class="card-body">
-              {{ form.search|as_crispy_field }}
+              <h5 class="card-title">Search</h5>
+              <input class="form-control" type="text" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
             </div>
             <div class="card-body">
               {{ form.pathogen|as_crispy_field }}
