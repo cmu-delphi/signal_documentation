@@ -10,6 +10,7 @@ from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
+from signals.forms import SignalFilterForm
 from signals.models import Signal
 from signals.serializers import SignalSerializer
 
@@ -44,6 +45,7 @@ class SignalsListView(ListView):
         """
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
+        context['form'] = SignalFilterForm()
         context['filter'] = SignalFilter(self.request.GET, queryset=self.get_queryset())
         paginator = Paginator(self.get_queryset(), self.paginate_by)
         page_number: str | None = self.request.GET.get('page')
