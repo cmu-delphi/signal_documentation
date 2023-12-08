@@ -93,6 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#module-signals.urls">signals.urls module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-signals.views">signals.views module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#signals.views.SignalsDetailView"><code class="docutils literal notranslate"><span class="pre">SignalsDetailView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signals.views.SignalsListApiView"><code class="docutils literal notranslate"><span class="pre">SignalsListApiView</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#signals.views.SignalsListView"><code class="docutils literal notranslate"><span class="pre">SignalsListView</span></code></a></li>
 </ul>
 </li>
@@ -184,7 +185,7 @@
 <li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.active"><code class="docutils literal notranslate"><span class="pre">SignalFactory.active</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.category"><code class="docutils literal notranslate"><span class="pre">SignalFactory.category</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.description"><code class="docutils literal notranslate"><span class="pre">SignalFactory.description</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.format"><code class="docutils literal notranslate"><span class="pre">SignalFactory.format</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.format_type"><code class="docutils literal notranslate"><span class="pre">SignalFactory.format_type</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_available_geography"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_available_geography</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_links"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_links</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="signals.tests.html#signals.tests.factories.SignalFactory.generate_pathogens"><code class="docutils literal notranslate"><span class="pre">SignalFactory.generate_pathogens</span></code></a></li>
@@ -300,7 +301,7 @@
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="signals.admin.SignalAdmin.list_filter">
-<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'pathogen'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'available_geography'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'signal_type'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'format'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_smoothed'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_weighted'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_cumulative'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'has_stderr'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'has_sample_size'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('pathogen',</span> <span class="pre">'available_geography',</span> <span class="pre">'signal_type',</span> <span class="pre">'format',</span> <span class="pre">'is_smoothed',</span> <span class="pre">'is_weighted',</span> <span class="pre">'is_cumulative',</span> <span class="pre">'has_stderr',</span> <span class="pre">'has_sample_size')</span></em><a class="headerlink" href="#signals.admin.SignalAdmin.list_filter" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">list_filter</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'pathogen'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'available_geography'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'signal_type'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'format_type'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_smoothed'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_weighted'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'is_cumulative'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'has_stderr'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'has_sample_size'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('pathogen',</span> <span class="pre">'available_geography',</span> <span class="pre">'signal_type',</span> <span class="pre">'format_type',</span> <span class="pre">'is_smoothed',</span> <span class="pre">'is_weighted',</span> <span class="pre">'is_cumulative',</span> <span class="pre">'has_stderr',</span> <span class="pre">'has_sample_size')</span></em><a class="headerlink" href="#signals.admin.SignalAdmin.list_filter" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
@@ -390,9 +391,10 @@
 <dt class="sig sig-object py" id="signals.filters.SignalFilter">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.filters.</span></span><span class="sig-name descname"><span class="pre">SignalFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queryset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.filters.SignalFilter" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">FilterSet</span></code></p>
+<p>FilterSet for the Signal model.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="signals.filters.SignalFilter.base_filters">
-<span class="sig-name descname"><span class="pre">base_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'available_geography':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'category':</span> <span class="pre">&lt;django_filters.filters.ModelChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'format':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'pathogen':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'search':</span> <span class="pre">&lt;django_filters.filters.CharFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'signal_type':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'source':</span> <span class="pre">&lt;django_filters.filters.ModelChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'time_label':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#signals.filters.SignalFilter.base_filters" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">base_filters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'active':</span> <span class="pre">&lt;django_filters.filters.BooleanFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'available_geography':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'category':</span> <span class="pre">&lt;django_filters.filters.ModelChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'format_type':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'pathogen':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'search':</span> <span class="pre">&lt;django_filters.filters.CharFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'signal_type':</span> <span class="pre">&lt;django_filters.filters.ModelMultipleChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'source':</span> <span class="pre">&lt;django_filters.filters.ModelChoiceFilter</span> <span class="pre">object&gt;,</span> <span class="pre">'time_label':</span> <span class="pre">&lt;django_filters.filters.ChoiceFilter</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#signals.filters.SignalFilter.base_filters" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -403,7 +405,16 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="signals.filters.SignalFilter.filter_search">
 <span class="sig-name descname"><span class="pre">filter_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queryset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.filters.SignalFilter.filter_search" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Custom filter method to perform a search on the Signal model.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>queryset (QuerySet): The initial queryset.
+name (str): The name of the filter field.
+value (Any): The value to search for.</p>
+</dd>
+<dt>Returns:</dt><dd><p>QuerySet: The filtered queryset based on the search value.</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -678,7 +689,7 @@
 <li><p><strong>active</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Active. Active</p></li>
 <li><p><strong>short_description</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><em>TextField</em></a>) – Short description. Short Description</p></li>
 <li><p><strong>description</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.TextField" title="(in Django v4.2)"><em>TextField</em></a>) – Description. Description</p></li>
-<li><p><strong>format</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Format. Format</p></li>
+<li><p><strong>format_type</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Format type. Format</p></li>
 <li><p><strong>time_type</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Time type. Time type</p></li>
 <li><p><strong>time_label</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><em>CharField</em></a>) – Time label. Time label</p></li>
 <li><p><strong>is_smoothed</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BooleanField" title="(in Django v4.2)"><em>BooleanField</em></a>) – Is smoothed. Is Smoothed</p></li>
@@ -801,10 +812,10 @@
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="signals.models.Signal.format">
-<span class="sig-name descname"><span class="pre">format</span></span><a class="headerlink" href="#signals.models.Signal.format" title="Link to this definition"></a></dt>
+<dt class="sig sig-object py" id="signals.models.Signal.format_type">
+<span class="sig-name descname"><span class="pre">format_type</span></span><a class="headerlink" href="#signals.models.Signal.format_type" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
-<p>Format. Format</p>
+<p>Format type. Format</p>
 <p>Choices:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">raw</span></code></p></li>
@@ -816,9 +827,9 @@
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="signals.models.Signal.get_format_display">
-<span class="sig-name descname"><span class="pre">get_format_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">format&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_format_display" title="Link to this definition"></a></dt>
-<dd><p>Shows the label of the <a class="reference internal" href="#signals.models.Signal.format" title="signals.models.Signal.format"><code class="xref py py-attr docutils literal notranslate"><span class="pre">format</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+<dt class="sig sig-object py" id="signals.models.Signal.get_format_type_display">
+<span class="sig-name descname"><span class="pre">get_format_type_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">format_type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.models.Signal.get_format_type_display" title="Link to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#signals.models.Signal.format_type" title="signals.models.Signal.format_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">format_type</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v4.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1249,6 +1260,7 @@
 <dt class="sig sig-object py" id="signals.resources.SignalBaseResource">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.resources.</span></span><span class="sig-name descname"><span class="pre">SignalBaseResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.resources.SignalBaseResource" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelResource</span></code></p>
+<p>Resource class for importing Signals base.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="signals.resources.SignalBaseResource.before_import_row">
 <span class="sig-name descname"><span class="pre">before_import_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.resources.SignalBaseResource.before_import_row" title="Link to this definition"></a></dt>
@@ -1272,7 +1284,7 @@
 <dt class="sig sig-object py" id="signals.resources.SignalResource">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.resources.</span></span><span class="sig-name descname"><span class="pre">SignalResource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.resources.SignalResource" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelResource</span></code></p>
-<p>Resource class for importing and exporting Signal models.</p>
+<p>Resource class for importing and exporting Signal models</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="signals.resources.SignalResource.before_import_row">
 <span class="sig-name descname"><span class="pre">before_import_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.12)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#signals.resources.SignalResource.before_import_row" title="Link to this definition"></a></dt>
@@ -1320,6 +1332,7 @@
 <dt class="sig sig-object py" id="signals.views.SignalsDetailView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.views.</span></span><span class="sig-name descname"><span class="pre">SignalsDetailView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsDetailView" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/generic-display/#django.views.generic.detail.DetailView" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DetailView</span></code></a></p>
+<p>DetailView for displaying a single Signal object.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="signals.views.SignalsDetailView.dispatch">
 <span class="sig-name descname"><span class="pre">dispatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsDetailView.dispatch" title="Link to this definition"></a></dt>
@@ -1334,21 +1347,61 @@
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object py" id="signals.views.SignalsListApiView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.views.</span></span><span class="sig-name descname"><span class="pre">SignalsListApiView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsListApiView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListAPIView</span></code></p>
+<p>ListAPIView for retrieving a list of Signal objects via API.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListApiView.filter_backends">
+<span class="sig-name descname"><span class="pre">filter_backends</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;class</span> <span class="pre">'rest_framework.filters.SearchFilter'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'django_filters.rest_framework.backends.DjangoFilterBackend'&gt;]</span></em><a class="headerlink" href="#signals.views.SignalsListApiView.filter_backends" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListApiView.filterset_fields">
+<span class="sig-name descname"><span class="pre">filterset_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'display_name',</span> <span class="pre">'pathogen__name',</span> <span class="pre">'available_geography__name',</span> <span class="pre">'signal_type__name',</span> <span class="pre">'category__name',</span> <span class="pre">'format_type',</span> <span class="pre">'base',</span> <span class="pre">'source__name',</span> <span class="pre">'time_label')</span></em><a class="headerlink" href="#signals.views.SignalsListApiView.filterset_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListApiView.queryset">
+<span class="sig-name descname"><span class="pre">queryset</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">QuerySet</span></em><a class="headerlink" href="#signals.views.SignalsListApiView.queryset" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListApiView.search_fields">
+<span class="sig-name descname"><span class="pre">search_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'display_name',</span> <span class="pre">'description',</span> <span class="pre">'short_description')</span></em><a class="headerlink" href="#signals.views.SignalsListApiView.search_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="signals.views.SignalsListApiView.serializer_class">
+<span class="sig-name descname"><span class="pre">serializer_class</span></span><a class="headerlink" href="#signals.views.SignalsListApiView.serializer_class" title="Link to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SignalSerializer</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object py" id="signals.views.SignalsListView">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.views.</span></span><span class="sig-name descname"><span class="pre">SignalsListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsListView" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/generic-display/#django.views.generic.list.ListView" title="(in Django v4.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListView</span></code></a></p>
+<p>ListView for displaying a list of Signal objects.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="signals.views.SignalsListView.get_context_data">
 <span class="sig-name descname"><span class="pre">get_context_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.12)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#signals.views.SignalsListView.get_context_data" title="Link to this definition"></a></dt>
-<dd><p>Get the context for this view.</p>
+<dd><p>Get the context data for the view.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Dict[str, Any]: The context data for the view.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="signals.views.SignalsListView.get_queryset">
 <span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.12)"><span class="pre">Any</span></a></span></span><a class="headerlink" href="#signals.views.SignalsListView.get_queryset" title="Link to this definition"></a></dt>
-<dd><p>Return the list of items for this view.</p>
-<p>The return value must be an iterable and may be an instance of
-<cite>QuerySet</cite> in which case <cite>QuerySet</cite> specific behavior will be enabled.</p>
+<dd><p>Get the queryset for the view.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>QuerySet: The queryset for the view.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py attribute">

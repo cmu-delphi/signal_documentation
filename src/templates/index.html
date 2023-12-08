@@ -5,23 +5,16 @@
 
 
 <head>
-  {% load bootstrap5 %}
-  {% bootstrap_css %}
-  {% bootstrap_javascript %}
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Signals</title>
+  <title>Signals | DELPHI</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/DELPHI-favicon.svg' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-  <!-- Include Bootstrap CSS and JS files -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Google Fonts -->
   <link href="{% static 'https://fonts.gstatic.com' %}" rel="preconnect">
@@ -48,17 +41,16 @@
   ======================================================== -->
 </head>
 
-<body>
+<body class="toggle-sidebar">
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="{% url 'signals' %}" class="logo d-flex align-items-center">
-        <img assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">Signal Documentation</span>
-      </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="{% url 'signals' %}" class="d-flex align-items-center">
+        <img src="{% static 'assets/img/CMU-wordmark.svg' %}" alt="">
+      </a>
     </div><!-- End Logo -->
 
     <nav class="header-nav ms-auto">

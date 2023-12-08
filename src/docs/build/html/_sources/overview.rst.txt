@@ -141,8 +141,22 @@ Django admin is a web interface for managing the project web application. It is 
 The user should have ``is_staff`` or ``is_superuser`` permissions to access the admin interface.
 
 
+
+
+
+Documentation
+-------------
+The project documentation is generated and served using the following tools:
+
+1. `Sphynx <https://www.sphinx-doc.org/en/master/>`__.
+2. `sphinxcontrib-django <https://sphinxcontrib-django.readthedocs.io/en/latest/>`__.
+3. `sphinx_rtd_theme <https://sphinx-rtd-theme.readthedocs.io/en/stable/>`__.
+4. `django-docs <https://django-docs.readthedocs.io/en/latest/>`__.
+5. `drf-spectacular <https://drf-spectacular.readthedocs.io/en/latest/>`__.
+
+
 Read the docs (Sphynx)
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 Auto generated documentation for the project web appplication is available at the following URL.
 
 ``http://localhost:8000/<MAIN_PAGE>/docs/index.html``
@@ -161,3 +175,15 @@ To generate the documentation, run the following commands:
 
    $ cd ./docs
    $ make html
+
+Swagger
+~~~~~~~
+Auto generated swagger documentation for the project web appplication is available at the following URL.
+
+``http://localhost:8000/<MAIN_PAGE>/api/docs/swagger/``
+
+Redoc
+~~~~~
+Auto generated redoc documentation for the project web appplication is available at the following URL.
+
+``http://localhost:8000/<MAIN_PAGE>/api/docs/redoc/``
