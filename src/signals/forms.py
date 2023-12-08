@@ -20,7 +20,7 @@ class SignalFilterForm(forms.ModelForm):
     match_substring = forms.BooleanField()
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), empty_label='---------')
     active = forms.NullBooleanField(initial=None)
-    pathogen = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
+    format_type = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
     source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), empty_label='---------')
     time_label = forms.ChoiceField(choices=[('', '---------')] + TimeLabelChoices.choices, label=_('Temporal Resolution'))
 
