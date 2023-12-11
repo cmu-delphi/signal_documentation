@@ -17,7 +17,6 @@ class SignalFilterForm(forms.ModelForm):
     A form for filtering signals.
     """
     search = forms.CharField(min_length=3)
-    match_substring = forms.BooleanField()
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), empty_label='---------')
     active = forms.NullBooleanField(initial=None)
     format_type = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
@@ -28,7 +27,6 @@ class SignalFilterForm(forms.ModelForm):
         model = Signal
         fields: list[str] = [
             'search',
-            'match_substring',
             'pathogen',
             'active',
             'available_geography',
@@ -41,7 +39,6 @@ class SignalFilterForm(forms.ModelForm):
 
         widgets = {
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
-            'match_substring': forms.CheckboxInput(attrs={'class': 'form-check-input'}),
             'pathogen': forms.Select(attrs={'class': 'form-select'}),
             'active': forms.NullBooleanSelect(attrs={'class': 'form-check mt-3'},),
             'available_geography': forms.SelectMultiple(attrs={
