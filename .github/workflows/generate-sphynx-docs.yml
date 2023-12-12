@@ -1,0 +1,44 @@
+name: Update Sphinx Documentation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        token: ${{ secrets.GENERATE_SPHINX_DOCS_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        sudo apt-get update -y
+        sudo apt-get install mysql-client -y
+        pip install pipenv
+        pipenv requirements > requirements.txt
+        pip install -r requirements.txt
+
+    - name: Generate documentation
+      run: |
+        cd src/docs
+        make clean
+        make html
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add -A
+        git commit -m "Update Sphinx documentation"
+        git push
