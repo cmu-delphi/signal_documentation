@@ -1,4 +1,5 @@
 .env
+.secrets
 /.vscode/
 /src/media/
 /src/staticfiles/
