@@ -10,10 +10,10 @@ jobs:
 
     steps:
     - name: Checkout source branch
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         ref: ${{ github.event.pull_request.head.ref }}
-        token: ${{ secrets.GENERATE_SPHINX_DOCS_TOKEN }}
+        token: ${{ secrets.PAT }}
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -25,9 +25,11 @@ jobs:
         python3 -m pip install --upgrade pip
         sudo apt-get update -y
         sudo apt-get install mysql-client -y
+        sudo apt-get install graphviz graphviz-dev -y
         pip install pipenv
         pipenv requirements > requirements.txt
         pip install -r requirements.txt
+
 
     - name: Generate documentation
       run: |
@@ -35,10 +37,14 @@ jobs:
         make clean
         make html
 
+    - name: setup git config
+      run: |
+        # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+
     - name: Commit and push changes
       run: |
-        git config --global user.name '${{ secrets.GITHUB_USERNAME }}'
-        git config --global user.email '${{ secrets.SPHINX_GITHUB_EMAIL }}'
         git add -A
         git commit -m "Update Sphinx documentation"
         git push
