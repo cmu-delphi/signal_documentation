@@ -2,6 +2,7 @@
 
 
 {% load i18n %}
+{% load crispy_forms_tags  %}
 
 {% block content %}
 
@@ -84,113 +85,44 @@
       <div class="card">
         <form method="GET">
           <div class="form-group">
+            <br>
             <div class="card-body">
               <h5 class="card-title">Search</h5>
-              <input class="form-control" type="text" id="search" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
+              <input class="form-control" type="text" name="{{ filter.form.search.name }}" placeholder="Search" title="Enter search keyword">
             </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.pathogen.label }}</h5>
-              <select name="{{ filter.form.pathogen.name }}" class="form-select">
-                <option value="">---------</option>
-                {% for choice in filter.form.pathogen.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-              </selectright>
+              {{ form.pathogen|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.active.label }}</h5>
-              <select name="{{ filter.form.active.name }}" class="form-select" >
-                  <option value="">---------</option>
-                  <option value="True">True</option>
-                  <option value="False">False</option>
-              </select>
+              {{ form.active|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.available_geography.label }}</h5>
-              <select
-                name="{{ filter.form.available_geography.name }}" class="form-select" multiple
-                data-bs-toggle="tooltip" data-bs-placement="bottom"
-                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
-              >
-                {% for choice in filter.form.available_geography.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                  {% endfor %}
-              </select>
+              {{ form.available_geography|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.signal_type.label }}</h5>
-              <select
-                name="{{ filter.form.signal_type.name }}" class="form-select" multiple
-                data-bs-toggle="tooltip" data-bs-placement="bottom"
-                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
-              >
-                {% for choice in filter.form.signal_type.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-              </select>
+              {{ form.signal_type|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.category.label }}</h5>
-              <select
-                name="{{ filter.form.category.name }}" class="form-select" multiple
-                data-bs-toggle="tooltip" data-bs-placement="bottom"
-                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
-              >
-                {% for choice in filter.form.category.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-              </select>
+              {{ form.category|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.format_type.label }}</h5>
-              <select name="{{ filter.form.format_type.name }}" class="form-select">
-                {% for choice in filter.form.format_type.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-              </select>
+              {{ form.format_type|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">{{ filter.form.source.label }}</h5>
-              <select name="{{ filter.form.source.name }}" class="selectpicker form-select" multiple
-                data-bs-toggle="tooltip" data-bs-placement="bottom"
-                data-bs-original-title='{% trans "Hold down “Control”, or “Command” on a Mac, to select more than one." %}'
-              >
-                {% for choice in filter.form.source.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-              </select>
+              {{ form.source|as_crispy_field }}
             </div>
-          </div>
-          <div class="form-group">
             <div class="card-body">
-              <h5 class="card-title">Temporal resolution</h5>
-              <select name="{{ filter.form.time_label.name }}" class="selectpicker form-select">
-                {% for choice in filter.form.time_label.field.choices %}
-                  <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                {% endfor %}
-              </select>
+              {{ form.time_label|as_crispy_field }}
+            </div>
+            <div class="card-body">
+              <div class="d-grid gap-2 mt-3">
+                <button type="submit" class="btn btn-primary">{% trans "Apply Filters" %}</button>
+              </div>
             </div>
           </div>
-        <div class="card-body">
-          <div class="d-grid gap-2 mt-3">
-            <button type="submit" class="btn btn-primary">{% trans "Apply Filters" %}</button>
-          </div>
-        </div>
         </form>
-      </div><!-- End Filters -->
+      </div>
+      <!-- End Filters -->
 
     </div><!-- End Right side columns -->
     <style>
@@ -264,14 +196,34 @@
         //  */
 
         if (select('#toggle-search-panel-btn')) {
-            on('click', '#toggle-search-panel-btn', function (e) {
-                select('body').classList.toggle('is-search-panel-visible')
-                select('body').classList.add('animated');
-                setTimeout(function () {
-                    select('body').classList.remove('animated');
-                }, 400);
-            })
+          on('click', '#toggle-search-panel-btn', function (e) {
+            var body = select('body');
+            body.classList.toggle('is-search-panel-visible');
+
+            // Only add the 'animated' class when manually toggling
+            if (!body.classList.contains('animated')) {
+              body.classList.add('animated');
+              setTimeout(function () {
+                body.classList.remove('animated');
+              }, 400);
+            }
+
+            // Save the state to localStorage
+            localStorage.setItem('searchPanelState', body.classList.contains('is-search-panel-visible'));
+          })
         }
+
+        // Call this function when the page loads
+        (function loadSearchPanelState() {
+          var body = select('body');
+          var savedState = localStorage.getItem('searchPanelState');
+          // If there's a saved state, apply it
+          if (savedState === 'true') {
+            body.classList.add('is-search-panel-visible');
+          } else if (savedState === 'false') {
+            body.classList.remove('is-search-panel-visible');
+          }
+        })();
       })()
     </script>
   </div>

@@ -43,8 +43,32 @@ class SignalFilter(django_filters.FilterSet):
 
         if not value:
             return queryset
+        search_tokens = value.split()
+        queries: list[Q] = []
+        for field in ['name', 'description', 'short_description']:
+            token_query: list[Q] = []
+            for token in search_tokens:
+                if '*' in token:
+                    left = token.find('*') == 0
+                    right = token.rfind('*') == len(token) - 1
+                    token = token.replace('*', '')
+                    if left and right:
+                        token_query.append(Q((f'{field}__icontains', token)))
+                        continue
+                    if left:
+                        token_query.append(Q((f'{field}__iregex', fr'{token}\b')))
+                        continue
+                    if right:
+                        token_query.append(Q((f'{field}__iregex', fr'\b{token}')))
+                        continue
+                else:
+                    token_query.append(Q((f'{field}__iregex', fr"\b{token}\b")))
+                    continue
+            query: Q = token_query.pop()
+            for item in token_query:
+                query &= item
+            queries.append(query)
 
-        queries: list[Q] = [Q((f'{field}__icontains', value)) for field in ['name', 'description', 'short_description']]
         query: Q = queries.pop()
 
         for item in queries:

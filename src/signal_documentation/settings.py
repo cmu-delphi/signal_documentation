@@ -90,6 +90,8 @@ EXTERNAL_APPS: list[str] = [
     'health_check.contrib.migrations',
     'import_export',
     'docs',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -154,6 +156,11 @@ DATABASES: dict[str, dict[str, Any]] = {
 
 
 PAGE_SIZE = os.environ.get('PAGE_SIZE', 10)
+
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 # Django REST framework

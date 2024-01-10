@@ -75,6 +75,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#signals.filters.SignalFilter"><code class="docutils literal notranslate"><span class="pre">SignalFilter</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#module-signals.forms">signals.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signals.forms.SignalFilterForm"><code class="docutils literal notranslate"><span class="pre">SignalFilterForm</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-signals.models">signals.models module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#signals.models.FormatChoices"><code class="docutils literal notranslate"><span class="pre">FormatChoices</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#signals.models.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
@@ -416,6 +420,40 @@ value (Any): The value to search for.</p>
 <dt>Returns:</dt><dd><p>QuerySet: The filtered queryset based on the search value.</p>
 </dd>
 </dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-signals.forms">
+<span id="signals-forms-module"></span><h2>signals.forms module<a class="headerlink" href="#module-signals.forms" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="signals.forms.SignalFilterForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">signals.forms.</span></span><span class="sig-name descname"><span class="pre">SignalFilterForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.forms.SignalFilterForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/topics/forms/modelforms/#django.forms.ModelForm" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></a></p>
+<p>A form for filtering signals.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">search</span></code>: Search (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.CharField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pathogen</span></code>: Pathogen (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ModelChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelChoiceField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">active</span></code>: Active (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.NullBooleanField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NullBooleanField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">available_geography</span></code>: Available geography (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ModelMultipleChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelMultipleChoiceField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">category</span></code>: Category (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ModelChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelChoiceField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">format_type</span></code>: Format Type (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChoiceField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">signal_type</span></code>: Signal type (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ModelMultipleChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelMultipleChoiceField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">source</span></code>: Source (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ModelChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ModelChoiceField</span></code></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">time_label</span></code>: Temporal Resolution (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/forms/fields/#django.forms.ChoiceField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ChoiceField</span></code></a>)</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.forms.SignalFilterForm.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#signals.forms.SignalFilterForm.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the form.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="signals.forms.SignalFilterForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#signals.forms.SignalFilterForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
 </dd></dl>
 
 </dd></dl>
@@ -1405,6 +1443,11 @@ value (Any): The value to search for.</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="signals.views.SignalsListView.get_url_params">
+<span class="sig-name descname"><span class="pre">get_url_params</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#signals.views.SignalsListView.get_url_params" title="Link to this definition"></a></dt>
+<dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="signals.views.SignalsListView.model">
