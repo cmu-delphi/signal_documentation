@@ -21,7 +21,7 @@ class SignalsListView(ListView):
     """
 
     model = Signal
-    template_name = 'signals/signal_list.html'
+    template_name = "signals/signal_list.html"
     paginate_by = settings.PAGE_SIZE
 
     def get_queryset(self) -> Any:
@@ -37,17 +37,30 @@ class SignalsListView(ListView):
         return f.qs
 
     def get_url_params(self):
-
         url_params_dict = {
             "search": self.request.GET.get("search"),
-            "pathogen": int(self.request.GET.get("pathogen")) if self.request.GET.get("pathogen") else "",
+            "pathogen": int(self.request.GET.get("pathogen"))
+            if self.request.GET.get("pathogen")
+            else "",
             "active": self.request.GET.get("active", "unknown"),
-            "available_geography": [int(el) for el in self.request.GET._getlist("available_geography")] if self.request.GET.get("available_geography") else None,
-            "signal_type": [int(el) for el in self.request.GET._getlist("signal_type")] if self.request.GET.get("signal_type") else None,
-            "category": self.request.GET._getlist("category") if self.request.GET.get("category") else None,
+            "available_geography": [
+                int(el) for el in self.request.GET._getlist("available_geography")
+            ]
+            if self.request.GET.get("available_geography")
+            else None,
+            "signal_type": [int(el) for el in self.request.GET._getlist("signal_type")]
+            if self.request.GET.get("signal_type")
+            else None,
+            "category": self.request.GET._getlist("category")
+            if self.request.GET.get("category")
+            else None,
             "format_type": self.request.GET.get("format_type"),
-            "source": int(self.request.GET.get("source")) if self.request.GET.get("source") else "",
-            "time_label": self.request.GET.get("time_label") if self.request.GET.get("time_label") else "",
+            "source": int(self.request.GET.get("source"))
+            if self.request.GET.get("source")
+            else "",
+            "time_label": self.request.GET.get("time_label")
+            if self.request.GET.get("time_label")
+            else "",
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():
@@ -55,7 +68,7 @@ class SignalsListView(ListView):
                 for value in param_value:
                     url_params_str = f"{url_params_str}&{param_name}={value}"
             else:
-                if param_value not in ['', None]:
+                if param_value not in ["", None]:
                     url_params_str = f"{url_params_str}&{param_name}={param_value}"
         return url_params_dict, url_params_str
 
@@ -69,18 +82,18 @@ class SignalsListView(ListView):
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         url_params_dict, url_params_str = self.get_url_params()
-        context['form'] = SignalFilterForm(initial=url_params_dict)
-        context['url_params_str'] = url_params_str
-        context['filter'] = SignalFilter(self.request.GET, queryset=self.get_queryset())
+        context["form"] = SignalFilterForm(initial=url_params_dict)
+        context["url_params_str"] = url_params_str
+        context["filter"] = SignalFilter(self.request.GET, queryset=self.get_queryset())
         paginator = Paginator(self.get_queryset(), self.paginate_by)
-        page_number: str | None = self.request.GET.get('page')
+        page_number: str | None = self.request.GET.get("page")
         page_obj: Page = paginator.get_page(page_number)
 
-        context['signals'] = page_obj
+        context["signals"] = page_obj
         return context
 
 
-@method_decorator(cache_page(60 * 5), name='dispatch')
+@method_decorator(cache_page(60 * 5), name="dispatch")
 class SignalsDetailView(DetailView):
     """
     DetailView for displaying a single Signal object.
@@ -96,17 +109,17 @@ class SignalsListApiView(ListAPIView):
 
     queryset = Signal.objects.all()
     serializer_class = SignalSerializer
-    search_fields = ('name', 'display_name', 'description', 'short_description')
+    search_fields = ("name", "display_name", "description", "short_description")
     filter_backends = [SearchFilter, DjangoFilterBackend]
     filterset_fields = (
-        'name',
-        'display_name',
-        'pathogen__name',
-        'available_geography__name',
-        'signal_type__name',
-        'category__name',
-        'format_type',
-        'base',
-        'source__name',
-        'time_label',
+        "name",
+        "display_name",
+        "pathogen__name",
+        "available_geography__name",
+        "signal_type__name",
+        "category__name",
+        "format_type",
+        "base",
+        "source__name",
+        "time_label",
     )
