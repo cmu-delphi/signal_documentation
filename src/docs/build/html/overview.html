@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overview and installation &mdash; Signal Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Import data from admin interface" href="data_import.html" />
+    <link rel="prev" title="Welcome to Signal Documentation’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Signal Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Overview and installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#entity-relationship-diagram">Entity Relationship Diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-libs-and-db">Core libs and DB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setup-env-vars">Setup Env Vars</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#to-run-locally">To run locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#to-run-via-docker">To run via docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#to-run-via-docker-and-emulate-production">To run via docker and emulate production</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#django-admin-web-interface">Django admin web interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documentation">Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#read-the-docs-sphynx">Read the docs (Sphynx)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#swagger">Swagger</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#redoc">Redoc</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Import data from admin interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Signal Documentation Modules</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Signal Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Overview and installation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="overview-and-installation">
+<h1>Overview and installation<a class="headerlink" href="#overview-and-installation" title="Link to this heading"></a></h1>
+<p>Single Source of Documentation System</p>
+<img alt="Signal Documentation Schema" src="_images/signal_documentation_schema.jpg" />
+<section id="entity-relationship-diagram">
+<h2>Entity Relationship Diagram<a class="headerlink" href="#entity-relationship-diagram" title="Link to this heading"></a></h2>
+<img alt="Signal Documentation ERD" src="_images/models.png" />
+</section>
+<section id="core-libs-and-db">
+<h2>Core libs and DB<a class="headerlink" href="#core-libs-and-db" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.djangoproject.com/">Django</a></p></li>
+<li><p><a class="reference external" href="https://django-filter.readthedocs.io/en/stable/index.html">Django-filter</a></p></li>
+<li><p><a class="reference external" href="https://www.postgresql.org/">PostgreSQL</a></p></li>
+</ol>
+<p>All requirements you can find in <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code></p>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<section id="setup-env-vars">
+<h3>Setup Env Vars<a class="headerlink" href="#setup-env-vars" title="Link to this heading"></a></h3>
+<p>create <code class="docutils literal notranslate"><span class="pre">.env</span></code> file and add variables like in <code class="docutils literal notranslate"><span class="pre">.env.example</span></code></p>
+</section>
+<section id="to-run-locally">
+<h3>To run locally<a class="headerlink" href="#to-run-locally" title="Link to this heading"></a></h3>
+<p>Install <code class="docutils literal notranslate"><span class="pre">python:3.10</span></code>, <code class="docutils literal notranslate"><span class="pre">pip3</span></code>, <code class="docutils literal notranslate"><span class="pre">pipenv</span></code></p>
+<p>Using <a class="reference external" href="https://github.com/pypa/pipenv">pipenv</a> run <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">shell</span></code>
+and <code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">install</span></code> to create virtual environment and install
+dependencies</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pipenv<span class="w"> </span>shell
+$<span class="w"> </span>pipenv<span class="w"> </span>install
+</pre></div>
+</div>
+<p>Go to <code class="docutils literal notranslate"><span class="pre">src</span></code> directory and run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span><span class="nb">test</span>
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>runserver
+</pre></div>
+</div>
+<p>load fixtures</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>loaddata<span class="w"> </span>.<span class="se">\f</span>ixtures<span class="se">\a</span>vailable_geography.json
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>loaddata<span class="w"> </span>.<span class="se">\f</span>ixtures<span class="se">\p</span>athogens.json
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>loaddata<span class="w"> </span>.<span class="se">\f</span>ixtures<span class="se">\s</span>ignal_categories.json
+$<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>loaddata<span class="w"> </span>.<span class="se">\f</span>ixtures<span class="se">\s</span>ignal_types.json
+</pre></div>
+</div>
+<p>if you need test coverage</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>coverage<span class="w"> </span>erase
+$<span class="w"> </span>coverage<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span><span class="nb">test</span>
+$<span class="w"> </span>coverage<span class="w"> </span>report
+</pre></div>
+</div>
+<p>you can also get test coverage with one command</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>coverage<span class="w"> </span>erase<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>coverage<span class="w"> </span>run<span class="w"> </span>manage.py<span class="w"> </span><span class="nb">test</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>coverage<span class="w"> </span>report
+</pre></div>
+</div>
+<p>sort imports</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w">  </span>isort<span class="w"> </span>.
+</pre></div>
+</div>
+<p>check flake</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w">  </span>flake8<span class="w"> </span>--show-source
+</pre></div>
+</div>
+</section>
+<section id="to-run-via-docker">
+<h3>To run via docker<a class="headerlink" href="#to-run-via-docker" title="Link to this heading"></a></h3>
+<p>Install <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">docker-compose</span></code></p>
+<p>Run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>docker-compose<span class="w"> </span>build
+$<span class="w"> </span>docker-compose<span class="w"> </span>up
+</pre></div>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">http://localhost:8000</span></code> to view it in the browser</p>
+</section>
+<section id="to-run-via-docker-and-emulate-production">
+<h3>To run via docker and emulate production<a class="headerlink" href="#to-run-via-docker-and-emulate-production" title="Link to this heading"></a></h3>
+<p>Though probably not necessary in most cases, if you want to
+test/modify/emulate how this will run in production you can:</p>
+<ul class="simple">
+<li><p>In <code class="docutils literal notranslate"><span class="pre">.env</span></code> set:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DEBUG</span> <span class="o">=</span> <span class="s1">&#39;False&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Modify the app container’s command in <code class="docutils literal notranslate"><span class="pre">docker-compose.yaml</span></code> to run:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000&quot;</span>
+
+<span class="o">*</span><span class="p">(</span><span class="n">Essentially</span> <span class="n">you</span><span class="s1">&#39;ll replace just the last line of the command, switching out the &quot;runserver&quot; line)</span>
+</pre></div>
+</div>
+<p>Open <code class="docutils literal notranslate"><span class="pre">http://localhost</span></code> to view it in the browser. In this usage your
+request will be serviced by Nginx instead of the application directly.</p>
+<p>The primary use case for this will be when making changes to the Nginx
+container image that runs in production and hosts the static file
+content, or also if making changes to the Gunicorn config.</p>
+<p>Changes of this sort should be carefully evaluated as they may require
+interaction with systems managed by devops folks.</p>
+</section>
+</section>
+<section id="django-admin-web-interface">
+<h2><a class="reference external" href="https://docs.djangoproject.com/en/4.1/ref/contrib/admin/">Django admin</a> web interface<a class="headerlink" href="#django-admin-web-interface" title="Link to this heading"></a></h2>
+<p>Django admin is a web interface for managing the project web application. It is available at the following URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/admin</span></code></p>
+<p>The user should have <code class="docutils literal notranslate"><span class="pre">is_staff</span></code> or <code class="docutils literal notranslate"><span class="pre">is_superuser</span></code> permissions to access the admin interface.</p>
+</section>
+<section id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
+<p>The project documentation is generated and served using the following tools:</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphynx</a>.</p></li>
+<li><p><a class="reference external" href="https://sphinxcontrib-django.readthedocs.io/en/latest/">sphinxcontrib-django</a>.</p></li>
+<li><p><a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">sphinx_rtd_theme</a>.</p></li>
+<li><p><a class="reference external" href="https://django-docs.readthedocs.io/en/latest/">django-docs</a>.</p></li>
+<li><p><a class="reference external" href="https://drf-spectacular.readthedocs.io/en/latest/">drf-spectacular</a>.</p></li>
+</ol>
+<section id="read-the-docs-sphynx">
+<h3>Read the docs (Sphynx)<a class="headerlink" href="#read-the-docs-sphynx" title="Link to this heading"></a></h3>
+<p>Auto generated documentation for the project web appplication is available at the following URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/&lt;MAIN_PAGE&gt;/docs/index.html</span></code></p>
+<p>To clean the documentation, run the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./docs
+$<span class="w"> </span>make<span class="w"> </span>clean
+</pre></div>
+</div>
+<p>To generate the documentation, run the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>./docs
+$<span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+</section>
+<section id="swagger">
+<h3>Swagger<a class="headerlink" href="#swagger" title="Link to this heading"></a></h3>
+<p>Auto generated swagger documentation for the project web appplication is available at the following URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/&lt;MAIN_PAGE&gt;/api/docs/swagger/</span></code></p>
+</section>
+<section id="redoc">
+<h3>Redoc<a class="headerlink" href="#redoc" title="Link to this heading"></a></h3>
+<p>Auto generated redoc documentation for the project web appplication is available at the following URL.</p>
+<p><code class="docutils literal notranslate"><span class="pre">http://localhost:8000/&lt;MAIN_PAGE&gt;/api/docs/redoc/</span></code></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Signal Documentation’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="data_import.html" class="btn btn-neutral float-right" title="Import data from admin interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, cmu.edu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

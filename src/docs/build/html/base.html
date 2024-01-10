@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>base package &mdash; Signal Documentation 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="base.migrations package" href="base.migrations.html" />
+    <link rel="prev" title="Signal Documentation Modules" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Signal Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview and installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_import.html">Import data from admin interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Signal Documentation Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">base package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.migrations.html">base.migrations package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.tests.html">base.tests package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-base.admin">base.admin module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base.admin.LinkAdmin"><code class="docutils literal notranslate"><span class="pre">LinkAdmin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-base.apps">base.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base.apps.BaseConfig"><code class="docutils literal notranslate"><span class="pre">BaseConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-base.models">base.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base.models.Link"><code class="docutils literal notranslate"><span class="pre">Link</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base.models.LinkTypeChoices"><code class="docutils literal notranslate"><span class="pre">LinkTypeChoices</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-base.views">base.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#base.views.BadRequestErrorView"><code class="docutils literal notranslate"><span class="pre">BadRequestErrorView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base.views.ForbiddenErrorView"><code class="docutils literal notranslate"><span class="pre">ForbiddenErrorView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base.views.InternalServerErrorView"><code class="docutils literal notranslate"><span class="pre">InternalServerErrorView</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#base.views.NotFoundErrorView"><code class="docutils literal notranslate"><span class="pre">NotFoundErrorView</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-base">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datasources.html">datasources package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signals.html">signals package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal_documentation.html">signal_documentation package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Signal Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Signal Documentation Modules</a></li>
+      <li class="breadcrumb-item active">base package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/base.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="base-package">
+<h1>base package<a class="headerlink" href="#base-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="base.migrations.html">base.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.migrations.html#module-base.migrations.0001_initial">base.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="base.migrations.html#base.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.migrations.html#base.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.migrations.html#base.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.migrations.html#base.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="base.migrations.html#module-base.migrations.0002_link_created_link_modified">base.migrations.0002_link_created_link_modified module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="base.migrations.html#base.migrations.0002_link_created_link_modified.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.migrations.html#base.migrations.0002_link_created_link_modified.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.migrations.html#base.migrations.0002_link_created_link_modified.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="base.migrations.html#module-base.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="base.tests.html">base.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="base.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="base.tests.html#module-base.tests.factories">base.tests.factories module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="base.tests.html#base.tests.factories.LinkFactory"><code class="docutils literal notranslate"><span class="pre">LinkFactory</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.tests.html#base.tests.factories.LinkFactory.link_type"><code class="docutils literal notranslate"><span class="pre">LinkFactory.link_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.tests.html#base.tests.factories.LinkFactory.url"><code class="docutils literal notranslate"><span class="pre">LinkFactory.url</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="base.tests.html#module-base.tests.test_models">base.tests.test_models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="base.tests.html#base.tests.test_models.LinkModelTest"><code class="docutils literal notranslate"><span class="pre">LinkModelTest</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="base.tests.html#base.tests.test_models.LinkModelTest.setUp"><code class="docutils literal notranslate"><span class="pre">LinkModelTest.setUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.tests.html#base.tests.test_models.LinkModelTest.test_get_preview"><code class="docutils literal notranslate"><span class="pre">LinkModelTest.test_get_preview()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="base.tests.html#base.tests.test_models.LinkModelTest.test_link_str"><code class="docutils literal notranslate"><span class="pre">LinkModelTest.test_link_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="base.tests.html#module-base.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-base.admin">
+<span id="base-admin-module"></span><h2>base.admin module<a class="headerlink" href="#module-base.admin" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="base.admin.LinkAdmin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.admin.</span></span><span class="sig-name descname"><span class="pre">LinkAdmin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">admin_site</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.admin.LinkAdmin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelAdmin</span></code></p>
+<p>Admin interface for managing link objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.admin.LinkAdmin.list_display">
+<span class="sig-name descname"><span class="pre">list_display</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.12)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'url'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.12)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'link_type'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('url',</span> <span class="pre">'link_type')</span></em><a class="headerlink" href="#base.admin.LinkAdmin.list_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="base.admin.LinkAdmin.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#base.admin.LinkAdmin.media" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-base.apps">
+<span id="base-apps-module"></span><h2>base.apps module<a class="headerlink" href="#module-base.apps" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="base.apps.BaseConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.apps.</span></span><span class="sig-name descname"><span class="pre">BaseConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.apps.BaseConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.apps.BaseConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#base.apps.BaseConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.apps.BaseConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'base'</span></em><a class="headerlink" href="#base.apps.BaseConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-base.models">
+<span id="base-models-module"></span><h2>base.models module<a class="headerlink" href="#module-base.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="base.models.Link">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.models.</span></span><span class="sig-name descname"><span class="pre">Link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.Link" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeStampedModel</span></code></p>
+<p>A model representing a Link.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v5.0)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>created</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v5.0)"><em>DateTimeField</em></a>) – Created</p></li>
+<li><p><strong>modified</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v5.0)"><em>DateTimeField</em></a>) – Modified</p></li>
+<li><p><strong>link_type</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.0)"><em>CharField</em></a>) – Link type. Link type</p></li>
+<li><p><strong>url</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.URLField" title="(in Django v5.0)"><em>URLField</em></a>) – Url. Link url</p></li>
+</ul>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_subdivisions</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision" title="datasources.models.SourceSubdivision"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceSubdivision</span></code></a>) – All source subdivisions of this link (related name of <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision.links" title="datasources.models.SourceSubdivision.links"><code class="xref py py-attr docutils literal notranslate"><span class="pre">links</span></code></a>)</p></li>
+<li><p><strong>data_sources</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="datasources.html#datasources.models.DataSource" title="datasources.models.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a>) – All data sources of this link (related name of <a class="reference internal" href="datasources.html#datasources.models.DataSource.links" title="datasources.models.DataSource.links"><code class="xref py py-attr docutils literal notranslate"><span class="pre">links</span></code></a>)</p></li>
+<li><p><strong>signals</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="signals.html#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>) – All signals of this link (related name of <a class="reference internal" href="signals.html#signals.models.Signal.links" title="signals.models.Signal.links"><code class="xref py py-attr docutils literal notranslate"><span class="pre">links</span></code></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="base.models.Link.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#base.models.Link.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="base.models.Link.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#base.models.Link.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#base.models.Link.created" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Created</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.data_sources">
+<span class="sig-name descname"><span class="pre">data_sources</span></span><a class="headerlink" href="#base.models.Link.data_sources" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="datasources.html#datasources.models.DataSource" title="datasources.models.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a></p>
+<p>All data sources of this link (related name of <a class="reference internal" href="datasources.html#datasources.models.DataSource.links" title="datasources.models.DataSource.links"><code class="xref py py-attr docutils literal notranslate"><span class="pre">links</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="base.models.Link.get_link_type_display">
+<span class="sig-name descname"><span class="pre">get_link_type_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.CharField:</span> <span class="pre">link_type&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.Link.get_link_type_display" title="Link to this definition"></a></dt>
+<dd><p>Shows the label of the <a class="reference internal" href="#base.models.Link.link_type" title="base.models.Link.link_type"><code class="xref py py-attr docutils literal notranslate"><span class="pre">link_type</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_FOO_display" title="(in Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_FOO_display()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="base.models.Link.get_next_by_created">
+<span class="sig-name descname"><span class="pre">get_next_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.Link.get_next_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#base.models.Link.created" title="base.models.Link.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="base.models.Link.get_next_by_modified">
+<span class="sig-name descname"><span class="pre">get_next_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.Link.get_next_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds next instance based on <a class="reference internal" href="#base.models.Link.modified" title="base.models.Link.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_next_by_FOO" title="(in Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_next_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="base.models.Link.get_preview">
+<span class="sig-name descname"><span class="pre">get_preview</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">LinkPreview</span></span></span><a class="headerlink" href="#base.models.Link.get_preview" title="Link to this definition"></a></dt>
+<dd><p>Returns a preview of the link using the link_preview library.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing information about the link preview, including title, description, and image.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.12)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="base.models.Link.get_previous_by_created">
+<span class="sig-name descname"><span class="pre">get_previous_by_created</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">created&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.Link.get_previous_by_created" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#base.models.Link.created" title="base.models.Link.created"><code class="xref py py-attr docutils literal notranslate"><span class="pre">created</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="base.models.Link.get_previous_by_modified">
+<span class="sig-name descname"><span class="pre">get_previous_by_modified</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.DateTimeField:</span> <span class="pre">modified&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.Link.get_previous_by_modified" title="Link to this definition"></a></dt>
+<dd><p>Finds previous instance based on <a class="reference internal" href="#base.models.Link.modified" title="base.models.Link.modified"><code class="xref py py-attr docutils literal notranslate"><span class="pre">modified</span></code></a>. See <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model.get_previous_by_FOO" title="(in Django v5.0)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_previous_by_FOO()</span></code></a> for more information.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#base.models.Link.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.link_type">
+<span class="sig-name descname"><span class="pre">link_type</span></span><a class="headerlink" href="#base.models.Link.link_type" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Link type. Link type</p>
+<p>Choices:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">api_documentation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dua</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">interpreting_mask</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">question_text</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">survey_details</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">survey_documentation</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">technical_description</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wave_10_revision</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wave_11_revision</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">other</span></code></p></li>
+</ul>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.modified">
+<span class="sig-name descname"><span class="pre">modified</span></span><a class="headerlink" href="#base.models.Link.modified" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.DateTimeField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">DateTimeField</span></code></a></p>
+<p>Modified</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#base.models.Link.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.signals">
+<span class="sig-name descname"><span class="pre">signals</span></span><a class="headerlink" href="#base.models.Link.signals" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="signals.html#signals.models.Signal" title="signals.models.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a></p>
+<p>All signals of this link (related name of <a class="reference internal" href="signals.html#signals.models.Signal.links" title="signals.models.Signal.links"><code class="xref py py-attr docutils literal notranslate"><span class="pre">links</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.source_subdivisions">
+<span class="sig-name descname"><span class="pre">source_subdivisions</span></span><a class="headerlink" href="#base.models.Link.source_subdivisions" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ManyToManyField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ManyToManyField</span></code></a> from <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision" title="datasources.models.SourceSubdivision"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceSubdivision</span></code></a></p>
+<p>All source subdivisions of this link (related name of <a class="reference internal" href="datasources.html#datasources.models.SourceSubdivision.links" title="datasources.models.SourceSubdivision.links"><code class="xref py py-attr docutils literal notranslate"><span class="pre">links</span></code></a>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.Link.url">
+<span class="sig-name descname"><span class="pre">url</span></span><a class="headerlink" href="#base.models.Link.url" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.URLField" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">URLField</span></code></a></p>
+<p>Url. Link url</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.models.</span></span><span class="sig-name descname"><span class="pre">LinkTypeChoices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">qualname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">boundary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.models.LinkTypeChoices" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TextChoices</span></code></p>
+<p>A class representing choices for link types.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.API_DOCUMENTATION">
+<span class="sig-name descname"><span class="pre">API_DOCUMENTATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'api_documentation'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.API_DOCUMENTATION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.DUA">
+<span class="sig-name descname"><span class="pre">DUA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'dua'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.DUA" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.INTERPRETING_MASK">
+<span class="sig-name descname"><span class="pre">INTERPRETING_MASK</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'interpreting_mask'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.INTERPRETING_MASK" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.OTHER">
+<span class="sig-name descname"><span class="pre">OTHER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'other'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.OTHER" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.QUESTION_TEXT">
+<span class="sig-name descname"><span class="pre">QUESTION_TEXT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'question_text'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.QUESTION_TEXT" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.SURVEY_DETAILS">
+<span class="sig-name descname"><span class="pre">SURVEY_DETAILS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'survey_details'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.SURVEY_DETAILS" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.SURVEY_DOCUMENTATION">
+<span class="sig-name descname"><span class="pre">SURVEY_DOCUMENTATION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'survey_documentation'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.SURVEY_DOCUMENTATION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.TECHNICAL_DESCRIPTION">
+<span class="sig-name descname"><span class="pre">TECHNICAL_DESCRIPTION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'technical_description'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.TECHNICAL_DESCRIPTION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.WAVE_10_REVISION">
+<span class="sig-name descname"><span class="pre">WAVE_10_REVISION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wave_10_revision'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.WAVE_10_REVISION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.models.LinkTypeChoices.WAVE_11_REVISION">
+<span class="sig-name descname"><span class="pre">WAVE_11_REVISION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'wave_11_revision'</span></em><a class="headerlink" href="#base.models.LinkTypeChoices.WAVE_11_REVISION" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-base.views">
+<span id="base-views-module"></span><h2>base.views module<a class="headerlink" href="#module-base.views" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="base.views.BadRequestErrorView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.views.</span></span><span class="sig-name descname"><span class="pre">BadRequestErrorView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.views.BadRequestErrorView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/base/#django.views.generic.base.TemplateView" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></a></p>
+<p>Displays a custom 400 error page when a bad request is made.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.views.BadRequestErrorView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'400.html'</span></em><a class="headerlink" href="#base.views.BadRequestErrorView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="base.views.ForbiddenErrorView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.views.</span></span><span class="sig-name descname"><span class="pre">ForbiddenErrorView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.views.ForbiddenErrorView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/base/#django.views.generic.base.TemplateView" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></a></p>
+<p>Displays a custom 403 error page when access to a resource is forbidden.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.views.ForbiddenErrorView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'403.html'</span></em><a class="headerlink" href="#base.views.ForbiddenErrorView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="base.views.InternalServerErrorView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.views.</span></span><span class="sig-name descname"><span class="pre">InternalServerErrorView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.views.InternalServerErrorView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/base/#django.views.generic.base.TemplateView" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></a></p>
+<p>Displays a custom 500 error page when an internal server error occurs.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.views.InternalServerErrorView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'500.html'</span></em><a class="headerlink" href="#base.views.InternalServerErrorView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="base.views.NotFoundErrorView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">base.views.</span></span><span class="sig-name descname"><span class="pre">NotFoundErrorView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#base.views.NotFoundErrorView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/base/#django.views.generic.base.TemplateView" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateView</span></code></a></p>
+<p>Displays a custom 404 error page when a page is not found.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="base.views.NotFoundErrorView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'404.html'</span></em><a class="headerlink" href="#base.views.NotFoundErrorView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-base">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-base" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="Signal Documentation Modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="base.migrations.html" class="btn btn-neutral float-right" title="base.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, cmu.edu.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
