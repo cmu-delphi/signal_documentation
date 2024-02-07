@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <form method="GET">
+                    <div class="form-group">
+                        <br />
+                        <div class="card-body">
+                            <h5 class="card-title">Search</h5>
+                            <input class="form-control" type="text" name="{{ filter.form.search.name }}"
+                                placeholder="Search" title="Enter search keyword" />
+                        </div>
+                        <div class="card-body">{{ form.pathogen|as_crispy_field }}</div>
+                        <div class="card-body">{{ form.active|as_crispy_field }} <span><i class="ri-stack-line"></i></span></div>
+                        <div class="card-body">{{ form.available_geography|as_crispy_field }}</div>
+                        <div class="card-body">{{ form.signal_type|as_crispy_field }}</div>
+                        <div class="card-body">{{ form.category|as_crispy_field }}</div>
+                        <div class="card-body">{{ form.format_type|as_crispy_field }}</div>
+                        <div class="card-body">{{ form.source|as_crispy_field }}</div>
+                        <div class="card-body">{{ form.time_label|as_crispy_field }}</div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2 mt-3">
+                                <button type="submit" class="btn btn-primary">{% trans 'Apply Filters' %}</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="row margin-bottom">
+                <div class="col-8 text-left-center">
+                    {% comment %} <span>Showing {{ signals|length }} of {{ signals.paginator.count }} signals.</span> {% endcomment %}
+                </div>
+                <div class="col-4 no-padding">
+                    <form id="orderByForm">
+                        <div class="input-group">
+                            <label class="input-group-text" for="orderSelect">Sort By</label>
+                            <select class="form-select" id="orderSelect" name="orderBy" aria-label="Order By"
+                                onchange="document.getElementById('orderByForm').submit();">
+                                <option value="default" selected>Default</option>
+                                <option value="name">Name</option>
+                                <option value="date">Date</option>
+                                <option value="price">Price</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card signals-list-card no-padding">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <table class="table table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Data Source</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Pathogen/Disease Area</th>
+                                    <th scope="col">Base Signal</th>
+                                    <th scope="col">Last Updated</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% include "signals/signals_list.html" with signals=signals %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

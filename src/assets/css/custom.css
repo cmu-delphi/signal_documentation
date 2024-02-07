@@ -1,0 +1,80 @@
+.is-search-panel-visible .toggled-search-panel {
+    width: 35%;
+    height: auto;
+}
+
+.toggled-search-panel {
+    width: 0;
+    height: 0;
+    transition: 0.4s linear;
+    overflow: hidden;
+}
+
+.toggled-search-panel .card {
+    opacity: 0;
+    transition: 0.3s linear;
+}
+
+.is-search-panel-visible .toggled-search-panel .card {
+    opacity: 1;
+}
+
+.animated .toggled-search-panel {
+    height: auto !important;
+}
+
+@media (max-width: 1200px) {
+    .is-search-panel-visible .toggled-search-panel {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* #navbarNav {
+    padding-left: 5%;
+}
+
+.navbar-logo {
+    padding-left: 5%;
+}
+
+#main {
+    margin-top: 1rem;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.signals-list {
+    margin-right: 0.5rem;
+}
+*/
+
+
+.clickable-table-row {
+    cursor: pointer;
+}
+
+#navbarNav {
+    padding-left: 5%;
+}
+
+.margin-bottom {
+    margin-bottom: 1rem;
+}
+
+.text-left-center {
+    display: block;
+    margin: auto 0;
+    text-align: left !important;
+}

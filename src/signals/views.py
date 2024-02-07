@@ -21,7 +21,7 @@ class SignalsListView(ListView):
     """
 
     model = Signal
-    template_name = "signals/signal_list.html"
+    template_name = "signals/signals.html"
     paginate_by = settings.PAGE_SIZE
 
     def get_queryset(self) -> Any:
@@ -91,6 +91,11 @@ class SignalsListView(ListView):
 
         context["signals"] = page_obj
         return context
+    
+    def get_template_names(self) -> list[str]:
+        if self.request.htmx:
+            return ["signals/signals_list.html"]
+        return [self.template_name]
 
 
 @method_decorator(cache_page(60 * 5), name="dispatch")
