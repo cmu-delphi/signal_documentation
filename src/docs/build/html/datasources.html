@@ -76,7 +76,10 @@
 <li class="toctree-l4"><a class="reference internal" href="#datasources.resources.SourceSubdivisionResource"><code class="docutils literal notranslate"><span class="pre">SourceSubdivisionResource</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#module-datasources.views">datasources.views module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-datasources.views">datasources.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#datasources.views.DataSourceListView"><code class="docutils literal notranslate"><span class="pre">DataSourceListView</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-datasources">Module contents</a></li>
 </ul>
 </li>
@@ -582,6 +585,24 @@ any additional links specified in ‘DUA’ or ‘Link’ columns.</p>
 </section>
 <section id="module-datasources.views">
 <span id="datasources-views-module"></span><h2>datasources.views module<a class="headerlink" href="#module-datasources.views" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="datasources.views.DataSourceListView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">datasources.views.</span></span><span class="sig-name descname"><span class="pre">DataSourceListView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#datasources.views.DataSourceListView" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/class-based-views/generic-display/#django.views.generic.list.ListView" title="(in Django v5.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ListView</span></code></a></p>
+<p>ListView for displaying a list of DataSource objects.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datasources.views.DataSourceListView.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#datasources.views.DataSourceListView.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#datasources.models.DataSource" title="datasources.models.DataSource"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataSource</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="datasources.views.DataSourceListView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'datasources/datasource_list.html'</span></em><a class="headerlink" href="#datasources.views.DataSourceListView.template_name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 <section id="module-datasources">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-datasources" title="Link to this heading"></a></h2>
