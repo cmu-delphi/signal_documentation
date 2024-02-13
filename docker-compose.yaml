@@ -67,8 +67,8 @@ services:
     env_file:
       - ./.env
     container_name: signal_documentation-celery
-    working_dir: /usr/src/signal_documentation
-    command: celery -A celery worker -l info
+    working_dir: /usr/src/signal_documentation/src
+    command: celery -A signal_documentation worker -l info
     volumes:
       - .:/usr/src/signal_documentation
     depends_on:
@@ -80,8 +80,8 @@ services:
     env_file:
       - ./.env
     container_name: signal_documentation-celery-beat
-    working_dir: /usr/src/signal_documentation
-    command: celery -A celery beat -l info
+    working_dir: /usr/src/signal_documentation/src
+    command: celery -A signal_documentation beat -l info
     volumes:
       - .:/usr/src/signal_documentation
     depends_on:
@@ -94,8 +94,8 @@ services:
       - ./.env
     image: mher/flower
     container_name: signal_documentation-flower
-    working_dir: /usr/src/signal_documentation
-    command: celery -A celery flower -l info
+    working_dir: /usr/src/signal_documentation/src
+    command: celery -A signal_documentation flower -l info
     volumes:
       - .:/usr/src/signal_documentation
     ports:

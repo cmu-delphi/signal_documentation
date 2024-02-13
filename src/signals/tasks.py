@@ -8,8 +8,8 @@ from signal_documentation.celery import BaseTaskWithRetry, app
 COVID_CAST_META_URL = os.environ.get('COVID_CAST_META_URL', 'https://api.covidcast.cmu.edu/epidata/covidcast/meta')
 
 
-@app.task(BaseTaskWithRetry)
-def get_covidcast_meta():
+@app.task(bind=BaseTaskWithRetry)
+def get_covidcast_meta(self):
     response = requests.get(COVID_CAST_META_URL, timeout=5)
     if response is None:
         return f'Not response, url {COVID_CAST_META_URL}'
