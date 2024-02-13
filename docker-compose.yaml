@@ -20,7 +20,9 @@ services:
 
   sdwebapp:
     image: ${REGISTRY}signal_documentation-webapp${TAG}
-    build: .
+    build:
+      context: .
+
     env_file:
       - ./.env
     container_name: signal_documentation-webapp
@@ -59,7 +61,53 @@ services:
       - "80:80"
     depends_on:
       - sdwebapp
+
+  celery:
+    build: .
+    env_file:
+      - ./.env
+    container_name: signal_documentation-celery
+    working_dir: /usr/src/signal_documentation
+    command: celery -A celery worker -l info
+    volumes:
+      - .:/usr/src/signal_documentation
+    depends_on:
+      - db
+      - redis
+
+  celery-beat:
+    build: .
+    env_file:
+      - ./.env
+    container_name: signal_documentation-celery-beat
+    working_dir: /usr/src/signal_documentation
+    command: celery -A celery beat -l info
+    volumes:
+      - .:/usr/src/signal_documentation
+    depends_on:
+      - db
+      - redis
+
+  flower:
+    build: .
+    env_file:
+      - ./.env
+    image: mher/flower
+    container_name: signal_documentation-flower
+    working_dir: /usr/src/signal_documentation
+    command: celery -A celery flower -l info
+    volumes:
+      - .:/usr/src/signal_documentation
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+      - celery
+      - celery-beat
+
 volumes:
   mysql:
   webapp:
   static:
+  celery:
+  celery-beat:
