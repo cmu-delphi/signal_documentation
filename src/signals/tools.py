@@ -7,7 +7,21 @@ class SignalLastUpdatedParser:
 
     def __init__(self, covidcast_meta_data: list) -> None:
         self.covidcast_meta_data = covidcast_meta_data
-        self.incoming_date_format = '%Y%m%d'
+        self.year_month_date_format = '%Y%m'
+        self.year_month_day_date_format = '%Y%m%d'
+
+    def format_date(self, date: str,) -> str:
+        """
+        Format the date string to a specific format.
+
+        :param date: The date string to format.
+        :return: The formatted date string.
+        :rtype: str
+        """
+        if len(date) == 6:
+            return datetime.strptime(date, self.year_month_date_format)
+        elif len(date) == 8:
+            return datetime.strptime(date, self.year_month_day_date_format)
 
     def set_data(self) -> None:
         """
@@ -17,12 +31,11 @@ class SignalLastUpdatedParser:
         for db_source in self.covidcast_meta_data:
             for signal_data in db_source['signals']:
                 try:
-                    signal = Signal.objects.get(name=signal_data['signal_basename'])
+                    signal = Signal.objects.get(name=signal_data['signal_basename'], source__name=signal_data['source'])
                 except Signal.DoesNotExist:
                     # TODO: Log this
                     continue
-                if signal:
-                    signal.last_updated = datetime.strptime(str(signal_data['max_issue']), self.incoming_date_format)
-                    signal.from_date = datetime.strptime(str(signal_data['min_time']), self.incoming_date_format)
-                    signal.to_date = datetime.strptime(str(signal_data['max_time']), self.incoming_date_format)
-                    signal.save()
+                signal.last_updated = self.format_date(str(signal_data['max_issue']))
+                signal.from_date = self.format_date(str(signal_data['min_time']))
+                signal.to_date = self.format_date(str(signal_data['max_time']))
+                signal.save()

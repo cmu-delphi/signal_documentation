@@ -3,6 +3,7 @@ from __future__ import absolute_import, unicode_literals
 import os
 
 from celery import Celery, Task
+from celery.schedules import crontab
 from django.conf import settings
 from dotenv import load_dotenv
 
@@ -52,6 +53,6 @@ class BaseTaskWithRetry(Task):
 app.conf.beat_schedule = {
     'get_covidcast_meta': {
         'task': 'signals.tasks.get_covidcast_meta',
-        'schedule': 60,
+        'schedule': crontab(minute=1, hour=0),
     },
 }
