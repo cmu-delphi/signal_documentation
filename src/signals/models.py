@@ -241,6 +241,13 @@ class Signal(TimeStampedModel):
         on_delete=models.PROTECT,
     )
 
+    example_url = models.CharField(
+        help_text=_('Example URL'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+
     class Meta:
         unique_together = ['name', 'source']
         ordering: list[str] = ["modified"]
