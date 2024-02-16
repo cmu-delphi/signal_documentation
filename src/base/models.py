@@ -18,6 +18,7 @@ class LinkTypeChoices(models.TextChoices):
     WAVE_10_REVISION = 'wave_10_revision', _('Wave 10 revision updates')
     WAVE_11_REVISION = 'wave_11_revision', _('Wave 11 revision updates')
     OTHER = 'other', _('Other')
+    EXAMPLE_URL = 'example_url', _('Example URL')
 
 
 class Link(TimeStampedModel):

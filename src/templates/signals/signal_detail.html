@@ -205,19 +205,15 @@
                 <div class="card-body padding-top-1rem">
                     <div class="row">
                     {% for link in signal.links.all %}
-                        <div class="card col-2 related-link-card">
-                            {% if link.get_preview.image %}
-                                {% comment %} <img src="{{ link.get_preview.image }}" class="card-img-top"> {% endcomment %}
-                                <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/icons/card-image.svg" class="card-img-top" alt="{{ link.get_preview.title }}">
-                            {% else %}
-                                <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/icons/card-image.svg" class="card-img-top" alt="{{ link.get_preview.title }}">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ link.get_previerw.title }}</h5>
-                                <p class="card-text">{{ link.get_preview.description }}</p>
-                                <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
+                        {% if link.link_type != 'example_url' %}
+                            <div class="card col-2 related-link-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ link.get_previerw.title }}</h5>
+                                    <p class="card-text">{{ link.get_preview.description }}</p>
+                                    <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
+                                </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endfor %}
                     </div>
                 </div>
