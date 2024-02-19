@@ -35,6 +35,7 @@ sphinxcontrib-django = "*"
 sphinx-rtd-theme = "*"
 django-crispy-forms = "*"
 crispy-bootstrap5 = "*"
+django-htmx = "*"
 
 [dev-packages]
 flake8 = "*"

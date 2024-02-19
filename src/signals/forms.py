@@ -40,31 +40,27 @@ class SignalFilterForm(forms.ModelForm):
         widgets = {
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
             'pathogen': forms.Select(attrs={'class': 'form-select'}),
-            'active': forms.NullBooleanSelect(attrs={'class': 'form-check mt-3'},),
-            'available_geography': forms.SelectMultiple(attrs={
+            'active': forms.NullBooleanSelect(attrs={'class': 'form-check mt-3', 'label': "Test <i class='ri-stack-line'></i>"},),
+            'available_geography': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
-                'data-bs-original-title': MULTI_SELECT_TOOLTIP_MESSAGE
             }),
-            'signal_type': forms.SelectMultiple(attrs={
+            'signal_type': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
-                'data-bs-original-title': MULTI_SELECT_TOOLTIP_MESSAGE
             }),
-            'category': forms.SelectMultiple(attrs={
+            'category': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
-                'data-bs-original-title': MULTI_SELECT_TOOLTIP_MESSAGE
             }),
             'format_type': forms.Select(attrs={'class': 'form-control'}),
-            'source': forms.SelectMultiple(attrs={
+            'source': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
-                'data-bs-original-title': MULTI_SELECT_TOOLTIP_MESSAGE
             }),
             'time_label': forms.Select(attrs={'class': 'form-select'}),
         }
@@ -79,3 +75,4 @@ class SignalFilterForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.required = False
             field.help_text = ''
+            field.label = False
