@@ -241,6 +241,11 @@ class Signal(TimeStampedModel):
         on_delete=models.PROTECT,
     )
 
+    @property
+    def example_url(self):
+        example_url = self.links.filter(link_type="example_url").first()
+        return example_url.url if example_url else None
+
     class Meta:
         unique_together = ['name', 'source']
         ordering: list[str] = ["modified"]
