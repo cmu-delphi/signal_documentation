@@ -1,0 +1,317 @@
+{% extends 'index.html' %}
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <form method="GET">
+                    <div class="form-group">
+                        <br />
+                        <div class="card-body">
+                            <h5 class="card-title">Search</h5>
+                            <input class="form-control" type="text" name="{{ filter.form.search.name }}"
+                                placeholder="Search" title="Enter search keyword" />
+                        </div>
+                        <div class="card-body">
+                            <label for="id_pathogen" class="form-label">
+                                Pathogen <a href="#" data-bs-toggle="modal" data-bs-target="#pathogen_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="pathogen_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Pathogen</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.pathogen|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_active" class="form-label">
+                                Active
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#active_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="active_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Active</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.active|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_available_geography" class="form-label">
+                                Available Geography
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#available_geography_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="available_geography_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Available Geography</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.available_geography|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_signal_type" class="form-label">
+                                Signal Type
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#signal_type_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="signal_type_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Signal Type</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.signal_type|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_category" class="form-label">
+                                Category
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#category_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="category_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Category</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.category|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_format_type" class="form-label">
+                                Format Type
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#format_type_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="format_type_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Format Type</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.format_type|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_source" class="form-label">
+                                Source
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#source_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="source_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Source</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.source|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <label for="id_time_label" class="form-label">
+                                Time Label
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#time_label_modal">
+                                    <i class="bi bi-info-circle"></i>
+                                </a>
+                            </label>
+                            <div class="modal fade" id="time_label_modal" tabindex="-1" style="display: none;"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Time Label</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Non omnis incidunt qui sed occaecati magni asperiores est mollitia. Soluta
+                                            at et reprehenderit. Placeat autem numquam et fuga numquam. Tempora in
+                                            facere consequatur sit dolor ipsum. Consequatur nemo amet incidunt est
+                                            facilis. Dolorem neque recusandae quo sit molestias sint dignissimos.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form.time_label|as_crispy_field }}
+                        </div>
+                        <div class="card-body">
+                            <div class="d-grid gap-2 mt-3">
+                                <button type="submit" class="btn btn-primary">{% trans 'Apply Filters' %}</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="row margin-bottom-1rem">
+                <div class="col-8 text-left-center">
+                </div>
+                <div class="col-4 no-padding">
+                    <form id="orderByForm">
+                        <div class="input-group">
+                            <label class="input-group-text" for="orderSelect">Sort By</label>
+                            <select class="form-select" id="orderSelect" name="orderBy" aria-label="Order By"
+                                onchange="document.getElementById('orderByForm').submit();">
+                                <option value="default" selected>Default</option>
+                                <option value="name">Name</option>
+                                <option value="date">Date</option>
+                                <option value="price">Price</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card signals-list-card no-padding">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <table class="table table-borderless table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Data Source</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Pathogen/Disease Area</th>
+                                    <th scope="col">Base Signal</th>
+                                    <th scope="col">Last Updated</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% include "signals/signals_list.html" with signals=signals %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

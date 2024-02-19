@@ -2,8 +2,6 @@ from typing import Any, Dict
 
 from django.conf import settings
 from django.core.paginator import Page, Paginator
-from django.utils.decorators import method_decorator
-from django.views.decorators.cache import cache_page
 from django.views.generic import DetailView, ListView
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
@@ -21,7 +19,7 @@ class SignalsListView(ListView):
     """
 
     model = Signal
-    template_name = "signals/signal_list.html"
+    template_name = "signals/signals.html"
     paginate_by = settings.PAGE_SIZE
 
     def get_queryset(self) -> Any:
@@ -92,8 +90,12 @@ class SignalsListView(ListView):
         context["signals"] = page_obj
         return context
 
+    def get_template_names(self) -> list[str]:
+        if self.request.htmx:
+            return ["signals/signals_list.html"]
+        return [self.template_name]
 
-@method_decorator(cache_page(60 * 5), name="dispatch")
+
 class SignalsDetailView(DetailView):
     """
     DetailView for displaying a single Signal object.

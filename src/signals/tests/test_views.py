@@ -17,12 +17,12 @@ class SignalListViewTest(TestCase):
         for _ in range(fake.random_int(min=1, max=100)):
             SignalFactory()
 
-    def test_signal_list_view(self):
+    def test_signals_view(self):
         response = self.client.get(reverse('signals'))
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'signals/signal_list.html')
+        self.assertTemplateUsed(response, 'signals/signals.html')
 
-    def test_signal_list_view_context(self):
+    def test_signals_view_context(self):
         response = self.client.get(reverse('signals'))
         self.assertTrue('signals' in response.context)
         self.assertTrue('is_paginated' in response.context)
@@ -30,7 +30,7 @@ class SignalListViewTest(TestCase):
         self.assertTrue('paginator' in response.context)
         self.assertTrue('filter' in response.context)
 
-    def test_signal_list_view_filters(self):
+    def test_signals_view_filters(self):
         signal = SignalFactory()
         response = self.client.get(reverse('signals'))
         self.assertEqual(response.status_code, 200)
@@ -60,7 +60,7 @@ class SignalListViewTest(TestCase):
         for s in response.context['filter'].qs:
             self.assertEqual(s.time_label, signal.time_label)
 
-    def test_signal_list_view_search(self):
+    def test_signals_view_search(self):
         name = fake.random_element(Signal.objects.all()).name
         description_word = fake.random_element(fake.random_element(Signal.objects.all()).description.split(' ')).strip()
         short_description_word = fake.random_element(fake.random_element(Signal.objects.all()).short_description.split(' ')).strip()
