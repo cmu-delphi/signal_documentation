@@ -37,14 +37,14 @@
                             </div>
                             <div class="col-3 border-left">
                                 <p class="margin-top-1rem margin-bottom-0">
-                                    Last Updated
+                                    Last Updated:
                                 </p>
                                 {% if signal.last_updated %}
                                     <h5>{{ signal.last_updated }}</h5>
                                 {% else %}
                                     <h5>Not available</h5>
                                 {% endif %}
-                                <p class="margin-bottom-0">Data Provided By</p>
+                                <p class="margin-bottom-0">Data Provided By:</p>
                                 <h5>{{signal.source.data_source.display_name}} ({{ signal.source.name }})</h5>
                             </div>
                         </div>
