@@ -2,8 +2,6 @@ from typing import Any, Dict
 
 from django.conf import settings
 from django.core.paginator import Page, Paginator
-from django.utils.decorators import method_decorator
-from django.views.decorators.cache import cache_page
 from django.views.generic import DetailView, ListView
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
@@ -98,7 +96,6 @@ class SignalsListView(ListView):
         return [self.template_name]
 
 
-@method_decorator(cache_page(60 * 5), name="dispatch")
 class SignalsDetailView(DetailView):
     """
     DetailView for displaying a single Signal object.

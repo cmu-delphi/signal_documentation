@@ -2,288 +2,294 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-<main id="main" class="main">
-    <section class="section">
-        <div class="row">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        {{ signal.display_name }}
-                        <span class="badge rounded-pill text-bg-primary"
-                            >{{ signal.source.name }}</span
-                        >
-                    </h5>
-                    <hr class="no-margin" />
-                    <div class="row">
-                        <div class="col-9">
-                            <p
-                                class="margin-top-1rem margin-bottom-0 overview"
-                                id="overview"
-                            >
-                                {{ signal.description|safe|truncatechars:300 }}
-                            </p>
-                            <p
-                                class="margin-top-1rem margin-bottom-0 full-text"
-                                id="full-text"
-                            >
-                                {{ signal.description|safe }}
-                            </p>
-                            {% if signal.description|length > 300 %}
-                            <a href="#" onclick="readMore(this);"
-                                >Read more <i class="bi bi-arrow-bar-down"></i
-                            ></a>
-                            {% endif %}
-                        </div>
-                        <div class="col-3 border-left">
-                            <p class="margin-top-1rem margin-bottom-0">
-                                Last Updated
-                            </p>
-                            <h5>February 15, 2024</h5>
-                            <p class="margin-bottom-0">Data Provided By</p>
-                            <h5>{{ signal.source.name }}</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <h5>About this signal</h5>
-    <section class="section signal">
-        <div class="row">
-            <div class="card">
-                <div class="card-body">
-                    <div class="row margin-top-1rem">
-                        <table class="table table-striped">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Data Source</th>
-                                    <td>{{ signal.source.name }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Signal Name</th>
-                                    <td>{{ signal.name }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Pathogen</th>
-                                    <td>
-                                        <ul class="no-padding">
-                                            {% for pathogen in signal.pathogen.all %}
-                                            <span
-                                                class="badge rounded-pill bg-dark"
-                                                >{{ pathogen|title }}</span
-                                            >
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Geography</th>
-                                    <td>
-                                        <ul class="no-padding">
-                                            {% for geography in signal.available_geography.all %}
-                                            <span
-                                                class="badge rounded-pill bg-dark"
-                                                >{{ geography }}</span
-                                            >
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Signal Type</th>
-                                    <td>
-                                        <ul class="no-padding">
-                                            {% for signal_type in signal.signal_type.all %}
-                                            <span
-                                                class="badge rounded-pill bg-dark"
-                                                >{{ signal_type }}</span
-                                            >
-                                            {% endfor %}
-                                        </ul>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Format</th>
-                                    <td>{{ signal.format_type|title }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Temporal Resolution</th>
-                                    <td>{{ signal.time_label|title }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Smoothing</th>
-                                    <td>
-                                        {% if signal.is_smoothed %}
-                                        <span
-                                            class="badge rounded-pill bg-success"
-                                            >Yes</span
-                                        >
-                                        {% else %}
-                                        <span
-                                            class="badge rounded-pill bg-danger"
-                                            >No</span
-                                        >
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Cumulative</th>
-                                    <td>
-                                        {% if signal.is_cumulative %}
-                                        <span
-                                            class="badge rounded-pill bg-success"
-                                            >Yes</span
-                                        >
-                                        {% else %}
-                                        <span
-                                            class="badge rounded-pill bg-danger"
-                                            >No</span
-                                        >
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Standard Error</th>
-                                    <td>
-                                        {% if signal.has_stderr %}
-                                        <span
-                                            class="badge rounded-pill bg-success"
-                                            >Yes</span
-                                        >
-                                        {% else %}
-                                        <span
-                                            class="badge rounded-pill bg-danger"
-                                            >No</span
-                                        >
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Sample Size</th>
-                                    <td>
-                                        {% if signal.has_sample_size %}
-                                        <span
-                                            class="badge rounded-pill bg-success"
-                                            >Yes</span
-                                        >
-                                        {% else %}
-                                        <span
-                                            class="badge rounded-pill bg-danger"
-                                            >No</span
-                                        >
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    {% if signal.example_url != '' %}
-        <h5>Response Example</h5>
+
+    <main id="main" class="main">
         <section class="section">
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <div class="row margin-top-1rem">
-                            <p>Example URL:</p>
-                            <span>{{ signal.example_url }}</span>
-                            <button type="button" class="btn btn-primary margin-top-1rem" id="show-response">Show response</button>
-                            <pre class="margin-top-1rem"><code id="example-response" class="hidden"></code></pre>
+                        <h5 class="card-title">
+                            {{ signal.display_name }}
+                            <span class="badge rounded-pill text-bg-primary"
+                                >{{ signal.source.name }}</span
+                            >
+                        </h5>
+                        <hr class="no-margin" />
+                        <div class="row">
+                            <div class="col-9">
+                                <p
+                                    class="margin-top-1rem margin-bottom-0 overview"
+                                    id="overview"
+                                >
+                                    {{ signal.description|safe|truncatechars:300 }}
+                                </p>
+                                <p
+                                    class="margin-top-1rem margin-bottom-0 full-text"
+                                    id="full-text"
+                                >
+                                    {{ signal.description|safe }}
+                                </p>
+                                {% if signal.description|length > 300 %}
+                                <a href="#" onclick="readMore(this);"
+                                    >Read more <i class="bi bi-arrow-bar-down"></i
+                                ></a>
+                                {% endif %}
+                            </div>
+                            <div class="col-3 border-left">
+                                <p class="margin-top-1rem margin-bottom-0">
+                                    Last Updated:
+                                </p>
+                                {% if signal.last_updated %}
+                                    <h5>{{ signal.last_updated }}</h5>
+                                {% else %}
+                                    <h5>Not available</h5>
+                                {% endif %}
+                                <p class="margin-bottom-0">Data Provided By:</p>
+                                <h5>{{signal.source.data_source.display_name}} ({{ signal.source.name }})</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    {% endif %}
-    <h5>Related links</h5>
-    <section class="section">
-        <div class="row">
-            <div class="card">
-                <div class="card-body padding-top-1rem">
-                    <div class="row">
-                    {% for link in signal.links.all %}
-                        {% if link.link_type != 'example_url' %}
-                            <div class="card col-2 related-link-card">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ link.get_previerw.title }}</h5>
-                                    <p class="card-text">{{ link.get_preview.description }}</p>
-                                    <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+        <h5>About this signal</h5>
+        <section class="section signal">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row margin-top-1rem">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Data Source</th>
+                                        <td>{{ signal.source.name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Signal Name</th>
+                                        <td>{{ signal.name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Pathogen</th>
+                                        <td>
+                                            <ul class="no-padding">
+                                                {% for pathogen in signal.pathogen.all %}
+                                                <span
+                                                    class="badge rounded-pill bg-dark"
+                                                    >{{ pathogen|title }}</span
+                                                >
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Geography</th>
+                                        <td>
+                                            <ul class="no-padding">
+                                                {% for geography in signal.available_geography.all %}
+                                                <span
+                                                    class="badge rounded-pill bg-dark"
+                                                    >{{ geography }}</span
+                                                >
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Signal Type</th>
+                                        <td>
+                                            <ul class="no-padding">
+                                                {% for signal_type in signal.signal_type.all %}
+                                                <span
+                                                    class="badge rounded-pill bg-dark"
+                                                    >{{ signal_type }}</span
+                                                >
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Format</th>
+                                        <td>{{ signal.format_type|title }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Temporal Resolution</th>
+                                        <td>{{ signal.time_label|title }}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Smoothing</th>
+                                        <td>
+                                            {% if signal.is_smoothed %}
+                                            <span
+                                                class="badge rounded-pill bg-success"
+                                                >Yes</span
+                                            >
+                                            {% else %}
+                                            <span
+                                                class="badge rounded-pill bg-danger"
+                                                >No</span
+                                            >
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cumulative</th>
+                                        <td>
+                                            {% if signal.is_cumulative %}
+                                            <span
+                                                class="badge rounded-pill bg-success"
+                                                >Yes</span
+                                            >
+                                            {% else %}
+                                            <span
+                                                class="badge rounded-pill bg-danger"
+                                                >No</span
+                                            >
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Standard Error</th>
+                                        <td>
+                                            {% if signal.has_stderr %}
+                                            <span
+                                                class="badge rounded-pill bg-success"
+                                                >Yes</span
+                                            >
+                                            {% else %}
+                                            <span
+                                                class="badge rounded-pill bg-danger"
+                                                >No</span
+                                            >
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sample Size</th>
+                                        <td>
+                                            {% if signal.has_sample_size %}
+                                            <span
+                                                class="badge rounded-pill bg-success"
+                                                >Yes</span
+                                            >
+                                            {% else %}
+                                            <span
+                                                class="badge rounded-pill bg-danger"
+                                                >No</span
+                                            >
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        {% if signal.example_url != '' %}
+            <h5>Response Example</h5>
+            <section class="section">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row margin-top-1rem">
+                                <p>Example URL:</p>
+                                <span>{{ signal.example_url }}</span>
+                                <button type="button" class="btn btn-primary margin-top-1rem" id="show-response">Show response</button>
+                                <pre class="margin-top-1rem"><code id="example-response" class="hidden"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        <h5>Related links</h5>
+        <section class="section">
+            <div class="row">
+                <div class="card">
+                    <div class="card-body padding-top-1rem">
+                        <div class="row">
+                        {% for link in signal.links.all %}
+                            {% if link.link_type != 'example_url' %}
+                                <div class="card col-2 related-link-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ link.get_previerw.title }}</h5>
+                                        <p class="card-text">{{ link.get_preview.description }}</p>
+                                        <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        if (!library)
-            var library = {};
+        <script>
+            if (!library)
+                var library = {};
 
-        library.json = {
-            replacer: function (match, pIndent, pKey, pVal, pEnd) {
-                var key = '<span class=json-key>';
-                var val = '<span class=json-value>';
-                var str = '<span class=json-string>';
-                var r = pIndent || '';
-                if (pKey)
-                    r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
-                if (pVal)
-                    r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
-                return r + (pEnd || '');
-            },
-            prettyPrint: function (obj) {
-                var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
-                return JSON.stringify(obj, null, 3)
-                    .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
-                    .replace(/</g, '&lt;').replace(/>/g, '&gt;')
-                    .replace(jsonLine, library.json.replacer);
-            }
-        };
+            library.json = {
+                replacer: function (match, pIndent, pKey, pVal, pEnd) {
+                    var key = '<span class=json-key>';
+                    var val = '<span class=json-value>';
+                    var str = '<span class=json-string>';
+                    var r = pIndent || '';
+                    if (pKey)
+                        r = r + key + pKey.replace(/[": ]/g, '') + '</span>: ';
+                    if (pVal)
+                        r = r + (pVal[0] == '"' ? str : val) + pVal + '</span>';
+                    return r + (pEnd || '');
+                },
+                prettyPrint: function (obj) {
+                    var jsonLine = /^( *)("[\w]+": )?("[^"]*"|[\w.+-]*)?([,[{])?$/mg;
+                    return JSON.stringify(obj, null, 3)
+                        .replace(/&/g, '&amp;').replace(/\\"/g, '&quot;')
+                        .replace(/</g, '&lt;').replace(/>/g, '&gt;')
+                        .replace(jsonLine, library.json.replacer);
+                }
+            };
 
-        var requestSent = false;
+            var requestSent = false;
 
-        $(document).ready(function () {
-            $("#show-response").click(function () {
-                if (!requestSent) {
-                    $.ajax({
-                        url: '{{ signal.example_url|safe }}',
-                        type: 'GET',
-                        success: function (result) {
-                            // Update the page with the response data.
-                            // This depends on the structure of your response data.
-                            // For example, if the response data is a string:
-                            if (result["epidata"].length > 5) {
-                                result = { epidata: result["epidata"].slice(0, 5), result: result["result"], message: result["message"] }
+            $(document).ready(function () {
+                $("#show-response").click(function () {
+                    if (!requestSent) {
+                        $.ajax({
+                            url: '{{ signal.example_url|safe }}',
+                            type: 'GET',
+                            success: function (result) {
+                                // Update the page with the response data.
+                                // This depends on the structure of your response data.
+                                // For example, if the response data is a string:
+                                if (result["epidata"].length > 5) {
+                                    result = { epidata: result["epidata"].slice(0, 5), result: result["result"], message: result["message"] }
+                                }
+                                $('#example-response').html(library.json.prettyPrint(result));
                             }
-                            $('#example-response').html(library.json.prettyPrint(result));
-                        }
-                    });
-                    requestSent = true;
-                };
-                $("#example-response").toggleClass("hidden");
+                        });
+                        requestSent = true;
+                    };
+                    $("#example-response").toggleClass("hidden");
+                });
             });
-        });
 
-        function readMore(button) {
-            var truncatedText = document.querySelector(".overview");
-            var fullText = document.querySelector(".full-text");
+            function readMore(button) {
+                var truncatedText = document.querySelector(".overview");
+                var fullText = document.querySelector(".full-text");
 
-            if (truncatedText.style.display === "none") {
-                truncatedText.style.display = "block";
-                fullText.style.display = "none";
-                button.innerHTML = 'Read more <i class="bi bi-arrow-bar-down"></i>';
-            } else {
-                truncatedText.style.display = "none";
-                fullText.style.display = "block";
-                button.innerHTML = 'Read less <i class="bi bi-arrow-bar-up"></i>';
+                if (truncatedText.style.display === "none") {
+                    truncatedText.style.display = "block";
+                    fullText.style.display = "none";
+                    button.innerHTML = 'Read more <i class="bi bi-arrow-bar-down"></i>';
+                } else {
+                    truncatedText.style.display = "none";
+                    fullText.style.display = "block";
+                    button.innerHTML = 'Read less <i class="bi bi-arrow-bar-up"></i>';
+                }
             }
-        }
-    </script>
-</main>
+        </script>
+    </main>
+
 {% endblock %}

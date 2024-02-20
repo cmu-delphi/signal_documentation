@@ -210,13 +210,29 @@ SPECTACULAR_SETTINGS = {
 
 # Django chache
 # https://docs.djangoproject.com/en/4.2/topics/cache/#redis
+REDIS_HOST_NAME = os.environ.get('REDIS_HOST_NAME', 'localhost')
+REDIS_PORT = os.environ.get('REDIS_PORT', 6379)
+REDIS_DB = os.environ.get('REDIS_DB', 0)
+
+REDIS_URL = os.environ.get('REDIS_URL', f'redis://{REDIS_HOST_NAME}:{REDIS_PORT}/')
+
 
 CACHES: dict[str, dict[str, str]] = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
-        'LOCATION': os.environ.get('REDIS_URL', 'redis://127.0.0.1:6379'),
+        'LOCATION': REDIS_URL,
     }
 }
+
+
+# Celery
+# https://docs.celeryq.dev/en/stable/index.html
+CELERY_BROKER_URL = f"{REDIS_URL}{REDIS_DB}"
+
+CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
 
 
 # Password validation
