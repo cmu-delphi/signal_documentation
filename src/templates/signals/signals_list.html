@@ -21,7 +21,11 @@
             {% endif %}
         </td>
         <td>
-            Last Updated
+            {% if signal.last_updated %}
+                {{ signal.last_updated|date:"Y-m-d" }}
+            {% else %}
+                --/--
+            {% endif %}
         </td>
     </tr>
 {% endfor %}

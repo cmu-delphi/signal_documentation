@@ -15,7 +15,7 @@ class SignalFilter(django_filters.FilterSet):
     search = CharFilter(method='filter_search')
     order_by = OrderingFilter(
         fields=(
-            ('name', 'ame'),
+            ('display_name', 'name'),
             ('source__name', 'source'),
             ('last_updated', 'last_updated'),
         )
