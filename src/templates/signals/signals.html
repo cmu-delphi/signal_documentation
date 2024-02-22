@@ -4,11 +4,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+<form method="GET" id="filters-form">
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
             <div class="card">
-                <form method="GET">
                     <div class="form-group">
                         <br />
                         <div class="card-body">
@@ -269,7 +269,6 @@
                             </div>
                         </div>
                     </div>
-                </form>
             </div>
         </div>
         <div class="col-9">
@@ -277,18 +276,15 @@
                 <div class="col-8 text-left-center">
                 </div>
                 <div class="col-4 no-padding">
-                    <form id="orderByForm">
-                        <div class="input-group">
-                            <label class="input-group-text" for="orderSelect">Sort By</label>
-                            <select class="form-select" id="orderSelect" name="orderBy" aria-label="Order By"
-                                onchange="document.getElementById('orderByForm').submit();">
-                                <option value="default" selected>Default</option>
-                                <option value="name">Name</option>
-                                <option value="date">Date</option>
-                                <option value="price">Price</option>
-                            </select>
+                        <div class="input-group mb-3">
+                            <label class="input-group-text form-label" for="id_order_by">Sort By</label>
+                            {{ form.order_by|as_crispy_field }}
                         </div>
-                    </form>
+                    <script>
+                        document.getElementById('id_order_by').addEventListener('change', function() {
+                            document.getElementById('filters-form').submit();
+                        });
+                    </script>
                 </div>
             </div>
             <div class="row">
@@ -314,4 +310,5 @@
             </div>
         </div>
     </div>
+</form>
     {% endblock %}

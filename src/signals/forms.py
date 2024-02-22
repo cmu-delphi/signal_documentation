@@ -16,6 +16,14 @@ class SignalFilterForm(forms.ModelForm):
     """
     A form for filtering signals.
     """
+    order_by = forms.ChoiceField(choices=[
+            ('', '---------'),
+            ('name', 'Name'),
+            ('source__name', 'Source'),
+            ('last_updated', 'Last Updated'),
+        ],
+        required=False,
+    )
     search = forms.CharField(min_length=3)
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), empty_label='---------')
     active = forms.NullBooleanField(initial=None)
@@ -26,6 +34,7 @@ class SignalFilterForm(forms.ModelForm):
     class Meta:
         model = Signal
         fields: list[str] = [
+            'order_by',
             'search',
             'pathogen',
             'active',
@@ -38,6 +47,11 @@ class SignalFilterForm(forms.ModelForm):
         ]
 
         widgets = {
+            'order_by': forms.Select(attrs={
+                'class': 'form-select',
+                'id': 'order_by',
+                'aria-label': 'Order by',
+            }),
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
             'pathogen': forms.Select(attrs={'class': 'form-select'}),
             'active': forms.NullBooleanSelect(attrs={'class': 'form-check mt-3', 'label': "Test <i class='ri-stack-line'></i>"},),
