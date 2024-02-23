@@ -276,15 +276,10 @@
                 <div class="col-8 text-left-center">
                 </div>
                 <div class="col-4 no-padding">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text form-label" for="id_order_by">Sort By</label>
-                            {{ form.order_by|as_crispy_field }}
-                        </div>
-                    <script>
-                        document.getElementById('id_order_by').addEventListener('change', function() {
-                            document.getElementById('filters-form').submit();
-                        });
-                    </script>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
+                        {{ form.order_by|as_crispy_field }}
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -311,4 +306,9 @@
         </div>
     </div>
 </form>
+<script>
+    document.getElementById('id_order_by').addEventListener('change', function() {
+        document.getElementById('filters-form').submit();
+    });
+</script>
 {% endblock %}

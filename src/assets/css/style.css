@@ -1228,3 +1228,11 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+#id_order_by {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+#order_by_label{
+  margin-bottom: 1rem;
+}
