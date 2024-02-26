@@ -1,6 +1,6 @@
 {% for signal in signals %}
     {% if forloop.last %}
-        <tr hx-trigger="revealed" class="clickable-table-row" hx-get="{% url 'signals' %}?page={{ page_obj.number|add:1 }}"
+        <tr hx-trigger="revealed" class="clickable-table-row" hx-get="{% url 'signals' %}?page={{ page_obj.number|add:1 }}{{ url_params_str }}"
             hx-swap="afterend" onClick="location.href='{% url 'signal' pk=signal.id %}';">
     {% else %}
         <tr classs="clickable-table-row" onClick="location.href='{% url 'signal' pk=signal.id %}';">
