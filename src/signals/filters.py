@@ -2,7 +2,7 @@ from typing import Any
 
 import django_filters
 from django.db.models import Q
-from django_filters.filters import CharFilter
+from django_filters.filters import CharFilter, OrderingFilter
 
 from signals.models import Signal
 
@@ -13,6 +13,13 @@ class SignalFilter(django_filters.FilterSet):
     """
 
     search = CharFilter(method='filter_search')
+    order_by = OrderingFilter(
+        fields=(
+            ('display_name', 'name'),
+            ('source__name', 'source'),
+            ('last_updated', 'last_updated'),
+        )
+    )
 
     class Meta:
         model = Signal
