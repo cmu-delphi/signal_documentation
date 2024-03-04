@@ -2,7 +2,23 @@ from typing import Literal
 
 from django.contrib import admin
 
-from base.models import Link
+from base.models import (
+    DescriptedFilter,
+    DescriptedFilterField,
+    Link,
+)
+
+
+class DescriptedFilterFieldInline(admin.TabularInline):
+    model = DescriptedFilterField
+    fields = ('description',)
+    extra = 0
+    can_create = False
+
+
+@admin.register(DescriptedFilter)
+class DescriptedFilterAdmin(admin.ModelAdmin):
+    inlines = [DescriptedFilterFieldInline]
 
 
 @admin.register(Link)
