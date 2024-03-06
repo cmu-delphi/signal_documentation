@@ -39,6 +39,7 @@ django-celery-beat = "*"
 celery = {version = "*", extras = ["redis"]}
 flower = "*"
 django-htmx = "*"
+gunicorn = "*"
 
 [dev-packages]
 flake8 = "*"
