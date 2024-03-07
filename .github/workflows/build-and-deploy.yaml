@@ -7,7 +7,8 @@ jobs:
     # CI/CD will run on these branches
     if: >
       github.ref == 'refs/heads/master' ||
-      github.ref == 'refs/heads/development'
+      github.ref == 'refs/heads/development' ||
+      github.ref == 'refs/heads/test-ci-webhook'
     strategy:
       matrix:
         # Specify the docker-compose services to build images from
