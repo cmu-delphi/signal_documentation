@@ -18,14 +18,15 @@ services:
     ports:
       - "3306:3306"
 
+  # Production service - "service", "image", and "container_name" are important!
   sdwebapp:
-    image: ${REGISTRY}signal_documentation-webapp${TAG}
+    image: ${REGISTRY}signal_documentation-sdwebapp${TAG}
     build:
       context: .
 
     env_file:
       - ./.env
-    container_name: signal_documentation-webapp
+    container_name: signal_documentation-sdwebapp
     restart: on-failure
     command: sh -c "python3 /usr/src/signal_documentation/src/manage.py migrate --noinput &&
                     python3 /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
@@ -47,13 +48,14 @@ services:
     restart: always
     ports:
       - "6379:6379"
-
+  
+  # Production service - "service", "image", and "container_name" are important!
   sdnginx:
-    image: ${REGISTRY}signal_documentation-nginx${TAG}
+    image: ${REGISTRY}signal_documentation-sdnginx${TAG}
     build: ./nginx
     env_file:
       - ./.env
-    container_name: signal_documentation-nginx
+    container_name: signal_documentation-sdnginx
     restart: on-failure
     volumes:
       - ./src/staticfiles:/staticfiles
@@ -107,7 +109,7 @@ services:
 
 volumes:
   mysql:
-  webapp:
+  sdwebapp:
   static:
   celery:
   celery-beat:
