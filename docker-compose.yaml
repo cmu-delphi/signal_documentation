@@ -18,7 +18,8 @@ services:
     ports:
       - "3306:3306"
 
-  # Production service - "service", "image", and "container_name" are important!
+  # Production service - "service", "image", and "container_name" should all contain the same
+  # reference, based on the name of the service.
   sdwebapp:
     image: ${REGISTRY}signal_documentation-sdwebapp${TAG}
     build:
@@ -49,7 +50,8 @@ services:
     ports:
       - "6379:6379"
   
-  # Production service - "service", "image", and "container_name" are important!
+  # Production service - "service", "image", and "container_name" should all contain the same
+  # reference, based on the name of the service.
   sdnginx:
     image: ${REGISTRY}signal_documentation-sdnginx${TAG}
     build: ./nginx
