@@ -41,6 +41,14 @@ class HighValuesAreChoices(models.TextChoices):
     NEUTRAL = 'neutral', _('Neutral')
 
 
+class ActiveChoices(models.TextChoices):
+    """
+    A class representing choices for active signals.
+    """
+    ACTIVE = True, _('Active')
+    HISTORICAL = False, _('Historical')
+
+
 class SignalCategory(TimeStampedModel):
     """
     A model representing a signal category.

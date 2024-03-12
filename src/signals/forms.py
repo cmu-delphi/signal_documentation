@@ -7,6 +7,7 @@ from signals.models import (
     Pathogen,
     Signal,
     TimeLabelChoices,
+    ActiveChoices
 )
 
 MULTI_SELECT_TOOLTIP_MESSAGE = _('Hold down “Control”, or “Command” on a Mac, to select more than one.')
@@ -26,7 +27,7 @@ class SignalFilterForm(forms.ModelForm):
     )
     search = forms.CharField(min_length=3)
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), empty_label='---------')
-    active = forms.NullBooleanField(initial=None)
+    active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
     format_type = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
     source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), empty_label='---------')
     time_label = forms.ChoiceField(choices=[('', '---------')] + TimeLabelChoices.choices, label=_('Temporal Resolution'))
@@ -54,7 +55,6 @@ class SignalFilterForm(forms.ModelForm):
             }),
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
             'pathogen': forms.Select(attrs={'class': 'form-select'}),
-            'active': forms.NullBooleanSelect(attrs={'class': 'form-check mt-3', 'label': "Test <i class='ri-stack-line'></i>"},),
             'available_geography': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',

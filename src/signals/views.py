@@ -40,7 +40,9 @@ class SignalsListView(ListView):
             "pathogen": int(self.request.GET.get("pathogen"))
             if self.request.GET.get("pathogen")
             else "",
-            "active": self.request.GET.get("active", "unknown"),
+            "active": [el for el in self.request.GET._getlist("active")]
+            if self.request.GET.get("active")
+            else [True, False],
             "available_geography": [
                 int(el) for el in self.request.GET._getlist("available_geography")
             ]
