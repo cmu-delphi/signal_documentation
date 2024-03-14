@@ -203,6 +203,8 @@ Each environment is essentially a bunch of different services all governed by `d
 - A PR merged to either `development` or `master` will trigger CI to build container images that are then tagged (based on the branch name and ":latest" respectively) and stored in our GitHub Packages container image repository.
 - CI triggers a webhook that tells the host systems to pull and run new container images and restart any services that have been updated.
 
+**IMPORTANT!** - The CI/CD process uses Docker Compose to build the specific container images that will be used in external environments. Success of the the build-and-deploy workflow is dependent on constructed services in `docker-compose.yaml`. If considering making changes there, please have a PR reviewed by devops folks :pray: :pray: :pray:
+
 ### Control of the deployed environment
 
 The environment and secrets used for deployment live in <https://github.com/cmu-delphi/delphi-ansible-web>. Any changes to the environment should be made there and then tested and validated by devops folks.
