@@ -179,6 +179,24 @@
                                             {% endif %}
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <th scope="row">Available Since</th>
+                                        <td>
+                                            {{ signal.from_date }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Available Until</th>
+                                        <td>
+                                            {{ signal.to_date }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Last Updated</th>
+                                        <td>
+                                            {{ signal.last_updated }}
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
