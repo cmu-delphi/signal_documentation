@@ -36,6 +36,7 @@ class SignalsListView(ListView):
 
     def get_url_params(self):
         url_params_dict = {
+            "id": self.request.GET.get("id"),
             "search": self.request.GET.get("search"),
             "pathogen": int(self.request.GET.get("pathogen"))
             if self.request.GET.get("pathogen")

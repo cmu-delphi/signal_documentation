@@ -2,9 +2,19 @@ from typing import Any
 
 import django_filters
 from django.db.models import Q
-from django_filters.filters import CharFilter, OrderingFilter
+from django_filters.filters import (
+    BaseInFilter,
+    CharFilter,
+    NumberFilter,
+    OrderingFilter,
+)
+from django_filters.widgets import QueryArrayWidget
 
 from signals.models import Signal
+
+
+class NumberInFilter(BaseInFilter, NumberFilter):
+    pass
 
 
 class SignalFilter(django_filters.FilterSet):
@@ -12,6 +22,7 @@ class SignalFilter(django_filters.FilterSet):
     FilterSet for the Signal model.
     """
 
+    id = NumberInFilter(field_name='id', lookup_expr='in', widget=QueryArrayWidget)
     search = CharFilter(method='filter_search')
     order_by = OrderingFilter(
         fields=(
@@ -24,6 +35,7 @@ class SignalFilter(django_filters.FilterSet):
     class Meta:
         model = Signal
         fields: list[str] = [
+            'id',
             'search',
             'pathogen',
             'active',

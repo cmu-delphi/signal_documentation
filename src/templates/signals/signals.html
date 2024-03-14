@@ -241,7 +241,7 @@
                         </div>
                         <div class="card-body">
                             <div class="d-grid gap-2 mt-3">
-                                <button type="submit" class="btn btn-primary">{% trans 'Apply Filters' %}</button>
+                                <button id="filter-submit" type="submit" class="btn btn-primary">{% trans 'Apply Filters' %}</button>
                             </div>
                         </div>
                     </div>
@@ -264,6 +264,7 @@
                         <table class="table table-borderless table-hover">
                             <thead>
                                 <tr>
+                                    <th scope="col"></th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Data Source</th>
                                     <th scope="col">Description</th>
@@ -282,9 +283,4 @@
         </div>
     </div>
 </form>
-<script>
-    document.getElementById('id_order_by').addEventListener('change', function() {
-        document.getElementById('filters-form').submit();
-    });
-</script>
 {% endblock %}
