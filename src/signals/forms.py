@@ -26,7 +26,7 @@ class SignalFilterForm(forms.ModelForm):
         required=False,
     )
     search = forms.CharField(min_length=3)
-    pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), empty_label='---------')
+    pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple(), empty_label='---------')
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
     format_type = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
     source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), empty_label='---------')
@@ -54,7 +54,6 @@ class SignalFilterForm(forms.ModelForm):
                 'aria-label': 'Order by',
             }),
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
-            'pathogen': forms.Select(attrs={'class': 'form-select'}),
             'available_geography': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
@@ -70,7 +69,11 @@ class SignalFilterForm(forms.ModelForm):
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
-            'format_type': forms.Select(attrs={'class': 'form-control'}),
+            'format_type': forms.CheckboxSelectMultiple(attrs={
+                'class': 'form-select',
+                'data-bs-toggle': 'tooltip',
+                'data-bs-placement': 'bottom',
+            }),
             'source': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',

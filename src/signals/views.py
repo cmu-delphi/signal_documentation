@@ -9,7 +9,7 @@ from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Signal
+from signals.models import Signal, Pathogen
 from signals.serializers import SignalSerializer
 
 
@@ -37,9 +37,9 @@ class SignalsListView(ListView):
     def get_url_params(self):
         url_params_dict = {
             "search": self.request.GET.get("search"),
-            "pathogen": int(self.request.GET.get("pathogen"))
+            "pathogen": [el for el in self.request.GET._getlist("pathogen")]
             if self.request.GET.get("pathogen")
-            else "",
+            else [el.id for el in Pathogen.objects.all()],
             "active": [el for el in self.request.GET._getlist("active")]
             if self.request.GET.get("active")
             else [True, False],
