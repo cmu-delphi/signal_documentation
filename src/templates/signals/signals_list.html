@@ -11,7 +11,7 @@
             <input type="checkbox" name="id" value="{{ signal.id }}">
             {{ form.id|as_crispy_field }}
         </td>
-        <td onClick="location.href='{% url 'signal' pk=signal.id %}';">{{ signal.display_name }}</td>
+        <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
         <td>{{ signal.source }}</td>
         <td>{{ signal.description }}</td>
         <td>
@@ -34,9 +34,5 @@
             {% endif %}
         </td>
     </tr>
-
-<script>
-
-</script>
 
 {% endfor %}
