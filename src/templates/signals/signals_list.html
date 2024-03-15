@@ -1,11 +1,17 @@
+{% load crispy_forms_tags %}
+
 {% for signal in signals %}
     {% if forloop.last %}
         <tr hx-trigger="revealed" class="clickable-table-row" hx-get="{% url 'signals' %}?page={{ page_obj.number|add:1 }}{{ url_params_str }}"
-            hx-swap="afterend" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+            hx-swap="afterend">
     {% else %}
-        <tr classs="clickable-table-row" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+        <tr classs="clickable-table-row">
     {% endif %}
-        <td>{{ signal.display_name }}</td>
+        <td>
+            <input type="checkbox" name="id" value="{{ signal.id }}">
+            {{ form.id|as_crispy_field }}
+        </td>
+        <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
         <td>{{ signal.source }}</td>
         <td>{{ signal.description }}</td>
         <td>
@@ -28,4 +34,5 @@
             {% endif %}
         </td>
     </tr>
+
 {% endfor %}

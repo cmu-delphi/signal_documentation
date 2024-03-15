@@ -1236,3 +1236,7 @@ h6 {
 #order_by_label{
   margin-bottom: 1rem;
 }
+
+.clickable-table-cell:hover {
+  cursor: pointer;
+}
