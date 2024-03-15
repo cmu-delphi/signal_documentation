@@ -10,13 +10,12 @@ from signals.models import (
     ActiveChoices
 )
 
-MULTI_SELECT_TOOLTIP_MESSAGE = _('Hold down “Control”, or “Command” on a Mac, to select more than one.')
-
 
 class SignalFilterForm(forms.ModelForm):
     """
     A form for filtering signals.
     """
+    id = forms.ModelMultipleChoiceField(queryset=Signal.objects.all(), widget=forms.MultipleHiddenInput)
     order_by = forms.ChoiceField(choices=[
             ('', '---------'),
             ('name', 'Name'),
@@ -35,6 +34,7 @@ class SignalFilterForm(forms.ModelForm):
     class Meta:
         model = Signal
         fields: list[str] = [
+            'id',
             'order_by',
             'search',
             'pathogen',
