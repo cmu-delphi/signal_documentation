@@ -18,9 +18,9 @@ class SignalFilterForm(forms.ModelForm):
     id = forms.ModelMultipleChoiceField(queryset=Signal.objects.all(), widget=forms.MultipleHiddenInput)
     order_by = forms.ChoiceField(choices=[
             ('', '---------'),
-            ('name', 'Name'),
-            ('source__name', 'Source'),
-            ('last_updated', 'Last Updated'),
+            ('name', _('Name')),
+            ('source__name', _('Source')),
+            ('last_updated', _('Last Updated')),
         ],
         required=False,
     )
@@ -53,7 +53,7 @@ class SignalFilterForm(forms.ModelForm):
                 'id': 'order_by',
                 'aria-label': 'Order by',
             }),
-            'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
+            'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Enter search term')}),
             'available_geography': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
