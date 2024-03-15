@@ -1240,3 +1240,8 @@ h6 {
 .clickable-table-cell:hover {
   cursor: pointer;
 }
+
+.bulk-select > a:nth-child(1):hover,
+.bulk-select > a:nth-child(2):hover {
+  color: #0d6efd;
+}
