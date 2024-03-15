@@ -3,11 +3,11 @@ from django.utils.translation import gettext_lazy as _
 
 from datasources.models import SourceSubdivision
 from signals.models import (
+    ActiveChoices,
     FormatChoices,
     Pathogen,
     Signal,
     TimeLabelChoices,
-    ActiveChoices
 )
 
 MULTI_SELECT_TOOLTIP_MESSAGE = _('Hold down “Control”, or “Command” on a Mac, to select more than one.')
@@ -26,11 +26,11 @@ class SignalFilterForm(forms.ModelForm):
         required=False,
     )
     search = forms.CharField(min_length=3)
-    pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple(), empty_label='---------')
+    pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple())
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
-    format_type = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
-    source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), empty_label='---------')
-    time_label = forms.ChoiceField(choices=[('', '---------')] + TimeLabelChoices.choices, label=_('Temporal Resolution'))
+    format_type = forms.ChoiceField(choices=FormatChoices.choices, widget=forms.CheckboxSelectMultiple())
+    source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
+    time_label = forms.ChoiceField(choices=TimeLabelChoices.choices, widget=forms.CheckboxSelectMultiple())
 
     class Meta:
         model = Signal
