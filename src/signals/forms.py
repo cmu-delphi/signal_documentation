@@ -28,7 +28,7 @@ class SignalFilterForm(forms.ModelForm):
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple())
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
     format_type = forms.ChoiceField(choices=FormatChoices.choices, widget=forms.CheckboxSelectMultiple())
-    source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
+    source = forms.ModelMultipleChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
     time_label = forms.ChoiceField(choices=TimeLabelChoices.choices, widget=forms.CheckboxSelectMultiple())
 
     class Meta:
@@ -79,7 +79,6 @@ class SignalFilterForm(forms.ModelForm):
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
-            'time_label': forms.Select(attrs={'class': 'form-select'}),
         }
 
     def __init__(self, *args, **kwargs):

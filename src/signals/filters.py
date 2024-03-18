@@ -10,7 +10,12 @@ from django_filters.filters import (
 )
 from django_filters.widgets import QueryArrayWidget
 
-from signals.models import Signal, TimeLabelChoices
+from datasources.models import SourceSubdivision
+from signals.models import (
+    FormatChoices,
+    Signal,
+    TimeLabelChoices,
+)
 
 
 class NumberInFilter(BaseInFilter, NumberFilter):
@@ -35,9 +40,9 @@ class SignalFilter(django_filters.FilterSet):
             ('last_updated', 'last_updated'),
         )
     )
-    time_label = django_filters.MultipleChoiceFilter(
-        choices=TimeLabelChoices.choices,
-    )
+    format_type = django_filters.MultipleChoiceFilter(choices=FormatChoices.choices)
+    source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all())
+    time_label = django_filters.MultipleChoiceFilter(choices=TimeLabelChoices.choices)
 
     class Meta:
         model = Signal
