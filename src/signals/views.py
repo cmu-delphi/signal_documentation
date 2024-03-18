@@ -59,7 +59,6 @@ class SignalsListView(ListView):
             "source": [int(el) for el in self.request.GET._getlist("source")],
             "time_label": [el for el in self.request.GET._getlist("time_label")]
         }
-        print(url_params_dict)
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():
             if isinstance(param_value, list):
