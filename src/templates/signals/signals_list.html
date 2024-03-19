@@ -1,8 +1,8 @@
 {% load crispy_forms_tags %}
 
 {% for signal in signals %}
-    {% if forloop.last %}
-        <tr hx-trigger="revealed" class="clickable-table-row" hx-get="{% url 'signals' %}?page={{ page_obj.number|add:1 }}{{ url_params_str }}"
+    {% if forloop.last and page_obj.has_next %}
+        <tr hx-trigger="revealed" class="clickable-table-row" hx-get="{% url 'signals' %}?page={{ page_obj.next_page_number }}{{ url_params_str }}"
             hx-swap="afterend">
     {% else %}
         <tr classs="clickable-table-row">
