@@ -3,11 +3,11 @@ from django.utils.translation import gettext_lazy as _
 
 from datasources.models import SourceSubdivision
 from signals.models import (
+    ActiveChoices,
     FormatChoices,
     Pathogen,
     Signal,
     TimeLabelChoices,
-    ActiveChoices
 )
 
 
@@ -18,18 +18,18 @@ class SignalFilterForm(forms.ModelForm):
     id = forms.ModelMultipleChoiceField(queryset=Signal.objects.all(), widget=forms.MultipleHiddenInput)
     order_by = forms.ChoiceField(choices=[
             ('', '---------'),
-            ('name', 'Name'),
-            ('source__name', 'Source'),
-            ('last_updated', 'Last Updated'),
+            ('name', _('Name')),
+            ('source__name', _('Source')),
+            ('last_updated', _('Last Updated')),
         ],
         required=False,
     )
     search = forms.CharField(min_length=3)
-    pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), empty_label='---------')
+    pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple())
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
-    format_type = forms.ChoiceField(choices=[('', '---------')] + FormatChoices.choices)
-    source = forms.ModelChoiceField(queryset=SourceSubdivision.objects.all(), empty_label='---------')
-    time_label = forms.ChoiceField(choices=[('', '---------')] + TimeLabelChoices.choices, label=_('Temporal Resolution'))
+    format_type = forms.ChoiceField(choices=FormatChoices.choices, widget=forms.CheckboxSelectMultiple())
+    source = forms.ModelMultipleChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
+    time_label = forms.ChoiceField(choices=TimeLabelChoices.choices, widget=forms.CheckboxSelectMultiple())
 
     class Meta:
         model = Signal
@@ -53,8 +53,7 @@ class SignalFilterForm(forms.ModelForm):
                 'id': 'order_by',
                 'aria-label': 'Order by',
             }),
-            'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter search term'}),
-            'pathogen': forms.Select(attrs={'class': 'form-select'}),
+            'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Enter search term')}),
             'available_geography': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
@@ -70,13 +69,16 @@ class SignalFilterForm(forms.ModelForm):
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
-            'format_type': forms.Select(attrs={'class': 'form-control'}),
+            'format_type': forms.CheckboxSelectMultiple(attrs={
+                'class': 'form-select',
+                'data-bs-toggle': 'tooltip',
+                'data-bs-placement': 'bottom',
+            }),
             'source': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
-            'time_label': forms.Select(attrs={'class': 'form-select'}),
         }
 
     def __init__(self, *args, **kwargs):

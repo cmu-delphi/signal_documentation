@@ -18,7 +18,8 @@
                         </div>
                         <div class="card-body">
                             <label for="id_pathogen" class="form-label">
-                                Pathogen <a href="#" data-bs-toggle="modal" data-bs-target="#pathogen_modal">
+                                Pathogen
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#pathogen_modal">
                                     <i class="bi bi-info-circle"></i>
                                 </a>
                             </label>
@@ -42,6 +43,7 @@
                                 </div>
                             </div>
                             {{ form.pathogen|as_crispy_field }}
+
                         </div>
                         <div class="card-body">
                             <label for="id_active" class="form-label">
@@ -97,6 +99,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-evenly bulk-select">
+                                <a role="button">All</a>
+                                <a role="button">Clear</a>
+                            </div>
                             {{ form.available_geography|as_crispy_field }}
                         </div>
                         <div class="card-body">
@@ -124,6 +130,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-evenly bulk-select">
+                                <a role="button">All</a>
+                                <a role="button">Clear</a>
                             </div>
                             {{ form.signal_type|as_crispy_field }}
                         </div>
@@ -153,6 +163,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-evenly bulk-select">
+                                <a role="button">All</a>
+                                <a role="button">Clear</a>
+                            </div>
                             {{ form.category|as_crispy_field }}
                         </div>
                         <div class="card-body">
@@ -181,6 +195,10 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="d-flex justify-content-evenly bulk-select">
+                                <a role="button">All</a>
+                                <a role="button">Clear</a>
+                            </div>
                             {{ form.format_type|as_crispy_field }}
                         </div>
                         <div class="card-body">
@@ -208,6 +226,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="d-flex justify-content-evenly bulk-select">
+                                <a role="button">All</a>
+                                <a role="button">Clear</a>
                             </div>
                             {{ form.source|as_crispy_field }}
                         </div>
@@ -285,9 +307,28 @@
 </form>
 
 <script>
+
+    // Add an event listener to the 'order_by' select element
     document.getElementById('id_order_by').addEventListener('change', function() {
         document.getElementById('filters-form').submit();
     });
+
+
+    // Add an event listener to each 'bulk-select' element
+    let bulkSelectDivs = document.querySelectorAll('.bulk-select');
+    bulkSelectDivs.forEach(div => {
+        div.addEventListener('click', function(event) {
+            let form = this.nextElementSibling;
+            let checkboxes = form.querySelectorAll('input[type="checkbox"]');
+
+            if (event.target.innerText === 'All') {
+                checkboxes.forEach(checkbox => checkbox.checked = true);
+            } else if (event.target.innerText === 'Clear') {
+                checkboxes.forEach(checkbox => checkbox.checked = false);
+            }
+        });
+    });
+
 </script>
 
 {% endblock %}

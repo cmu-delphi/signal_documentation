@@ -57,13 +57,12 @@ class SignalAdmin(ImportExportModelAdmin):
     list_display: tuple[Literal['name']] = ('name',)
     search_fields: tuple[Literal['name'], Literal['description'], Literal['short_description']]
     search_fields = ('name', 'description', 'short_description')
-    list_filter: tuple[Literal['pathogen'], Literal['available_geography'], Literal['signal_type'], Literal['format_type'],
-                       Literal['is_smoothed'], Literal['is_weighted'], Literal['is_cumulative'], Literal['has_stderr'], Literal['has_sample_size']]
     list_filter = (
         'pathogen',
         'available_geography',
         'signal_type',
         'format_type',
+        'time_label',
         'is_smoothed',
         'is_weighted',
         'is_cumulative',
