@@ -42,8 +42,19 @@
                                     </div>
                                 </div>
                             </div>
-                            {{ form.pathogen|as_crispy_field }}
-
+                            <div id="div_id_pathogen" class="mb-3">
+                                <div>
+                                    {% for choice in form.pathogen.field.choices %}
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" name="pathogen" id="id_pathogen_{{ choice.0 }}" value="{{ choice.0 }}"
+                                            {% if choice.0 in url_params_dict.pathogen %}
+                                            checked
+                                            {% endif %}>
+                                            <label for="id_pathogen_{{ choice.0 }}" class="form-check-label">{{ choice.1 }}</label>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <label for="id_active" class="form-label">
@@ -103,7 +114,31 @@
                                 <a role="button">All</a>
                                 <a role="button">Clear</a>
                             </div>
-                            {{ form.available_geography|as_crispy_field }}
+                            <div id="div_id_available_geography" class="mb-3">
+                                    {% for choice in form.available_geography.field.choices %}
+                                        <div class="form-check"
+                                        {% if forloop.counter > 5 and not url_params_dict.available_geography %}
+                                            style="display: none;"
+                                        {% endif %}
+                                        >
+                                            <input type="checkbox" class="form-check-input" name="available_geography" id="id_available_geography_{{ choice.0 }}" value="{{ choice.0 }}"
+                                            {% if choice.0 in url_params_dict.available_geography %}
+                                            checked
+                                            
+                                            {% endif %}>
+                                            <label for="id_available_geography_{{ choice.0 }}" class="form-check-label">{{ choice.1 }}</label>
+                                        </div>
+                                    {% endfor %}
+                                    {% if form.available_geography|length > 5 %}
+                                        <a href="" onclick="showAllOptions(event, div_id_available_geography)">
+                                            {% if url_params_dict.available_geography %}
+                                                Show less...
+                                            {% else %}
+                                                Show more...
+                                            {% endif %}
+                                        </a>
+                                    {% endif %}
+                            </div>
                         </div>
                         <div class="card-body">
                             <label for="id_signal_type" class="form-label">
@@ -135,7 +170,29 @@
                                 <a role="button">All</a>
                                 <a role="button">Clear</a>
                             </div>
-                            {{ form.signal_type|as_crispy_field }}
+                            <div id="div_id_signal_type" class="mb-3">
+                                {% for choice in form.signal_type.field.choices %}
+                                    <div class="form-check"
+                                    {% if forloop.counter > 5 and not url_params_dict.signal_type %}
+                                        style="display: none;"
+                                    {% endif %}>
+                                        <input type="checkbox" class="form-check-input" name="signal_type" id="id_signal_type_{{ choice.0 }}" value="{{ choice.0 }}"
+                                        {% if choice.0 in url_params_dict.signal_type %}
+                                        checked
+                                        {% endif %}>
+                                        <label for="id_signal_type_{{ choice.0 }}" class="form-check-label">{{ choice.1 }}</label>
+                                    </div>
+                                {% endfor %}
+                                {% if form.signal_type|length > 5 %}
+                                    <a href="" onclick="showAllOptions(event, div_id_signal_type)">
+                                        {% if url_params_dict.signal_type %}
+                                            Show less...
+                                        {% else %}
+                                            Show more...
+                                        {% endif %}
+                                    </a>
+                                {% endif %}
+                            </div>
                         </div>
                         <div class="card-body">
                             <label for="id_category" class="form-label">
@@ -231,7 +288,30 @@
                                 <a role="button">All</a>
                                 <a role="button">Clear</a>
                             </div>
-                            {{ form.source|as_crispy_field }}
+                            <div id="div_id_source" class="mb-3">
+                                {% for choice in form.source.field.choices %}
+                                    <div class="form-check"
+                                    {% if forloop.counter > 5 and not url_params_dict.source %}
+                                        style="display: none;"
+                                    {% endif %}
+                                    >
+                                        <input type="checkbox" class="form-check-input" name="source" id="id_source_{{ choice.0 }}" value="{{ choice.0 }}"
+                                        {% if choice.0 in url_params_dict.source %}
+                                        checked
+                                        {% endif %}>
+                                        <label for="id_source_{{ choice.0 }}" class="form-check-label">{{ choice.1 }}</label>
+                                    </div>
+                                {% endfor %}
+                                {% if form.source|length > 5 %}
+                                    <a href="" onclick="showAllOptions(event, div_id_source)">
+                                        {% if url_params_dict.source %}
+                                            Show less...
+                                        {% else %}
+                                            Show more...
+                                        {% endif %}
+                                    </a>
+                                {% endif %}
+                            </div>
                         </div>
                         <div class="card-body">
                             <label for="id_time_label" class="form-label">
@@ -308,9 +388,26 @@
 
 <script>
 
+    function showAllOptions(event, parentDiv) {
+        event.preventDefault();
+        var childDivs = parentDiv.querySelectorAll('.form-check');
+        for (i = 5; i < childDivs.length; i++) {
+            if (childDivs[i].style.display === 'none') {
+                childDivs[i].style.display = 'block';
+            } else {
+                childDivs[i].style.display = 'none';
+            }
+        }
+        if (event.target.innerText === 'Show more...') {
+            event.target.innerText = 'Show less...';
+        } else {
+            event.target.innerText = 'Show more...';
+        }
+    }
+
     // Add an event listener to the 'order_by' select element
     document.getElementById('id_order_by').addEventListener('change', function() {
-        document.getElementById('filters-form').submit();
+        document.getElementById('x-form').submit();
     });
 
 
