@@ -9,7 +9,7 @@ from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Pathogen, Signal
+from signals.models import Signal
 from signals.serializers import SignalSerializer
 
 
@@ -38,12 +38,8 @@ class SignalsListView(ListView):
         url_params_dict = {
             "id": self.request.GET.get("id"),
             "search": self.request.GET.get("search"),
-            "pathogen": [el for el in self.request.GET._getlist("pathogen")]
-            if self.request.GET.get("pathogen")
-            else [el.id for el in Pathogen.objects.all()],
-            "active": [el for el in self.request.GET._getlist("active")]
-            if self.request.GET.get("active")
-            else [True, False],
+            "pathogen": [int(el) for el in self.request.GET._getlist("pathogen")],
+            "active": [el for el in self.request.GET._getlist("active")],
             "available_geography": [
                 int(el) for el in self.request.GET._getlist("available_geography")
             ]
@@ -79,6 +75,7 @@ class SignalsListView(ListView):
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         url_params_dict, url_params_str = self.get_url_params()
+        context["url_params_dict"] = url_params_dict
         context["form"] = SignalFilterForm(initial=url_params_dict)
         context["url_params_str"] = url_params_str
         context["filter"] = SignalFilter(self.request.GET, queryset=self.get_queryset())
