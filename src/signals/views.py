@@ -9,7 +9,7 @@ from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Pathogen, Signal
+from signals.models import Signal
 from signals.serializers import SignalSerializer
 
 
