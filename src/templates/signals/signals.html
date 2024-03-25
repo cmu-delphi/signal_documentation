@@ -110,9 +110,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-evenly bulk-select">
-                                <a role="button">All</a>
-                                <a role="button">Clear</a>
+                            <div class="bulk-select">
+                                <input type="checkbox" class="form-check-input" id="select-all">
+                                <label for="select-all">Select all</label>
                             </div>
                             <div id="div_id_available_geography" class="mb-3">
                                     {% for choice in form.available_geography.field.choices %}
@@ -166,9 +166,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-evenly bulk-select">
-                                <a role="button">All</a>
-                                <a role="button">Clear</a>
+                            <div class="bulk-select">
+                                <input type="checkbox" class="form-check-input" id="select-all">
+                                <label for="select-all">Select all</label>
                             </div>
                             <div id="div_id_signal_type" class="mb-3">
                                 {% for choice in form.signal_type.field.choices %}
@@ -220,9 +220,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-evenly bulk-select">
-                                <a role="button">All</a>
-                                <a role="button">Clear</a>
+                            <div class="bulk-select">
+                                <input type="checkbox" class="form-check-input" id="select-all">
+                                <label for="select-all">Select all</label>
                             </div>
                             {{ form.category|as_crispy_field }}
                         </div>
@@ -252,9 +252,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-evenly bulk-select">
-                                <a role="button">All</a>
-                                <a role="button">Clear</a>
+                            <div class="bulk-select">
+                                <input type="checkbox" class="form-check-input" id="select-all">
+                                <label for="select-all">Select all</label>
                             </div>
                             {{ form.format_type|as_crispy_field }}
                         </div>
@@ -284,9 +284,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-evenly bulk-select">
-                                <a role="button">All</a>
-                                <a role="button">Clear</a>
+                            <div class="bulk-select">
+                                <input type="checkbox" class="form-check-input" id="select-all">
+                                <label for="select-all">Select all</label>
                             </div>
                             <div id="div_id_source" class="mb-3">
                                 {% for choice in form.source.field.choices %}
@@ -416,12 +416,29 @@
     bulkSelectDivs.forEach(div => {
         div.addEventListener('click', function(event) {
             let form = this.nextElementSibling;
+            let showMoreLink = form.querySelector('a');
             let checkboxes = form.querySelectorAll('input[type="checkbox"]');
 
-            if (event.target.innerText === 'All') {
-                checkboxes.forEach(checkbox => checkbox.checked = true);
-            } else if (event.target.innerText === 'Clear') {
-                checkboxes.forEach(checkbox => checkbox.checked = false);
+            if (event.target.checked === true) {
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = true;
+                    if (index > 4) {
+                        checkbox.parentElement.style.display = checkbox.parentElement.style.display === 'none' ? 'block' : null;
+                    }
+                })
+                if (showMoreLink) {
+                    showMoreLink.innerText = 'Show less...';
+                }
+            } else if (event.target.checked === false) {
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = false
+                    if (index > 4) {
+                        checkbox.parentElement.style.display = checkbox.parentElement.style.display === 'block' ? 'none' : null;
+                    }
+                });
+                if (showMoreLink) {
+                    showMoreLink.innerText = 'Show more...';
+                }
             }
         });
     });
