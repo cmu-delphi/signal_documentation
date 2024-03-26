@@ -116,4 +116,9 @@ class Link(TimeStampedModel):
         :return: A dictionary containing information about the link preview, including title, description, and image.
         :rtype: dict
         """
-        return link_preview(self)
+        try:
+            return link_preview(self)
+        except Exception:
+            return {
+                'description': _('No description available'),
+            }
