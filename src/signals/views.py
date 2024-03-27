@@ -38,6 +38,7 @@ class SignalsListView(ListView):
         url_params_dict = {
             "id": self.request.GET.get("id"),
             "search": self.request.GET.get("search"),
+            "order_by": self.request.GET.get("order_by"),
             "pathogen": [int(el) for el in self.request.GET._getlist("pathogen")],
             "active": [el for el in self.request.GET._getlist("active")],
             "available_geography": [
