@@ -227,17 +227,30 @@
                 <div class="card">
                     <div class="card-body padding-top-1rem">
                         <div class="row">
-                        {% for link in signal.links.all %}
-                            {% if link.link_type != 'example_url' %}
-                                <div class="card col-2 related-link-card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ link.get_previerw.title }}</h5>
-                                        <p class="card-text">{{ link.get_preview.description }}</p>
-                                        <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
-                                    </div>
-                                </div>
-                            {% endif %}
-                        {% endfor %}
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Link Type</th>
+                                    <th scope="col">Link Description</th>
+                                    <th scope="col">URL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for link in signal.links.all %}
+                                    {% if link.link_type != 'example_url' %}
+                                        <tr>
+                                            <td>
+                                                {{ link.get_link_type_display }}
+                                            </td>
+                                            <td>{{ link.get_preview.description }}</td>
+                                            <td>
+                                                <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
+                                            </td>
+                                        </tr>
+                                    {% endif %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
                         </div>
                     </div>
                 </div>
