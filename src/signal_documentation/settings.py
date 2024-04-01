@@ -158,7 +158,7 @@ DATABASES: dict[str, dict[str, Any]] = {
 }
 
 
-PAGE_SIZE = os.environ.get('PAGE_SIZE', 10)
+PAGE_SIZE: int = int(os.environ.get('PAGE_SIZE', 10))
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

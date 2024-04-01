@@ -88,7 +88,7 @@ class SignalsListView(ListView):
         return context
 
     def get_template_names(self) -> list[str]:
-        if self.request.htmx:
+        if getattr(self.request, 'htmx', False):
             return ["signals/signals_list.html"]
         return [self.template_name]
 
