@@ -53,7 +53,7 @@ class SignalCategory(TimeStampedModel):
     """
     A model representing a signal category.
     """
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
         unique=True
@@ -70,21 +70,18 @@ class SignalCategory(TimeStampedModel):
         :return: The name of the signal category as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
 
 
 class SignalType(TimeStampedModel):
     """
     A model representing a signal type.
     """
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
         unique=True
     )
-
-    class Meta:
-        ordering: list[str] = ["name"]
 
     def __str__(self) -> str:
         """
@@ -93,14 +90,14 @@ class SignalType(TimeStampedModel):
         :return: The name of the signal type as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
 
 
 class Pathogen(TimeStampedModel):
     """
     A model representing a pathogen.
     """
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
         unique=True
@@ -113,14 +110,14 @@ class Pathogen(TimeStampedModel):
         :return: The name of the pathogen as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
 
 
 class Geography(TimeStampedModel):
     """
     A model representing a available geography.
     """
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
         unique=True
@@ -137,22 +134,22 @@ class Geography(TimeStampedModel):
         :return: The name of the available geography as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
 
 
 class Signal(TimeStampedModel):
     """
     A model representing a signal.
     """
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
     )
-    display_name = models.CharField(
+    display_name: models.CharField = models.CharField(
         help_text=_('Display Name'),
         max_length=128,
     )
-    base = models.ForeignKey(
+    base: models.ForeignKey = models.ForeignKey(
         'signals.Signal',
         related_name='base_for',
         help_text=_('Signal base'),
@@ -160,105 +157,105 @@ class Signal(TimeStampedModel):
         null=True,
         blank=True
     )
-    pathogen = models.ManyToManyField(
+    pathogen: models.ManyToManyField = models.ManyToManyField(
         'signals.Pathogen',
         related_name='signals',
         help_text=_('Pathogen/Disease Area'),
     )
-    signal_type = models.ManyToManyField(
+    signal_type: models.ManyToManyField = models.ManyToManyField(
         'signals.SignalType',
         related_name='signals',
         help_text=_('Signal Type')
     )
-    active = models.BooleanField(
+    active: models.BooleanField = models.BooleanField(
         help_text=_('Active'),
         default=False
     )
-    short_description = models.TextField(
+    short_description: models.TextField = models.TextField(
         help_text=_('Short Description'),
         max_length=500,
         null=True,
         blank=True
     )
-    description = models.TextField(
+    description: models.TextField = models.TextField(
         help_text=_('Description'),
         max_length=1000,
         null=True,
         blank=True
     )
-    format_type = models.CharField(
+    format_type: models.CharField = models.CharField(
         help_text=_('Format'),
         max_length=128,
         choices=FormatChoices.choices
     )
-    time_type = models.CharField(
+    time_type: models.CharField = models.CharField(
         help_text=_('Time type'),
         max_length=128,
         choices=TimeTypeChoices.choices
     )
-    time_label = models.CharField(
+    time_label: models.CharField = models.CharField(
         help_text=_('Time label'),
         max_length=128,
         choices=TimeLabelChoices.choices
     )
-    category = models.ForeignKey(
+    category: models.ForeignKey = models.ForeignKey(
         'signals.SignalCategory',
         related_name='signals',
         help_text=_('Signal Category'),
         on_delete=models.SET_NULL,
         null=True
     )
-    links = models.ManyToManyField(
+    links: models.ManyToManyField = models.ManyToManyField(
         'base.Link',
         help_text=_('Signal links'),
         related_name="signals"
     )
-    available_geography = models.ManyToManyField(
+    available_geography: models.ManyToManyField = models.ManyToManyField(
         'signals.Geography',
         help_text=_('Available geography')
     )
-    is_smoothed = models.BooleanField(
+    is_smoothed: models.BooleanField = models.BooleanField(
         help_text=_('Is Smoothed'),
         default=False
     )
-    is_weighted = models.BooleanField(
+    is_weighted: models.BooleanField = models.BooleanField(
         help_text=_('Is Weighted'),
         default=False
     )
-    is_cumulative = models.BooleanField(
+    is_cumulative: models.BooleanField = models.BooleanField(
         help_text=_('Is Cumulative'),
         default=False
     )
-    has_stderr = models.BooleanField(
+    has_stderr: models.BooleanField = models.BooleanField(
         help_text=_('Has StdErr'),
         default=False
     )
-    has_sample_size = models.BooleanField(
+    has_sample_size: models.BooleanField = models.BooleanField(
         help_text=_('Has Sample Size'),
         default=False
     )
-    high_values_are = models.CharField(
+    high_values_are: models.CharField = models.CharField(
         help_text=_('High values are'),
         max_length=128,
         choices=HighValuesAreChoices.choices
     )
-    source = models.ForeignKey(
+    source: models.ForeignKey = models.ForeignKey(
         'datasources.SourceSubdivision',
         related_name='signals',
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT,
     )
-    last_updated = models.DateField(
+    last_updated: models.DateField = models.DateField(
         help_text=_('Last Updated'),
         null=True,
         blank=True
     )
-    from_date = models.DateField(
+    from_date: models.DateField = models.DateField(
         help_text=_('From Date'),
         null=True,
         blank=True
     )
-    to_date = models.DateField(
+    to_date: models.DateField = models.DateField(
         help_text=_('To Date'),
         null=True,
         blank=True
@@ -280,7 +277,7 @@ class Signal(TimeStampedModel):
         :return: The name of the signal as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
 
     def clean(self) -> None:
         """

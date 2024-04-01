@@ -7,32 +7,32 @@ class SourceSubdivision(TimeStampedModel):
     """
     A model representing a source subdivision.
     """
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
         unique=True
     )
-    display_name = models.CharField(
+    display_name: models.CharField = models.CharField(
         help_text=_('Display Name'),
         max_length=128,
         unique=True
     )
-    description = models.TextField(
+    description: models.TextField = models.TextField(
         help_text=_('Source description'),
         max_length=1000,
         null=True,
         blank=True
     )
-    db_source = models.CharField(
+    db_source: models.CharField = models.CharField(
         help_text=_('DB Source'),
         max_length=128,
     )
-    links = models.ManyToManyField(
+    links: models.ManyToManyField = models.ManyToManyField(
         'base.Link',
         help_text=_('Source Subdivision links'),
         related_name="source_subdivisions"
     )
-    data_source = models.ForeignKey(
+    data_source: models.ForeignKey = models.ForeignKey(
         'datasources.DataSource',
         related_name='source_subdivisions',
         help_text=_('Source Subdivision'),
@@ -49,7 +49,7 @@ class SourceSubdivision(TimeStampedModel):
         :return: The name of the source subdivision as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
 
 
 class DataSource(TimeStampedModel):
@@ -57,27 +57,27 @@ class DataSource(TimeStampedModel):
     A model representing a data source.
     """
 
-    name = models.CharField(
+    name: models.CharField = models.CharField(
         help_text=_('Name'),
         max_length=128,
         unique=True
     )
-    display_name = models.CharField(
+    display_name: models.CharField = models.CharField(
         help_text=_('Display Name'),
         max_length=128,
         unique=True
     )
-    description = models.TextField(
+    description: models.TextField = models.TextField(
         help_text=_('Source description'),
         max_length=1000,
         null=True,
         blank=True
     )
-    source_license = models.CharField(
+    source_license: models.CharField = models.CharField(
         help_text=_('License'),
         max_length=128
     )
-    links = models.ManyToManyField(
+    links: models.ManyToManyField = models.ManyToManyField(
         'base.Link',
         help_text=_('DataSource links'),
         related_name="data_sources"
@@ -93,4 +93,4 @@ class DataSource(TimeStampedModel):
         :return: The name of the data source as a string.
         :rtype: str
         """
-        return self.name
+        return str(self.name)
