@@ -81,7 +81,7 @@ class SignalFilterForm(forms.ModelForm):
             }),
         }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs) -> None:
         """
         Initialize the form.
         """
@@ -91,4 +91,4 @@ class SignalFilterForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.required = False
             field.help_text = ''
-            field.label = False
+            field.label = ''

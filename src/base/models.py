@@ -31,7 +31,7 @@ class DescriptedFilterField(models.Model):
         Returns the name of the filter and the filter field
         that associated with description.
         """
-        return self.filter_field
+        return str(self.filter_field)
 
 
 class DescriptedFilter(models.Model):
@@ -45,7 +45,7 @@ class DescriptedFilter(models.Model):
         Returns the name of the filter and the filter field
         that associated with description.
         """
-        return self.filter_name
+        return str(self.filter_name)
 
     def save(self, *args, **kwargs) -> None:
         """
