@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+from distutils.util import strtobool
 from pathlib import Path
 from typing import Any
 
@@ -43,7 +44,7 @@ BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG: bool = True
+DEBUG = bool(strtobool(os.getenv('DEBUG', 'False')))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -158,7 +159,7 @@ DATABASES: dict[str, dict[str, Any]] = {
 }
 
 
-PAGE_SIZE = os.environ.get('PAGE_SIZE', 10)
+PAGE_SIZE: int = int(os.environ.get('PAGE_SIZE', 10))
 
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -188,6 +189,43 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
+
+# Logging
+# https://docs.djangoproject.com/en/4.2/topics/logging/
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s | %(name)s | %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'signal_documentation.log'),
+            'formatter': 'simple',
+            'maxBytes': 1024*1024*15,  # 15MB
+            'backupCount': 10,
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+        },
+    },
+}
+
+if DEBUG:
+    for logger in LOGGING['loggers']:
+        LOGGING['loggers'][logger]['handlers'] = ['console']
 
 
 # DRF Spectacular settings

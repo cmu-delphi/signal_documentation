@@ -3,6 +3,7 @@
 /.vscode/
 /src/media/
 /src/staticfiles/
+*log
 *.mo
 *.pyc
 htmlcov/
