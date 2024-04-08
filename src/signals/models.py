@@ -12,6 +12,14 @@ class TimeTypeChoices(models.TextChoices):
     WEEK = 'week', _('Week')
 
 
+class ReportingCadence(models.TextChoices):
+    """
+    A class representing choices for reporting cadences.
+    """
+    DAILY = 'daily', _('Daily')
+    WEEKLY = 'weekly', _('Weekly')
+
+
 class TimeLabelChoices(models.TextChoices):
     """
     A class representing choices for time labels.
