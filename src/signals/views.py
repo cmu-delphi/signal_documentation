@@ -20,7 +20,7 @@ class SignalsListView(ListView):
 
     model = Signal
     template_name = "signals/signals.html"
-    paginate_by = settings.PAGE_SIZE
+    paginate_by: int = settings.PAGE_SIZE
 
     def get_queryset(self) -> Any:
         """
@@ -39,22 +39,22 @@ class SignalsListView(ListView):
             "id": self.request.GET.get("id"),
             "search": self.request.GET.get("search"),
             "order_by": self.request.GET.get("order_by"),
-            "pathogen": [int(el) for el in self.request.GET._getlist("pathogen")],
-            "active": [el for el in self.request.GET._getlist("active")],
+            "pathogen": [int(el) for el in self.request.GET.getlist("pathogen")],
+            "active": [el for el in self.request.GET.getlist("active")],
             "available_geography": [
-                int(el) for el in self.request.GET._getlist("available_geography")
+                int(el) for el in self.request.GET.getlist("available_geography")
             ]
             if self.request.GET.get("available_geography")
             else None,
-            "signal_type": [int(el) for el in self.request.GET._getlist("signal_type")]
+            "signal_type": [int(el) for el in self.request.GET.getlist("signal_type")]
             if self.request.GET.get("signal_type")
             else None,
-            "category": self.request.GET._getlist("category")
+            "category": self.request.GET.getlist("category")
             if self.request.GET.get("category")
             else None,
-            "format_type": [el for el in self.request.GET._getlist("format_type")],
-            "source": [int(el) for el in self.request.GET._getlist("source")],
-            "time_label": [el for el in self.request.GET._getlist("time_label")]
+            "format_type": [el for el in self.request.GET.getlist("format_type")],
+            "source": [int(el) for el in self.request.GET.getlist("source")],
+            "time_label": [el for el in self.request.GET.getlist("time_label")]
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():
@@ -88,7 +88,7 @@ class SignalsListView(ListView):
         return context
 
     def get_template_names(self) -> list[str]:
-        if self.request.htmx:
+        if getattr(self.request, 'htmx', False):
             return ["signals/signals_list.html"]
         return [self.template_name]
 

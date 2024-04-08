@@ -100,7 +100,7 @@ class SignalFilter(django_filters.FilterSet):
                 query &= item
             queries.append(query)
 
-        query: Q = queries.pop()
+        query = queries.pop()
 
         for item in queries:
             query |= item
