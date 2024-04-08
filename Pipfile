@@ -40,6 +40,7 @@ celery = {version = "*", extras = ["redis"]}
 flower = "*"
 django-htmx = "*"
 gunicorn = "*"
+types-requests = "*"
 
 [dev-packages]
 flake8 = "*"

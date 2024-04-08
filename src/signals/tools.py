@@ -10,7 +10,7 @@ class SignalLastUpdatedParser:
         self.year_month_date_format = '%Y%m'
         self.year_month_day_date_format = '%Y%m%d'
 
-    def format_date(self, date: str,) -> str:
+    def format_date(self, date: str,) -> datetime:
         """
         Format the date string to a specific format.
 
@@ -18,10 +18,12 @@ class SignalLastUpdatedParser:
         :return: The formatted date string.
         :rtype: str
         """
+        formated_date: datetime
         if len(date) == 6:
-            return datetime.strptime(date, self.year_month_date_format)
+            formated_date = datetime.strptime(date, self.year_month_date_format)
         elif len(date) == 8:
-            return datetime.strptime(date, self.year_month_day_date_format)
+            formated_date = datetime.strptime(date, self.year_month_day_date_format)
+        return formated_date
 
     def set_data(self) -> None:
         """

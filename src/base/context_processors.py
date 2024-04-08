@@ -10,7 +10,7 @@ def filters_descriptions(request) -> dict[str, list[dict[str, Any]]]:
     """
     descripted_filters = DescriptedFilter.objects.all()
 
-    results: dict[str, dict[dict[str, dict[str, str]]]] = {
+    results: dict = {
         'filters_descriptions': {
                 split_class_name(str(df.filter_name))[-1]: df.descriptions
             } for df in descripted_filters

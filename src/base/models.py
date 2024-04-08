@@ -15,13 +15,13 @@ class DescriptedFilterField(models.Model):
     """
     A model representing a filter field that is descripted.
     """
-    filter = models.ForeignKey(
+    filter: models.ForeignKey = models.ForeignKey(
         'DescriptedFilter',
         on_delete=models.CASCADE,
         related_name='filter_fields'
     )
-    filter_field = models.CharField(help_text=_('Filter field'), max_length=256)
-    description = models.TextField(help_text=_('Filter field description'), blank=True, null=True)
+    filter_field: models.CharField = models.CharField(help_text=_('Filter field'), max_length=256)
+    description: models.TextField = models.TextField(help_text=_('Filter field description'), blank=True, null=True)
 
     class Meta:
         unique_together = ('filter', 'filter_field')
@@ -31,21 +31,21 @@ class DescriptedFilterField(models.Model):
         Returns the name of the filter and the filter field
         that associated with description.
         """
-        return self.filter_field
+        return str(self.filter_field)
 
 
 class DescriptedFilter(models.Model):
     """
     A model representing a filter wich fields are descripted.
     """
-    filter_name = models.CharField(max_length=256, unique=True, choices=FILTERS_LIST)
+    filter_name: models.CharField = models.CharField(max_length=256, unique=True, choices=FILTERS_LIST)
 
     def __str__(self) -> str:
         """
         Returns the name of the filter and the filter field
         that associated with description.
         """
-        return self.filter_name
+        return str(self.filter_name)
 
     def save(self, *args, **kwargs) -> None:
         """
@@ -90,7 +90,7 @@ class Link(TimeStampedModel):
     """
     A model representing a Link.
     """
-    link_type = models.CharField(
+    link_type: models.CharField = models.CharField(
         help_text=_('Link type'),
         choices=LinkTypeChoices.choices,
         max_length=128
