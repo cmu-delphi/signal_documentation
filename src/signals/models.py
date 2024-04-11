@@ -57,6 +57,13 @@ class ActiveChoices(models.TextChoices):
     HISTORICAL = False, _('Historical')
 
 
+class DemograohicDisaggregation(models.TextChoices):
+    """
+    A class representing choices for demographic disaggregation.
+    """
+    pass  # TODO: Add choices for demographic disaggregation or split into separate classes if needed. Should be discussed.
+
+
 class SignalCategory(TimeStampedModel):
     """
     A model representing a signal category.
@@ -145,6 +152,66 @@ class Geography(TimeStampedModel):
         return str(self.name)
 
 
+class GeographicScope(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+    """
+    A model representing a geographic scope.
+    """
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the geographic scope as a string.
+
+        :return: The name of the geographic scope as a string.
+        :rtype: str
+        """
+        return str(self.name)
+
+
+class DemograficScope(TimeStampedModel):
+    """
+    A model representing a demographic scope.
+    """
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the demographic scope as a string.
+
+        :return: The name of the demographic scope as a string.
+        :rtype: str
+        """
+        return str(self.name)
+
+
+class OrganisationsAccess(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+    """
+    A model representing an access list.
+    """
+    organisation_name: models.CharField = models.CharField(
+        help_text=_('Organisation Name'),
+        max_length=128,
+    )
+
+
+class SharingOrganisation(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+    """
+    A model representing a sharing organisation.
+    """
+    organisation_name: models.CharField = models.CharField(
+        help_text=_('Organisation Name'),
+        max_length=128,
+    )
+
+
 class Signal(TimeStampedModel):
     """
     A model representing a signal.
@@ -206,6 +273,21 @@ class Signal(TimeStampedModel):
         max_length=128,
         choices=TimeLabelChoices.choices
     )
+    reporting_cadence: models.CharField = models.CharField(
+        help_text=_('Reporting Cadence'),
+        max_length=128,
+        choices=ReportingCadence.choices
+    )
+    demographic_scope: models.ManyToManyField = models.ManyToManyField(
+        'signals.DemograficScope',
+        related_name='signals',
+        help_text=_('Demographic Scope')
+    )
+    demographic_disaggregation: models.CharField = models.CharField(  # TODO: Choices for this field are not clear. Need to be discussed.
+        help_text=_('Demographic Disaggregation'),
+        max_length=128,
+        choices=DemograohicDisaggregation.choices
+    )
     category: models.ForeignKey = models.ForeignKey(
         'signals.SignalCategory',
         related_name='signals',
@@ -253,6 +335,26 @@ class Signal(TimeStampedModel):
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT,
     )
+    data_censoring: models.TextField = models.TextField(
+        help_text=_('Data Censoring'),
+        null=True,
+        blank=True
+    )
+    missingness: models.TextField = models.TextField(
+        help_text=_('Missingness'),
+        null=True,
+        blank=True
+    )
+    organisations_access_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
+        'signals.OrganisationsAccess',
+        help_text=_('Organisations Access List')
+    )
+
+    organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
+        'signals.SharingOrganisation',
+        help_text=_('Organisations Sharing List')
+    )
+
     last_updated: models.DateField = models.DateField(
         help_text=_('Last Updated'),
         null=True,
