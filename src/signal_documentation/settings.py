@@ -150,7 +150,7 @@ DATABASES: dict[str, dict[str, Any]] = {
         'NAME': os.environ.get('MYSQL_DATABASE', None),
         'USER': os.environ.get('MYSQL_USER', None),
         'PASSWORD': os.environ.get('MYSQL_PASSWORD', None),
-        'HOST': os.environ.get('MYSQL_HOST', '127.0.0.1'),
+        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
         'PORT': os.environ.get('MYSQL_PORT', 3306),
     }
 }
