@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import sys
 from distutils.util import strtobool
 from pathlib import Path
 from typing import Any
@@ -206,19 +207,14 @@ LOGGING = {
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
+            'stream': sys.stdout,
         },
-        'file': {
-            'class': 'logging.handlers.RotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs', 'signal_documentation.log'),
-            'formatter': 'simple',
-            'maxBytes': 1024*1024*15,  # 15MB
-            'backupCount': 10,
-        }
     },
     'loggers': {
         'django': {
-            'handlers': ['file', 'console'],
+            'handlers': ['console'],
             'level': 'INFO',
+            'propagate': True,
         },
     },
 }
