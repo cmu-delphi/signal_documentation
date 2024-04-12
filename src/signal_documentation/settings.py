@@ -92,7 +92,6 @@ EXTERNAL_APPS: list[str] = [
     'docs',
     'crispy_forms',
     'crispy_bootstrap5',
-    'django_htmx',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -112,7 +111,6 @@ MIDDLEWARE: list[str] = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 
@@ -152,7 +150,7 @@ DATABASES: dict[str, dict[str, Any]] = {
         'NAME': os.environ.get('MYSQL_DATABASE', None),
         'USER': os.environ.get('MYSQL_USER', None),
         'PASSWORD': os.environ.get('MYSQL_PASSWORD', None),
-        'HOST': os.environ.get('MYSQL_HOST', 'localhost'),
+        'HOST': os.environ.get('MYSQL_HOST', '127.0.0.1'),
         'PORT': os.environ.get('MYSQL_PORT', 3306),
     }
 }
