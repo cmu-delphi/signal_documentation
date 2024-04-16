@@ -1,1 +1,4270 @@
-[{"model": "signals.GeographyUnit", "pk": 1, "fields": {"geo_id": "22380", "name": "Flagstaff, AZ", "display_name": "Flagstaff, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 2, "fields": {"geo_id": "38860", "name": "Portland-South Portland, ME", "display_name": "Portland-South Portland, ME Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 3, "fields": {"geo_id": "29420", "name": "Lake Havasu City-Kingman, AZ", "display_name": "Lake Havasu City-Kingman, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 4, "fields": {"geo_id": "40900", "name": "Sacramento--Roseville--Arden-Arcade, CA", "display_name": "Sacramento--Roseville--Arden-Arcade, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 5, "fields": {"geo_id": "12100", "name": "Atlantic City-Hammonton, NJ", "display_name": "Atlantic City-Hammonton, NJ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 6, "fields": {"geo_id": "35620", "name": "New York-Newark-Jersey City, NY-NJ-PA", "display_name": "New York-Newark-Jersey City, NY-NJ-PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 7, "fields": {"geo_id": "12980", "name": "Battle Creek, MI", "display_name": "Battle Creek, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 8, "fields": {"geo_id": "21300", "name": "Elmira, NY", "display_name": "Elmira, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 9, "fields": {"geo_id": "24340", "name": "Grand Rapids-Wyoming, MI", "display_name": "Grand Rapids-Wyoming, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 10, "fields": {"geo_id": "28740", "name": "Kingston, NY", "display_name": "Kingston, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 11, "fields": {"geo_id": "45780", "name": "Toledo, OH", "display_name": "Toledo, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 12, "fields": {"geo_id": "23580", "name": "Gainesville, GA", "display_name": "Gainesville, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 13, "fields": {"geo_id": "14100", "name": "Bloomsburg-Berwick, PA", "display_name": "Bloomsburg-Berwick, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 14, "fields": {"geo_id": "29020", "name": "Kokomo, IN", "display_name": "Kokomo, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 15, "fields": {"geo_id": "29620", "name": "Lansing-East Lansing, MI", "display_name": "Lansing-East Lansing, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 16, "fields": {"geo_id": "26980", "name": "Iowa City, IA", "display_name": "Iowa City, IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 17, "fields": {"geo_id": "19100", "name": "Dallas-Fort Worth-Arlington, TX", "display_name": "Dallas-Fort Worth-Arlington, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 18, "fields": {"geo_id": "26300", "name": "Hot Springs, AR", "display_name": "Hot Springs, AR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 19, "fields": {"geo_id": "39820", "name": "Redding, CA", "display_name": "Redding, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 20, "fields": {"geo_id": "25220", "name": "Hammond, LA", "display_name": "Hammond, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 21, "fields": {"geo_id": "16740", "name": "Charlotte-Concord-Gastonia, NC-SC", "display_name": "Charlotte-Concord-Gastonia, NC-SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 22, "fields": {"geo_id": "18880", "name": "Crestview-Fort Walton Beach-Destin, FL", "display_name": "Crestview-Fort Walton Beach-Destin, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 23, "fields": {"geo_id": "48540", "name": "Wheeling, WV-OH", "display_name": "Wheeling, WV-OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 24, "fields": {"geo_id": "35380", "name": "New Orleans-Metairie, LA", "display_name": "New Orleans-Metairie, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 25, "fields": {"geo_id": "33220", "name": "Midland, MI", "display_name": "Midland, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 26, "fields": {"geo_id": "32780", "name": "Medford, OR", "display_name": "Medford, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 27, "fields": {"geo_id": "30980", "name": "Longview, TX", "display_name": "Longview, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 28, "fields": {"geo_id": "42200", "name": "Santa Maria-Santa Barbara, CA", "display_name": "Santa Maria-Santa Barbara, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 29, "fields": {"geo_id": "27620", "name": "Jefferson City, MO", "display_name": "Jefferson City, MO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 30, "fields": {"geo_id": "44220", "name": "Springfield, OH", "display_name": "Springfield, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 31, "fields": {"geo_id": "43100", "name": "Sheboygan, WI", "display_name": "Sheboygan, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 32, "fields": {"geo_id": "34620", "name": "Muncie, IN", "display_name": "Muncie, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 33, "fields": {"geo_id": "36780", "name": "Oshkosh-Neenah, WI", "display_name": "Oshkosh-Neenah, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 34, "fields": {"geo_id": "14460", "name": "Boston-Cambridge-Newton, MA-NH", "display_name": "Boston-Cambridge-Newton, MA-NH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 35, "fields": {"geo_id": "36220", "name": "Odessa, TX", "display_name": "Odessa, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 36, "fields": {"geo_id": "11540", "name": "Appleton, WI", "display_name": "Appleton, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 37, "fields": {"geo_id": "31180", "name": "Lubbock, TX", "display_name": "Lubbock, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 38, "fields": {"geo_id": "40660", "name": "Rome, GA", "display_name": "Rome, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 39, "fields": {"geo_id": "15940", "name": "Canton-Massillon, OH", "display_name": "Canton-Massillon, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 40, "fields": {"geo_id": "43420", "name": "Sierra Vista-Douglas, AZ", "display_name": "Sierra Vista-Douglas, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 41, "fields": {"geo_id": "11100", "name": "Amarillo, TX", "display_name": "Amarillo, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 42, "fields": {"geo_id": "31900", "name": "Mansfield, OH", "display_name": "Mansfield, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 43, "fields": {"geo_id": "19140", "name": "Dalton, GA", "display_name": "Dalton, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 44, "fields": {"geo_id": "25620", "name": "Hattiesburg, MS", "display_name": "Hattiesburg, MS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 45, "fields": {"geo_id": "45500", "name": "Texarkana, TX-AR", "display_name": "Texarkana, TX-AR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 46, "fields": {"geo_id": "28100", "name": "Kankakee, IL", "display_name": "Kankakee, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 47, "fields": {"geo_id": "24860", "name": "Greenville-Anderson-Mauldin, SC", "display_name": "Greenville-Anderson-Mauldin, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 48, "fields": {"geo_id": "22540", "name": "Fond du Lac, WI", "display_name": "Fond du Lac, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 49, "fields": {"geo_id": "14020", "name": "Bloomington, IN", "display_name": "Bloomington, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 50, "fields": {"geo_id": "21340", "name": "El Paso, TX", "display_name": "El Paso, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 51, "fields": {"geo_id": "48140", "name": "Wausau, WI", "display_name": "Wausau, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 52, "fields": {"geo_id": "10180", "name": "Abilene, TX", "display_name": "Abilene, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 53, "fields": {"geo_id": "15500", "name": "Burlington, NC", "display_name": "Burlington, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 54, "fields": {"geo_id": "20020", "name": "Dothan, AL", "display_name": "Dothan, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 55, "fields": {"geo_id": "42340", "name": "Savannah, GA", "display_name": "Savannah, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 56, "fields": {"geo_id": "30700", "name": "Lincoln, NE", "display_name": "Lincoln, NE Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 57, "fields": {"geo_id": "23900", "name": "Gettysburg, PA", "display_name": "Gettysburg, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 58, "fields": {"geo_id": "19380", "name": "Dayton, OH", "display_name": "Dayton, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 59, "fields": {"geo_id": "17820", "name": "Colorado Springs, CO", "display_name": "Colorado Springs, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 60, "fields": {"geo_id": "30340", "name": "Lewiston-Auburn, ME", "display_name": "Lewiston-Auburn, ME Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 61, "fields": {"geo_id": "42020", "name": "San Luis Obispo-Paso Robles-Arroyo Grande, CA", "display_name": "San Luis Obispo-Paso Robles-Arroyo Grande, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 62, "fields": {"geo_id": "12260", "name": "Augusta-Richmond County, GA-SC", "display_name": "Augusta-Richmond County, GA-SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 63, "fields": {"geo_id": "11640", "name": "Arecibo, PR", "display_name": "Arecibo, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 64, "fields": {"geo_id": "10420", "name": "Akron, OH", "display_name": "Akron, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 65, "fields": {"geo_id": "47260", "name": "Virginia Beach-Norfolk-Newport News, VA-NC", "display_name": "Virginia Beach-Norfolk-Newport News, VA-NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 66, "fields": {"geo_id": "39380", "name": "Pueblo, CO", "display_name": "Pueblo, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 67, "fields": {"geo_id": "26580", "name": "Huntington-Ashland, WV-KY-OH", "display_name": "Huntington-Ashland, WV-KY-OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 68, "fields": {"geo_id": "47900", "name": "Washington-Arlington-Alexandria, DC-VA-MD-WV", "display_name": "Washington-Arlington-Alexandria, DC-VA-MD-WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 69, "fields": {"geo_id": "14260", "name": "Boise City, ID", "display_name": "Boise City, ID Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 70, "fields": {"geo_id": "30780", "name": "Little Rock-North Little Rock-Conway, AR", "display_name": "Little Rock-North Little Rock-Conway, AR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 71, "fields": {"geo_id": "29940", "name": "Lawrence, KS", "display_name": "Lawrence, KS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 72, "fields": {"geo_id": "27780", "name": "Johnstown, PA", "display_name": "Johnstown, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 73, "fields": {"geo_id": "21140", "name": "Elkhart-Goshen, IN", "display_name": "Elkhart-Goshen, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 74, "fields": {"geo_id": "20740", "name": "Eau Claire, WI", "display_name": "Eau Claire, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 75, "fields": {"geo_id": "24140", "name": "Goldsboro, NC", "display_name": "Goldsboro, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 76, "fields": {"geo_id": "25020", "name": "Guayama, PR", "display_name": "Guayama, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 77, "fields": {"geo_id": "40060", "name": "Richmond, VA", "display_name": "Richmond, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 78, "fields": {"geo_id": "19780", "name": "Des Moines-West Des Moines, IA", "display_name": "Des Moines-West Des Moines, IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 79, "fields": {"geo_id": "11700", "name": "Asheville, NC", "display_name": "Asheville, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 80, "fields": {"geo_id": "47380", "name": "Waco, TX", "display_name": "Waco, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 81, "fields": {"geo_id": "28020", "name": "Kalamazoo-Portage, MI", "display_name": "Kalamazoo-Portage, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 82, "fields": {"geo_id": "16940", "name": "Cheyenne, WY", "display_name": "Cheyenne, WY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 83, "fields": {"geo_id": "41860", "name": "San Francisco-Oakland-Hayward, CA", "display_name": "San Francisco-Oakland-Hayward, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 84, "fields": {"geo_id": "11180", "name": "Ames, IA", "display_name": "Ames, IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 85, "fields": {"geo_id": "27260", "name": "Jacksonville, FL", "display_name": "Jacksonville, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 86, "fields": {"geo_id": "40980", "name": "Saginaw, MI", "display_name": "Saginaw, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 87, "fields": {"geo_id": "41420", "name": "Salem, OR", "display_name": "Salem, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 88, "fields": {"geo_id": "41500", "name": "Salinas, CA", "display_name": "Salinas, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 89, "fields": {"geo_id": "10540", "name": "Albany, OR", "display_name": "Albany, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 90, "fields": {"geo_id": "39300", "name": "Providence-Warwick, RI-MA", "display_name": "Providence-Warwick, RI-MA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 91, "fields": {"geo_id": "41940", "name": "San Jose-Sunnyvale-Santa Clara, CA", "display_name": "San Jose-Sunnyvale-Santa Clara, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 92, "fields": {"geo_id": "22420", "name": "Flint, MI", "display_name": "Flint, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 93, "fields": {"geo_id": "41660", "name": "San Angelo, TX", "display_name": "San Angelo, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 94, "fields": {"geo_id": "48300", "name": "Wenatchee, WA", "display_name": "Wenatchee, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 95, "fields": {"geo_id": "33260", "name": "Midland, TX", "display_name": "Midland, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 96, "fields": {"geo_id": "23420", "name": "Fresno, CA", "display_name": "Fresno, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 97, "fields": {"geo_id": "30140", "name": "Lebanon, PA", "display_name": "Lebanon, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 98, "fields": {"geo_id": "24420", "name": "Grants Pass, OR", "display_name": "Grants Pass, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 99, "fields": {"geo_id": "36100", "name": "Ocala, FL", "display_name": "Ocala, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 100, "fields": {"geo_id": "44180", "name": "Springfield, MO", "display_name": "Springfield, MO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 101, "fields": {"geo_id": "42680", "name": "Sebastian-Vero Beach, FL", "display_name": "Sebastian-Vero Beach, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 102, "fields": {"geo_id": "27980", "name": "Kahului-Wailuku-Lahaina, HI", "display_name": "Kahului-Wailuku-Lahaina, HI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 103, "fields": {"geo_id": "11460", "name": "Ann Arbor, MI", "display_name": "Ann Arbor, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 104, "fields": {"geo_id": "28940", "name": "Knoxville, TN", "display_name": "Knoxville, TN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 105, "fields": {"geo_id": "41700", "name": "San Antonio-New Braunfels, TX", "display_name": "San Antonio-New Braunfels, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 106, "fields": {"geo_id": "26900", "name": "Indianapolis-Carmel-Anderson, IN", "display_name": "Indianapolis-Carmel-Anderson, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 107, "fields": {"geo_id": "16300", "name": "Cedar Rapids, IA", "display_name": "Cedar Rapids, IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 108, "fields": {"geo_id": "18020", "name": "Columbus, IN", "display_name": "Columbus, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 109, "fields": {"geo_id": "32820", "name": "Memphis, TN-MS-AR", "display_name": "Memphis, TN-MS-AR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 110, "fields": {"geo_id": "16580", "name": "Champaign-Urbana, IL", "display_name": "Champaign-Urbana, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 111, "fields": {"geo_id": "12580", "name": "Baltimore-Columbia-Towson, MD", "display_name": "Baltimore-Columbia-Towson, MD Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 112, "fields": {"geo_id": "42700", "name": "Sebring, FL", "display_name": "Sebring, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 113, "fields": {"geo_id": "37980", "name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD", "display_name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 114, "fields": {"geo_id": "37900", "name": "Peoria, IL", "display_name": "Peoria, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 115, "fields": {"geo_id": "26420", "name": "Houston-The Woodlands-Sugar Land, TX", "display_name": "Houston-The Woodlands-Sugar Land, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 116, "fields": {"geo_id": "42540", "name": "Scranton--Wilkes-Barre--Hazleton, PA", "display_name": "Scranton--Wilkes-Barre--Hazleton, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 117, "fields": {"geo_id": "11020", "name": "Altoona, PA", "display_name": "Altoona, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 118, "fields": {"geo_id": "23060", "name": "Fort Wayne, IN", "display_name": "Fort Wayne, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 119, "fields": {"geo_id": "40140", "name": "Riverside-San Bernardino-Ontario, CA", "display_name": "Riverside-San Bernardino-Ontario, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 120, "fields": {"geo_id": "19300", "name": "Daphne-Fairhope-Foley, AL", "display_name": "Daphne-Fairhope-Foley, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 121, "fields": {"geo_id": "37860", "name": "Pensacola-Ferry Pass-Brent, FL", "display_name": "Pensacola-Ferry Pass-Brent, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 122, "fields": {"geo_id": "40420", "name": "Rockford, IL", "display_name": "Rockford, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 123, "fields": {"geo_id": "30460", "name": "Lexington-Fayette, KY", "display_name": "Lexington-Fayette, KY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 124, "fields": {"geo_id": "17980", "name": "Columbus, GA-AL", "display_name": "Columbus, GA-AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 125, "fields": {"geo_id": "19500", "name": "Decatur, IL", "display_name": "Decatur, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 126, "fields": {"geo_id": "13740", "name": "Billings, MT", "display_name": "Billings, MT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 127, "fields": {"geo_id": "42660", "name": "Seattle-Tacoma-Bellevue, WA", "display_name": "Seattle-Tacoma-Bellevue, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 128, "fields": {"geo_id": "32420", "name": "Mayag\u00fcez, PR", "display_name": "Mayag\u00fcez, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 129, "fields": {"geo_id": "30620", "name": "Lima, OH", "display_name": "Lima, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 130, "fields": {"geo_id": "17460", "name": "Cleveland-Elyria, OH", "display_name": "Cleveland-Elyria, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 131, "fields": {"geo_id": "38300", "name": "Pittsburgh, PA", "display_name": "Pittsburgh, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 132, "fields": {"geo_id": "41900", "name": "San Germ\u00e1n, PR", "display_name": "San Germ\u00e1n, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 133, "fields": {"geo_id": "27180", "name": "Jackson, TN", "display_name": "Jackson, TN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 134, "fields": {"geo_id": "48660", "name": "Wichita Falls, TX", "display_name": "Wichita Falls, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 135, "fields": {"geo_id": "13140", "name": "Beaumont-Port Arthur, TX", "display_name": "Beaumont-Port Arthur, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 136, "fields": {"geo_id": "43580", "name": "Sioux City, IA-NE-SD", "display_name": "Sioux City, IA-NE-SD Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 137, "fields": {"geo_id": "25420", "name": "Harrisburg-Carlisle, PA", "display_name": "Harrisburg-Carlisle, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 138, "fields": {"geo_id": "31340", "name": "Lynchburg, VA", "display_name": "Lynchburg, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 139, "fields": {"geo_id": "38220", "name": "Pine Bluff, AR", "display_name": "Pine Bluff, AR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 140, "fields": {"geo_id": "38060", "name": "Phoenix-Mesa-Scottsdale, AZ", "display_name": "Phoenix-Mesa-Scottsdale, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 141, "fields": {"geo_id": "26140", "name": "Homosassa Springs, FL", "display_name": "Homosassa Springs, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 142, "fields": {"geo_id": "42220", "name": "Santa Rosa, CA", "display_name": "Santa Rosa, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 143, "fields": {"geo_id": "46140", "name": "Tulsa, OK", "display_name": "Tulsa, OK Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 144, "fields": {"geo_id": "33140", "name": "Michigan City-La Porte, IN", "display_name": "Michigan City-La Porte, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 145, "fields": {"geo_id": "16700", "name": "Charleston-North Charleston, SC", "display_name": "Charleston-North Charleston, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 146, "fields": {"geo_id": "36260", "name": "Ogden-Clearfield, UT", "display_name": "Ogden-Clearfield, UT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 147, "fields": {"geo_id": "31740", "name": "Manhattan, KS", "display_name": "Manhattan, KS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 148, "fields": {"geo_id": "35840", "name": "North Port-Sarasota-Bradenton, FL", "display_name": "North Port-Sarasota-Bradenton, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 149, "fields": {"geo_id": "43300", "name": "Sherman-Denison, TX", "display_name": "Sherman-Denison, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 150, "fields": {"geo_id": "33100", "name": "Miami-Fort Lauderdale-West Palm Beach, FL", "display_name": "Miami-Fort Lauderdale-West Palm Beach, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 151, "fields": {"geo_id": "23540", "name": "Gainesville, FL", "display_name": "Gainesville, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 152, "fields": {"geo_id": "12700", "name": "Barnstable Town, MA", "display_name": "Barnstable Town, MA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 153, "fields": {"geo_id": "12940", "name": "Baton Rouge, LA", "display_name": "Baton Rouge, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 154, "fields": {"geo_id": "27100", "name": "Jackson, MI", "display_name": "Jackson, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 155, "fields": {"geo_id": "27060", "name": "Ithaca, NY", "display_name": "Ithaca, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 156, "fields": {"geo_id": "20220", "name": "Dubuque, IA", "display_name": "Dubuque, IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 157, "fields": {"geo_id": "10740", "name": "Albuquerque, NM", "display_name": "Albuquerque, NM Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 158, "fields": {"geo_id": "46060", "name": "Tucson, AZ", "display_name": "Tucson, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 159, "fields": {"geo_id": "24020", "name": "Glens Falls, NY", "display_name": "Glens Falls, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 160, "fields": {"geo_id": "39740", "name": "Reading, PA", "display_name": "Reading, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 161, "fields": {"geo_id": "16020", "name": "Cape Girardeau, MO-IL", "display_name": "Cape Girardeau, MO-IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 162, "fields": {"geo_id": "27340", "name": "Jacksonville, NC", "display_name": "Jacksonville, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 163, "fields": {"geo_id": "39140", "name": "Prescott, AZ", "display_name": "Prescott, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 164, "fields": {"geo_id": "25180", "name": "Hagerstown-Martinsburg, MD-WV", "display_name": "Hagerstown-Martinsburg, MD-WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 165, "fields": {"geo_id": "31020", "name": "Longview, WA", "display_name": "Longview, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 166, "fields": {"geo_id": "21060", "name": "Elizabethtown-Fort Knox, KY", "display_name": "Elizabethtown-Fort Knox, KY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 167, "fields": {"geo_id": "33780", "name": "Monroe, MI", "display_name": "Monroe, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 168, "fields": {"geo_id": "16220", "name": "Casper, WY", "display_name": "Casper, WY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 169, "fields": {"geo_id": "16540", "name": "Chambersburg-Waynesboro, PA", "display_name": "Chambersburg-Waynesboro, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 170, "fields": {"geo_id": "43900", "name": "Spartanburg, SC", "display_name": "Spartanburg, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 171, "fields": {"geo_id": "16860", "name": "Chattanooga, TN-GA", "display_name": "Chattanooga, TN-GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 172, "fields": {"geo_id": "15260", "name": "Brunswick, GA", "display_name": "Brunswick, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 173, "fields": {"geo_id": "44140", "name": "Springfield, MA", "display_name": "Springfield, MA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 174, "fields": {"geo_id": "42140", "name": "Santa Fe, NM", "display_name": "Santa Fe, NM Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 175, "fields": {"geo_id": "44300", "name": "State College, PA", "display_name": "State College, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 176, "fields": {"geo_id": "14500", "name": "Boulder, CO", "display_name": "Boulder, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 177, "fields": {"geo_id": "39460", "name": "Punta Gorda, FL", "display_name": "Punta Gorda, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 178, "fields": {"geo_id": "34740", "name": "Muskegon, MI", "display_name": "Muskegon, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 179, "fields": {"geo_id": "33540", "name": "Missoula, MT", "display_name": "Missoula, MT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 180, "fields": {"geo_id": "39540", "name": "Racine, WI", "display_name": "Racine, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 181, "fields": {"geo_id": "34580", "name": "Mount Vernon-Anacortes, WA", "display_name": "Mount Vernon-Anacortes, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 182, "fields": {"geo_id": "29700", "name": "Laredo, TX", "display_name": "Laredo, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 183, "fields": {"geo_id": "29540", "name": "Lancaster, PA", "display_name": "Lancaster, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 184, "fields": {"geo_id": "43620", "name": "Sioux Falls, SD", "display_name": "Sioux Falls, SD Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 185, "fields": {"geo_id": "40220", "name": "Roanoke, VA", "display_name": "Roanoke, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 186, "fields": {"geo_id": "49180", "name": "Winston-Salem, NC", "display_name": "Winston-Salem, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 187, "fields": {"geo_id": "22900", "name": "Fort Smith, AR-OK", "display_name": "Fort Smith, AR-OK Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 188, "fields": {"geo_id": "16980", "name": "Chicago-Naperville-Elgin, IL-IN-WI", "display_name": "Chicago-Naperville-Elgin, IL-IN-WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 189, "fields": {"geo_id": "12060", "name": "Atlanta-Sandy Springs-Roswell, GA", "display_name": "Atlanta-Sandy Springs-Roswell, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 190, "fields": {"geo_id": "14540", "name": "Bowling Green, KY", "display_name": "Bowling Green, KY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 191, "fields": {"geo_id": "26820", "name": "Idaho Falls, ID", "display_name": "Idaho Falls, ID Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 192, "fields": {"geo_id": "41140", "name": "St. Joseph, MO-KS", "display_name": "St. Joseph, MO-KS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 193, "fields": {"geo_id": "45220", "name": "Tallahassee, FL", "display_name": "Tallahassee, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 194, "fields": {"geo_id": "30300", "name": "Lewiston, ID-WA", "display_name": "Lewiston, ID-WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 195, "fields": {"geo_id": "10500", "name": "Albany, GA", "display_name": "Albany, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 196, "fields": {"geo_id": "19660", "name": "Deltona-Daytona Beach-Ormond Beach, FL", "display_name": "Deltona-Daytona Beach-Ormond Beach, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 197, "fields": {"geo_id": "25980", "name": "Hinesville, GA", "display_name": "Hinesville, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 198, "fields": {"geo_id": "40340", "name": "Rochester, MN", "display_name": "Rochester, MN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 199, "fields": {"geo_id": "15540", "name": "Burlington-South Burlington, VT", "display_name": "Burlington-South Burlington, VT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 200, "fields": {"geo_id": "25540", "name": "Hartford-West Hartford-East Hartford, CT", "display_name": "Hartford-West Hartford-East Hartford, CT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 201, "fields": {"geo_id": "45300", "name": "Tampa-St. Petersburg-Clearwater, FL", "display_name": "Tampa-St. Petersburg-Clearwater, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 202, "fields": {"geo_id": "17140", "name": "Cincinnati, OH-KY-IN", "display_name": "Cincinnati, OH-KY-IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 203, "fields": {"geo_id": "25860", "name": "Hickory-Lenoir-Morganton, NC", "display_name": "Hickory-Lenoir-Morganton, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 204, "fields": {"geo_id": "41540", "name": "Salisbury, MD-DE", "display_name": "Salisbury, MD-DE Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 205, "fields": {"geo_id": "49740", "name": "Yuma, AZ", "display_name": "Yuma, AZ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 206, "fields": {"geo_id": "30860", "name": "Logan, UT-ID", "display_name": "Logan, UT-ID Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 207, "fields": {"geo_id": "24260", "name": "Grand Island, NE", "display_name": "Grand Island, NE Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 208, "fields": {"geo_id": "33460", "name": "Minneapolis-St. Paul-Bloomington, MN-WI", "display_name": "Minneapolis-St. Paul-Bloomington, MN-WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 209, "fields": {"geo_id": "29200", "name": "Lafayette-West Lafayette, IN", "display_name": "Lafayette-West Lafayette, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 210, "fields": {"geo_id": "28660", "name": "Killeen-Temple, TX", "display_name": "Killeen-Temple, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 211, "fields": {"geo_id": "29100", "name": "La Crosse-Onalaska, WI-MN", "display_name": "La Crosse-Onalaska, WI-MN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 212, "fields": {"geo_id": "10580", "name": "Albany-Schenectady-Troy, NY", "display_name": "Albany-Schenectady-Troy, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 213, "fields": {"geo_id": "12420", "name": "Austin-Round Rock, TX", "display_name": "Austin-Round Rock, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 214, "fields": {"geo_id": "17780", "name": "College Station-Bryan, TX", "display_name": "College Station-Bryan, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 215, "fields": {"geo_id": "39580", "name": "Raleigh, NC", "display_name": "Raleigh, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 216, "fields": {"geo_id": "36740", "name": "Orlando-Kissimmee-Sanford, FL", "display_name": "Orlando-Kissimmee-Sanford, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 217, "fields": {"geo_id": "16820", "name": "Charlottesville, VA", "display_name": "Charlottesville, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 218, "fields": {"geo_id": "34980", "name": "Nashville-Davidson--Murfreesboro--Franklin, TN", "display_name": "Nashville-Davidson--Murfreesboro--Franklin, TN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 219, "fields": {"geo_id": "36540", "name": "Omaha-Council Bluffs, NE-IA", "display_name": "Omaha-Council Bluffs, NE-IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 220, "fields": {"geo_id": "44420", "name": "Staunton-Waynesboro, VA", "display_name": "Staunton-Waynesboro, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 221, "fields": {"geo_id": "19820", "name": "Detroit-Warren-Dearborn, MI", "display_name": "Detroit-Warren-Dearborn, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 222, "fields": {"geo_id": "46520", "name": "Urban Honolulu, HI", "display_name": "Urban Honolulu, HI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 223, "fields": {"geo_id": "30020", "name": "Lawton, OK", "display_name": "Lawton, OK Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 224, "fields": {"geo_id": "27900", "name": "Joplin, MO", "display_name": "Joplin, MO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 225, "fields": {"geo_id": "29460", "name": "Lakeland-Winter Haven, FL", "display_name": "Lakeland-Winter Haven, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 226, "fields": {"geo_id": "37100", "name": "Oxnard-Thousand Oaks-Ventura, CA", "display_name": "Oxnard-Thousand Oaks-Ventura, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 227, "fields": {"geo_id": "35980", "name": "Norwich-New London, CT", "display_name": "Norwich-New London, CT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 228, "fields": {"geo_id": "10780", "name": "Alexandria, LA", "display_name": "Alexandria, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 229, "fields": {"geo_id": "43780", "name": "South Bend-Mishawaka, IN-MI", "display_name": "South Bend-Mishawaka, IN-MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 230, "fields": {"geo_id": "33660", "name": "Mobile, AL", "display_name": "Mobile, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 231, "fields": {"geo_id": "18580", "name": "Corpus Christi, TX", "display_name": "Corpus Christi, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 232, "fields": {"geo_id": "28700", "name": "Kingsport-Bristol-Bristol, TN-VA", "display_name": "Kingsport-Bristol-Bristol, TN-VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 233, "fields": {"geo_id": "36140", "name": "Ocean City, NJ", "display_name": "Ocean City, NJ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 234, "fields": {"geo_id": "31860", "name": "Mankato-North Mankato, MN", "display_name": "Mankato-North Mankato, MN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 235, "fields": {"geo_id": "49420", "name": "Yakima, WA", "display_name": "Yakima, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 236, "fields": {"geo_id": "49340", "name": "Worcester, MA-CT", "display_name": "Worcester, MA-CT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 237, "fields": {"geo_id": "41740", "name": "San Diego-Carlsbad, CA", "display_name": "San Diego-Carlsbad, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 238, "fields": {"geo_id": "31420", "name": "Macon, GA", "display_name": "Macon, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 239, "fields": {"geo_id": "45820", "name": "Topeka, KS", "display_name": "Topeka, KS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 240, "fields": {"geo_id": "12020", "name": "Athens-Clarke County, GA", "display_name": "Athens-Clarke County, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 241, "fields": {"geo_id": "13820", "name": "Birmingham-Hoover, AL", "display_name": "Birmingham-Hoover, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 242, "fields": {"geo_id": "48620", "name": "Wichita, KS", "display_name": "Wichita, KS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 243, "fields": {"geo_id": "27860", "name": "Jonesboro, AR", "display_name": "Jonesboro, AR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 244, "fields": {"geo_id": "37620", "name": "Parkersburg-Vienna, WV", "display_name": "Parkersburg-Vienna, WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 245, "fields": {"geo_id": "24580", "name": "Green Bay, WI", "display_name": "Green Bay, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 246, "fields": {"geo_id": "24500", "name": "Great Falls, MT", "display_name": "Great Falls, MT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 247, "fields": {"geo_id": "29740", "name": "Las Cruces, NM", "display_name": "Las Cruces, NM Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 248, "fields": {"geo_id": "38940", "name": "Port St. Lucie, FL", "display_name": "Port St. Lucie, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 249, "fields": {"geo_id": "46700", "name": "Vallejo-Fairfield, CA", "display_name": "Vallejo-Fairfield, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 250, "fields": {"geo_id": "25940", "name": "Hilton Head Island-Bluffton-Beaufort, SC", "display_name": "Hilton Head Island-Bluffton-Beaufort, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 251, "fields": {"geo_id": "47460", "name": "Walla Walla, WA", "display_name": "Walla Walla, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 252, "fields": {"geo_id": "16060", "name": "Carbondale-Marion, IL", "display_name": "Carbondale-Marion, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 253, "fields": {"geo_id": "47020", "name": "Victoria, TX", "display_name": "Victoria, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 254, "fields": {"geo_id": "40380", "name": "Rochester, NY", "display_name": "Rochester, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 255, "fields": {"geo_id": "44060", "name": "Spokane-Spokane Valley, WA", "display_name": "Spokane-Spokane Valley, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 256, "fields": {"geo_id": "22660", "name": "Fort Collins, CO", "display_name": "Fort Collins, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 257, "fields": {"geo_id": "38340", "name": "Pittsfield, MA", "display_name": "Pittsfield, MA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 258, "fields": {"geo_id": "37460", "name": "Panama City, FL", "display_name": "Panama City, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 259, "fields": {"geo_id": "13380", "name": "Bellingham, WA", "display_name": "Bellingham, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 260, "fields": {"geo_id": "22140", "name": "Farmington, NM", "display_name": "Farmington, NM Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 261, "fields": {"geo_id": "46660", "name": "Valdosta, GA", "display_name": "Valdosta, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 262, "fields": {"geo_id": "49700", "name": "Yuba City, CA", "display_name": "Yuba City, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 263, "fields": {"geo_id": "40580", "name": "Rocky Mount, NC", "display_name": "Rocky Mount, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 264, "fields": {"geo_id": "17420", "name": "Cleveland, TN", "display_name": "Cleveland, TN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 265, "fields": {"geo_id": "31540", "name": "Madison, WI", "display_name": "Madison, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 266, "fields": {"geo_id": "20700", "name": "East Stroudsburg, PA", "display_name": "East Stroudsburg, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 267, "fields": {"geo_id": "36420", "name": "Oklahoma City, OK", "display_name": "Oklahoma City, OK Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 268, "fields": {"geo_id": "48700", "name": "Williamsport, PA", "display_name": "Williamsport, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 269, "fields": {"geo_id": "39660", "name": "Rapid City, SD", "display_name": "Rapid City, SD Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 270, "fields": {"geo_id": "46340", "name": "Tyler, TX", "display_name": "Tyler, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 271, "fields": {"geo_id": "39900", "name": "Reno, NV", "display_name": "Reno, NV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 272, "fields": {"geo_id": "31700", "name": "Manchester-Nashua, NH", "display_name": "Manchester-Nashua, NH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 273, "fields": {"geo_id": "15680", "name": "California-Lexington Park, MD", "display_name": "California-Lexington Park, MD Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 274, "fields": {"geo_id": "46540", "name": "Utica-Rome, NY", "display_name": "Utica-Rome, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 275, "fields": {"geo_id": "17660", "name": "Coeur d'Alene, ID", "display_name": "Coeur d'Alene, ID Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 276, "fields": {"geo_id": "20260", "name": "Duluth, MN-WI", "display_name": "Duluth, MN-WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 277, "fields": {"geo_id": "48900", "name": "Wilmington, NC", "display_name": "Wilmington, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 278, "fields": {"geo_id": "47220", "name": "Vineland-Bridgeton, NJ", "display_name": "Vineland-Bridgeton, NJ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 279, "fields": {"geo_id": "11500", "name": "Anniston-Oxford-Jacksonville, AL", "display_name": "Anniston-Oxford-Jacksonville, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 280, "fields": {"geo_id": "23460", "name": "Gadsden, AL", "display_name": "Gadsden, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 281, "fields": {"geo_id": "17300", "name": "Clarksville, TN-KY", "display_name": "Clarksville, TN-KY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 282, "fields": {"geo_id": "34820", "name": "Myrtle Beach-Conway-North Myrtle Beach, SC-NC", "display_name": "Myrtle Beach-Conway-North Myrtle Beach, SC-NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 283, "fields": {"geo_id": "26380", "name": "Houma-Thibodaux, LA", "display_name": "Houma-Thibodaux, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 284, "fields": {"geo_id": "21820", "name": "Fairbanks, AK", "display_name": "Fairbanks, AK Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 285, "fields": {"geo_id": "43340", "name": "Shreveport-Bossier City, LA", "display_name": "Shreveport-Bossier City, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 286, "fields": {"geo_id": "49620", "name": "York-Hanover, PA", "display_name": "York-Hanover, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 287, "fields": {"geo_id": "15380", "name": "Buffalo-Cheektowaga-Niagara Falls, NY", "display_name": "Buffalo-Cheektowaga-Niagara Falls, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 288, "fields": {"geo_id": "41100", "name": "St. George, UT", "display_name": "St. George, UT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 289, "fields": {"geo_id": "12540", "name": "Bakersfield, CA", "display_name": "Bakersfield, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 290, "fields": {"geo_id": "10900", "name": "Allentown-Bethlehem-Easton, PA-NJ", "display_name": "Allentown-Bethlehem-Easton, PA-NJ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 291, "fields": {"geo_id": "15980", "name": "Cape Coral-Fort Myers, FL", "display_name": "Cape Coral-Fort Myers, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 292, "fields": {"geo_id": "44940", "name": "Sumter, SC", "display_name": "Sumter, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 293, "fields": {"geo_id": "33740", "name": "Monroe, LA", "display_name": "Monroe, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 294, "fields": {"geo_id": "20100", "name": "Dover, DE", "display_name": "Dover, DE Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 295, "fields": {"geo_id": "47300", "name": "Visalia-Porterville, CA", "display_name": "Visalia-Porterville, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 296, "fields": {"geo_id": "33700", "name": "Modesto, CA", "display_name": "Modesto, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 297, "fields": {"geo_id": "39340", "name": "Provo-Orem, UT", "display_name": "Provo-Orem, UT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 298, "fields": {"geo_id": "21500", "name": "Erie, PA", "display_name": "Erie, PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 299, "fields": {"geo_id": "41060", "name": "St. Cloud, MN", "display_name": "St. Cloud, MN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 300, "fields": {"geo_id": "25060", "name": "Gulfport-Biloxi-Pascagoula, MS", "display_name": "Gulfport-Biloxi-Pascagoula, MS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 301, "fields": {"geo_id": "31460", "name": "Madera, CA", "display_name": "Madera, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 302, "fields": {"geo_id": "28420", "name": "Kennewick-Richland, WA", "display_name": "Kennewick-Richland, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 303, "fields": {"geo_id": "19180", "name": "Danville, IL", "display_name": "Danville, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 304, "fields": {"geo_id": "24780", "name": "Greenville, NC", "display_name": "Greenville, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 305, "fields": {"geo_id": "13460", "name": "Bend-Redmond, OR", "display_name": "Bend-Redmond, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 306, "fields": {"geo_id": "14860", "name": "Bridgeport-Stamford-Norwalk, CT", "display_name": "Bridgeport-Stamford-Norwalk, CT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 307, "fields": {"geo_id": "44700", "name": "Stockton-Lodi, CA", "display_name": "Stockton-Lodi, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 308, "fields": {"geo_id": "32900", "name": "Merced, CA", "display_name": "Merced, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 309, "fields": {"geo_id": "34940", "name": "Naples-Immokalee-Marco Island, FL", "display_name": "Naples-Immokalee-Marco Island, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 310, "fields": {"geo_id": "24220", "name": "Grand Forks, ND-MN", "display_name": "Grand Forks, ND-MN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 311, "fields": {"geo_id": "19460", "name": "Decatur, AL", "display_name": "Decatur, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 312, "fields": {"geo_id": "48060", "name": "Watertown-Fort Drum, NY", "display_name": "Watertown-Fort Drum, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 313, "fields": {"geo_id": "22520", "name": "Florence-Muscle Shoals, AL", "display_name": "Florence-Muscle Shoals, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 314, "fields": {"geo_id": "20500", "name": "Durham-Chapel Hill, NC", "display_name": "Durham-Chapel Hill, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 315, "fields": {"geo_id": "38660", "name": "Ponce, PR", "display_name": "Ponce, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 316, "fields": {"geo_id": "34100", "name": "Morristown, TN", "display_name": "Morristown, TN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 317, "fields": {"geo_id": "10380", "name": "Aguadilla-Isabela, PR", "display_name": "Aguadilla-Isabela, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 318, "fields": {"geo_id": "45540", "name": "The Villages, FL", "display_name": "The Villages, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 319, "fields": {"geo_id": "25500", "name": "Harrisonburg, VA", "display_name": "Harrisonburg, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 320, "fields": {"geo_id": "13900", "name": "Bismarck, ND", "display_name": "Bismarck, ND Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 321, "fields": {"geo_id": "14010", "name": "Bloomington, IL", "display_name": "Bloomington, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 322, "fields": {"geo_id": "33860", "name": "Montgomery, AL", "display_name": "Montgomery, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 323, "fields": {"geo_id": "17020", "name": "Chico, CA", "display_name": "Chico, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 324, "fields": {"geo_id": "44100", "name": "Springfield, IL", "display_name": "Springfield, IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 325, "fields": {"geo_id": "29820", "name": "Las Vegas-Henderson-Paradise, NV", "display_name": "Las Vegas-Henderson-Paradise, NV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 326, "fields": {"geo_id": "49020", "name": "Winchester, VA-WV", "display_name": "Winchester, VA-WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 327, "fields": {"geo_id": "16180", "name": "Carson City, NV", "display_name": "Carson City, NV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 328, "fields": {"geo_id": "27140", "name": "Jackson, MS", "display_name": "Jackson, MS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 329, "fields": {"geo_id": "35300", "name": "New Haven-Milford, CT", "display_name": "New Haven-Milford, CT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 330, "fields": {"geo_id": "19060", "name": "Cumberland, MD-WV", "display_name": "Cumberland, MD-WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 331, "fields": {"geo_id": "45060", "name": "Syracuse, NY", "display_name": "Syracuse, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 332, "fields": {"geo_id": "12220", "name": "Auburn-Opelika, AL", "display_name": "Auburn-Opelika, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 333, "fields": {"geo_id": "32580", "name": "McAllen-Edinburg-Mission, TX", "display_name": "McAllen-Edinburg-Mission, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 334, "fields": {"geo_id": "22180", "name": "Fayetteville, NC", "display_name": "Fayetteville, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 335, "fields": {"geo_id": "18140", "name": "Columbus, OH", "display_name": "Columbus, OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 336, "fields": {"geo_id": "21660", "name": "Eugene, OR", "display_name": "Eugene, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 337, "fields": {"geo_id": "36980", "name": "Owensboro, KY", "display_name": "Owensboro, KY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 338, "fields": {"geo_id": "21780", "name": "Evansville, IN-KY", "display_name": "Evansville, IN-KY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 339, "fields": {"geo_id": "46220", "name": "Tuscaloosa, AL", "display_name": "Tuscaloosa, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 340, "fields": {"geo_id": "35100", "name": "New Bern, NC", "display_name": "New Bern, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 341, "fields": {"geo_id": "24660", "name": "Greensboro-High Point, NC", "display_name": "Greensboro-High Point, NC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 342, "fields": {"geo_id": "34060", "name": "Morgantown, WV", "display_name": "Morgantown, WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 343, "fields": {"geo_id": "17900", "name": "Columbia, SC", "display_name": "Columbia, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 344, "fields": {"geo_id": "13220", "name": "Beckley, WV", "display_name": "Beckley, WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 345, "fields": {"geo_id": "47580", "name": "Warner Robins, GA", "display_name": "Warner Robins, GA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 346, "fields": {"geo_id": "38540", "name": "Pocatello, ID", "display_name": "Pocatello, ID Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 347, "fields": {"geo_id": "45940", "name": "Trenton, NJ", "display_name": "Trenton, NJ Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 348, "fields": {"geo_id": "37340", "name": "Palm Bay-Melbourne-Titusville, FL", "display_name": "Palm Bay-Melbourne-Titusville, FL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 349, "fields": {"geo_id": "19340", "name": "Davenport-Moline-Rock Island, IA-IL", "display_name": "Davenport-Moline-Rock Island, IA-IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 350, "fields": {"geo_id": "27740", "name": "Johnson City, TN", "display_name": "Johnson City, TN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 351, "fields": {"geo_id": "19740", "name": "Denver-Aurora-Lakewood, CO", "display_name": "Denver-Aurora-Lakewood, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 352, "fields": {"geo_id": "13780", "name": "Binghamton, NY", "display_name": "Binghamton, NY Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 353, "fields": {"geo_id": "41620", "name": "Salt Lake City, UT", "display_name": "Salt Lake City, UT Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 354, "fields": {"geo_id": "12620", "name": "Bangor, ME", "display_name": "Bangor, ME Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 355, "fields": {"geo_id": "13020", "name": "Bay City, MI", "display_name": "Bay City, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 356, "fields": {"geo_id": "24540", "name": "Greeley, CO", "display_name": "Greeley, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 357, "fields": {"geo_id": "41180", "name": "St. Louis, MO-IL", "display_name": "St. Louis, MO-IL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 358, "fields": {"geo_id": "31140", "name": "Louisville/Jefferson County, KY-IN", "display_name": "Louisville/Jefferson County, KY-IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 359, "fields": {"geo_id": "22220", "name": "Fayetteville-Springdale-Rogers, AR-MO", "display_name": "Fayetteville-Springdale-Rogers, AR-MO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 360, "fields": {"geo_id": "16620", "name": "Charleston, WV", "display_name": "Charleston, WV Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 361, "fields": {"geo_id": "49660", "name": "Youngstown-Warren-Boardman, OH-PA", "display_name": "Youngstown-Warren-Boardman, OH-PA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 362, "fields": {"geo_id": "33340", "name": "Milwaukee-Waukesha-West Allis, WI", "display_name": "Milwaukee-Waukesha-West Allis, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 363, "fields": {"geo_id": "20940", "name": "El Centro, CA", "display_name": "El Centro, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 364, "fields": {"geo_id": "28140", "name": "Kansas City, MO-KS", "display_name": "Kansas City, MO-KS Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 365, "fields": {"geo_id": "17860", "name": "Columbia, MO", "display_name": "Columbia, MO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 366, "fields": {"geo_id": "25260", "name": "Hanford-Corcoran, CA", "display_name": "Hanford-Corcoran, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 367, "fields": {"geo_id": "18700", "name": "Corvallis, OR", "display_name": "Corvallis, OR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 368, "fields": {"geo_id": "47940", "name": "Waterloo-Cedar Falls, IA", "display_name": "Waterloo-Cedar Falls, IA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 369, "fields": {"geo_id": "41980", "name": "San Juan-Carolina-Caguas, PR", "display_name": "San Juan-Carolina-Caguas, PR Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 370, "fields": {"geo_id": "24300", "name": "Grand Junction, CO", "display_name": "Grand Junction, CO Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 371, "fields": {"geo_id": "11260", "name": "Anchorage, AK", "display_name": "Anchorage, AK Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 372, "fields": {"geo_id": "22020", "name": "Fargo, ND-MN", "display_name": "Fargo, ND-MN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 373, "fields": {"geo_id": "45460", "name": "Terre Haute, IN", "display_name": "Terre Haute, IN Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 374, "fields": {"geo_id": "31080", "name": "Los Angeles-Long Beach-Anaheim, CA", "display_name": "Los Angeles-Long Beach-Anaheim, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 375, "fields": {"geo_id": "48260", "name": "Weirton-Steubenville, WV-OH", "display_name": "Weirton-Steubenville, WV-OH Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 376, "fields": {"geo_id": "27500", "name": "Janesville-Beloit, WI", "display_name": "Janesville-Beloit, WI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 377, "fields": {"geo_id": "36500", "name": "Olympia-Tumwater, WA", "display_name": "Olympia-Tumwater, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 378, "fields": {"geo_id": "34900", "name": "Napa, CA", "display_name": "Napa, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 379, "fields": {"geo_id": "13980", "name": "Blacksburg-Christiansburg-Radford, VA", "display_name": "Blacksburg-Christiansburg-Radford, VA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 380, "fields": {"geo_id": "14740", "name": "Bremerton-Silverdale, WA", "display_name": "Bremerton-Silverdale, WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 381, "fields": {"geo_id": "38900", "name": "Portland-Vancouver-Hillsboro, OR-WA", "display_name": "Portland-Vancouver-Hillsboro, OR-WA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 382, "fields": {"geo_id": "29180", "name": "Lafayette, LA", "display_name": "Lafayette, LA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 383, "fields": {"geo_id": "42100", "name": "Santa Cruz-Watsonville, CA", "display_name": "Santa Cruz-Watsonville, CA Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 384, "fields": {"geo_id": "22500", "name": "Florence, SC", "display_name": "Florence, SC Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 385, "fields": {"geo_id": "26620", "name": "Huntsville, AL", "display_name": "Huntsville, AL Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 386, "fields": {"geo_id": "35660", "name": "Niles-Benton Harbor, MI", "display_name": "Niles-Benton Harbor, MI Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 387, "fields": {"geo_id": "15180", "name": "Brownsville-Harlingen, TX", "display_name": "Brownsville-Harlingen, TX Metro Area", "postal": null, "level": 4}}, {"model": "signals.GeographyUnit", "pk": 388, "fields": {"geo_id": "29340", "name": "Lake Charles, LA", "display_name": "Lake Charles, LA Metro Area", "postal": null, "level": 4}}]
+[
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 1,
+        "fields": {
+            "geo_id": "22380",
+            "name": "Flagstaff, AZ",
+            "display_name": "Flagstaff, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 2,
+        "fields": {
+            "geo_id": "38860",
+            "name": "Portland-South Portland, ME",
+            "display_name": "Portland-South Portland, ME Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3,
+        "fields": {
+            "geo_id": "29420",
+            "name": "Lake Havasu City-Kingman, AZ",
+            "display_name": "Lake Havasu City-Kingman, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 4,
+        "fields": {
+            "geo_id": "40900",
+            "name": "Sacramento--Roseville--Arden-Arcade, CA",
+            "display_name": "Sacramento--Roseville--Arden-Arcade, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 5,
+        "fields": {
+            "geo_id": "12100",
+            "name": "Atlantic City-Hammonton, NJ",
+            "display_name": "Atlantic City-Hammonton, NJ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 6,
+        "fields": {
+            "geo_id": "35620",
+            "name": "New York-Newark-Jersey City, NY-NJ-PA",
+            "display_name": "New York-Newark-Jersey City, NY-NJ-PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 7,
+        "fields": {
+            "geo_id": "12980",
+            "name": "Battle Creek, MI",
+            "display_name": "Battle Creek, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 8,
+        "fields": {
+            "geo_id": "21300",
+            "name": "Elmira, NY",
+            "display_name": "Elmira, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 9,
+        "fields": {
+            "geo_id": "24340",
+            "name": "Grand Rapids-Wyoming, MI",
+            "display_name": "Grand Rapids-Wyoming, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 10,
+        "fields": {
+            "geo_id": "28740",
+            "name": "Kingston, NY",
+            "display_name": "Kingston, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 11,
+        "fields": {
+            "geo_id": "45780",
+            "name": "Toledo, OH",
+            "display_name": "Toledo, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 12,
+        "fields": {
+            "geo_id": "23580",
+            "name": "Gainesville, GA",
+            "display_name": "Gainesville, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 13,
+        "fields": {
+            "geo_id": "14100",
+            "name": "Bloomsburg-Berwick, PA",
+            "display_name": "Bloomsburg-Berwick, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 14,
+        "fields": {
+            "geo_id": "29020",
+            "name": "Kokomo, IN",
+            "display_name": "Kokomo, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 15,
+        "fields": {
+            "geo_id": "29620",
+            "name": "Lansing-East Lansing, MI",
+            "display_name": "Lansing-East Lansing, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 16,
+        "fields": {
+            "geo_id": "26980",
+            "name": "Iowa City, IA",
+            "display_name": "Iowa City, IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 17,
+        "fields": {
+            "geo_id": "19100",
+            "name": "Dallas-Fort Worth-Arlington, TX",
+            "display_name": "Dallas-Fort Worth-Arlington, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 18,
+        "fields": {
+            "geo_id": "26300",
+            "name": "Hot Springs, AR",
+            "display_name": "Hot Springs, AR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 19,
+        "fields": {
+            "geo_id": "39820",
+            "name": "Redding, CA",
+            "display_name": "Redding, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 20,
+        "fields": {
+            "geo_id": "25220",
+            "name": "Hammond, LA",
+            "display_name": "Hammond, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 21,
+        "fields": {
+            "geo_id": "16740",
+            "name": "Charlotte-Concord-Gastonia, NC-SC",
+            "display_name": "Charlotte-Concord-Gastonia, NC-SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 22,
+        "fields": {
+            "geo_id": "18880",
+            "name": "Crestview-Fort Walton Beach-Destin, FL",
+            "display_name": "Crestview-Fort Walton Beach-Destin, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 23,
+        "fields": {
+            "geo_id": "48540",
+            "name": "Wheeling, WV-OH",
+            "display_name": "Wheeling, WV-OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 24,
+        "fields": {
+            "geo_id": "35380",
+            "name": "New Orleans-Metairie, LA",
+            "display_name": "New Orleans-Metairie, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 25,
+        "fields": {
+            "geo_id": "33220",
+            "name": "Midland, MI",
+            "display_name": "Midland, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 26,
+        "fields": {
+            "geo_id": "32780",
+            "name": "Medford, OR",
+            "display_name": "Medford, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 27,
+        "fields": {
+            "geo_id": "30980",
+            "name": "Longview, TX",
+            "display_name": "Longview, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 28,
+        "fields": {
+            "geo_id": "42200",
+            "name": "Santa Maria-Santa Barbara, CA",
+            "display_name": "Santa Maria-Santa Barbara, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 29,
+        "fields": {
+            "geo_id": "27620",
+            "name": "Jefferson City, MO",
+            "display_name": "Jefferson City, MO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 30,
+        "fields": {
+            "geo_id": "44220",
+            "name": "Springfield, OH",
+            "display_name": "Springfield, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 31,
+        "fields": {
+            "geo_id": "43100",
+            "name": "Sheboygan, WI",
+            "display_name": "Sheboygan, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 32,
+        "fields": {
+            "geo_id": "34620",
+            "name": "Muncie, IN",
+            "display_name": "Muncie, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 33,
+        "fields": {
+            "geo_id": "36780",
+            "name": "Oshkosh-Neenah, WI",
+            "display_name": "Oshkosh-Neenah, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 34,
+        "fields": {
+            "geo_id": "14460",
+            "name": "Boston-Cambridge-Newton, MA-NH",
+            "display_name": "Boston-Cambridge-Newton, MA-NH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 35,
+        "fields": {
+            "geo_id": "36220",
+            "name": "Odessa, TX",
+            "display_name": "Odessa, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 36,
+        "fields": {
+            "geo_id": "11540",
+            "name": "Appleton, WI",
+            "display_name": "Appleton, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 37,
+        "fields": {
+            "geo_id": "31180",
+            "name": "Lubbock, TX",
+            "display_name": "Lubbock, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 38,
+        "fields": {
+            "geo_id": "40660",
+            "name": "Rome, GA",
+            "display_name": "Rome, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 39,
+        "fields": {
+            "geo_id": "15940",
+            "name": "Canton-Massillon, OH",
+            "display_name": "Canton-Massillon, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 40,
+        "fields": {
+            "geo_id": "43420",
+            "name": "Sierra Vista-Douglas, AZ",
+            "display_name": "Sierra Vista-Douglas, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 41,
+        "fields": {
+            "geo_id": "11100",
+            "name": "Amarillo, TX",
+            "display_name": "Amarillo, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 42,
+        "fields": {
+            "geo_id": "31900",
+            "name": "Mansfield, OH",
+            "display_name": "Mansfield, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 43,
+        "fields": {
+            "geo_id": "19140",
+            "name": "Dalton, GA",
+            "display_name": "Dalton, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 44,
+        "fields": {
+            "geo_id": "25620",
+            "name": "Hattiesburg, MS",
+            "display_name": "Hattiesburg, MS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 45,
+        "fields": {
+            "geo_id": "45500",
+            "name": "Texarkana, TX-AR",
+            "display_name": "Texarkana, TX-AR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 46,
+        "fields": {
+            "geo_id": "28100",
+            "name": "Kankakee, IL",
+            "display_name": "Kankakee, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 47,
+        "fields": {
+            "geo_id": "24860",
+            "name": "Greenville-Anderson-Mauldin, SC",
+            "display_name": "Greenville-Anderson-Mauldin, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 48,
+        "fields": {
+            "geo_id": "22540",
+            "name": "Fond du Lac, WI",
+            "display_name": "Fond du Lac, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 49,
+        "fields": {
+            "geo_id": "14020",
+            "name": "Bloomington, IN",
+            "display_name": "Bloomington, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 50,
+        "fields": {
+            "geo_id": "21340",
+            "name": "El Paso, TX",
+            "display_name": "El Paso, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 51,
+        "fields": {
+            "geo_id": "48140",
+            "name": "Wausau, WI",
+            "display_name": "Wausau, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 52,
+        "fields": {
+            "geo_id": "10180",
+            "name": "Abilene, TX",
+            "display_name": "Abilene, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 53,
+        "fields": {
+            "geo_id": "15500",
+            "name": "Burlington, NC",
+            "display_name": "Burlington, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 54,
+        "fields": {
+            "geo_id": "20020",
+            "name": "Dothan, AL",
+            "display_name": "Dothan, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 55,
+        "fields": {
+            "geo_id": "42340",
+            "name": "Savannah, GA",
+            "display_name": "Savannah, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 56,
+        "fields": {
+            "geo_id": "30700",
+            "name": "Lincoln, NE",
+            "display_name": "Lincoln, NE Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 57,
+        "fields": {
+            "geo_id": "23900",
+            "name": "Gettysburg, PA",
+            "display_name": "Gettysburg, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 58,
+        "fields": {
+            "geo_id": "19380",
+            "name": "Dayton, OH",
+            "display_name": "Dayton, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 59,
+        "fields": {
+            "geo_id": "17820",
+            "name": "Colorado Springs, CO",
+            "display_name": "Colorado Springs, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 60,
+        "fields": {
+            "geo_id": "30340",
+            "name": "Lewiston-Auburn, ME",
+            "display_name": "Lewiston-Auburn, ME Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 61,
+        "fields": {
+            "geo_id": "42020",
+            "name": "San Luis Obispo-Paso Robles-Arroyo Grande, CA",
+            "display_name": "San Luis Obispo-Paso Robles-Arroyo Grande, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 62,
+        "fields": {
+            "geo_id": "12260",
+            "name": "Augusta-Richmond County, GA-SC",
+            "display_name": "Augusta-Richmond County, GA-SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 63,
+        "fields": {
+            "geo_id": "11640",
+            "name": "Arecibo, PR",
+            "display_name": "Arecibo, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 64,
+        "fields": {
+            "geo_id": "10420",
+            "name": "Akron, OH",
+            "display_name": "Akron, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 65,
+        "fields": {
+            "geo_id": "47260",
+            "name": "Virginia Beach-Norfolk-Newport News, VA-NC",
+            "display_name": "Virginia Beach-Norfolk-Newport News, VA-NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 66,
+        "fields": {
+            "geo_id": "39380",
+            "name": "Pueblo, CO",
+            "display_name": "Pueblo, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 67,
+        "fields": {
+            "geo_id": "26580",
+            "name": "Huntington-Ashland, WV-KY-OH",
+            "display_name": "Huntington-Ashland, WV-KY-OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 68,
+        "fields": {
+            "geo_id": "47900",
+            "name": "Washington-Arlington-Alexandria, DC-VA-MD-WV",
+            "display_name": "Washington-Arlington-Alexandria, DC-VA-MD-WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 69,
+        "fields": {
+            "geo_id": "14260",
+            "name": "Boise City, ID",
+            "display_name": "Boise City, ID Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 70,
+        "fields": {
+            "geo_id": "30780",
+            "name": "Little Rock-North Little Rock-Conway, AR",
+            "display_name": "Little Rock-North Little Rock-Conway, AR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 71,
+        "fields": {
+            "geo_id": "29940",
+            "name": "Lawrence, KS",
+            "display_name": "Lawrence, KS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 72,
+        "fields": {
+            "geo_id": "27780",
+            "name": "Johnstown, PA",
+            "display_name": "Johnstown, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 73,
+        "fields": {
+            "geo_id": "21140",
+            "name": "Elkhart-Goshen, IN",
+            "display_name": "Elkhart-Goshen, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 74,
+        "fields": {
+            "geo_id": "20740",
+            "name": "Eau Claire, WI",
+            "display_name": "Eau Claire, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 75,
+        "fields": {
+            "geo_id": "24140",
+            "name": "Goldsboro, NC",
+            "display_name": "Goldsboro, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 76,
+        "fields": {
+            "geo_id": "25020",
+            "name": "Guayama, PR",
+            "display_name": "Guayama, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 77,
+        "fields": {
+            "geo_id": "40060",
+            "name": "Richmond, VA",
+            "display_name": "Richmond, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 78,
+        "fields": {
+            "geo_id": "19780",
+            "name": "Des Moines-West Des Moines, IA",
+            "display_name": "Des Moines-West Des Moines, IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 79,
+        "fields": {
+            "geo_id": "11700",
+            "name": "Asheville, NC",
+            "display_name": "Asheville, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 80,
+        "fields": {
+            "geo_id": "47380",
+            "name": "Waco, TX",
+            "display_name": "Waco, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 81,
+        "fields": {
+            "geo_id": "28020",
+            "name": "Kalamazoo-Portage, MI",
+            "display_name": "Kalamazoo-Portage, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 82,
+        "fields": {
+            "geo_id": "16940",
+            "name": "Cheyenne, WY",
+            "display_name": "Cheyenne, WY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 83,
+        "fields": {
+            "geo_id": "41860",
+            "name": "San Francisco-Oakland-Hayward, CA",
+            "display_name": "San Francisco-Oakland-Hayward, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 84,
+        "fields": {
+            "geo_id": "11180",
+            "name": "Ames, IA",
+            "display_name": "Ames, IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 85,
+        "fields": {
+            "geo_id": "27260",
+            "name": "Jacksonville, FL",
+            "display_name": "Jacksonville, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 86,
+        "fields": {
+            "geo_id": "40980",
+            "name": "Saginaw, MI",
+            "display_name": "Saginaw, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 87,
+        "fields": {
+            "geo_id": "41420",
+            "name": "Salem, OR",
+            "display_name": "Salem, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 88,
+        "fields": {
+            "geo_id": "41500",
+            "name": "Salinas, CA",
+            "display_name": "Salinas, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 89,
+        "fields": {
+            "geo_id": "10540",
+            "name": "Albany, OR",
+            "display_name": "Albany, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 90,
+        "fields": {
+            "geo_id": "39300",
+            "name": "Providence-Warwick, RI-MA",
+            "display_name": "Providence-Warwick, RI-MA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 91,
+        "fields": {
+            "geo_id": "41940",
+            "name": "San Jose-Sunnyvale-Santa Clara, CA",
+            "display_name": "San Jose-Sunnyvale-Santa Clara, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 92,
+        "fields": {
+            "geo_id": "22420",
+            "name": "Flint, MI",
+            "display_name": "Flint, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 93,
+        "fields": {
+            "geo_id": "41660",
+            "name": "San Angelo, TX",
+            "display_name": "San Angelo, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 94,
+        "fields": {
+            "geo_id": "48300",
+            "name": "Wenatchee, WA",
+            "display_name": "Wenatchee, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 95,
+        "fields": {
+            "geo_id": "33260",
+            "name": "Midland, TX",
+            "display_name": "Midland, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 96,
+        "fields": {
+            "geo_id": "23420",
+            "name": "Fresno, CA",
+            "display_name": "Fresno, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 97,
+        "fields": {
+            "geo_id": "30140",
+            "name": "Lebanon, PA",
+            "display_name": "Lebanon, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 98,
+        "fields": {
+            "geo_id": "24420",
+            "name": "Grants Pass, OR",
+            "display_name": "Grants Pass, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 99,
+        "fields": {
+            "geo_id": "36100",
+            "name": "Ocala, FL",
+            "display_name": "Ocala, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 100,
+        "fields": {
+            "geo_id": "44180",
+            "name": "Springfield, MO",
+            "display_name": "Springfield, MO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 101,
+        "fields": {
+            "geo_id": "42680",
+            "name": "Sebastian-Vero Beach, FL",
+            "display_name": "Sebastian-Vero Beach, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 102,
+        "fields": {
+            "geo_id": "27980",
+            "name": "Kahului-Wailuku-Lahaina, HI",
+            "display_name": "Kahului-Wailuku-Lahaina, HI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 103,
+        "fields": {
+            "geo_id": "11460",
+            "name": "Ann Arbor, MI",
+            "display_name": "Ann Arbor, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 104,
+        "fields": {
+            "geo_id": "28940",
+            "name": "Knoxville, TN",
+            "display_name": "Knoxville, TN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 105,
+        "fields": {
+            "geo_id": "41700",
+            "name": "San Antonio-New Braunfels, TX",
+            "display_name": "San Antonio-New Braunfels, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 106,
+        "fields": {
+            "geo_id": "26900",
+            "name": "Indianapolis-Carmel-Anderson, IN",
+            "display_name": "Indianapolis-Carmel-Anderson, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 107,
+        "fields": {
+            "geo_id": "16300",
+            "name": "Cedar Rapids, IA",
+            "display_name": "Cedar Rapids, IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 108,
+        "fields": {
+            "geo_id": "18020",
+            "name": "Columbus, IN",
+            "display_name": "Columbus, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 109,
+        "fields": {
+            "geo_id": "32820",
+            "name": "Memphis, TN-MS-AR",
+            "display_name": "Memphis, TN-MS-AR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 110,
+        "fields": {
+            "geo_id": "16580",
+            "name": "Champaign-Urbana, IL",
+            "display_name": "Champaign-Urbana, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 111,
+        "fields": {
+            "geo_id": "12580",
+            "name": "Baltimore-Columbia-Towson, MD",
+            "display_name": "Baltimore-Columbia-Towson, MD Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 112,
+        "fields": {
+            "geo_id": "42700",
+            "name": "Sebring, FL",
+            "display_name": "Sebring, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 113,
+        "fields": {
+            "geo_id": "37980",
+            "name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
+            "display_name": "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 114,
+        "fields": {
+            "geo_id": "37900",
+            "name": "Peoria, IL",
+            "display_name": "Peoria, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 115,
+        "fields": {
+            "geo_id": "26420",
+            "name": "Houston-The Woodlands-Sugar Land, TX",
+            "display_name": "Houston-The Woodlands-Sugar Land, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 116,
+        "fields": {
+            "geo_id": "42540",
+            "name": "Scranton--Wilkes-Barre--Hazleton, PA",
+            "display_name": "Scranton--Wilkes-Barre--Hazleton, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 117,
+        "fields": {
+            "geo_id": "11020",
+            "name": "Altoona, PA",
+            "display_name": "Altoona, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 118,
+        "fields": {
+            "geo_id": "23060",
+            "name": "Fort Wayne, IN",
+            "display_name": "Fort Wayne, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 119,
+        "fields": {
+            "geo_id": "40140",
+            "name": "Riverside-San Bernardino-Ontario, CA",
+            "display_name": "Riverside-San Bernardino-Ontario, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 120,
+        "fields": {
+            "geo_id": "19300",
+            "name": "Daphne-Fairhope-Foley, AL",
+            "display_name": "Daphne-Fairhope-Foley, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 121,
+        "fields": {
+            "geo_id": "37860",
+            "name": "Pensacola-Ferry Pass-Brent, FL",
+            "display_name": "Pensacola-Ferry Pass-Brent, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 122,
+        "fields": {
+            "geo_id": "40420",
+            "name": "Rockford, IL",
+            "display_name": "Rockford, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 123,
+        "fields": {
+            "geo_id": "30460",
+            "name": "Lexington-Fayette, KY",
+            "display_name": "Lexington-Fayette, KY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 124,
+        "fields": {
+            "geo_id": "17980",
+            "name": "Columbus, GA-AL",
+            "display_name": "Columbus, GA-AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 125,
+        "fields": {
+            "geo_id": "19500",
+            "name": "Decatur, IL",
+            "display_name": "Decatur, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 126,
+        "fields": {
+            "geo_id": "13740",
+            "name": "Billings, MT",
+            "display_name": "Billings, MT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 127,
+        "fields": {
+            "geo_id": "42660",
+            "name": "Seattle-Tacoma-Bellevue, WA",
+            "display_name": "Seattle-Tacoma-Bellevue, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 128,
+        "fields": {
+            "geo_id": "32420",
+            "name": "Mayag\u00fcez, PR",
+            "display_name": "Mayag\u00fcez, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 129,
+        "fields": {
+            "geo_id": "30620",
+            "name": "Lima, OH",
+            "display_name": "Lima, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 130,
+        "fields": {
+            "geo_id": "17460",
+            "name": "Cleveland-Elyria, OH",
+            "display_name": "Cleveland-Elyria, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 131,
+        "fields": {
+            "geo_id": "38300",
+            "name": "Pittsburgh, PA",
+            "display_name": "Pittsburgh, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 132,
+        "fields": {
+            "geo_id": "41900",
+            "name": "San Germ\u00e1n, PR",
+            "display_name": "San Germ\u00e1n, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 133,
+        "fields": {
+            "geo_id": "27180",
+            "name": "Jackson, TN",
+            "display_name": "Jackson, TN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 134,
+        "fields": {
+            "geo_id": "48660",
+            "name": "Wichita Falls, TX",
+            "display_name": "Wichita Falls, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 135,
+        "fields": {
+            "geo_id": "13140",
+            "name": "Beaumont-Port Arthur, TX",
+            "display_name": "Beaumont-Port Arthur, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 136,
+        "fields": {
+            "geo_id": "43580",
+            "name": "Sioux City, IA-NE-SD",
+            "display_name": "Sioux City, IA-NE-SD Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 137,
+        "fields": {
+            "geo_id": "25420",
+            "name": "Harrisburg-Carlisle, PA",
+            "display_name": "Harrisburg-Carlisle, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 138,
+        "fields": {
+            "geo_id": "31340",
+            "name": "Lynchburg, VA",
+            "display_name": "Lynchburg, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 139,
+        "fields": {
+            "geo_id": "38220",
+            "name": "Pine Bluff, AR",
+            "display_name": "Pine Bluff, AR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 140,
+        "fields": {
+            "geo_id": "38060",
+            "name": "Phoenix-Mesa-Scottsdale, AZ",
+            "display_name": "Phoenix-Mesa-Scottsdale, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 141,
+        "fields": {
+            "geo_id": "26140",
+            "name": "Homosassa Springs, FL",
+            "display_name": "Homosassa Springs, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 142,
+        "fields": {
+            "geo_id": "42220",
+            "name": "Santa Rosa, CA",
+            "display_name": "Santa Rosa, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 143,
+        "fields": {
+            "geo_id": "46140",
+            "name": "Tulsa, OK",
+            "display_name": "Tulsa, OK Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 144,
+        "fields": {
+            "geo_id": "33140",
+            "name": "Michigan City-La Porte, IN",
+            "display_name": "Michigan City-La Porte, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 145,
+        "fields": {
+            "geo_id": "16700",
+            "name": "Charleston-North Charleston, SC",
+            "display_name": "Charleston-North Charleston, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 146,
+        "fields": {
+            "geo_id": "36260",
+            "name": "Ogden-Clearfield, UT",
+            "display_name": "Ogden-Clearfield, UT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 147,
+        "fields": {
+            "geo_id": "31740",
+            "name": "Manhattan, KS",
+            "display_name": "Manhattan, KS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 148,
+        "fields": {
+            "geo_id": "35840",
+            "name": "North Port-Sarasota-Bradenton, FL",
+            "display_name": "North Port-Sarasota-Bradenton, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 149,
+        "fields": {
+            "geo_id": "43300",
+            "name": "Sherman-Denison, TX",
+            "display_name": "Sherman-Denison, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 150,
+        "fields": {
+            "geo_id": "33100",
+            "name": "Miami-Fort Lauderdale-West Palm Beach, FL",
+            "display_name": "Miami-Fort Lauderdale-West Palm Beach, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 151,
+        "fields": {
+            "geo_id": "23540",
+            "name": "Gainesville, FL",
+            "display_name": "Gainesville, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 152,
+        "fields": {
+            "geo_id": "12700",
+            "name": "Barnstable Town, MA",
+            "display_name": "Barnstable Town, MA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 153,
+        "fields": {
+            "geo_id": "12940",
+            "name": "Baton Rouge, LA",
+            "display_name": "Baton Rouge, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 154,
+        "fields": {
+            "geo_id": "27100",
+            "name": "Jackson, MI",
+            "display_name": "Jackson, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 155,
+        "fields": {
+            "geo_id": "27060",
+            "name": "Ithaca, NY",
+            "display_name": "Ithaca, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 156,
+        "fields": {
+            "geo_id": "20220",
+            "name": "Dubuque, IA",
+            "display_name": "Dubuque, IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 157,
+        "fields": {
+            "geo_id": "10740",
+            "name": "Albuquerque, NM",
+            "display_name": "Albuquerque, NM Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 158,
+        "fields": {
+            "geo_id": "46060",
+            "name": "Tucson, AZ",
+            "display_name": "Tucson, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 159,
+        "fields": {
+            "geo_id": "24020",
+            "name": "Glens Falls, NY",
+            "display_name": "Glens Falls, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 160,
+        "fields": {
+            "geo_id": "39740",
+            "name": "Reading, PA",
+            "display_name": "Reading, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 161,
+        "fields": {
+            "geo_id": "16020",
+            "name": "Cape Girardeau, MO-IL",
+            "display_name": "Cape Girardeau, MO-IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 162,
+        "fields": {
+            "geo_id": "27340",
+            "name": "Jacksonville, NC",
+            "display_name": "Jacksonville, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 163,
+        "fields": {
+            "geo_id": "39140",
+            "name": "Prescott, AZ",
+            "display_name": "Prescott, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 164,
+        "fields": {
+            "geo_id": "25180",
+            "name": "Hagerstown-Martinsburg, MD-WV",
+            "display_name": "Hagerstown-Martinsburg, MD-WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 165,
+        "fields": {
+            "geo_id": "31020",
+            "name": "Longview, WA",
+            "display_name": "Longview, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 166,
+        "fields": {
+            "geo_id": "21060",
+            "name": "Elizabethtown-Fort Knox, KY",
+            "display_name": "Elizabethtown-Fort Knox, KY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 167,
+        "fields": {
+            "geo_id": "33780",
+            "name": "Monroe, MI",
+            "display_name": "Monroe, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 168,
+        "fields": {
+            "geo_id": "16220",
+            "name": "Casper, WY",
+            "display_name": "Casper, WY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 169,
+        "fields": {
+            "geo_id": "16540",
+            "name": "Chambersburg-Waynesboro, PA",
+            "display_name": "Chambersburg-Waynesboro, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 170,
+        "fields": {
+            "geo_id": "43900",
+            "name": "Spartanburg, SC",
+            "display_name": "Spartanburg, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 171,
+        "fields": {
+            "geo_id": "16860",
+            "name": "Chattanooga, TN-GA",
+            "display_name": "Chattanooga, TN-GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 172,
+        "fields": {
+            "geo_id": "15260",
+            "name": "Brunswick, GA",
+            "display_name": "Brunswick, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 173,
+        "fields": {
+            "geo_id": "44140",
+            "name": "Springfield, MA",
+            "display_name": "Springfield, MA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 174,
+        "fields": {
+            "geo_id": "42140",
+            "name": "Santa Fe, NM",
+            "display_name": "Santa Fe, NM Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 175,
+        "fields": {
+            "geo_id": "44300",
+            "name": "State College, PA",
+            "display_name": "State College, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 176,
+        "fields": {
+            "geo_id": "14500",
+            "name": "Boulder, CO",
+            "display_name": "Boulder, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 177,
+        "fields": {
+            "geo_id": "39460",
+            "name": "Punta Gorda, FL",
+            "display_name": "Punta Gorda, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 178,
+        "fields": {
+            "geo_id": "34740",
+            "name": "Muskegon, MI",
+            "display_name": "Muskegon, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 179,
+        "fields": {
+            "geo_id": "33540",
+            "name": "Missoula, MT",
+            "display_name": "Missoula, MT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 180,
+        "fields": {
+            "geo_id": "39540",
+            "name": "Racine, WI",
+            "display_name": "Racine, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 181,
+        "fields": {
+            "geo_id": "34580",
+            "name": "Mount Vernon-Anacortes, WA",
+            "display_name": "Mount Vernon-Anacortes, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 182,
+        "fields": {
+            "geo_id": "29700",
+            "name": "Laredo, TX",
+            "display_name": "Laredo, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 183,
+        "fields": {
+            "geo_id": "29540",
+            "name": "Lancaster, PA",
+            "display_name": "Lancaster, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 184,
+        "fields": {
+            "geo_id": "43620",
+            "name": "Sioux Falls, SD",
+            "display_name": "Sioux Falls, SD Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 185,
+        "fields": {
+            "geo_id": "40220",
+            "name": "Roanoke, VA",
+            "display_name": "Roanoke, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 186,
+        "fields": {
+            "geo_id": "49180",
+            "name": "Winston-Salem, NC",
+            "display_name": "Winston-Salem, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 187,
+        "fields": {
+            "geo_id": "22900",
+            "name": "Fort Smith, AR-OK",
+            "display_name": "Fort Smith, AR-OK Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 188,
+        "fields": {
+            "geo_id": "16980",
+            "name": "Chicago-Naperville-Elgin, IL-IN-WI",
+            "display_name": "Chicago-Naperville-Elgin, IL-IN-WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 189,
+        "fields": {
+            "geo_id": "12060",
+            "name": "Atlanta-Sandy Springs-Roswell, GA",
+            "display_name": "Atlanta-Sandy Springs-Roswell, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 190,
+        "fields": {
+            "geo_id": "14540",
+            "name": "Bowling Green, KY",
+            "display_name": "Bowling Green, KY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 191,
+        "fields": {
+            "geo_id": "26820",
+            "name": "Idaho Falls, ID",
+            "display_name": "Idaho Falls, ID Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 192,
+        "fields": {
+            "geo_id": "41140",
+            "name": "St. Joseph, MO-KS",
+            "display_name": "St. Joseph, MO-KS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 193,
+        "fields": {
+            "geo_id": "45220",
+            "name": "Tallahassee, FL",
+            "display_name": "Tallahassee, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 194,
+        "fields": {
+            "geo_id": "30300",
+            "name": "Lewiston, ID-WA",
+            "display_name": "Lewiston, ID-WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 195,
+        "fields": {
+            "geo_id": "10500",
+            "name": "Albany, GA",
+            "display_name": "Albany, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 196,
+        "fields": {
+            "geo_id": "19660",
+            "name": "Deltona-Daytona Beach-Ormond Beach, FL",
+            "display_name": "Deltona-Daytona Beach-Ormond Beach, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 197,
+        "fields": {
+            "geo_id": "25980",
+            "name": "Hinesville, GA",
+            "display_name": "Hinesville, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 198,
+        "fields": {
+            "geo_id": "40340",
+            "name": "Rochester, MN",
+            "display_name": "Rochester, MN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 199,
+        "fields": {
+            "geo_id": "15540",
+            "name": "Burlington-South Burlington, VT",
+            "display_name": "Burlington-South Burlington, VT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 200,
+        "fields": {
+            "geo_id": "25540",
+            "name": "Hartford-West Hartford-East Hartford, CT",
+            "display_name": "Hartford-West Hartford-East Hartford, CT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 201,
+        "fields": {
+            "geo_id": "45300",
+            "name": "Tampa-St. Petersburg-Clearwater, FL",
+            "display_name": "Tampa-St. Petersburg-Clearwater, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 202,
+        "fields": {
+            "geo_id": "17140",
+            "name": "Cincinnati, OH-KY-IN",
+            "display_name": "Cincinnati, OH-KY-IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 203,
+        "fields": {
+            "geo_id": "25860",
+            "name": "Hickory-Lenoir-Morganton, NC",
+            "display_name": "Hickory-Lenoir-Morganton, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 204,
+        "fields": {
+            "geo_id": "41540",
+            "name": "Salisbury, MD-DE",
+            "display_name": "Salisbury, MD-DE Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 205,
+        "fields": {
+            "geo_id": "49740",
+            "name": "Yuma, AZ",
+            "display_name": "Yuma, AZ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 206,
+        "fields": {
+            "geo_id": "30860",
+            "name": "Logan, UT-ID",
+            "display_name": "Logan, UT-ID Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 207,
+        "fields": {
+            "geo_id": "24260",
+            "name": "Grand Island, NE",
+            "display_name": "Grand Island, NE Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 208,
+        "fields": {
+            "geo_id": "33460",
+            "name": "Minneapolis-St. Paul-Bloomington, MN-WI",
+            "display_name": "Minneapolis-St. Paul-Bloomington, MN-WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 209,
+        "fields": {
+            "geo_id": "29200",
+            "name": "Lafayette-West Lafayette, IN",
+            "display_name": "Lafayette-West Lafayette, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 210,
+        "fields": {
+            "geo_id": "28660",
+            "name": "Killeen-Temple, TX",
+            "display_name": "Killeen-Temple, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 211,
+        "fields": {
+            "geo_id": "29100",
+            "name": "La Crosse-Onalaska, WI-MN",
+            "display_name": "La Crosse-Onalaska, WI-MN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 212,
+        "fields": {
+            "geo_id": "10580",
+            "name": "Albany-Schenectady-Troy, NY",
+            "display_name": "Albany-Schenectady-Troy, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 213,
+        "fields": {
+            "geo_id": "12420",
+            "name": "Austin-Round Rock, TX",
+            "display_name": "Austin-Round Rock, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 214,
+        "fields": {
+            "geo_id": "17780",
+            "name": "College Station-Bryan, TX",
+            "display_name": "College Station-Bryan, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 215,
+        "fields": {
+            "geo_id": "39580",
+            "name": "Raleigh, NC",
+            "display_name": "Raleigh, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 216,
+        "fields": {
+            "geo_id": "36740",
+            "name": "Orlando-Kissimmee-Sanford, FL",
+            "display_name": "Orlando-Kissimmee-Sanford, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 217,
+        "fields": {
+            "geo_id": "16820",
+            "name": "Charlottesville, VA",
+            "display_name": "Charlottesville, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 218,
+        "fields": {
+            "geo_id": "34980",
+            "name": "Nashville-Davidson--Murfreesboro--Franklin, TN",
+            "display_name": "Nashville-Davidson--Murfreesboro--Franklin, TN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 219,
+        "fields": {
+            "geo_id": "36540",
+            "name": "Omaha-Council Bluffs, NE-IA",
+            "display_name": "Omaha-Council Bluffs, NE-IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 220,
+        "fields": {
+            "geo_id": "44420",
+            "name": "Staunton-Waynesboro, VA",
+            "display_name": "Staunton-Waynesboro, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 221,
+        "fields": {
+            "geo_id": "19820",
+            "name": "Detroit-Warren-Dearborn, MI",
+            "display_name": "Detroit-Warren-Dearborn, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 222,
+        "fields": {
+            "geo_id": "46520",
+            "name": "Urban Honolulu, HI",
+            "display_name": "Urban Honolulu, HI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 223,
+        "fields": {
+            "geo_id": "30020",
+            "name": "Lawton, OK",
+            "display_name": "Lawton, OK Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 224,
+        "fields": {
+            "geo_id": "27900",
+            "name": "Joplin, MO",
+            "display_name": "Joplin, MO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 225,
+        "fields": {
+            "geo_id": "29460",
+            "name": "Lakeland-Winter Haven, FL",
+            "display_name": "Lakeland-Winter Haven, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 226,
+        "fields": {
+            "geo_id": "37100",
+            "name": "Oxnard-Thousand Oaks-Ventura, CA",
+            "display_name": "Oxnard-Thousand Oaks-Ventura, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 227,
+        "fields": {
+            "geo_id": "35980",
+            "name": "Norwich-New London, CT",
+            "display_name": "Norwich-New London, CT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 228,
+        "fields": {
+            "geo_id": "10780",
+            "name": "Alexandria, LA",
+            "display_name": "Alexandria, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 229,
+        "fields": {
+            "geo_id": "43780",
+            "name": "South Bend-Mishawaka, IN-MI",
+            "display_name": "South Bend-Mishawaka, IN-MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 230,
+        "fields": {
+            "geo_id": "33660",
+            "name": "Mobile, AL",
+            "display_name": "Mobile, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 231,
+        "fields": {
+            "geo_id": "18580",
+            "name": "Corpus Christi, TX",
+            "display_name": "Corpus Christi, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 232,
+        "fields": {
+            "geo_id": "28700",
+            "name": "Kingsport-Bristol-Bristol, TN-VA",
+            "display_name": "Kingsport-Bristol-Bristol, TN-VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 233,
+        "fields": {
+            "geo_id": "36140",
+            "name": "Ocean City, NJ",
+            "display_name": "Ocean City, NJ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 234,
+        "fields": {
+            "geo_id": "31860",
+            "name": "Mankato-North Mankato, MN",
+            "display_name": "Mankato-North Mankato, MN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 235,
+        "fields": {
+            "geo_id": "49420",
+            "name": "Yakima, WA",
+            "display_name": "Yakima, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 236,
+        "fields": {
+            "geo_id": "49340",
+            "name": "Worcester, MA-CT",
+            "display_name": "Worcester, MA-CT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 237,
+        "fields": {
+            "geo_id": "41740",
+            "name": "San Diego-Carlsbad, CA",
+            "display_name": "San Diego-Carlsbad, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 238,
+        "fields": {
+            "geo_id": "31420",
+            "name": "Macon, GA",
+            "display_name": "Macon, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 239,
+        "fields": {
+            "geo_id": "45820",
+            "name": "Topeka, KS",
+            "display_name": "Topeka, KS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 240,
+        "fields": {
+            "geo_id": "12020",
+            "name": "Athens-Clarke County, GA",
+            "display_name": "Athens-Clarke County, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 241,
+        "fields": {
+            "geo_id": "13820",
+            "name": "Birmingham-Hoover, AL",
+            "display_name": "Birmingham-Hoover, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 242,
+        "fields": {
+            "geo_id": "48620",
+            "name": "Wichita, KS",
+            "display_name": "Wichita, KS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 243,
+        "fields": {
+            "geo_id": "27860",
+            "name": "Jonesboro, AR",
+            "display_name": "Jonesboro, AR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 244,
+        "fields": {
+            "geo_id": "37620",
+            "name": "Parkersburg-Vienna, WV",
+            "display_name": "Parkersburg-Vienna, WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 245,
+        "fields": {
+            "geo_id": "24580",
+            "name": "Green Bay, WI",
+            "display_name": "Green Bay, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 246,
+        "fields": {
+            "geo_id": "24500",
+            "name": "Great Falls, MT",
+            "display_name": "Great Falls, MT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 247,
+        "fields": {
+            "geo_id": "29740",
+            "name": "Las Cruces, NM",
+            "display_name": "Las Cruces, NM Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 248,
+        "fields": {
+            "geo_id": "38940",
+            "name": "Port St. Lucie, FL",
+            "display_name": "Port St. Lucie, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 249,
+        "fields": {
+            "geo_id": "46700",
+            "name": "Vallejo-Fairfield, CA",
+            "display_name": "Vallejo-Fairfield, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 250,
+        "fields": {
+            "geo_id": "25940",
+            "name": "Hilton Head Island-Bluffton-Beaufort, SC",
+            "display_name": "Hilton Head Island-Bluffton-Beaufort, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 251,
+        "fields": {
+            "geo_id": "47460",
+            "name": "Walla Walla, WA",
+            "display_name": "Walla Walla, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 252,
+        "fields": {
+            "geo_id": "16060",
+            "name": "Carbondale-Marion, IL",
+            "display_name": "Carbondale-Marion, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 253,
+        "fields": {
+            "geo_id": "47020",
+            "name": "Victoria, TX",
+            "display_name": "Victoria, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 254,
+        "fields": {
+            "geo_id": "40380",
+            "name": "Rochester, NY",
+            "display_name": "Rochester, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 255,
+        "fields": {
+            "geo_id": "44060",
+            "name": "Spokane-Spokane Valley, WA",
+            "display_name": "Spokane-Spokane Valley, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 256,
+        "fields": {
+            "geo_id": "22660",
+            "name": "Fort Collins, CO",
+            "display_name": "Fort Collins, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 257,
+        "fields": {
+            "geo_id": "38340",
+            "name": "Pittsfield, MA",
+            "display_name": "Pittsfield, MA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 258,
+        "fields": {
+            "geo_id": "37460",
+            "name": "Panama City, FL",
+            "display_name": "Panama City, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 259,
+        "fields": {
+            "geo_id": "13380",
+            "name": "Bellingham, WA",
+            "display_name": "Bellingham, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 260,
+        "fields": {
+            "geo_id": "22140",
+            "name": "Farmington, NM",
+            "display_name": "Farmington, NM Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 261,
+        "fields": {
+            "geo_id": "46660",
+            "name": "Valdosta, GA",
+            "display_name": "Valdosta, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 262,
+        "fields": {
+            "geo_id": "49700",
+            "name": "Yuba City, CA",
+            "display_name": "Yuba City, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 263,
+        "fields": {
+            "geo_id": "40580",
+            "name": "Rocky Mount, NC",
+            "display_name": "Rocky Mount, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 264,
+        "fields": {
+            "geo_id": "17420",
+            "name": "Cleveland, TN",
+            "display_name": "Cleveland, TN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 265,
+        "fields": {
+            "geo_id": "31540",
+            "name": "Madison, WI",
+            "display_name": "Madison, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 266,
+        "fields": {
+            "geo_id": "20700",
+            "name": "East Stroudsburg, PA",
+            "display_name": "East Stroudsburg, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 267,
+        "fields": {
+            "geo_id": "36420",
+            "name": "Oklahoma City, OK",
+            "display_name": "Oklahoma City, OK Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 268,
+        "fields": {
+            "geo_id": "48700",
+            "name": "Williamsport, PA",
+            "display_name": "Williamsport, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 269,
+        "fields": {
+            "geo_id": "39660",
+            "name": "Rapid City, SD",
+            "display_name": "Rapid City, SD Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 270,
+        "fields": {
+            "geo_id": "46340",
+            "name": "Tyler, TX",
+            "display_name": "Tyler, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 271,
+        "fields": {
+            "geo_id": "39900",
+            "name": "Reno, NV",
+            "display_name": "Reno, NV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 272,
+        "fields": {
+            "geo_id": "31700",
+            "name": "Manchester-Nashua, NH",
+            "display_name": "Manchester-Nashua, NH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 273,
+        "fields": {
+            "geo_id": "15680",
+            "name": "California-Lexington Park, MD",
+            "display_name": "California-Lexington Park, MD Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 274,
+        "fields": {
+            "geo_id": "46540",
+            "name": "Utica-Rome, NY",
+            "display_name": "Utica-Rome, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 275,
+        "fields": {
+            "geo_id": "17660",
+            "name": "Coeur d'Alene, ID",
+            "display_name": "Coeur d'Alene, ID Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 276,
+        "fields": {
+            "geo_id": "20260",
+            "name": "Duluth, MN-WI",
+            "display_name": "Duluth, MN-WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 277,
+        "fields": {
+            "geo_id": "48900",
+            "name": "Wilmington, NC",
+            "display_name": "Wilmington, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 278,
+        "fields": {
+            "geo_id": "47220",
+            "name": "Vineland-Bridgeton, NJ",
+            "display_name": "Vineland-Bridgeton, NJ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 279,
+        "fields": {
+            "geo_id": "11500",
+            "name": "Anniston-Oxford-Jacksonville, AL",
+            "display_name": "Anniston-Oxford-Jacksonville, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 280,
+        "fields": {
+            "geo_id": "23460",
+            "name": "Gadsden, AL",
+            "display_name": "Gadsden, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 281,
+        "fields": {
+            "geo_id": "17300",
+            "name": "Clarksville, TN-KY",
+            "display_name": "Clarksville, TN-KY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 282,
+        "fields": {
+            "geo_id": "34820",
+            "name": "Myrtle Beach-Conway-North Myrtle Beach, SC-NC",
+            "display_name": "Myrtle Beach-Conway-North Myrtle Beach, SC-NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 283,
+        "fields": {
+            "geo_id": "26380",
+            "name": "Houma-Thibodaux, LA",
+            "display_name": "Houma-Thibodaux, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 284,
+        "fields": {
+            "geo_id": "21820",
+            "name": "Fairbanks, AK",
+            "display_name": "Fairbanks, AK Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 285,
+        "fields": {
+            "geo_id": "43340",
+            "name": "Shreveport-Bossier City, LA",
+            "display_name": "Shreveport-Bossier City, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 286,
+        "fields": {
+            "geo_id": "49620",
+            "name": "York-Hanover, PA",
+            "display_name": "York-Hanover, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 287,
+        "fields": {
+            "geo_id": "15380",
+            "name": "Buffalo-Cheektowaga-Niagara Falls, NY",
+            "display_name": "Buffalo-Cheektowaga-Niagara Falls, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 288,
+        "fields": {
+            "geo_id": "41100",
+            "name": "St. George, UT",
+            "display_name": "St. George, UT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 289,
+        "fields": {
+            "geo_id": "12540",
+            "name": "Bakersfield, CA",
+            "display_name": "Bakersfield, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 290,
+        "fields": {
+            "geo_id": "10900",
+            "name": "Allentown-Bethlehem-Easton, PA-NJ",
+            "display_name": "Allentown-Bethlehem-Easton, PA-NJ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 291,
+        "fields": {
+            "geo_id": "15980",
+            "name": "Cape Coral-Fort Myers, FL",
+            "display_name": "Cape Coral-Fort Myers, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 292,
+        "fields": {
+            "geo_id": "44940",
+            "name": "Sumter, SC",
+            "display_name": "Sumter, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 293,
+        "fields": {
+            "geo_id": "33740",
+            "name": "Monroe, LA",
+            "display_name": "Monroe, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 294,
+        "fields": {
+            "geo_id": "20100",
+            "name": "Dover, DE",
+            "display_name": "Dover, DE Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 295,
+        "fields": {
+            "geo_id": "47300",
+            "name": "Visalia-Porterville, CA",
+            "display_name": "Visalia-Porterville, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 296,
+        "fields": {
+            "geo_id": "33700",
+            "name": "Modesto, CA",
+            "display_name": "Modesto, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 297,
+        "fields": {
+            "geo_id": "39340",
+            "name": "Provo-Orem, UT",
+            "display_name": "Provo-Orem, UT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 298,
+        "fields": {
+            "geo_id": "21500",
+            "name": "Erie, PA",
+            "display_name": "Erie, PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 299,
+        "fields": {
+            "geo_id": "41060",
+            "name": "St. Cloud, MN",
+            "display_name": "St. Cloud, MN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 300,
+        "fields": {
+            "geo_id": "25060",
+            "name": "Gulfport-Biloxi-Pascagoula, MS",
+            "display_name": "Gulfport-Biloxi-Pascagoula, MS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 301,
+        "fields": {
+            "geo_id": "31460",
+            "name": "Madera, CA",
+            "display_name": "Madera, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 302,
+        "fields": {
+            "geo_id": "28420",
+            "name": "Kennewick-Richland, WA",
+            "display_name": "Kennewick-Richland, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 303,
+        "fields": {
+            "geo_id": "19180",
+            "name": "Danville, IL",
+            "display_name": "Danville, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 304,
+        "fields": {
+            "geo_id": "24780",
+            "name": "Greenville, NC",
+            "display_name": "Greenville, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 305,
+        "fields": {
+            "geo_id": "13460",
+            "name": "Bend-Redmond, OR",
+            "display_name": "Bend-Redmond, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 306,
+        "fields": {
+            "geo_id": "14860",
+            "name": "Bridgeport-Stamford-Norwalk, CT",
+            "display_name": "Bridgeport-Stamford-Norwalk, CT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 307,
+        "fields": {
+            "geo_id": "44700",
+            "name": "Stockton-Lodi, CA",
+            "display_name": "Stockton-Lodi, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 308,
+        "fields": {
+            "geo_id": "32900",
+            "name": "Merced, CA",
+            "display_name": "Merced, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 309,
+        "fields": {
+            "geo_id": "34940",
+            "name": "Naples-Immokalee-Marco Island, FL",
+            "display_name": "Naples-Immokalee-Marco Island, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 310,
+        "fields": {
+            "geo_id": "24220",
+            "name": "Grand Forks, ND-MN",
+            "display_name": "Grand Forks, ND-MN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 311,
+        "fields": {
+            "geo_id": "19460",
+            "name": "Decatur, AL",
+            "display_name": "Decatur, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 312,
+        "fields": {
+            "geo_id": "48060",
+            "name": "Watertown-Fort Drum, NY",
+            "display_name": "Watertown-Fort Drum, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 313,
+        "fields": {
+            "geo_id": "22520",
+            "name": "Florence-Muscle Shoals, AL",
+            "display_name": "Florence-Muscle Shoals, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 314,
+        "fields": {
+            "geo_id": "20500",
+            "name": "Durham-Chapel Hill, NC",
+            "display_name": "Durham-Chapel Hill, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 315,
+        "fields": {
+            "geo_id": "38660",
+            "name": "Ponce, PR",
+            "display_name": "Ponce, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 316,
+        "fields": {
+            "geo_id": "34100",
+            "name": "Morristown, TN",
+            "display_name": "Morristown, TN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 317,
+        "fields": {
+            "geo_id": "10380",
+            "name": "Aguadilla-Isabela, PR",
+            "display_name": "Aguadilla-Isabela, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 318,
+        "fields": {
+            "geo_id": "45540",
+            "name": "The Villages, FL",
+            "display_name": "The Villages, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 319,
+        "fields": {
+            "geo_id": "25500",
+            "name": "Harrisonburg, VA",
+            "display_name": "Harrisonburg, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 320,
+        "fields": {
+            "geo_id": "13900",
+            "name": "Bismarck, ND",
+            "display_name": "Bismarck, ND Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 321,
+        "fields": {
+            "geo_id": "14010",
+            "name": "Bloomington, IL",
+            "display_name": "Bloomington, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 322,
+        "fields": {
+            "geo_id": "33860",
+            "name": "Montgomery, AL",
+            "display_name": "Montgomery, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 323,
+        "fields": {
+            "geo_id": "17020",
+            "name": "Chico, CA",
+            "display_name": "Chico, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 324,
+        "fields": {
+            "geo_id": "44100",
+            "name": "Springfield, IL",
+            "display_name": "Springfield, IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 325,
+        "fields": {
+            "geo_id": "29820",
+            "name": "Las Vegas-Henderson-Paradise, NV",
+            "display_name": "Las Vegas-Henderson-Paradise, NV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 326,
+        "fields": {
+            "geo_id": "49020",
+            "name": "Winchester, VA-WV",
+            "display_name": "Winchester, VA-WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 327,
+        "fields": {
+            "geo_id": "16180",
+            "name": "Carson City, NV",
+            "display_name": "Carson City, NV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 328,
+        "fields": {
+            "geo_id": "27140",
+            "name": "Jackson, MS",
+            "display_name": "Jackson, MS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 329,
+        "fields": {
+            "geo_id": "35300",
+            "name": "New Haven-Milford, CT",
+            "display_name": "New Haven-Milford, CT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 330,
+        "fields": {
+            "geo_id": "19060",
+            "name": "Cumberland, MD-WV",
+            "display_name": "Cumberland, MD-WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 331,
+        "fields": {
+            "geo_id": "45060",
+            "name": "Syracuse, NY",
+            "display_name": "Syracuse, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 332,
+        "fields": {
+            "geo_id": "12220",
+            "name": "Auburn-Opelika, AL",
+            "display_name": "Auburn-Opelika, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 333,
+        "fields": {
+            "geo_id": "32580",
+            "name": "McAllen-Edinburg-Mission, TX",
+            "display_name": "McAllen-Edinburg-Mission, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 334,
+        "fields": {
+            "geo_id": "22180",
+            "name": "Fayetteville, NC",
+            "display_name": "Fayetteville, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 335,
+        "fields": {
+            "geo_id": "18140",
+            "name": "Columbus, OH",
+            "display_name": "Columbus, OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 336,
+        "fields": {
+            "geo_id": "21660",
+            "name": "Eugene, OR",
+            "display_name": "Eugene, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 337,
+        "fields": {
+            "geo_id": "36980",
+            "name": "Owensboro, KY",
+            "display_name": "Owensboro, KY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 338,
+        "fields": {
+            "geo_id": "21780",
+            "name": "Evansville, IN-KY",
+            "display_name": "Evansville, IN-KY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 339,
+        "fields": {
+            "geo_id": "46220",
+            "name": "Tuscaloosa, AL",
+            "display_name": "Tuscaloosa, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 340,
+        "fields": {
+            "geo_id": "35100",
+            "name": "New Bern, NC",
+            "display_name": "New Bern, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 341,
+        "fields": {
+            "geo_id": "24660",
+            "name": "Greensboro-High Point, NC",
+            "display_name": "Greensboro-High Point, NC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 342,
+        "fields": {
+            "geo_id": "34060",
+            "name": "Morgantown, WV",
+            "display_name": "Morgantown, WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 343,
+        "fields": {
+            "geo_id": "17900",
+            "name": "Columbia, SC",
+            "display_name": "Columbia, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 344,
+        "fields": {
+            "geo_id": "13220",
+            "name": "Beckley, WV",
+            "display_name": "Beckley, WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 345,
+        "fields": {
+            "geo_id": "47580",
+            "name": "Warner Robins, GA",
+            "display_name": "Warner Robins, GA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 346,
+        "fields": {
+            "geo_id": "38540",
+            "name": "Pocatello, ID",
+            "display_name": "Pocatello, ID Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 347,
+        "fields": {
+            "geo_id": "45940",
+            "name": "Trenton, NJ",
+            "display_name": "Trenton, NJ Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 348,
+        "fields": {
+            "geo_id": "37340",
+            "name": "Palm Bay-Melbourne-Titusville, FL",
+            "display_name": "Palm Bay-Melbourne-Titusville, FL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 349,
+        "fields": {
+            "geo_id": "19340",
+            "name": "Davenport-Moline-Rock Island, IA-IL",
+            "display_name": "Davenport-Moline-Rock Island, IA-IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 350,
+        "fields": {
+            "geo_id": "27740",
+            "name": "Johnson City, TN",
+            "display_name": "Johnson City, TN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 351,
+        "fields": {
+            "geo_id": "19740",
+            "name": "Denver-Aurora-Lakewood, CO",
+            "display_name": "Denver-Aurora-Lakewood, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 352,
+        "fields": {
+            "geo_id": "13780",
+            "name": "Binghamton, NY",
+            "display_name": "Binghamton, NY Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 353,
+        "fields": {
+            "geo_id": "41620",
+            "name": "Salt Lake City, UT",
+            "display_name": "Salt Lake City, UT Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 354,
+        "fields": {
+            "geo_id": "12620",
+            "name": "Bangor, ME",
+            "display_name": "Bangor, ME Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 355,
+        "fields": {
+            "geo_id": "13020",
+            "name": "Bay City, MI",
+            "display_name": "Bay City, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 356,
+        "fields": {
+            "geo_id": "24540",
+            "name": "Greeley, CO",
+            "display_name": "Greeley, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 357,
+        "fields": {
+            "geo_id": "41180",
+            "name": "St. Louis, MO-IL",
+            "display_name": "St. Louis, MO-IL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 358,
+        "fields": {
+            "geo_id": "31140",
+            "name": "Louisville/Jefferson County, KY-IN",
+            "display_name": "Louisville/Jefferson County, KY-IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 359,
+        "fields": {
+            "geo_id": "22220",
+            "name": "Fayetteville-Springdale-Rogers, AR-MO",
+            "display_name": "Fayetteville-Springdale-Rogers, AR-MO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 360,
+        "fields": {
+            "geo_id": "16620",
+            "name": "Charleston, WV",
+            "display_name": "Charleston, WV Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 361,
+        "fields": {
+            "geo_id": "49660",
+            "name": "Youngstown-Warren-Boardman, OH-PA",
+            "display_name": "Youngstown-Warren-Boardman, OH-PA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 362,
+        "fields": {
+            "geo_id": "33340",
+            "name": "Milwaukee-Waukesha-West Allis, WI",
+            "display_name": "Milwaukee-Waukesha-West Allis, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 363,
+        "fields": {
+            "geo_id": "20940",
+            "name": "El Centro, CA",
+            "display_name": "El Centro, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 364,
+        "fields": {
+            "geo_id": "28140",
+            "name": "Kansas City, MO-KS",
+            "display_name": "Kansas City, MO-KS Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 365,
+        "fields": {
+            "geo_id": "17860",
+            "name": "Columbia, MO",
+            "display_name": "Columbia, MO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 366,
+        "fields": {
+            "geo_id": "25260",
+            "name": "Hanford-Corcoran, CA",
+            "display_name": "Hanford-Corcoran, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 367,
+        "fields": {
+            "geo_id": "18700",
+            "name": "Corvallis, OR",
+            "display_name": "Corvallis, OR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 368,
+        "fields": {
+            "geo_id": "47940",
+            "name": "Waterloo-Cedar Falls, IA",
+            "display_name": "Waterloo-Cedar Falls, IA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 369,
+        "fields": {
+            "geo_id": "41980",
+            "name": "San Juan-Carolina-Caguas, PR",
+            "display_name": "San Juan-Carolina-Caguas, PR Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 370,
+        "fields": {
+            "geo_id": "24300",
+            "name": "Grand Junction, CO",
+            "display_name": "Grand Junction, CO Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 371,
+        "fields": {
+            "geo_id": "11260",
+            "name": "Anchorage, AK",
+            "display_name": "Anchorage, AK Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 372,
+        "fields": {
+            "geo_id": "22020",
+            "name": "Fargo, ND-MN",
+            "display_name": "Fargo, ND-MN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 373,
+        "fields": {
+            "geo_id": "45460",
+            "name": "Terre Haute, IN",
+            "display_name": "Terre Haute, IN Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 374,
+        "fields": {
+            "geo_id": "31080",
+            "name": "Los Angeles-Long Beach-Anaheim, CA",
+            "display_name": "Los Angeles-Long Beach-Anaheim, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 375,
+        "fields": {
+            "geo_id": "48260",
+            "name": "Weirton-Steubenville, WV-OH",
+            "display_name": "Weirton-Steubenville, WV-OH Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 376,
+        "fields": {
+            "geo_id": "27500",
+            "name": "Janesville-Beloit, WI",
+            "display_name": "Janesville-Beloit, WI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 377,
+        "fields": {
+            "geo_id": "36500",
+            "name": "Olympia-Tumwater, WA",
+            "display_name": "Olympia-Tumwater, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 378,
+        "fields": {
+            "geo_id": "34900",
+            "name": "Napa, CA",
+            "display_name": "Napa, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 379,
+        "fields": {
+            "geo_id": "13980",
+            "name": "Blacksburg-Christiansburg-Radford, VA",
+            "display_name": "Blacksburg-Christiansburg-Radford, VA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 380,
+        "fields": {
+            "geo_id": "14740",
+            "name": "Bremerton-Silverdale, WA",
+            "display_name": "Bremerton-Silverdale, WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 381,
+        "fields": {
+            "geo_id": "38900",
+            "name": "Portland-Vancouver-Hillsboro, OR-WA",
+            "display_name": "Portland-Vancouver-Hillsboro, OR-WA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 382,
+        "fields": {
+            "geo_id": "29180",
+            "name": "Lafayette, LA",
+            "display_name": "Lafayette, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 383,
+        "fields": {
+            "geo_id": "42100",
+            "name": "Santa Cruz-Watsonville, CA",
+            "display_name": "Santa Cruz-Watsonville, CA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 384,
+        "fields": {
+            "geo_id": "22500",
+            "name": "Florence, SC",
+            "display_name": "Florence, SC Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 385,
+        "fields": {
+            "geo_id": "26620",
+            "name": "Huntsville, AL",
+            "display_name": "Huntsville, AL Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 386,
+        "fields": {
+            "geo_id": "35660",
+            "name": "Niles-Benton Harbor, MI",
+            "display_name": "Niles-Benton Harbor, MI Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 387,
+        "fields": {
+            "geo_id": "15180",
+            "name": "Brownsville-Harlingen, TX",
+            "display_name": "Brownsville-Harlingen, TX Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 388,
+        "fields": {
+            "geo_id": "29340",
+            "name": "Lake Charles, LA",
+            "display_name": "Lake Charles, LA Metro Area",
+            "postal": null,
+            "level": 4
+        }
+    }
+]

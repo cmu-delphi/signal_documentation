@@ -1,1 +1,3368 @@
-[{"model": "signals.GeographyUnit", "pk": 1, "fields": {"geo_id": "1", "name": "Birmingham", "display_name": "AL - Birmingham (HRR)", "postal": "AL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 2, "fields": {"geo_id": "10", "name": "Anchorage", "display_name": "AK - Anchorage (HRR)", "postal": "AK", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 3, "fields": {"geo_id": "101", "name": "Boulder", "display_name": "CO - Boulder (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 4, "fields": {"geo_id": "102", "name": "Colorado Springs", "display_name": "CO - Colorado Springs (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 5, "fields": {"geo_id": "103", "name": "Denver", "display_name": "CO - Denver (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 6, "fields": {"geo_id": "104", "name": "Fort Collins", "display_name": "CO - Fort Collins (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 7, "fields": {"geo_id": "105", "name": "Grand Junction", "display_name": "CO - Grand Junction (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 8, "fields": {"geo_id": "106", "name": "Greeley", "display_name": "CO - Greeley (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 9, "fields": {"geo_id": "107", "name": "Pueblo", "display_name": "CO - Pueblo (HRR)", "postal": "CO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 10, "fields": {"geo_id": "109", "name": "Bridgeport", "display_name": "CT - Bridgeport (HRR)", "postal": "CT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 11, "fields": {"geo_id": "11", "name": "Mesa", "display_name": "AZ - Mesa (HRR)", "postal": "AZ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 12, "fields": {"geo_id": "110", "name": "Hartford", "display_name": "CT - Hartford (HRR)", "postal": "CT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 13, "fields": {"geo_id": "111", "name": "New Haven", "display_name": "CT - New Haven (HRR)", "postal": "CT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 14, "fields": {"geo_id": "112", "name": "Wilmington", "display_name": "DE - Wilmington (HRR)", "postal": "DE", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 15, "fields": {"geo_id": "113", "name": "Washington", "display_name": "DC - Washington (HRR)", "postal": "DC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 16, "fields": {"geo_id": "115", "name": "Bradenton", "display_name": "FL - Bradenton (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 17, "fields": {"geo_id": "116", "name": "Clearwater", "display_name": "FL - Clearwater (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 18, "fields": {"geo_id": "118", "name": "Fort Lauderdale", "display_name": "FL - Fort Lauderdale (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 19, "fields": {"geo_id": "119", "name": "Fort Myers", "display_name": "FL - Fort Myers (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 20, "fields": {"geo_id": "12", "name": "Phoenix", "display_name": "AZ - Phoenix (HRR)", "postal": "AZ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 21, "fields": {"geo_id": "120", "name": "Gainesville", "display_name": "FL - Gainesville (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 22, "fields": {"geo_id": "122", "name": "Hudson", "display_name": "FL - Hudson (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 23, "fields": {"geo_id": "123", "name": "Jacksonville", "display_name": "FL - Jacksonville (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 24, "fields": {"geo_id": "124", "name": "Lakeland", "display_name": "FL - Lakeland (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 25, "fields": {"geo_id": "127", "name": "Miami", "display_name": "FL - Miami (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 26, "fields": {"geo_id": "129", "name": "Ocala", "display_name": "FL - Ocala (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 27, "fields": {"geo_id": "130", "name": "Orlando", "display_name": "FL - Orlando (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 28, "fields": {"geo_id": "131", "name": "Ormond Beach", "display_name": "FL - Ormond Beach (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 29, "fields": {"geo_id": "133", "name": "Panama City", "display_name": "FL - Panama City (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 30, "fields": {"geo_id": "134", "name": "Pensacola", "display_name": "FL - Pensacola (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 31, "fields": {"geo_id": "137", "name": "Sarasota", "display_name": "FL - Sarasota (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 32, "fields": {"geo_id": "139", "name": "St. Petersburg", "display_name": "FL - St. Petersburg (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 33, "fields": {"geo_id": "14", "name": "Sun City", "display_name": "AZ - Sun City (HRR)", "postal": "AZ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 34, "fields": {"geo_id": "140", "name": "Tallahassee", "display_name": "FL - Tallahassee (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 35, "fields": {"geo_id": "141", "name": "Tampa", "display_name": "FL - Tampa (HRR)", "postal": "FL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 36, "fields": {"geo_id": "142", "name": "Albany", "display_name": "GA - Albany (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 37, "fields": {"geo_id": "144", "name": "Atlanta", "display_name": "GA - Atlanta (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 38, "fields": {"geo_id": "145", "name": "Augusta", "display_name": "GA - Augusta (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 39, "fields": {"geo_id": "146", "name": "Columbus", "display_name": "GA - Columbus (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 40, "fields": {"geo_id": "147", "name": "Macon", "display_name": "GA - Macon (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 41, "fields": {"geo_id": "148", "name": "Rome", "display_name": "GA - Rome (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 42, "fields": {"geo_id": "149", "name": "Savannah", "display_name": "GA - Savannah (HRR)", "postal": "GA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 43, "fields": {"geo_id": "15", "name": "Tucson", "display_name": "AZ - Tucson (HRR)", "postal": "AZ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 44, "fields": {"geo_id": "150", "name": "Honolulu", "display_name": "HI - Honolulu (HRR)", "postal": "HI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 45, "fields": {"geo_id": "151", "name": "Boise", "display_name": "ID - Boise (HRR)", "postal": "ID", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 46, "fields": {"geo_id": "152", "name": "Idaho Falls", "display_name": "ID - Idaho Falls (HRR)", "postal": "ID", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 47, "fields": {"geo_id": "154", "name": "Aurora", "display_name": "IL - Aurora (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 48, "fields": {"geo_id": "155", "name": "Blue Island", "display_name": "IL - Blue Island (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 49, "fields": {"geo_id": "156", "name": "Chicago", "display_name": "IL - Chicago (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 50, "fields": {"geo_id": "158", "name": "Elgin", "display_name": "IL - Elgin (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 51, "fields": {"geo_id": "16", "name": "Fort Smith", "display_name": "AR - Fort Smith (HRR)", "postal": "AR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 52, "fields": {"geo_id": "161", "name": "Evanston", "display_name": "IL - Evanston (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 53, "fields": {"geo_id": "163", "name": "Hinsdale", "display_name": "IL - Hinsdale (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 54, "fields": {"geo_id": "164", "name": "Joliet", "display_name": "IL - Joliet (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 55, "fields": {"geo_id": "166", "name": "Melrose Park", "display_name": "IL - Melrose Park (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 56, "fields": {"geo_id": "170", "name": "Peoria", "display_name": "IL - Peoria (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 57, "fields": {"geo_id": "171", "name": "Rockford", "display_name": "IL - Rockford (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 58, "fields": {"geo_id": "172", "name": "Springfield", "display_name": "IL - Springfield (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 59, "fields": {"geo_id": "173", "name": "Urbana", "display_name": "IL - Urbana (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 60, "fields": {"geo_id": "175", "name": "Bloomington", "display_name": "IL - Bloomington (HRR)", "postal": "IL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 61, "fields": {"geo_id": "179", "name": "Evansville", "display_name": "IN - Evansville (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 62, "fields": {"geo_id": "18", "name": "Jonesboro", "display_name": "AR - Jonesboro (HRR)", "postal": "AR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 63, "fields": {"geo_id": "180", "name": "Fort Wayne", "display_name": "IN - Fort Wayne (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 64, "fields": {"geo_id": "181", "name": "Gary", "display_name": "IN - Gary (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 65, "fields": {"geo_id": "183", "name": "Indianapolis", "display_name": "IN - Indianapolis (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 66, "fields": {"geo_id": "184", "name": "Lafayette", "display_name": "IN - Lafayette (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 67, "fields": {"geo_id": "185", "name": "Muncie", "display_name": "IN - Muncie (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 68, "fields": {"geo_id": "186", "name": "Munster", "display_name": "IN - Munster (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 69, "fields": {"geo_id": "187", "name": "South Bend", "display_name": "IN - South Bend (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 70, "fields": {"geo_id": "188", "name": "Terre Haute", "display_name": "IN - Terre Haute (HRR)", "postal": "IN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 71, "fields": {"geo_id": "19", "name": "Little Rock", "display_name": "AR - Little Rock (HRR)", "postal": "AR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 72, "fields": {"geo_id": "190", "name": "Cedar Rapids", "display_name": "IA - Cedar Rapids (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 73, "fields": {"geo_id": "191", "name": "Davenport", "display_name": "IA - Davenport (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 74, "fields": {"geo_id": "192", "name": "Des Moines", "display_name": "IA - Des Moines (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 75, "fields": {"geo_id": "193", "name": "Dubuque", "display_name": "IA - Dubuque (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 76, "fields": {"geo_id": "194", "name": "Iowa City", "display_name": "IA - Iowa City (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 77, "fields": {"geo_id": "195", "name": "Mason City", "display_name": "IA - Mason City (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 78, "fields": {"geo_id": "196", "name": "Sioux City", "display_name": "IA - Sioux City (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 79, "fields": {"geo_id": "197", "name": "Waterloo", "display_name": "IA - Waterloo (HRR)", "postal": "IA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 80, "fields": {"geo_id": "2", "name": "Dothan", "display_name": "AL - Dothan (HRR)", "postal": "AL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 81, "fields": {"geo_id": "200", "name": "Topeka", "display_name": "KS - Topeka (HRR)", "postal": "KS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 82, "fields": {"geo_id": "201", "name": "Wichita", "display_name": "KS - Wichita (HRR)", "postal": "KS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 83, "fields": {"geo_id": "203", "name": "Covington", "display_name": "KY - Covington (HRR)", "postal": "KY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 84, "fields": {"geo_id": "204", "name": "Lexington", "display_name": "KY - Lexington (HRR)", "postal": "KY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 85, "fields": {"geo_id": "205", "name": "Louisville", "display_name": "KY - Louisville (HRR)", "postal": "KY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 86, "fields": {"geo_id": "207", "name": "Owensboro", "display_name": "KY - Owensboro (HRR)", "postal": "KY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 87, "fields": {"geo_id": "208", "name": "Paducah", "display_name": "KY - Paducah (HRR)", "postal": "KY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 88, "fields": {"geo_id": "209", "name": "Alexandria", "display_name": "LA - Alexandria (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 89, "fields": {"geo_id": "21", "name": "Springdale", "display_name": "AR - Springdale (HRR)", "postal": "AR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 90, "fields": {"geo_id": "210", "name": "Baton Rouge", "display_name": "LA - Baton Rouge (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 91, "fields": {"geo_id": "212", "name": "Houma", "display_name": "LA - Houma (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 92, "fields": {"geo_id": "213", "name": "Lafayette", "display_name": "LA - Lafayette (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 93, "fields": {"geo_id": "214", "name": "Lake Charles", "display_name": "LA - Lake Charles (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 94, "fields": {"geo_id": "216", "name": "Metairie", "display_name": "LA - Metairie (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 95, "fields": {"geo_id": "217", "name": "Monroe", "display_name": "LA - Monroe (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 96, "fields": {"geo_id": "218", "name": "New Orleans", "display_name": "LA - New Orleans (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 97, "fields": {"geo_id": "219", "name": "Shreveport", "display_name": "LA - Shreveport (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 98, "fields": {"geo_id": "22", "name": "Texarkana", "display_name": "AR - Texarkana (HRR)", "postal": "AR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 99, "fields": {"geo_id": "220", "name": "Slidell", "display_name": "LA - Slidell (HRR)", "postal": "LA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 100, "fields": {"geo_id": "221", "name": "Bangor", "display_name": "ME - Bangor (HRR)", "postal": "ME", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 101, "fields": {"geo_id": "222", "name": "Portland", "display_name": "ME - Portland (HRR)", "postal": "ME", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 102, "fields": {"geo_id": "223", "name": "Baltimore", "display_name": "MD - Baltimore (HRR)", "postal": "MD", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 103, "fields": {"geo_id": "225", "name": "Salisbury", "display_name": "MD - Salisbury (HRR)", "postal": "MD", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 104, "fields": {"geo_id": "226", "name": "Takoma Park", "display_name": "MD - Takoma Park (HRR)", "postal": "MD", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 105, "fields": {"geo_id": "227", "name": "Boston", "display_name": "MA - Boston (HRR)", "postal": "MA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 106, "fields": {"geo_id": "23", "name": "Orange County", "display_name": "CA - Orange County (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 107, "fields": {"geo_id": "230", "name": "Springfield", "display_name": "MA - Springfield (HRR)", "postal": "MA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 108, "fields": {"geo_id": "231", "name": "Worcester", "display_name": "MA - Worcester (HRR)", "postal": "MA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 109, "fields": {"geo_id": "232", "name": "Ann Arbor", "display_name": "MI - Ann Arbor (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 110, "fields": {"geo_id": "233", "name": "Dearborn", "display_name": "MI - Dearborn (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 111, "fields": {"geo_id": "234", "name": "Detroit", "display_name": "MI - Detroit (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 112, "fields": {"geo_id": "235", "name": "Flint", "display_name": "MI - Flint (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 113, "fields": {"geo_id": "236", "name": "Grand Rapids", "display_name": "MI - Grand Rapids (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 114, "fields": {"geo_id": "238", "name": "Kalamazoo", "display_name": "MI - Kalamazoo (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 115, "fields": {"geo_id": "239", "name": "Lansing", "display_name": "MI - Lansing (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 116, "fields": {"geo_id": "240", "name": "Marquette", "display_name": "MI - Marquette (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 117, "fields": {"geo_id": "242", "name": "Muskegon", "display_name": "MI - Muskegon (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 118, "fields": {"geo_id": "243", "name": "Petoskey", "display_name": "MI - Petoskey (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 119, "fields": {"geo_id": "244", "name": "Pontiac", "display_name": "MI - Pontiac (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 120, "fields": {"geo_id": "245", "name": "Royal Oak", "display_name": "MI - Royal Oak (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 121, "fields": {"geo_id": "246", "name": "Saginaw", "display_name": "MI - Saginaw (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 122, "fields": {"geo_id": "248", "name": "St. Joseph", "display_name": "MI - St. Joseph (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 123, "fields": {"geo_id": "249", "name": "Traverse City", "display_name": "MI - Traverse City (HRR)", "postal": "MI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 124, "fields": {"geo_id": "25", "name": "Bakersfield", "display_name": "CA - Bakersfield (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 125, "fields": {"geo_id": "250", "name": "Duluth", "display_name": "MN - Duluth (HRR)", "postal": "MN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 126, "fields": {"geo_id": "251", "name": "Minneapolis", "display_name": "MN - Minneapolis (HRR)", "postal": "MN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 127, "fields": {"geo_id": "253", "name": "Rochester", "display_name": "MN - Rochester (HRR)", "postal": "MN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 128, "fields": {"geo_id": "254", "name": "St. Cloud", "display_name": "MN - St. Cloud (HRR)", "postal": "MN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 129, "fields": {"geo_id": "256", "name": "St. Paul", "display_name": "MN - St. Paul (HRR)", "postal": "MN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 130, "fields": {"geo_id": "257", "name": "Gulfport", "display_name": "MS - Gulfport (HRR)", "postal": "MS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 131, "fields": {"geo_id": "258", "name": "Hattiesburg", "display_name": "MS - Hattiesburg (HRR)", "postal": "MS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 132, "fields": {"geo_id": "259", "name": "Jackson", "display_name": "MS - Jackson (HRR)", "postal": "MS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 133, "fields": {"geo_id": "260", "name": "Meridian", "display_name": "MS - Meridian (HRR)", "postal": "MS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 134, "fields": {"geo_id": "261", "name": "Oxford", "display_name": "MS - Oxford (HRR)", "postal": "MS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 135, "fields": {"geo_id": "262", "name": "Tupelo", "display_name": "MS - Tupelo (HRR)", "postal": "MS", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 136, "fields": {"geo_id": "263", "name": "Cape Girardeau", "display_name": "MO - Cape Girardeau (HRR)", "postal": "MO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 137, "fields": {"geo_id": "264", "name": "Columbia", "display_name": "MO - Columbia (HRR)", "postal": "MO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 138, "fields": {"geo_id": "267", "name": "Joplin", "display_name": "MO - Joplin (HRR)", "postal": "MO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 139, "fields": {"geo_id": "268", "name": "Kansas City", "display_name": "MO - Kansas City (HRR)", "postal": "MO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 140, "fields": {"geo_id": "270", "name": "Springfield", "display_name": "MO - Springfield (HRR)", "postal": "MO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 141, "fields": {"geo_id": "273", "name": "St. Louis", "display_name": "MO - St. Louis (HRR)", "postal": "MO", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 142, "fields": {"geo_id": "274", "name": "Billings", "display_name": "MT - Billings (HRR)", "postal": "MT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 143, "fields": {"geo_id": "275", "name": "Great Falls", "display_name": "MT - Great Falls (HRR)", "postal": "MT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 144, "fields": {"geo_id": "276", "name": "Missoula", "display_name": "MT - Missoula (HRR)", "postal": "MT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 145, "fields": {"geo_id": "277", "name": "Lincoln", "display_name": "NE - Lincoln (HRR)", "postal": "NE", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 146, "fields": {"geo_id": "278", "name": "Omaha", "display_name": "NE - Omaha (HRR)", "postal": "NE", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 147, "fields": {"geo_id": "279", "name": "Las Vegas", "display_name": "NV - Las Vegas (HRR)", "postal": "NV", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 148, "fields": {"geo_id": "280", "name": "Reno", "display_name": "NV - Reno (HRR)", "postal": "NV", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 149, "fields": {"geo_id": "281", "name": "Lebanon", "display_name": "NH - Lebanon (HRR)", "postal": "NH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 150, "fields": {"geo_id": "282", "name": "Manchester", "display_name": "NH - Manchester (HRR)", "postal": "NH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 151, "fields": {"geo_id": "283", "name": "Camden", "display_name": "NJ - Camden (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 152, "fields": {"geo_id": "284", "name": "Hackensack", "display_name": "NJ - Hackensack (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 153, "fields": {"geo_id": "285", "name": "Morristown", "display_name": "NJ - Morristown (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 154, "fields": {"geo_id": "288", "name": "New Brunswick", "display_name": "NJ - New Brunswick (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 155, "fields": {"geo_id": "289", "name": "Newark", "display_name": "NJ - Newark (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 156, "fields": {"geo_id": "291", "name": "Paterson", "display_name": "NJ - Paterson (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 157, "fields": {"geo_id": "292", "name": "Ridgewood", "display_name": "NJ - Ridgewood (HRR)", "postal": "NJ", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 158, "fields": {"geo_id": "293", "name": "Albuquerque", "display_name": "NM - Albuquerque (HRR)", "postal": "NM", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 159, "fields": {"geo_id": "295", "name": "Albany", "display_name": "NY - Albany (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 160, "fields": {"geo_id": "296", "name": "Binghamton", "display_name": "NY - Binghamton (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 161, "fields": {"geo_id": "297", "name": "Bronx", "display_name": "NY - Bronx (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 162, "fields": {"geo_id": "299", "name": "Buffalo", "display_name": "NY - Buffalo (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 163, "fields": {"geo_id": "300", "name": "Elmira", "display_name": "NY - Elmira (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 164, "fields": {"geo_id": "301", "name": "East Long Island", "display_name": "NY - East Long Island (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 165, "fields": {"geo_id": "303", "name": "Manhattan", "display_name": "NY - Manhattan (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 166, "fields": {"geo_id": "304", "name": "Rochester", "display_name": "NY - Rochester (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 167, "fields": {"geo_id": "305", "name": "Erie", "display_name": "PA - Erie (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 168, "fields": {"geo_id": "307", "name": "Syracuse", "display_name": "NY - Syracuse (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 169, "fields": {"geo_id": "308", "name": "White Plains", "display_name": "NY - White Plains (HRR)", "postal": "NY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 170, "fields": {"geo_id": "309", "name": "Asheville", "display_name": "NC - Asheville (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 171, "fields": {"geo_id": "31", "name": "Chico", "display_name": "CA - Chico (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 172, "fields": {"geo_id": "311", "name": "Charlotte", "display_name": "NC - Charlotte (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 173, "fields": {"geo_id": "312", "name": "Durham", "display_name": "NC - Durham (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 174, "fields": {"geo_id": "313", "name": "Greensboro", "display_name": "NC - Greensboro (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 175, "fields": {"geo_id": "314", "name": "Greenville", "display_name": "NC - Greenville (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 176, "fields": {"geo_id": "315", "name": "Hickory", "display_name": "NC - Hickory (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 177, "fields": {"geo_id": "318", "name": "Raleigh", "display_name": "NC - Raleigh (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 178, "fields": {"geo_id": "319", "name": "Wilmington", "display_name": "NC - Wilmington (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 179, "fields": {"geo_id": "320", "name": "Winston-Salem", "display_name": "NC - Winston-Salem (HRR)", "postal": "NC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 180, "fields": {"geo_id": "321", "name": "Bismarck", "display_name": "ND - Bismarck (HRR)", "postal": "ND", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 181, "fields": {"geo_id": "322", "name": "Fargo/Moorhead MN", "display_name": "ND - Fargo/Moorhead MN (HRR)", "postal": "ND", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 182, "fields": {"geo_id": "323", "name": "Grand Forks", "display_name": "ND - Grand Forks (HRR)", "postal": "ND", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 183, "fields": {"geo_id": "324", "name": "Minot", "display_name": "ND - Minot (HRR)", "postal": "ND", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 184, "fields": {"geo_id": "325", "name": "Akron", "display_name": "OH - Akron (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 185, "fields": {"geo_id": "326", "name": "Canton", "display_name": "OH - Canton (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 186, "fields": {"geo_id": "327", "name": "Cincinnati", "display_name": "OH - Cincinnati (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 187, "fields": {"geo_id": "328", "name": "Cleveland", "display_name": "OH - Cleveland (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 188, "fields": {"geo_id": "329", "name": "Columbus", "display_name": "OH - Columbus (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 189, "fields": {"geo_id": "33", "name": "Contra Costa County", "display_name": "CA - Contra Costa County (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 190, "fields": {"geo_id": "330", "name": "Dayton", "display_name": "OH - Dayton (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 191, "fields": {"geo_id": "331", "name": "Elyria", "display_name": "OH - Elyria (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 192, "fields": {"geo_id": "332", "name": "Kettering", "display_name": "OH - Kettering (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 193, "fields": {"geo_id": "334", "name": "Toledo", "display_name": "OH - Toledo (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 194, "fields": {"geo_id": "335", "name": "Youngstown", "display_name": "OH - Youngstown (HRR)", "postal": "OH", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 195, "fields": {"geo_id": "336", "name": "Lawton", "display_name": "OK - Lawton (HRR)", "postal": "OK", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 196, "fields": {"geo_id": "339", "name": "Oklahoma City", "display_name": "OK - Oklahoma City (HRR)", "postal": "OK", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 197, "fields": {"geo_id": "340", "name": "Tulsa", "display_name": "OK - Tulsa (HRR)", "postal": "OK", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 198, "fields": {"geo_id": "341", "name": "Bend", "display_name": "OR - Bend (HRR)", "postal": "OR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 199, "fields": {"geo_id": "342", "name": "Eugene", "display_name": "OR - Eugene (HRR)", "postal": "OR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 200, "fields": {"geo_id": "343", "name": "Medford", "display_name": "OR - Medford (HRR)", "postal": "OR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 201, "fields": {"geo_id": "344", "name": "Portland", "display_name": "OR - Portland (HRR)", "postal": "OR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 202, "fields": {"geo_id": "345", "name": "Salem", "display_name": "OR - Salem (HRR)", "postal": "OR", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 203, "fields": {"geo_id": "346", "name": "Allentown", "display_name": "PA - Allentown (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 204, "fields": {"geo_id": "347", "name": "Altoona", "display_name": "PA - Altoona (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 205, "fields": {"geo_id": "350", "name": "Danville", "display_name": "PA - Danville (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 206, "fields": {"geo_id": "352", "name": "Harrisburg", "display_name": "PA - Harrisburg (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 207, "fields": {"geo_id": "354", "name": "Johnstown", "display_name": "PA - Johnstown (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 208, "fields": {"geo_id": "355", "name": "Lancaster", "display_name": "PA - Lancaster (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 209, "fields": {"geo_id": "356", "name": "Philadelphia", "display_name": "PA - Philadelphia (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 210, "fields": {"geo_id": "357", "name": "Pittsburgh", "display_name": "PA - Pittsburgh (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 211, "fields": {"geo_id": "358", "name": "Reading", "display_name": "PA - Reading (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 212, "fields": {"geo_id": "359", "name": "Sayre", "display_name": "PA - Sayre (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 213, "fields": {"geo_id": "360", "name": "Scranton", "display_name": "PA - Scranton (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 214, "fields": {"geo_id": "362", "name": "Wilkes-Barre", "display_name": "PA - Wilkes-Barre (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 215, "fields": {"geo_id": "363", "name": "York", "display_name": "PA - York (HRR)", "postal": "PA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 216, "fields": {"geo_id": "364", "name": "Providence", "display_name": "RI - Providence (HRR)", "postal": "RI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 217, "fields": {"geo_id": "365", "name": "Charleston", "display_name": "SC - Charleston (HRR)", "postal": "SC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 218, "fields": {"geo_id": "366", "name": "Columbia", "display_name": "SC - Columbia (HRR)", "postal": "SC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 219, "fields": {"geo_id": "367", "name": "Florence", "display_name": "SC - Florence (HRR)", "postal": "SC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 220, "fields": {"geo_id": "368", "name": "Greenville", "display_name": "SC - Greenville (HRR)", "postal": "SC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 221, "fields": {"geo_id": "369", "name": "Spartanburg", "display_name": "SC - Spartanburg (HRR)", "postal": "SC", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 222, "fields": {"geo_id": "370", "name": "Rapid City", "display_name": "SD - Rapid City (HRR)", "postal": "SD", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 223, "fields": {"geo_id": "371", "name": "Sioux Falls", "display_name": "SD - Sioux Falls (HRR)", "postal": "SD", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 224, "fields": {"geo_id": "373", "name": "Chattanooga", "display_name": "TN - Chattanooga (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 225, "fields": {"geo_id": "374", "name": "Jackson", "display_name": "TN - Jackson (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 226, "fields": {"geo_id": "375", "name": "Johnson City", "display_name": "TN - Johnson City (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 227, "fields": {"geo_id": "376", "name": "Kingsport", "display_name": "TN - Kingsport (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 228, "fields": {"geo_id": "377", "name": "Knoxville", "display_name": "TN - Knoxville (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 229, "fields": {"geo_id": "379", "name": "Memphis", "display_name": "TN - Memphis (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 230, "fields": {"geo_id": "380", "name": "Nashville", "display_name": "TN - Nashville (HRR)", "postal": "TN", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 231, "fields": {"geo_id": "382", "name": "Abilene", "display_name": "TX - Abilene (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 232, "fields": {"geo_id": "383", "name": "Amarillo", "display_name": "TX - Amarillo (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 233, "fields": {"geo_id": "385", "name": "Austin", "display_name": "TX - Austin (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 234, "fields": {"geo_id": "386", "name": "Beaumont", "display_name": "TX - Beaumont (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 235, "fields": {"geo_id": "388", "name": "Bryan", "display_name": "TX - Bryan (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 236, "fields": {"geo_id": "390", "name": "Corpus Christi", "display_name": "TX - Corpus Christi (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 237, "fields": {"geo_id": "390", "name": "Victoria", "display_name": "TX - Victoria (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 238, "fields": {"geo_id": "391", "name": "Dallas", "display_name": "TX - Dallas (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 239, "fields": {"geo_id": "393", "name": "El Paso", "display_name": "TX - El Paso (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 240, "fields": {"geo_id": "394", "name": "Fort Worth", "display_name": "TX - Fort Worth (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 241, "fields": {"geo_id": "396", "name": "Harlingen", "display_name": "TX - Harlingen (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 242, "fields": {"geo_id": "397", "name": "Houston", "display_name": "TX - Houston (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 243, "fields": {"geo_id": "399", "name": "Longview", "display_name": "TX - Longview (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 244, "fields": {"geo_id": "400", "name": "Lubbock", "display_name": "TX - Lubbock (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 245, "fields": {"geo_id": "402", "name": "McAllen", "display_name": "TX - McAllen (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 246, "fields": {"geo_id": "406", "name": "Odessa", "display_name": "TX - Odessa (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 247, "fields": {"geo_id": "411", "name": "San Angelo", "display_name": "TX - San Angelo (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 248, "fields": {"geo_id": "412", "name": "San Antonio", "display_name": "TX - San Antonio (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 249, "fields": {"geo_id": "413", "name": "Temple", "display_name": "TX - Temple (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 250, "fields": {"geo_id": "416", "name": "Tyler", "display_name": "TX - Tyler (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 251, "fields": {"geo_id": "418", "name": "Waco", "display_name": "TX - Waco (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 252, "fields": {"geo_id": "420", "name": "Wichita Falls", "display_name": "TX - Wichita Falls (HRR)", "postal": "TX", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 253, "fields": {"geo_id": "421", "name": "Ogden", "display_name": "UT - Ogden (HRR)", "postal": "UT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 254, "fields": {"geo_id": "422", "name": "Provo", "display_name": "UT - Provo (HRR)", "postal": "UT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 255, "fields": {"geo_id": "423", "name": "Salt Lake City", "display_name": "UT - Salt Lake City (HRR)", "postal": "UT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 256, "fields": {"geo_id": "424", "name": "Burlington", "display_name": "VT - Burlington (HRR)", "postal": "VT", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 257, "fields": {"geo_id": "426", "name": "Arlington", "display_name": "VA - Arlington (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 258, "fields": {"geo_id": "427", "name": "Charlottesville", "display_name": "VA - Charlottesville (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 259, "fields": {"geo_id": "428", "name": "Lynchburg", "display_name": "VA - Lynchburg (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 260, "fields": {"geo_id": "429", "name": "Newport News", "display_name": "VA - Newport News (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 261, "fields": {"geo_id": "43", "name": "Fresno", "display_name": "CA - Fresno (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 262, "fields": {"geo_id": "430", "name": "Norfolk", "display_name": "VA - Norfolk (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 263, "fields": {"geo_id": "431", "name": "Richmond", "display_name": "VA - Richmond (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 264, "fields": {"geo_id": "432", "name": "Roanoke", "display_name": "VA - Roanoke (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 265, "fields": {"geo_id": "435", "name": "Winchester", "display_name": "VA - Winchester (HRR)", "postal": "VA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 266, "fields": {"geo_id": "437", "name": "Everett", "display_name": "WA - Everett (HRR)", "postal": "WA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 267, "fields": {"geo_id": "438", "name": "Olympia", "display_name": "WA - Olympia (HRR)", "postal": "WA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 268, "fields": {"geo_id": "439", "name": "Seattle", "display_name": "WA - Seattle (HRR)", "postal": "WA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 269, "fields": {"geo_id": "440", "name": "Spokane", "display_name": "WA - Spokane (HRR)", "postal": "WA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 270, "fields": {"geo_id": "441", "name": "Tacoma", "display_name": "WA - Tacoma (HRR)", "postal": "WA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 271, "fields": {"geo_id": "442", "name": "Yakima", "display_name": "WA - Yakima (HRR)", "postal": "WA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 272, "fields": {"geo_id": "443", "name": "Charleston", "display_name": "WV - Charleston (HRR)", "postal": "WV", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 273, "fields": {"geo_id": "444", "name": "Huntington", "display_name": "WV - Huntington (HRR)", "postal": "WV", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 274, "fields": {"geo_id": "445", "name": "Morgantown", "display_name": "WV - Morgantown (HRR)", "postal": "WV", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 275, "fields": {"geo_id": "446", "name": "Appleton", "display_name": "WI - Appleton (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 276, "fields": {"geo_id": "447", "name": "Green Bay", "display_name": "WI - Green Bay (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 277, "fields": {"geo_id": "448", "name": "La Crosse", "display_name": "WI - La Crosse (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 278, "fields": {"geo_id": "449", "name": "Madison", "display_name": "WI - Madison (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 279, "fields": {"geo_id": "450", "name": "Marshfield", "display_name": "WI - Marshfield (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 280, "fields": {"geo_id": "451", "name": "Milwaukee", "display_name": "WI - Milwaukee (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 281, "fields": {"geo_id": "452", "name": "Neenah", "display_name": "WI - Neenah (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 282, "fields": {"geo_id": "456", "name": "Wausau", "display_name": "WI - Wausau (HRR)", "postal": "WI", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 283, "fields": {"geo_id": "457", "name": "Casper", "display_name": "WY - Casper (HRR)", "postal": "WY", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 284, "fields": {"geo_id": "5", "name": "Huntsville", "display_name": "AL - Huntsville (HRR)", "postal": "AL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 285, "fields": {"geo_id": "56", "name": "Los Angeles", "display_name": "CA - Los Angeles (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 286, "fields": {"geo_id": "58", "name": "Modesto", "display_name": "CA - Modesto (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 287, "fields": {"geo_id": "6", "name": "Mobile", "display_name": "AL - Mobile (HRR)", "postal": "AL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 288, "fields": {"geo_id": "62", "name": "Napa", "display_name": "CA - Napa (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 289, "fields": {"geo_id": "65", "name": "Alameda County", "display_name": "CA - Alameda County (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 290, "fields": {"geo_id": "69", "name": "Palm Springs/Rancho Mirage", "display_name": "CA - Palm Springs/Rancho Mirage (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 291, "fields": {"geo_id": "7", "name": "Montgomery", "display_name": "AL - Montgomery (HRR)", "postal": "AL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 292, "fields": {"geo_id": "73", "name": "Redding", "display_name": "CA - Redding (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 293, "fields": {"geo_id": "77", "name": "Sacramento", "display_name": "CA - Sacramento (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 294, "fields": {"geo_id": "78", "name": "Salinas", "display_name": "CA - Salinas (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 295, "fields": {"geo_id": "79", "name": "San Bernardino", "display_name": "CA - San Bernardino (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 296, "fields": {"geo_id": "80", "name": "San Diego", "display_name": "CA - San Diego (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 297, "fields": {"geo_id": "81", "name": "San Francisco", "display_name": "CA - San Francisco (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 298, "fields": {"geo_id": "82", "name": "San Jose", "display_name": "CA - San Jose (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 299, "fields": {"geo_id": "83", "name": "San Luis Obispo", "display_name": "CA - San Luis Obispo (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 300, "fields": {"geo_id": "85", "name": "San Mateo County", "display_name": "CA - San Mateo County (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 301, "fields": {"geo_id": "86", "name": "Santa Barbara", "display_name": "CA - Santa Barbara (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 302, "fields": {"geo_id": "87", "name": "Santa Cruz", "display_name": "CA - Santa Cruz (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 303, "fields": {"geo_id": "89", "name": "Santa Rosa", "display_name": "CA - Santa Rosa (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 304, "fields": {"geo_id": "9", "name": "Tuscaloosa", "display_name": "AL - Tuscaloosa (HRR)", "postal": "AL", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 305, "fields": {"geo_id": "91", "name": "Stockton", "display_name": "CA - Stockton (HRR)", "postal": "CA", "level": 3}}, {"model": "signals.GeographyUnit", "pk": 306, "fields": {"geo_id": "96", "name": "Ventura", "display_name": "CA - Ventura (HRR)", "postal": "CA", "level": 3}}]
+[
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 1,
+        "fields": {
+            "geo_id": "1",
+            "name": "Birmingham",
+            "display_name": "AL - Birmingham (HRR)",
+            "postal": "AL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 2,
+        "fields": {
+            "geo_id": "10",
+            "name": "Anchorage",
+            "display_name": "AK - Anchorage (HRR)",
+            "postal": "AK",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3,
+        "fields": {
+            "geo_id": "101",
+            "name": "Boulder",
+            "display_name": "CO - Boulder (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 4,
+        "fields": {
+            "geo_id": "102",
+            "name": "Colorado Springs",
+            "display_name": "CO - Colorado Springs (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 5,
+        "fields": {
+            "geo_id": "103",
+            "name": "Denver",
+            "display_name": "CO - Denver (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 6,
+        "fields": {
+            "geo_id": "104",
+            "name": "Fort Collins",
+            "display_name": "CO - Fort Collins (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 7,
+        "fields": {
+            "geo_id": "105",
+            "name": "Grand Junction",
+            "display_name": "CO - Grand Junction (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 8,
+        "fields": {
+            "geo_id": "106",
+            "name": "Greeley",
+            "display_name": "CO - Greeley (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 9,
+        "fields": {
+            "geo_id": "107",
+            "name": "Pueblo",
+            "display_name": "CO - Pueblo (HRR)",
+            "postal": "CO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 10,
+        "fields": {
+            "geo_id": "109",
+            "name": "Bridgeport",
+            "display_name": "CT - Bridgeport (HRR)",
+            "postal": "CT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 11,
+        "fields": {
+            "geo_id": "11",
+            "name": "Mesa",
+            "display_name": "AZ - Mesa (HRR)",
+            "postal": "AZ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 12,
+        "fields": {
+            "geo_id": "110",
+            "name": "Hartford",
+            "display_name": "CT - Hartford (HRR)",
+            "postal": "CT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 13,
+        "fields": {
+            "geo_id": "111",
+            "name": "New Haven",
+            "display_name": "CT - New Haven (HRR)",
+            "postal": "CT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 14,
+        "fields": {
+            "geo_id": "112",
+            "name": "Wilmington",
+            "display_name": "DE - Wilmington (HRR)",
+            "postal": "DE",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 15,
+        "fields": {
+            "geo_id": "113",
+            "name": "Washington",
+            "display_name": "DC - Washington (HRR)",
+            "postal": "DC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 16,
+        "fields": {
+            "geo_id": "115",
+            "name": "Bradenton",
+            "display_name": "FL - Bradenton (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 17,
+        "fields": {
+            "geo_id": "116",
+            "name": "Clearwater",
+            "display_name": "FL - Clearwater (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 18,
+        "fields": {
+            "geo_id": "118",
+            "name": "Fort Lauderdale",
+            "display_name": "FL - Fort Lauderdale (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 19,
+        "fields": {
+            "geo_id": "119",
+            "name": "Fort Myers",
+            "display_name": "FL - Fort Myers (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 20,
+        "fields": {
+            "geo_id": "12",
+            "name": "Phoenix",
+            "display_name": "AZ - Phoenix (HRR)",
+            "postal": "AZ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 21,
+        "fields": {
+            "geo_id": "120",
+            "name": "Gainesville",
+            "display_name": "FL - Gainesville (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 22,
+        "fields": {
+            "geo_id": "122",
+            "name": "Hudson",
+            "display_name": "FL - Hudson (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 23,
+        "fields": {
+            "geo_id": "123",
+            "name": "Jacksonville",
+            "display_name": "FL - Jacksonville (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 24,
+        "fields": {
+            "geo_id": "124",
+            "name": "Lakeland",
+            "display_name": "FL - Lakeland (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 25,
+        "fields": {
+            "geo_id": "127",
+            "name": "Miami",
+            "display_name": "FL - Miami (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 26,
+        "fields": {
+            "geo_id": "129",
+            "name": "Ocala",
+            "display_name": "FL - Ocala (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 27,
+        "fields": {
+            "geo_id": "130",
+            "name": "Orlando",
+            "display_name": "FL - Orlando (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 28,
+        "fields": {
+            "geo_id": "131",
+            "name": "Ormond Beach",
+            "display_name": "FL - Ormond Beach (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 29,
+        "fields": {
+            "geo_id": "133",
+            "name": "Panama City",
+            "display_name": "FL - Panama City (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 30,
+        "fields": {
+            "geo_id": "134",
+            "name": "Pensacola",
+            "display_name": "FL - Pensacola (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 31,
+        "fields": {
+            "geo_id": "137",
+            "name": "Sarasota",
+            "display_name": "FL - Sarasota (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 32,
+        "fields": {
+            "geo_id": "139",
+            "name": "St. Petersburg",
+            "display_name": "FL - St. Petersburg (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 33,
+        "fields": {
+            "geo_id": "14",
+            "name": "Sun City",
+            "display_name": "AZ - Sun City (HRR)",
+            "postal": "AZ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 34,
+        "fields": {
+            "geo_id": "140",
+            "name": "Tallahassee",
+            "display_name": "FL - Tallahassee (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 35,
+        "fields": {
+            "geo_id": "141",
+            "name": "Tampa",
+            "display_name": "FL - Tampa (HRR)",
+            "postal": "FL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 36,
+        "fields": {
+            "geo_id": "142",
+            "name": "Albany",
+            "display_name": "GA - Albany (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 37,
+        "fields": {
+            "geo_id": "144",
+            "name": "Atlanta",
+            "display_name": "GA - Atlanta (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 38,
+        "fields": {
+            "geo_id": "145",
+            "name": "Augusta",
+            "display_name": "GA - Augusta (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 39,
+        "fields": {
+            "geo_id": "146",
+            "name": "Columbus",
+            "display_name": "GA - Columbus (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 40,
+        "fields": {
+            "geo_id": "147",
+            "name": "Macon",
+            "display_name": "GA - Macon (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 41,
+        "fields": {
+            "geo_id": "148",
+            "name": "Rome",
+            "display_name": "GA - Rome (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 42,
+        "fields": {
+            "geo_id": "149",
+            "name": "Savannah",
+            "display_name": "GA - Savannah (HRR)",
+            "postal": "GA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 43,
+        "fields": {
+            "geo_id": "15",
+            "name": "Tucson",
+            "display_name": "AZ - Tucson (HRR)",
+            "postal": "AZ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 44,
+        "fields": {
+            "geo_id": "150",
+            "name": "Honolulu",
+            "display_name": "HI - Honolulu (HRR)",
+            "postal": "HI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 45,
+        "fields": {
+            "geo_id": "151",
+            "name": "Boise",
+            "display_name": "ID - Boise (HRR)",
+            "postal": "ID",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 46,
+        "fields": {
+            "geo_id": "152",
+            "name": "Idaho Falls",
+            "display_name": "ID - Idaho Falls (HRR)",
+            "postal": "ID",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 47,
+        "fields": {
+            "geo_id": "154",
+            "name": "Aurora",
+            "display_name": "IL - Aurora (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 48,
+        "fields": {
+            "geo_id": "155",
+            "name": "Blue Island",
+            "display_name": "IL - Blue Island (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 49,
+        "fields": {
+            "geo_id": "156",
+            "name": "Chicago",
+            "display_name": "IL - Chicago (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 50,
+        "fields": {
+            "geo_id": "158",
+            "name": "Elgin",
+            "display_name": "IL - Elgin (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 51,
+        "fields": {
+            "geo_id": "16",
+            "name": "Fort Smith",
+            "display_name": "AR - Fort Smith (HRR)",
+            "postal": "AR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 52,
+        "fields": {
+            "geo_id": "161",
+            "name": "Evanston",
+            "display_name": "IL - Evanston (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 53,
+        "fields": {
+            "geo_id": "163",
+            "name": "Hinsdale",
+            "display_name": "IL - Hinsdale (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 54,
+        "fields": {
+            "geo_id": "164",
+            "name": "Joliet",
+            "display_name": "IL - Joliet (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 55,
+        "fields": {
+            "geo_id": "166",
+            "name": "Melrose Park",
+            "display_name": "IL - Melrose Park (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 56,
+        "fields": {
+            "geo_id": "170",
+            "name": "Peoria",
+            "display_name": "IL - Peoria (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 57,
+        "fields": {
+            "geo_id": "171",
+            "name": "Rockford",
+            "display_name": "IL - Rockford (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 58,
+        "fields": {
+            "geo_id": "172",
+            "name": "Springfield",
+            "display_name": "IL - Springfield (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 59,
+        "fields": {
+            "geo_id": "173",
+            "name": "Urbana",
+            "display_name": "IL - Urbana (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 60,
+        "fields": {
+            "geo_id": "175",
+            "name": "Bloomington",
+            "display_name": "IL - Bloomington (HRR)",
+            "postal": "IL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 61,
+        "fields": {
+            "geo_id": "179",
+            "name": "Evansville",
+            "display_name": "IN - Evansville (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 62,
+        "fields": {
+            "geo_id": "18",
+            "name": "Jonesboro",
+            "display_name": "AR - Jonesboro (HRR)",
+            "postal": "AR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 63,
+        "fields": {
+            "geo_id": "180",
+            "name": "Fort Wayne",
+            "display_name": "IN - Fort Wayne (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 64,
+        "fields": {
+            "geo_id": "181",
+            "name": "Gary",
+            "display_name": "IN - Gary (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 65,
+        "fields": {
+            "geo_id": "183",
+            "name": "Indianapolis",
+            "display_name": "IN - Indianapolis (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 66,
+        "fields": {
+            "geo_id": "184",
+            "name": "Lafayette",
+            "display_name": "IN - Lafayette (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 67,
+        "fields": {
+            "geo_id": "185",
+            "name": "Muncie",
+            "display_name": "IN - Muncie (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 68,
+        "fields": {
+            "geo_id": "186",
+            "name": "Munster",
+            "display_name": "IN - Munster (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 69,
+        "fields": {
+            "geo_id": "187",
+            "name": "South Bend",
+            "display_name": "IN - South Bend (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 70,
+        "fields": {
+            "geo_id": "188",
+            "name": "Terre Haute",
+            "display_name": "IN - Terre Haute (HRR)",
+            "postal": "IN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 71,
+        "fields": {
+            "geo_id": "19",
+            "name": "Little Rock",
+            "display_name": "AR - Little Rock (HRR)",
+            "postal": "AR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 72,
+        "fields": {
+            "geo_id": "190",
+            "name": "Cedar Rapids",
+            "display_name": "IA - Cedar Rapids (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 73,
+        "fields": {
+            "geo_id": "191",
+            "name": "Davenport",
+            "display_name": "IA - Davenport (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 74,
+        "fields": {
+            "geo_id": "192",
+            "name": "Des Moines",
+            "display_name": "IA - Des Moines (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 75,
+        "fields": {
+            "geo_id": "193",
+            "name": "Dubuque",
+            "display_name": "IA - Dubuque (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 76,
+        "fields": {
+            "geo_id": "194",
+            "name": "Iowa City",
+            "display_name": "IA - Iowa City (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 77,
+        "fields": {
+            "geo_id": "195",
+            "name": "Mason City",
+            "display_name": "IA - Mason City (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 78,
+        "fields": {
+            "geo_id": "196",
+            "name": "Sioux City",
+            "display_name": "IA - Sioux City (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 79,
+        "fields": {
+            "geo_id": "197",
+            "name": "Waterloo",
+            "display_name": "IA - Waterloo (HRR)",
+            "postal": "IA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 80,
+        "fields": {
+            "geo_id": "2",
+            "name": "Dothan",
+            "display_name": "AL - Dothan (HRR)",
+            "postal": "AL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 81,
+        "fields": {
+            "geo_id": "200",
+            "name": "Topeka",
+            "display_name": "KS - Topeka (HRR)",
+            "postal": "KS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 82,
+        "fields": {
+            "geo_id": "201",
+            "name": "Wichita",
+            "display_name": "KS - Wichita (HRR)",
+            "postal": "KS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 83,
+        "fields": {
+            "geo_id": "203",
+            "name": "Covington",
+            "display_name": "KY - Covington (HRR)",
+            "postal": "KY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 84,
+        "fields": {
+            "geo_id": "204",
+            "name": "Lexington",
+            "display_name": "KY - Lexington (HRR)",
+            "postal": "KY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 85,
+        "fields": {
+            "geo_id": "205",
+            "name": "Louisville",
+            "display_name": "KY - Louisville (HRR)",
+            "postal": "KY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 86,
+        "fields": {
+            "geo_id": "207",
+            "name": "Owensboro",
+            "display_name": "KY - Owensboro (HRR)",
+            "postal": "KY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 87,
+        "fields": {
+            "geo_id": "208",
+            "name": "Paducah",
+            "display_name": "KY - Paducah (HRR)",
+            "postal": "KY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 88,
+        "fields": {
+            "geo_id": "209",
+            "name": "Alexandria",
+            "display_name": "LA - Alexandria (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 89,
+        "fields": {
+            "geo_id": "21",
+            "name": "Springdale",
+            "display_name": "AR - Springdale (HRR)",
+            "postal": "AR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 90,
+        "fields": {
+            "geo_id": "210",
+            "name": "Baton Rouge",
+            "display_name": "LA - Baton Rouge (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 91,
+        "fields": {
+            "geo_id": "212",
+            "name": "Houma",
+            "display_name": "LA - Houma (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 92,
+        "fields": {
+            "geo_id": "213",
+            "name": "Lafayette",
+            "display_name": "LA - Lafayette (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 93,
+        "fields": {
+            "geo_id": "214",
+            "name": "Lake Charles",
+            "display_name": "LA - Lake Charles (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 94,
+        "fields": {
+            "geo_id": "216",
+            "name": "Metairie",
+            "display_name": "LA - Metairie (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 95,
+        "fields": {
+            "geo_id": "217",
+            "name": "Monroe",
+            "display_name": "LA - Monroe (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 96,
+        "fields": {
+            "geo_id": "218",
+            "name": "New Orleans",
+            "display_name": "LA - New Orleans (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 97,
+        "fields": {
+            "geo_id": "219",
+            "name": "Shreveport",
+            "display_name": "LA - Shreveport (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 98,
+        "fields": {
+            "geo_id": "22",
+            "name": "Texarkana",
+            "display_name": "AR - Texarkana (HRR)",
+            "postal": "AR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 99,
+        "fields": {
+            "geo_id": "220",
+            "name": "Slidell",
+            "display_name": "LA - Slidell (HRR)",
+            "postal": "LA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 100,
+        "fields": {
+            "geo_id": "221",
+            "name": "Bangor",
+            "display_name": "ME - Bangor (HRR)",
+            "postal": "ME",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 101,
+        "fields": {
+            "geo_id": "222",
+            "name": "Portland",
+            "display_name": "ME - Portland (HRR)",
+            "postal": "ME",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 102,
+        "fields": {
+            "geo_id": "223",
+            "name": "Baltimore",
+            "display_name": "MD - Baltimore (HRR)",
+            "postal": "MD",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 103,
+        "fields": {
+            "geo_id": "225",
+            "name": "Salisbury",
+            "display_name": "MD - Salisbury (HRR)",
+            "postal": "MD",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 104,
+        "fields": {
+            "geo_id": "226",
+            "name": "Takoma Park",
+            "display_name": "MD - Takoma Park (HRR)",
+            "postal": "MD",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 105,
+        "fields": {
+            "geo_id": "227",
+            "name": "Boston",
+            "display_name": "MA - Boston (HRR)",
+            "postal": "MA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 106,
+        "fields": {
+            "geo_id": "23",
+            "name": "Orange County",
+            "display_name": "CA - Orange County (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 107,
+        "fields": {
+            "geo_id": "230",
+            "name": "Springfield",
+            "display_name": "MA - Springfield (HRR)",
+            "postal": "MA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 108,
+        "fields": {
+            "geo_id": "231",
+            "name": "Worcester",
+            "display_name": "MA - Worcester (HRR)",
+            "postal": "MA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 109,
+        "fields": {
+            "geo_id": "232",
+            "name": "Ann Arbor",
+            "display_name": "MI - Ann Arbor (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 110,
+        "fields": {
+            "geo_id": "233",
+            "name": "Dearborn",
+            "display_name": "MI - Dearborn (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 111,
+        "fields": {
+            "geo_id": "234",
+            "name": "Detroit",
+            "display_name": "MI - Detroit (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 112,
+        "fields": {
+            "geo_id": "235",
+            "name": "Flint",
+            "display_name": "MI - Flint (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 113,
+        "fields": {
+            "geo_id": "236",
+            "name": "Grand Rapids",
+            "display_name": "MI - Grand Rapids (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 114,
+        "fields": {
+            "geo_id": "238",
+            "name": "Kalamazoo",
+            "display_name": "MI - Kalamazoo (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 115,
+        "fields": {
+            "geo_id": "239",
+            "name": "Lansing",
+            "display_name": "MI - Lansing (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 116,
+        "fields": {
+            "geo_id": "240",
+            "name": "Marquette",
+            "display_name": "MI - Marquette (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 117,
+        "fields": {
+            "geo_id": "242",
+            "name": "Muskegon",
+            "display_name": "MI - Muskegon (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 118,
+        "fields": {
+            "geo_id": "243",
+            "name": "Petoskey",
+            "display_name": "MI - Petoskey (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 119,
+        "fields": {
+            "geo_id": "244",
+            "name": "Pontiac",
+            "display_name": "MI - Pontiac (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 120,
+        "fields": {
+            "geo_id": "245",
+            "name": "Royal Oak",
+            "display_name": "MI - Royal Oak (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 121,
+        "fields": {
+            "geo_id": "246",
+            "name": "Saginaw",
+            "display_name": "MI - Saginaw (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 122,
+        "fields": {
+            "geo_id": "248",
+            "name": "St. Joseph",
+            "display_name": "MI - St. Joseph (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 123,
+        "fields": {
+            "geo_id": "249",
+            "name": "Traverse City",
+            "display_name": "MI - Traverse City (HRR)",
+            "postal": "MI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 124,
+        "fields": {
+            "geo_id": "25",
+            "name": "Bakersfield",
+            "display_name": "CA - Bakersfield (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 125,
+        "fields": {
+            "geo_id": "250",
+            "name": "Duluth",
+            "display_name": "MN - Duluth (HRR)",
+            "postal": "MN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 126,
+        "fields": {
+            "geo_id": "251",
+            "name": "Minneapolis",
+            "display_name": "MN - Minneapolis (HRR)",
+            "postal": "MN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 127,
+        "fields": {
+            "geo_id": "253",
+            "name": "Rochester",
+            "display_name": "MN - Rochester (HRR)",
+            "postal": "MN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 128,
+        "fields": {
+            "geo_id": "254",
+            "name": "St. Cloud",
+            "display_name": "MN - St. Cloud (HRR)",
+            "postal": "MN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 129,
+        "fields": {
+            "geo_id": "256",
+            "name": "St. Paul",
+            "display_name": "MN - St. Paul (HRR)",
+            "postal": "MN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 130,
+        "fields": {
+            "geo_id": "257",
+            "name": "Gulfport",
+            "display_name": "MS - Gulfport (HRR)",
+            "postal": "MS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 131,
+        "fields": {
+            "geo_id": "258",
+            "name": "Hattiesburg",
+            "display_name": "MS - Hattiesburg (HRR)",
+            "postal": "MS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 132,
+        "fields": {
+            "geo_id": "259",
+            "name": "Jackson",
+            "display_name": "MS - Jackson (HRR)",
+            "postal": "MS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 133,
+        "fields": {
+            "geo_id": "260",
+            "name": "Meridian",
+            "display_name": "MS - Meridian (HRR)",
+            "postal": "MS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 134,
+        "fields": {
+            "geo_id": "261",
+            "name": "Oxford",
+            "display_name": "MS - Oxford (HRR)",
+            "postal": "MS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 135,
+        "fields": {
+            "geo_id": "262",
+            "name": "Tupelo",
+            "display_name": "MS - Tupelo (HRR)",
+            "postal": "MS",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 136,
+        "fields": {
+            "geo_id": "263",
+            "name": "Cape Girardeau",
+            "display_name": "MO - Cape Girardeau (HRR)",
+            "postal": "MO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 137,
+        "fields": {
+            "geo_id": "264",
+            "name": "Columbia",
+            "display_name": "MO - Columbia (HRR)",
+            "postal": "MO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 138,
+        "fields": {
+            "geo_id": "267",
+            "name": "Joplin",
+            "display_name": "MO - Joplin (HRR)",
+            "postal": "MO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 139,
+        "fields": {
+            "geo_id": "268",
+            "name": "Kansas City",
+            "display_name": "MO - Kansas City (HRR)",
+            "postal": "MO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 140,
+        "fields": {
+            "geo_id": "270",
+            "name": "Springfield",
+            "display_name": "MO - Springfield (HRR)",
+            "postal": "MO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 141,
+        "fields": {
+            "geo_id": "273",
+            "name": "St. Louis",
+            "display_name": "MO - St. Louis (HRR)",
+            "postal": "MO",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 142,
+        "fields": {
+            "geo_id": "274",
+            "name": "Billings",
+            "display_name": "MT - Billings (HRR)",
+            "postal": "MT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 143,
+        "fields": {
+            "geo_id": "275",
+            "name": "Great Falls",
+            "display_name": "MT - Great Falls (HRR)",
+            "postal": "MT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 144,
+        "fields": {
+            "geo_id": "276",
+            "name": "Missoula",
+            "display_name": "MT - Missoula (HRR)",
+            "postal": "MT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 145,
+        "fields": {
+            "geo_id": "277",
+            "name": "Lincoln",
+            "display_name": "NE - Lincoln (HRR)",
+            "postal": "NE",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 146,
+        "fields": {
+            "geo_id": "278",
+            "name": "Omaha",
+            "display_name": "NE - Omaha (HRR)",
+            "postal": "NE",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 147,
+        "fields": {
+            "geo_id": "279",
+            "name": "Las Vegas",
+            "display_name": "NV - Las Vegas (HRR)",
+            "postal": "NV",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 148,
+        "fields": {
+            "geo_id": "280",
+            "name": "Reno",
+            "display_name": "NV - Reno (HRR)",
+            "postal": "NV",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 149,
+        "fields": {
+            "geo_id": "281",
+            "name": "Lebanon",
+            "display_name": "NH - Lebanon (HRR)",
+            "postal": "NH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 150,
+        "fields": {
+            "geo_id": "282",
+            "name": "Manchester",
+            "display_name": "NH - Manchester (HRR)",
+            "postal": "NH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 151,
+        "fields": {
+            "geo_id": "283",
+            "name": "Camden",
+            "display_name": "NJ - Camden (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 152,
+        "fields": {
+            "geo_id": "284",
+            "name": "Hackensack",
+            "display_name": "NJ - Hackensack (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 153,
+        "fields": {
+            "geo_id": "285",
+            "name": "Morristown",
+            "display_name": "NJ - Morristown (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 154,
+        "fields": {
+            "geo_id": "288",
+            "name": "New Brunswick",
+            "display_name": "NJ - New Brunswick (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 155,
+        "fields": {
+            "geo_id": "289",
+            "name": "Newark",
+            "display_name": "NJ - Newark (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 156,
+        "fields": {
+            "geo_id": "291",
+            "name": "Paterson",
+            "display_name": "NJ - Paterson (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 157,
+        "fields": {
+            "geo_id": "292",
+            "name": "Ridgewood",
+            "display_name": "NJ - Ridgewood (HRR)",
+            "postal": "NJ",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 158,
+        "fields": {
+            "geo_id": "293",
+            "name": "Albuquerque",
+            "display_name": "NM - Albuquerque (HRR)",
+            "postal": "NM",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 159,
+        "fields": {
+            "geo_id": "295",
+            "name": "Albany",
+            "display_name": "NY - Albany (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 160,
+        "fields": {
+            "geo_id": "296",
+            "name": "Binghamton",
+            "display_name": "NY - Binghamton (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 161,
+        "fields": {
+            "geo_id": "297",
+            "name": "Bronx",
+            "display_name": "NY - Bronx (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 162,
+        "fields": {
+            "geo_id": "299",
+            "name": "Buffalo",
+            "display_name": "NY - Buffalo (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 163,
+        "fields": {
+            "geo_id": "300",
+            "name": "Elmira",
+            "display_name": "NY - Elmira (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 164,
+        "fields": {
+            "geo_id": "301",
+            "name": "East Long Island",
+            "display_name": "NY - East Long Island (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 165,
+        "fields": {
+            "geo_id": "303",
+            "name": "Manhattan",
+            "display_name": "NY - Manhattan (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 166,
+        "fields": {
+            "geo_id": "304",
+            "name": "Rochester",
+            "display_name": "NY - Rochester (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 167,
+        "fields": {
+            "geo_id": "305",
+            "name": "Erie",
+            "display_name": "PA - Erie (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 168,
+        "fields": {
+            "geo_id": "307",
+            "name": "Syracuse",
+            "display_name": "NY - Syracuse (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 169,
+        "fields": {
+            "geo_id": "308",
+            "name": "White Plains",
+            "display_name": "NY - White Plains (HRR)",
+            "postal": "NY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 170,
+        "fields": {
+            "geo_id": "309",
+            "name": "Asheville",
+            "display_name": "NC - Asheville (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 171,
+        "fields": {
+            "geo_id": "31",
+            "name": "Chico",
+            "display_name": "CA - Chico (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 172,
+        "fields": {
+            "geo_id": "311",
+            "name": "Charlotte",
+            "display_name": "NC - Charlotte (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 173,
+        "fields": {
+            "geo_id": "312",
+            "name": "Durham",
+            "display_name": "NC - Durham (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 174,
+        "fields": {
+            "geo_id": "313",
+            "name": "Greensboro",
+            "display_name": "NC - Greensboro (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 175,
+        "fields": {
+            "geo_id": "314",
+            "name": "Greenville",
+            "display_name": "NC - Greenville (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 176,
+        "fields": {
+            "geo_id": "315",
+            "name": "Hickory",
+            "display_name": "NC - Hickory (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 177,
+        "fields": {
+            "geo_id": "318",
+            "name": "Raleigh",
+            "display_name": "NC - Raleigh (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 178,
+        "fields": {
+            "geo_id": "319",
+            "name": "Wilmington",
+            "display_name": "NC - Wilmington (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 179,
+        "fields": {
+            "geo_id": "320",
+            "name": "Winston-Salem",
+            "display_name": "NC - Winston-Salem (HRR)",
+            "postal": "NC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 180,
+        "fields": {
+            "geo_id": "321",
+            "name": "Bismarck",
+            "display_name": "ND - Bismarck (HRR)",
+            "postal": "ND",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 181,
+        "fields": {
+            "geo_id": "322",
+            "name": "Fargo/Moorhead MN",
+            "display_name": "ND - Fargo/Moorhead MN (HRR)",
+            "postal": "ND",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 182,
+        "fields": {
+            "geo_id": "323",
+            "name": "Grand Forks",
+            "display_name": "ND - Grand Forks (HRR)",
+            "postal": "ND",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 183,
+        "fields": {
+            "geo_id": "324",
+            "name": "Minot",
+            "display_name": "ND - Minot (HRR)",
+            "postal": "ND",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 184,
+        "fields": {
+            "geo_id": "325",
+            "name": "Akron",
+            "display_name": "OH - Akron (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 185,
+        "fields": {
+            "geo_id": "326",
+            "name": "Canton",
+            "display_name": "OH - Canton (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 186,
+        "fields": {
+            "geo_id": "327",
+            "name": "Cincinnati",
+            "display_name": "OH - Cincinnati (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 187,
+        "fields": {
+            "geo_id": "328",
+            "name": "Cleveland",
+            "display_name": "OH - Cleveland (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 188,
+        "fields": {
+            "geo_id": "329",
+            "name": "Columbus",
+            "display_name": "OH - Columbus (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 189,
+        "fields": {
+            "geo_id": "33",
+            "name": "Contra Costa County",
+            "display_name": "CA - Contra Costa County (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 190,
+        "fields": {
+            "geo_id": "330",
+            "name": "Dayton",
+            "display_name": "OH - Dayton (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 191,
+        "fields": {
+            "geo_id": "331",
+            "name": "Elyria",
+            "display_name": "OH - Elyria (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 192,
+        "fields": {
+            "geo_id": "332",
+            "name": "Kettering",
+            "display_name": "OH - Kettering (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 193,
+        "fields": {
+            "geo_id": "334",
+            "name": "Toledo",
+            "display_name": "OH - Toledo (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 194,
+        "fields": {
+            "geo_id": "335",
+            "name": "Youngstown",
+            "display_name": "OH - Youngstown (HRR)",
+            "postal": "OH",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 195,
+        "fields": {
+            "geo_id": "336",
+            "name": "Lawton",
+            "display_name": "OK - Lawton (HRR)",
+            "postal": "OK",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 196,
+        "fields": {
+            "geo_id": "339",
+            "name": "Oklahoma City",
+            "display_name": "OK - Oklahoma City (HRR)",
+            "postal": "OK",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 197,
+        "fields": {
+            "geo_id": "340",
+            "name": "Tulsa",
+            "display_name": "OK - Tulsa (HRR)",
+            "postal": "OK",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 198,
+        "fields": {
+            "geo_id": "341",
+            "name": "Bend",
+            "display_name": "OR - Bend (HRR)",
+            "postal": "OR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 199,
+        "fields": {
+            "geo_id": "342",
+            "name": "Eugene",
+            "display_name": "OR - Eugene (HRR)",
+            "postal": "OR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 200,
+        "fields": {
+            "geo_id": "343",
+            "name": "Medford",
+            "display_name": "OR - Medford (HRR)",
+            "postal": "OR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 201,
+        "fields": {
+            "geo_id": "344",
+            "name": "Portland",
+            "display_name": "OR - Portland (HRR)",
+            "postal": "OR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 202,
+        "fields": {
+            "geo_id": "345",
+            "name": "Salem",
+            "display_name": "OR - Salem (HRR)",
+            "postal": "OR",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 203,
+        "fields": {
+            "geo_id": "346",
+            "name": "Allentown",
+            "display_name": "PA - Allentown (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 204,
+        "fields": {
+            "geo_id": "347",
+            "name": "Altoona",
+            "display_name": "PA - Altoona (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 205,
+        "fields": {
+            "geo_id": "350",
+            "name": "Danville",
+            "display_name": "PA - Danville (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 206,
+        "fields": {
+            "geo_id": "352",
+            "name": "Harrisburg",
+            "display_name": "PA - Harrisburg (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 207,
+        "fields": {
+            "geo_id": "354",
+            "name": "Johnstown",
+            "display_name": "PA - Johnstown (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 208,
+        "fields": {
+            "geo_id": "355",
+            "name": "Lancaster",
+            "display_name": "PA - Lancaster (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 209,
+        "fields": {
+            "geo_id": "356",
+            "name": "Philadelphia",
+            "display_name": "PA - Philadelphia (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 210,
+        "fields": {
+            "geo_id": "357",
+            "name": "Pittsburgh",
+            "display_name": "PA - Pittsburgh (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 211,
+        "fields": {
+            "geo_id": "358",
+            "name": "Reading",
+            "display_name": "PA - Reading (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 212,
+        "fields": {
+            "geo_id": "359",
+            "name": "Sayre",
+            "display_name": "PA - Sayre (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 213,
+        "fields": {
+            "geo_id": "360",
+            "name": "Scranton",
+            "display_name": "PA - Scranton (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 214,
+        "fields": {
+            "geo_id": "362",
+            "name": "Wilkes-Barre",
+            "display_name": "PA - Wilkes-Barre (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 215,
+        "fields": {
+            "geo_id": "363",
+            "name": "York",
+            "display_name": "PA - York (HRR)",
+            "postal": "PA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 216,
+        "fields": {
+            "geo_id": "364",
+            "name": "Providence",
+            "display_name": "RI - Providence (HRR)",
+            "postal": "RI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 217,
+        "fields": {
+            "geo_id": "365",
+            "name": "Charleston",
+            "display_name": "SC - Charleston (HRR)",
+            "postal": "SC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 218,
+        "fields": {
+            "geo_id": "366",
+            "name": "Columbia",
+            "display_name": "SC - Columbia (HRR)",
+            "postal": "SC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 219,
+        "fields": {
+            "geo_id": "367",
+            "name": "Florence",
+            "display_name": "SC - Florence (HRR)",
+            "postal": "SC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 220,
+        "fields": {
+            "geo_id": "368",
+            "name": "Greenville",
+            "display_name": "SC - Greenville (HRR)",
+            "postal": "SC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 221,
+        "fields": {
+            "geo_id": "369",
+            "name": "Spartanburg",
+            "display_name": "SC - Spartanburg (HRR)",
+            "postal": "SC",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 222,
+        "fields": {
+            "geo_id": "370",
+            "name": "Rapid City",
+            "display_name": "SD - Rapid City (HRR)",
+            "postal": "SD",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 223,
+        "fields": {
+            "geo_id": "371",
+            "name": "Sioux Falls",
+            "display_name": "SD - Sioux Falls (HRR)",
+            "postal": "SD",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 224,
+        "fields": {
+            "geo_id": "373",
+            "name": "Chattanooga",
+            "display_name": "TN - Chattanooga (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 225,
+        "fields": {
+            "geo_id": "374",
+            "name": "Jackson",
+            "display_name": "TN - Jackson (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 226,
+        "fields": {
+            "geo_id": "375",
+            "name": "Johnson City",
+            "display_name": "TN - Johnson City (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 227,
+        "fields": {
+            "geo_id": "376",
+            "name": "Kingsport",
+            "display_name": "TN - Kingsport (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 228,
+        "fields": {
+            "geo_id": "377",
+            "name": "Knoxville",
+            "display_name": "TN - Knoxville (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 229,
+        "fields": {
+            "geo_id": "379",
+            "name": "Memphis",
+            "display_name": "TN - Memphis (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 230,
+        "fields": {
+            "geo_id": "380",
+            "name": "Nashville",
+            "display_name": "TN - Nashville (HRR)",
+            "postal": "TN",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 231,
+        "fields": {
+            "geo_id": "382",
+            "name": "Abilene",
+            "display_name": "TX - Abilene (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 232,
+        "fields": {
+            "geo_id": "383",
+            "name": "Amarillo",
+            "display_name": "TX - Amarillo (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 233,
+        "fields": {
+            "geo_id": "385",
+            "name": "Austin",
+            "display_name": "TX - Austin (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 234,
+        "fields": {
+            "geo_id": "386",
+            "name": "Beaumont",
+            "display_name": "TX - Beaumont (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 235,
+        "fields": {
+            "geo_id": "388",
+            "name": "Bryan",
+            "display_name": "TX - Bryan (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 236,
+        "fields": {
+            "geo_id": "390",
+            "name": "Corpus Christi",
+            "display_name": "TX - Corpus Christi (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 237,
+        "fields": {
+            "geo_id": "390",
+            "name": "Victoria",
+            "display_name": "TX - Victoria (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 238,
+        "fields": {
+            "geo_id": "391",
+            "name": "Dallas",
+            "display_name": "TX - Dallas (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 239,
+        "fields": {
+            "geo_id": "393",
+            "name": "El Paso",
+            "display_name": "TX - El Paso (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 240,
+        "fields": {
+            "geo_id": "394",
+            "name": "Fort Worth",
+            "display_name": "TX - Fort Worth (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 241,
+        "fields": {
+            "geo_id": "396",
+            "name": "Harlingen",
+            "display_name": "TX - Harlingen (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 242,
+        "fields": {
+            "geo_id": "397",
+            "name": "Houston",
+            "display_name": "TX - Houston (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 243,
+        "fields": {
+            "geo_id": "399",
+            "name": "Longview",
+            "display_name": "TX - Longview (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 244,
+        "fields": {
+            "geo_id": "400",
+            "name": "Lubbock",
+            "display_name": "TX - Lubbock (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 245,
+        "fields": {
+            "geo_id": "402",
+            "name": "McAllen",
+            "display_name": "TX - McAllen (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 246,
+        "fields": {
+            "geo_id": "406",
+            "name": "Odessa",
+            "display_name": "TX - Odessa (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 247,
+        "fields": {
+            "geo_id": "411",
+            "name": "San Angelo",
+            "display_name": "TX - San Angelo (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 248,
+        "fields": {
+            "geo_id": "412",
+            "name": "San Antonio",
+            "display_name": "TX - San Antonio (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 249,
+        "fields": {
+            "geo_id": "413",
+            "name": "Temple",
+            "display_name": "TX - Temple (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 250,
+        "fields": {
+            "geo_id": "416",
+            "name": "Tyler",
+            "display_name": "TX - Tyler (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 251,
+        "fields": {
+            "geo_id": "418",
+            "name": "Waco",
+            "display_name": "TX - Waco (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 252,
+        "fields": {
+            "geo_id": "420",
+            "name": "Wichita Falls",
+            "display_name": "TX - Wichita Falls (HRR)",
+            "postal": "TX",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 253,
+        "fields": {
+            "geo_id": "421",
+            "name": "Ogden",
+            "display_name": "UT - Ogden (HRR)",
+            "postal": "UT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 254,
+        "fields": {
+            "geo_id": "422",
+            "name": "Provo",
+            "display_name": "UT - Provo (HRR)",
+            "postal": "UT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 255,
+        "fields": {
+            "geo_id": "423",
+            "name": "Salt Lake City",
+            "display_name": "UT - Salt Lake City (HRR)",
+            "postal": "UT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 256,
+        "fields": {
+            "geo_id": "424",
+            "name": "Burlington",
+            "display_name": "VT - Burlington (HRR)",
+            "postal": "VT",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 257,
+        "fields": {
+            "geo_id": "426",
+            "name": "Arlington",
+            "display_name": "VA - Arlington (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 258,
+        "fields": {
+            "geo_id": "427",
+            "name": "Charlottesville",
+            "display_name": "VA - Charlottesville (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 259,
+        "fields": {
+            "geo_id": "428",
+            "name": "Lynchburg",
+            "display_name": "VA - Lynchburg (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 260,
+        "fields": {
+            "geo_id": "429",
+            "name": "Newport News",
+            "display_name": "VA - Newport News (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 261,
+        "fields": {
+            "geo_id": "43",
+            "name": "Fresno",
+            "display_name": "CA - Fresno (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 262,
+        "fields": {
+            "geo_id": "430",
+            "name": "Norfolk",
+            "display_name": "VA - Norfolk (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 263,
+        "fields": {
+            "geo_id": "431",
+            "name": "Richmond",
+            "display_name": "VA - Richmond (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 264,
+        "fields": {
+            "geo_id": "432",
+            "name": "Roanoke",
+            "display_name": "VA - Roanoke (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 265,
+        "fields": {
+            "geo_id": "435",
+            "name": "Winchester",
+            "display_name": "VA - Winchester (HRR)",
+            "postal": "VA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 266,
+        "fields": {
+            "geo_id": "437",
+            "name": "Everett",
+            "display_name": "WA - Everett (HRR)",
+            "postal": "WA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 267,
+        "fields": {
+            "geo_id": "438",
+            "name": "Olympia",
+            "display_name": "WA - Olympia (HRR)",
+            "postal": "WA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 268,
+        "fields": {
+            "geo_id": "439",
+            "name": "Seattle",
+            "display_name": "WA - Seattle (HRR)",
+            "postal": "WA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 269,
+        "fields": {
+            "geo_id": "440",
+            "name": "Spokane",
+            "display_name": "WA - Spokane (HRR)",
+            "postal": "WA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 270,
+        "fields": {
+            "geo_id": "441",
+            "name": "Tacoma",
+            "display_name": "WA - Tacoma (HRR)",
+            "postal": "WA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 271,
+        "fields": {
+            "geo_id": "442",
+            "name": "Yakima",
+            "display_name": "WA - Yakima (HRR)",
+            "postal": "WA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 272,
+        "fields": {
+            "geo_id": "443",
+            "name": "Charleston",
+            "display_name": "WV - Charleston (HRR)",
+            "postal": "WV",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 273,
+        "fields": {
+            "geo_id": "444",
+            "name": "Huntington",
+            "display_name": "WV - Huntington (HRR)",
+            "postal": "WV",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 274,
+        "fields": {
+            "geo_id": "445",
+            "name": "Morgantown",
+            "display_name": "WV - Morgantown (HRR)",
+            "postal": "WV",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 275,
+        "fields": {
+            "geo_id": "446",
+            "name": "Appleton",
+            "display_name": "WI - Appleton (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 276,
+        "fields": {
+            "geo_id": "447",
+            "name": "Green Bay",
+            "display_name": "WI - Green Bay (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 277,
+        "fields": {
+            "geo_id": "448",
+            "name": "La Crosse",
+            "display_name": "WI - La Crosse (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 278,
+        "fields": {
+            "geo_id": "449",
+            "name": "Madison",
+            "display_name": "WI - Madison (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 279,
+        "fields": {
+            "geo_id": "450",
+            "name": "Marshfield",
+            "display_name": "WI - Marshfield (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 280,
+        "fields": {
+            "geo_id": "451",
+            "name": "Milwaukee",
+            "display_name": "WI - Milwaukee (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 281,
+        "fields": {
+            "geo_id": "452",
+            "name": "Neenah",
+            "display_name": "WI - Neenah (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 282,
+        "fields": {
+            "geo_id": "456",
+            "name": "Wausau",
+            "display_name": "WI - Wausau (HRR)",
+            "postal": "WI",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 283,
+        "fields": {
+            "geo_id": "457",
+            "name": "Casper",
+            "display_name": "WY - Casper (HRR)",
+            "postal": "WY",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 284,
+        "fields": {
+            "geo_id": "5",
+            "name": "Huntsville",
+            "display_name": "AL - Huntsville (HRR)",
+            "postal": "AL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 285,
+        "fields": {
+            "geo_id": "56",
+            "name": "Los Angeles",
+            "display_name": "CA - Los Angeles (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 286,
+        "fields": {
+            "geo_id": "58",
+            "name": "Modesto",
+            "display_name": "CA - Modesto (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 287,
+        "fields": {
+            "geo_id": "6",
+            "name": "Mobile",
+            "display_name": "AL - Mobile (HRR)",
+            "postal": "AL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 288,
+        "fields": {
+            "geo_id": "62",
+            "name": "Napa",
+            "display_name": "CA - Napa (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 289,
+        "fields": {
+            "geo_id": "65",
+            "name": "Alameda County",
+            "display_name": "CA - Alameda County (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 290,
+        "fields": {
+            "geo_id": "69",
+            "name": "Palm Springs/Rancho Mirage",
+            "display_name": "CA - Palm Springs/Rancho Mirage (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 291,
+        "fields": {
+            "geo_id": "7",
+            "name": "Montgomery",
+            "display_name": "AL - Montgomery (HRR)",
+            "postal": "AL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 292,
+        "fields": {
+            "geo_id": "73",
+            "name": "Redding",
+            "display_name": "CA - Redding (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 293,
+        "fields": {
+            "geo_id": "77",
+            "name": "Sacramento",
+            "display_name": "CA - Sacramento (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 294,
+        "fields": {
+            "geo_id": "78",
+            "name": "Salinas",
+            "display_name": "CA - Salinas (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 295,
+        "fields": {
+            "geo_id": "79",
+            "name": "San Bernardino",
+            "display_name": "CA - San Bernardino (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 296,
+        "fields": {
+            "geo_id": "80",
+            "name": "San Diego",
+            "display_name": "CA - San Diego (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 297,
+        "fields": {
+            "geo_id": "81",
+            "name": "San Francisco",
+            "display_name": "CA - San Francisco (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 298,
+        "fields": {
+            "geo_id": "82",
+            "name": "San Jose",
+            "display_name": "CA - San Jose (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 299,
+        "fields": {
+            "geo_id": "83",
+            "name": "San Luis Obispo",
+            "display_name": "CA - San Luis Obispo (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 300,
+        "fields": {
+            "geo_id": "85",
+            "name": "San Mateo County",
+            "display_name": "CA - San Mateo County (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 301,
+        "fields": {
+            "geo_id": "86",
+            "name": "Santa Barbara",
+            "display_name": "CA - Santa Barbara (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 302,
+        "fields": {
+            "geo_id": "87",
+            "name": "Santa Cruz",
+            "display_name": "CA - Santa Cruz (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 303,
+        "fields": {
+            "geo_id": "89",
+            "name": "Santa Rosa",
+            "display_name": "CA - Santa Rosa (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 304,
+        "fields": {
+            "geo_id": "9",
+            "name": "Tuscaloosa",
+            "display_name": "AL - Tuscaloosa (HRR)",
+            "postal": "AL",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 305,
+        "fields": {
+            "geo_id": "91",
+            "name": "Stockton",
+            "display_name": "CA - Stockton (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 306,
+        "fields": {
+            "geo_id": "96",
+            "name": "Ventura",
+            "display_name": "CA - Ventura (HRR)",
+            "postal": "CA",
+            "level": 3
+        }
+    }
+]
