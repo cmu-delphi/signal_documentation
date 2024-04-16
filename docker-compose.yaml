@@ -109,53 +109,9 @@ services:
       - celery
       - celery-beat
 
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
-    container_name: signal_documentation-elasticsearch
-    environment:
-      - discovery.type=single-node
-    ports:
-      - "9200:9200"
-      - "9300:9300"
-
-  kinaba:
-    image: docker.elastic.co/kibana/kibana:7.10.2
-    container_name: signal_documentation-kibana
-    ports:
-      - "5601:5601"
-    links:
-      - elasticsearch
-    depends_on:
-      - elasticsearch
-
-  logstash:
-    image: logstash:latest
-    restart: always
-    build:
-      context: .logstash
-      dockerfile: Dockerfile
-    depends_on:
-      - elasticsearch
-    volumes:
-      - logs_volume:/logs:ro
-
-  filebeat:
-    image: docker.elastic.co/beats/filebeat:7.10.2
-    container_name: signal_documentation-filebeat
-    volumes:
-      - ./filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
-      - ./src/logs:/usr/share/filebeat/logs
-    environment:
-      LASTICSEARCH_URL: http://elasticsearch:9200
-    links:
-      - elasticsearch
-    depends_on:
-      - elasticsearch
-
 volumes:
   mysql:
   sdwebapp:
   static:
   celery:
   celery-beat:
-  logs_volume:
