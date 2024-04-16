@@ -38,7 +38,6 @@ crispy-bootstrap5 = "*"
 django-celery-beat = "*"
 celery = {version = "*", extras = ["redis"]}
 flower = "*"
-django-htmx = "*"
 gunicorn = "*"
 types-requests = "*"
 

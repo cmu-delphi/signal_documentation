@@ -92,7 +92,6 @@ EXTERNAL_APPS: list[str] = [
     'docs',
     'crispy_forms',
     'crispy_bootstrap5',
-    'django_htmx',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -112,7 +111,6 @@ MIDDLEWARE: list[str] = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 

@@ -380,7 +380,36 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% include "signals/signals_list.html" with signals=signals %}
+                                {% for signal in signals %}
+                                    <tr classs="clickable-table-row">
+                                        <td>
+                                            <input type="checkbox" name="id" value="{{ signal.id }}">
+                                            {{ form.id|as_crispy_field }}
+                                        </td>
+                                        <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
+                                        <td>{{ signal.source }}</td>
+                                        <td>{{ signal.description }}</td>
+                                        <td>
+                                            {% for pathogen in signal.pathogen.all %}
+                                            <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
+                                            {% endfor %}
+                                        </td>
+                                        <td>
+                                            {% if signal.base %}
+                                            <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a>
+                                            {% else %}
+                                            --/--
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if signal.last_updated %}
+                                                {{ signal.last_updated|date:"Y-m-d" }}
+                                            {% else %}
+                                                --/--
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
