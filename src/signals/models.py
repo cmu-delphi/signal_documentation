@@ -168,7 +168,7 @@ class Geography(TimeStampedModel):
         return str(self.name)
 
 
-class GeographicScope(TimeStampedModel):
+class GeographicScope(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
     """
     A model representing a geographic scope.
     """
@@ -409,6 +409,9 @@ class Signal(TimeStampedModel):
     def example_url(self) -> str | None:
         """
         Returns the example URL of the signal.
+
+        :return: The example URL of the signal.
+        :rtype: str | None
         """
         example_url = self.links.filter(link_type="example_url").first()
         return example_url.url if example_url else None
@@ -417,6 +420,9 @@ class Signal(TimeStampedModel):
     def has_all_demographic_scopes(self) -> bool:
         """
         Returns True if the signal has all demographic scopes, False otherwise.
+
+        :return: True if the signal has all demographic scopes, False otherwise.
+        :rtype: bool
         """
         return self.demographic_scope.count() == DemographicScope.objects.count()
 

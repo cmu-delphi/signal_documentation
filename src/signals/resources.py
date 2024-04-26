@@ -8,6 +8,7 @@ from import_export.fields import Field, widgets
 from base.models import Link, LinkTypeChoices
 from datasources.models import SourceSubdivision
 from signals.models import (
+    DemographicScope,
     Geography,
     Pathogen,
     Signal,
@@ -72,9 +73,13 @@ class SignalResource(resources.ModelResource):
     active = Field(attribute='active', column_name='Active')
     short_description = Field(attribute='short_description', column_name='Short Description')
     description = Field(attribute='description', column_name='Description')
-    format = Field(attribute='format', column_name='Format')
+    format_type = Field(attribute='format_type', column_name='Format')
     time_type = Field(attribute='time_type', column_name='Time Type')
     time_label = Field(attribute='time_label', column_name='Time Label')
+    reporting_cadence = Field(attribute='reporting_cadence', column_name='Reporting Cadence')
+    demographic_scope = Field(attribute='demographic_scope', column_name='Demographic Scope')
+    severenity_pyramid_rungs = Field(attribute='severenity_pyramid_rungs', column_name='Severity Pyramid Rungs')
+
     category = Field(
         attribute='category',
         column_name='Category',
@@ -101,6 +106,11 @@ class SignalResource(resources.ModelResource):
         column_name='Links',
         widget=widgets.ManyToManyWidget(Link, field='url', separator='|'),
     )
+    data_censoring = Field(attribute='data_censoring', column_name='Data Censoring')
+    missingness = Field(attribute='missingness', column_name='Missingness')
+    gender_breakdown = Field(attribute='gender_breakdown', column_name='Gender Breakdown')
+    race_breakdown = Field(attribute='race_breakdown', column_name='Race Breakdown')
+    age_breakdown = Field(attribute='age_breakdown', column_name='Age Breakdown')
 
     class Meta:
         model = Signal
@@ -112,9 +122,12 @@ class SignalResource(resources.ModelResource):
             'active',
             'short_description',
             'description',
-            'format',
+            'format_type',
             'time_type',
             'time_label',
+            'reporting_cadence',
+            'demographic_scope',
+            'severenity_pyramid_rungs',
             'available_geography',
             'is_smoothed',
             'is_weighted',
@@ -123,7 +136,12 @@ class SignalResource(resources.ModelResource):
             'has_sample_size',
             'high_values_are',
             'source',
-            'links'
+            'links',
+            'data_censoring',
+            'missingness',
+            'gender_breakdown',
+            'race_breakdown',
+            'age_breakdown',
         ]
         import_id_fields: list[str] = ['name', 'source', 'display_name']
 
@@ -132,9 +150,19 @@ class SignalResource(resources.ModelResource):
         Pre-processes each row before importing.
         """
 
-        self.fix_boolean_fields(row, ['Active', 'Is Smoothed', 'Is Weighted', 'Is Cumulative', 'Has StdErr', 'Has Sample Size'])
+        self.fix_boolean_fields(row, [
+            'Active',
+            'Is Smoothed',
+            'Is Weighted',
+            'Is Cumulative',
+            'Has StdErr',
+            'Has Sample Size',
+            'gender_breakdown',
+            'race_breakdown',
+        ])
         self.process_links(row)
         self.process_pathogen(row)
+        self.process_demographic_scope(row)
 
     def is_url_in_domain(self, url, domain) -> Any:
         """
@@ -193,3 +221,13 @@ class SignalResource(resources.ModelResource):
             pathogens: str = row['Pathogen/ Disease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
+
+    def process_demographic_scope(self, row) -> None:
+        """
+        Processes demographic scope.
+        """
+
+        if row['Demographic Scope']:
+            demographic_scopes: str = row['Demographic Scope'].split(',')
+            for demographic_scope in demographic_scopes:
+                DemographicScope.objects.get_or_create(name=demographic_scope.strip())
