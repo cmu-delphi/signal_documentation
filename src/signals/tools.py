@@ -1,6 +1,9 @@
+import logging
 from datetime import datetime
 
 from signals.models import Signal
+
+logger = logging.getLogger('default')
 
 
 class SignalLastUpdatedParser:
@@ -35,9 +38,12 @@ class SignalLastUpdatedParser:
                 try:
                     signal = Signal.objects.get(name=signal_data['signal_basename'], source__name=signal_data['source'])
                 except Signal.DoesNotExist:
-                    # TODO: Log this
+                    logger.warning(
+                        f"Signal {signal_data['signal_basename']} not found in db. Update failed."
+                    )
                     continue
                 signal.last_updated = self.format_date(str(signal_data['max_issue']))
                 signal.from_date = self.format_date(str(signal_data['min_time']))
                 signal.to_date = self.format_date(str(signal_data['max_time']))
                 signal.save()
+                logger.info(f"Signal {signal_data['signal_basename']} successfully updated.")
