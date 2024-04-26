@@ -3,35 +3,45 @@
         "model": "signals.DemographicScope",
         "pk": 1,
         "fields": {
-            "name": "nationwide Change Healthcare network"
+            "name": "nationwide Change Healthcare network",
+            "created": "2022-01-01T00:00:00Z",
+            "modified": "2022-01-01T00:00:00Z"
         }
     },
     {
         "model": "signals.DemographicScope",
         "pk": 2,
         "fields": {
-            "name": "nationwide Optum network"
+            "name": "nationwide Optum network",
+            "created": "2022-01-01T00:00:00Z",
+            "modified": "2022-01-01T00:00:00Z"
         }
     },
     {
         "model": "signals.DemographicScope",
         "pk": 3,
         "fields": {
-            "name": "Adult Facebook users"
+            "name": "Adult Facebook users",
+            "created": "2022-01-01T00:00:00Z",
+            "modified": "2022-01-01T00:00:00Z"
         }
     },
     {
         "model": "signals.DemographicScope",
         "pk": 4,
         "fields": {
-            "name": "Google search users"
+            "name": "Google search users",
+            "created": "2022-01-01T00:00:00Z",
+            "modified": "2022-01-01T00:00:00Z"
         }
     },
     {
         "model": "signals.DemographicScope",
         "pk": 5,
         "fields": {
-            "name": "Smartphone users"
+            "name": "Smartphone users",
+            "created": "2022-01-01T00:00:00Z",
+            "modified": "2022-01-01T00:00:00Z"
         }
     }
 ]

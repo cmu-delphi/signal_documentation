@@ -208,26 +208,26 @@ class DemographicScope(TimeStampedModel):
         return str(self.name)
 
 
-class OrganisationsWithAccess(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
-    """
-    A model representing an access list.
-    """
-    organisation_name: models.CharField = models.CharField(
-        help_text=_('Organisation Name'),
-        max_length=128,
-        unique=True
-    )
+# class OrganisationsWithAccess(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+#     """
+#     A model representing an access list.
+#     """
+#     organisation_name: models.CharField = models.CharField(
+#         help_text=_('Organisation Name'),
+#         max_length=128,
+#         unique=True
+#     )
 
 
-class SharingOrganisation(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
-    """
-    A model representing a sharing organisation.
-    """
-    organisation_name: models.CharField = models.CharField(
-        help_text=_('Organisation Name'),
-        max_length=128,
-        unique=True
-    )
+# class SharingOrganisation(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+#     """
+#     A model representing a sharing organisation.
+#     """
+#     organisation_name: models.CharField = models.CharField(
+#         help_text=_('Organisation Name'),
+#         max_length=128,
+#         unique=True
+#     )
 
 
 class Signal(TimeStampedModel):
@@ -294,7 +294,8 @@ class Signal(TimeStampedModel):
     reporting_cadence: models.CharField = models.CharField(
         help_text=_('Reporting Cadence'),
         max_length=128,
-        choices=ReportingCadence.choices
+        choices=ReportingCadence.choices,
+        null=True
     )
     demographic_scope: models.ManyToManyField = models.ManyToManyField(
         'signals.DemographicScope',
@@ -304,7 +305,8 @@ class Signal(TimeStampedModel):
     severenity_pyramid_rungs: models.CharField = models.CharField(
         help_text=_('Severity Pyramid Rungs'),
         max_length=128,
-        choices=SeverityPyramidRungsChoices.choices
+        choices=SeverityPyramidRungsChoices.choices,
+        null=True
     )
     category: models.ForeignKey = models.ForeignKey(
         'signals.SignalCategory',
@@ -377,15 +379,15 @@ class Signal(TimeStampedModel):
         null=True,
         blank=True
     )
-    organisations_access_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
-        'signals.OrganisationsAccess',
-        help_text=_('Organisations Access List')
-    )
+    # organisations_access_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
+    #     'signals.OrganisationsAccess',
+    #     help_text=_('Organisations Access List')
+    # )
 
-    organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
-        'signals.SharingOrganisation',
-        help_text=_('Organisations Sharing List')
-    )
+    # organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
+    #     'signals.SharingOrganisation',
+    #     help_text=_('Organisations Sharing List')
+    # )
 
     last_updated: models.DateField = models.DateField(
         help_text=_('Last Updated'),
