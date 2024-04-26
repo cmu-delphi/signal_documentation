@@ -4,6 +4,7 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
 from signals.models import (
+    DemographicScope,
     Geography,
     Pathogen,
     Signal,
@@ -44,6 +45,15 @@ class PathogenAdmin(admin.ModelAdmin):
 class SignalTypeAdmin(admin.ModelAdmin):
     """
     Admin interface for managing signal type objects.
+    """
+    list_display: tuple[Literal['name']] = ('name',)
+    search_fields: tuple[Literal['name']] = ('name',)
+
+
+@admin.register(DemographicScope)
+class DemographicScopeAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing demographic scope objects.
     """
     list_display: tuple[Literal['name']] = ('name',)
     search_fields: tuple[Literal['name']] = ('name',)

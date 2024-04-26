@@ -57,11 +57,27 @@ class ActiveChoices(models.TextChoices):
     HISTORICAL = False, _('Historical')
 
 
-class DemograohicDisaggregation(models.TextChoices):
+class SeverityPyramidRungsChoices(models.TextChoices):
     """
-    A class representing choices for demographic disaggregation.
+    A class representing choices for severity pyramid rungs.
     """
-    pass  # TODO: Add choices for demographic disaggregation or split into separate classes if needed. Should be discussed.
+    POPULATION = 'population', _('Population')
+    INFECTED = 'infected', _('Infected')
+    SYMPTOMATIC = 'symptomatic', _('Symptomatic')
+    OUTPATIENT_VISIT = 'outpatient_visit', _('Outpatient visit')
+    ASCERTAINED = 'ascertained', _('Ascertained (case)')
+    HOSPITALIZED = 'hospitalized', _('Hospitalized')
+    ICU = 'icu', _('ICU')
+    DEAD = 'dead', _('Dead')
+
+
+class AgeBreakdownChoices(models.TextChoices):
+    """
+    A class representing choices for age breakdown.
+    """
+    CILDREN = '0-17', '0-17'
+    ADULTS = '18-64', '18-64'
+    SENIORS = '65+', '65+'
 
 
 class SignalCategory(TimeStampedModel):
@@ -152,7 +168,7 @@ class Geography(TimeStampedModel):
         return str(self.name)
 
 
-class GeographicScope(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+class GeographicScope(TimeStampedModel):
     """
     A model representing a geographic scope.
     """
@@ -172,7 +188,7 @@ class GeographicScope(TimeStampedModel):  # TODO: Requirements for this model ar
         return str(self.name)
 
 
-class DemograficScope(TimeStampedModel):
+class DemographicScope(TimeStampedModel):
     """
     A model representing a demographic scope.
     """
@@ -192,13 +208,14 @@ class DemograficScope(TimeStampedModel):
         return str(self.name)
 
 
-class OrganisationsAccess(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+class OrganisationsWithAccess(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
     """
     A model representing an access list.
     """
     organisation_name: models.CharField = models.CharField(
         help_text=_('Organisation Name'),
         max_length=128,
+        unique=True
     )
 
 
@@ -209,6 +226,7 @@ class SharingOrganisation(TimeStampedModel):  # TODO: Requirements for this mode
     organisation_name: models.CharField = models.CharField(
         help_text=_('Organisation Name'),
         max_length=128,
+        unique=True
     )
 
 
@@ -279,14 +297,14 @@ class Signal(TimeStampedModel):
         choices=ReportingCadence.choices
     )
     demographic_scope: models.ManyToManyField = models.ManyToManyField(
-        'signals.DemograficScope',
+        'signals.DemographicScope',
+        help_text=_('Demographic Scope'),
         related_name='signals',
-        help_text=_('Demographic Scope')
     )
-    demographic_disaggregation: models.CharField = models.CharField(  # TODO: Choices for this field are not clear. Need to be discussed.
-        help_text=_('Demographic Disaggregation'),
+    severenity_pyramid_rungs: models.CharField = models.CharField(
+        help_text=_('Severity Pyramid Rungs'),
         max_length=128,
-        choices=DemograohicDisaggregation.choices
+        choices=SeverityPyramidRungsChoices.choices
     )
     category: models.ForeignKey = models.ForeignKey(
         'signals.SignalCategory',
@@ -303,6 +321,20 @@ class Signal(TimeStampedModel):
     available_geography: models.ManyToManyField = models.ManyToManyField(
         'signals.Geography',
         help_text=_('Available geography')
+    )
+    gender_breakdown: models.BooleanField = models.BooleanField(
+        help_text=_('Gender Breakdown'),
+        default=False
+    )
+    race_breakdown: models.BooleanField = models.BooleanField(
+        help_text=_('Race Breakdown'),
+        default=False,
+    )
+    age_breakdown: models.CharField = models.CharField(
+        help_text=_('Age Breakdown'),
+        max_length=128,
+        choices=AgeBreakdownChoices.choices,
+        null=True,
     )
     is_smoothed: models.BooleanField = models.BooleanField(
         help_text=_('Is Smoothed'),
@@ -372,9 +404,19 @@ class Signal(TimeStampedModel):
     )
 
     @property
-    def example_url(self):
+    def example_url(self) -> str | None:
+        """
+        Returns the example URL of the signal.
+        """
         example_url = self.links.filter(link_type="example_url").first()
         return example_url.url if example_url else None
+
+    @property
+    def has_all_demographic_scopes(self) -> bool:
+        """
+        Returns True if the signal has all demographic scopes, False otherwise.
+        """
+        return self.demographic_scope.count() == DemographicScope.objects.count()
 
     class Meta:
         unique_together = ['name', 'source']

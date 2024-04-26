@@ -35,6 +35,7 @@ services:
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/pathogens.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_types.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_categories.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/demographic_scopes.json &&
                     python3 /usr/src/signal_documentation/src/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/signal_documentation
@@ -49,7 +50,7 @@ services:
     restart: always
     ports:
       - "6379:6379"
-  
+
   # Production service - "service", "image", and "container_name" should all contain the same
   # reference, based on the name of the service.
   sdnginx:
