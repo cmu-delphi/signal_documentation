@@ -1,0 +1,66 @@
+<h5>Build chart</h5>
+<section class="section">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form class="margin-top-1rem">
+                    <div class="row">
+                        <div class="col-2">
+                            <label for="inputState" class="form-label"
+                                >Data Source:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <select id="inputState" class="form-select" disabled>
+                                <option selected>{{ signal.source.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="inputState" class="form-label"
+                                >Data Signal:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <select id="inputState" class="form-select" disabled>
+                                <option selected>{{ signal.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="inputState" class="form-label"
+                                >Geographic Type:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                {% for geography in signal.available_geography.all %}
+                                <option>{{ geography }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="inputEmail3" class="col-form-label">Geographic Value:</label>
+                        </div>
+                        <div class="col-10">
+                          <input type="text" class="form-control" id="inputText">
+                        </div>
+                      </div>
+                    {% comment %} <div class="text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                        <button type="reset" class="btn btn-secondary">
+                            Reset
+                        </button>
+                    </div> {% endcomment %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
