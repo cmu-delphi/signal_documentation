@@ -137,6 +137,47 @@ class Geography(TimeStampedModel):
         return str(self.name)
 
 
+class GeographyUnit(TimeStampedModel):
+    """
+    A model representing a geography (geo-level) unit.
+    """
+
+    geo_id: models.CharField = models.CharField(
+        help_text=_('Geo ID'),
+        max_length=128
+    )
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128
+    )
+    display_name: models.CharField = models.CharField(
+        help_text=_('Display Name'),
+        max_length=128
+    )
+    postal: models.CharField = models.CharField(
+        help_text=_('Postal'),
+        max_length=128,
+        null=True,
+    )
+    level: models.IntegerField = models.IntegerField(help_text=_('Level'))
+
+    geography: models.ForeignKey = models.ForeignKey(
+        'signals.Geography',
+        related_name='geography_units',
+        help_text=_('Geography'),
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the geography unit as a string.
+
+        :return: The name of the geography unit as a string.
+        :rtype: str
+        """
+        return str(self.name)
+
+
 class Signal(TimeStampedModel):
     """
     A model representing a signal.

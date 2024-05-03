@@ -35,6 +35,11 @@ services:
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/pathogens.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_types.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_categories.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/county.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/hhs.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/hrr.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/msa.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/state.json &&
                     python3 /usr/src/signal_documentation/src/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/signal_documentation

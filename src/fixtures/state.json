@@ -1,0 +1,786 @@
+[
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3929,
+        "fields": {
+            "geo_id": "01",
+            "name": "Alabama",
+            "display_name": "Alabama",
+            "postal": "AL",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3930,
+        "fields": {
+            "geo_id": "02",
+            "name": "Alaska",
+            "display_name": "Alaska",
+            "postal": "AK",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3931,
+        "fields": {
+            "geo_id": "04",
+            "name": "Arizona",
+            "display_name": "Arizona",
+            "postal": "AZ",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3932,
+        "fields": {
+            "geo_id": "05",
+            "name": "Arkansas",
+            "display_name": "Arkansas",
+            "postal": "AR",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3933,
+        "fields": {
+            "geo_id": "06",
+            "name": "California",
+            "display_name": "California",
+            "postal": "CA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3934,
+        "fields": {
+            "geo_id": "08",
+            "name": "Colorado",
+            "display_name": "Colorado",
+            "postal": "CO",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3935,
+        "fields": {
+            "geo_id": "09",
+            "name": "Connecticut",
+            "display_name": "Connecticut",
+            "postal": "CT",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3936,
+        "fields": {
+            "geo_id": "10",
+            "name": "Delaware",
+            "display_name": "Delaware",
+            "postal": "DE",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3937,
+        "fields": {
+            "geo_id": "11",
+            "name": "District of Columbia",
+            "display_name": "District of Columbia",
+            "postal": "DC",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3938,
+        "fields": {
+            "geo_id": "12",
+            "name": "Florida",
+            "display_name": "Florida",
+            "postal": "FL",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3939,
+        "fields": {
+            "geo_id": "13",
+            "name": "Georgia",
+            "display_name": "Georgia",
+            "postal": "GA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3940,
+        "fields": {
+            "geo_id": "15",
+            "name": "Hawaii",
+            "display_name": "Hawaii",
+            "postal": "HI",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3941,
+        "fields": {
+            "geo_id": "16",
+            "name": "Idaho",
+            "display_name": "Idaho",
+            "postal": "ID",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3942,
+        "fields": {
+            "geo_id": "17",
+            "name": "Illinois",
+            "display_name": "Illinois",
+            "postal": "IL",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3943,
+        "fields": {
+            "geo_id": "18",
+            "name": "Indiana",
+            "display_name": "Indiana",
+            "postal": "IN",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3944,
+        "fields": {
+            "geo_id": "19",
+            "name": "Iowa",
+            "display_name": "Iowa",
+            "postal": "IA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3945,
+        "fields": {
+            "geo_id": "20",
+            "name": "Kansas",
+            "display_name": "Kansas",
+            "postal": "KS",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3946,
+        "fields": {
+            "geo_id": "21",
+            "name": "Kentucky",
+            "display_name": "Kentucky",
+            "postal": "KY",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3947,
+        "fields": {
+            "geo_id": "22",
+            "name": "Louisiana",
+            "display_name": "Louisiana",
+            "postal": "LA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3948,
+        "fields": {
+            "geo_id": "23",
+            "name": "Maine",
+            "display_name": "Maine",
+            "postal": "ME",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3949,
+        "fields": {
+            "geo_id": "24",
+            "name": "Maryland",
+            "display_name": "Maryland",
+            "postal": "MD",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3950,
+        "fields": {
+            "geo_id": "25",
+            "name": "Massachusetts",
+            "display_name": "Massachusetts",
+            "postal": "MA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3951,
+        "fields": {
+            "geo_id": "26",
+            "name": "Michigan",
+            "display_name": "Michigan",
+            "postal": "MI",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3952,
+        "fields": {
+            "geo_id": "27",
+            "name": "Minnesota",
+            "display_name": "Minnesota",
+            "postal": "MN",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3953,
+        "fields": {
+            "geo_id": "28",
+            "name": "Mississippi",
+            "display_name": "Mississippi",
+            "postal": "MS",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3954,
+        "fields": {
+            "geo_id": "29",
+            "name": "Missouri",
+            "display_name": "Missouri",
+            "postal": "MO",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3955,
+        "fields": {
+            "geo_id": "30",
+            "name": "Montana",
+            "display_name": "Montana",
+            "postal": "MT",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3956,
+        "fields": {
+            "geo_id": "31",
+            "name": "Nebraska",
+            "display_name": "Nebraska",
+            "postal": "NE",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3957,
+        "fields": {
+            "geo_id": "32",
+            "name": "Nevada",
+            "display_name": "Nevada",
+            "postal": "NV",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3958,
+        "fields": {
+            "geo_id": "33",
+            "name": "New Hampshire",
+            "display_name": "New Hampshire",
+            "postal": "NH",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3959,
+        "fields": {
+            "geo_id": "34",
+            "name": "New Jersey",
+            "display_name": "New Jersey",
+            "postal": "NJ",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3960,
+        "fields": {
+            "geo_id": "35",
+            "name": "New Mexico",
+            "display_name": "New Mexico",
+            "postal": "NM",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3961,
+        "fields": {
+            "geo_id": "36",
+            "name": "New York",
+            "display_name": "New York",
+            "postal": "NY",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3962,
+        "fields": {
+            "geo_id": "37",
+            "name": "North Carolina",
+            "display_name": "North Carolina",
+            "postal": "NC",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3963,
+        "fields": {
+            "geo_id": "38",
+            "name": "North Dakota",
+            "display_name": "North Dakota",
+            "postal": "ND",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3964,
+        "fields": {
+            "geo_id": "39",
+            "name": "Ohio",
+            "display_name": "Ohio",
+            "postal": "OH",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3965,
+        "fields": {
+            "geo_id": "40",
+            "name": "Oklahoma",
+            "display_name": "Oklahoma",
+            "postal": "OK",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3966,
+        "fields": {
+            "geo_id": "41",
+            "name": "Oregon",
+            "display_name": "Oregon",
+            "postal": "OR",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3967,
+        "fields": {
+            "geo_id": "42",
+            "name": "Pennsylvania",
+            "display_name": "Pennsylvania",
+            "postal": "PA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3968,
+        "fields": {
+            "geo_id": "44",
+            "name": "Rhode Island",
+            "display_name": "Rhode Island",
+            "postal": "RI",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3969,
+        "fields": {
+            "geo_id": "45",
+            "name": "South Carolina",
+            "display_name": "South Carolina",
+            "postal": "SC",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3970,
+        "fields": {
+            "geo_id": "46",
+            "name": "South Dakota",
+            "display_name": "South Dakota",
+            "postal": "SD",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3971,
+        "fields": {
+            "geo_id": "47",
+            "name": "Tennessee",
+            "display_name": "Tennessee",
+            "postal": "TN",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3972,
+        "fields": {
+            "geo_id": "48",
+            "name": "Texas",
+            "display_name": "Texas",
+            "postal": "TX",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3973,
+        "fields": {
+            "geo_id": "49",
+            "name": "Utah",
+            "display_name": "Utah",
+            "postal": "UT",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3974,
+        "fields": {
+            "geo_id": "50",
+            "name": "Vermont",
+            "display_name": "Vermont",
+            "postal": "VT",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3975,
+        "fields": {
+            "geo_id": "51",
+            "name": "Virginia",
+            "display_name": "Virginia",
+            "postal": "VA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3976,
+        "fields": {
+            "geo_id": "53",
+            "name": "Washington",
+            "display_name": "Washington",
+            "postal": "WA",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3977,
+        "fields": {
+            "geo_id": "54",
+            "name": "West Virginia",
+            "display_name": "West Virginia",
+            "postal": "WV",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3978,
+        "fields": {
+            "geo_id": "55",
+            "name": "Wisconsin",
+            "display_name": "Wisconsin",
+            "postal": "WI",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3979,
+        "fields": {
+            "geo_id": "56",
+            "name": "Wyoming",
+            "display_name": "Wyoming",
+            "postal": "WY",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3980,
+        "fields": {
+            "geo_id": "72",
+            "name": "Puerto Rico",
+            "display_name": "Puerto Rico",
+            "postal": "PR",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3981,
+        "fields": {
+            "geo_id": "78",
+            "name": "Virgin Islands",
+            "display_name": "Virgin Islands",
+            "postal": "VI",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3982,
+        "fields": {
+            "geo_id": "66",
+            "name": "Guam",
+            "display_name": "Guam",
+            "postal": "GU",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3983,
+        "fields": {
+            "geo_id": "03",
+            "name": "American Samoa",
+            "display_name": "American Samoa",
+            "postal": "AS",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3984,
+        "fields": {
+            "geo_id": "69",
+            "name": "Northern Mariana Islands",
+            "display_name": "Northern Mariana Islands",
+            "postal": "MP",
+            "level": 6,
+            "geography": 6,
+            "created": "2024-05-02T15:08:51.679268Z",
+            "modified": "2024-05-02T15:08:51.679268Z"
+        }
+    }
+]
