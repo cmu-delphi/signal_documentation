@@ -3,7 +3,7 @@ from datetime import datetime
 
 from signals.models import Signal
 
-logger = logging.getLogger('default')
+logger = logging.getLogger(__name__)
 
 
 class SignalLastUpdatedParser:
