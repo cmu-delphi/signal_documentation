@@ -13,8 +13,11 @@
                         <br />
                         <div class="card-body">
                             <h5 class="card-title">Search</h5>
-                            <input class="form-control" type="text" name="{{ filter.form.search.name }}"
-                                placeholder="Search" title="Enter search keyword" />
+                            <div class="input-group">
+                                <input class="form-control border" type="search" name="{{ filter.form.search.name }}" id="example-search-input"
+                                    placeholder="Search" title="Enter search keyword"
+                                >
+                            </div>
                         </div>
                         <div class="accordion">
                             <div class="accordion-item">
@@ -28,7 +31,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="pathogen-collapse" class="accordion-collapse collapse" aria-labelledby="pathogen-heading">
+                              {% if form.pathogen.value %}
+                                <div id="pathogen-collapse" class="accordion-collapse" aria-labelledby="pathogen-heading">
+                              {% else %}
+                                <div id="pathogen-collapse" class="accordion-collapse collapse" aria-labelledby="pathogen-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     <div id="div_id_pathogen" class="mb-3">
                                         <div>
@@ -49,7 +56,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="active-collapse" class="accordion-collapse collapse" aria-labelledby="active-heading">
+                              {% if form.active.value %}
+                                <div id="active-collapse" class="accordion-collapse" aria-labelledby="active-heading">
+                              {% else %}
+                                <div id="active-collapse" class="accordion-collapse collapse" aria-labelledby="active-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     {{ form.active|as_crispy_field }}
                                 </div>
@@ -66,7 +77,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="available_geography-collapse" class="accordion-collapse collapse" aria-labelledby="available_geography-heading">
+                              {% if form.available_geography.value %}
+                                <div id="available_geography-collapse" class="accordion-collapse" aria-labelledby="available_geography-heading">
+                              {% else %}
+                                <div id="available_geography-collapse" class="accordion-collapse collapse" aria-labelledby="available_geography-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     <div class="bulk-select">
                                         <input type="checkbox" class="form-check-input" id="select-all">
@@ -87,7 +102,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="signal_type-collapse" class="accordion-collapse collapse" aria-labelledby="signal_type-heading">
+                              {% if form.signal_type.value %}
+                                <div id="signal_type-collapse" class="accordion-collapse" aria-labelledby="signal_type-heading">
+                              {% else %}
+                                <div id="signal_type-collapse" class="accordion-collapse collapse" aria-labelledby="signal_type-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     <div class="bulk-select">
                                         <input type="checkbox" class="form-check-input" id="select-all">
@@ -108,7 +127,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="category-collapse" class="accordion-collapse collapse" aria-labelledby="category-heading">
+                              {% if form.category.value %}
+                                <div id="category-collapse" class="accordion-collapse" aria-labelledby="category-heading">
+                              {% else %}
+                                <div id="category-collapse" class="accordion-collapse collapse" aria-labelledby="category-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     <div class="bulk-select">
                                         <input type="checkbox" class="form-check-input" id="select-all">
@@ -129,7 +152,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="format_type-collapse" class="accordion-collapse collapse" aria-labelledby="format_type-heading">
+                              {% if form.format_type.value %}
+                                <div id="format_type-collapse" class="accordion-collapse" aria-labelledby="format_type-heading">
+                              {% else %}
+                                <div id="format_type-collapse" class="accordion-collapse collapse" aria-labelledby="format_type-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     <div class="bulk-select">
                                         <input type="checkbox" class="form-check-input" id="select-all">
@@ -150,7 +177,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="source-collapse" class="accordion-collapse collapse" aria-labelledby="source-heading">
+                              {% if form.source.value %}
+                                <div id="source-collapse" class="accordion-collapse" aria-labelledby="source-heading">
+                              {% else %}
+                                <div id="source-collapse" class="accordion-collapse collapse" aria-labelledby="source-heading">
+                              {% endif %}
                                 <div class="accordion-body">
                                     <div class="bulk-select">
                                         <input type="checkbox" class="form-check-input" id="select-all">
@@ -171,7 +202,11 @@
                                     </label>
                                 </button>
                               </h2>
-                              <div id="time_label-collapse" class="accordion-collapse collapse" aria-labelledby="time_label-heading">
+                                {% if form.time_label.value %}
+                                  <div id="time_label-collapse" class="accordion-collapse" aria-labelledby="time_label-heading">
+                                {% else %}
+                                  <div id="time_label-collapse" class="accordion-collapse collapse" aria-labelledby="time_label-heading">
+                                {% endif %}
                                 <div class="accordion-body">
                                     {{ form.time_label|as_crispy_field }}
                                 </div>
