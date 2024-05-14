@@ -112,8 +112,8 @@
 
         var urlParamsEncoded = btoa(`{"datasets":[{"color":"#415742","title":"value","params":{"_endpoint":"covidcast","data_source":"${dataSource}","signal":"${dataSignal}","time_type":"day","geo_type":"${geographicType}","geo_value":"${geographicValue}"}}]}`);
 
-        var epiVisUrl = `https://deploy-preview-36--cmu-delphi-epivis.netlify.app/`;
-        
+        var epiVisUrl = "{{ epivis_url }}";
+
         if (geographicType === 'Choose...' || geographicValue === '') {
             window.open(epiVisUrl, '_blank').focus();
         } else {

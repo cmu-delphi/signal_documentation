@@ -23,6 +23,8 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
 
+EPIVIS_URL = "https://deploy-preview-36--cmu-delphi-epivis.netlify.app/"
+
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
     sentry_sdk.init(

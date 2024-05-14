@@ -101,6 +101,7 @@ class SignalsDetailView(DetailView):
         """
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
+        context["epivis_url"] = settings.EPIVIS_URL
         return context
 
 
