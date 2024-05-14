@@ -2,14 +2,15 @@ from typing import Any, Dict
 
 from django.conf import settings
 from django.views.generic import DetailView, ListView
+from django.db.models import Q
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Signal
-from signals.serializers import SignalSerializer
+from signals.models import Signal, GeographyUnit
+from signals.serializers import SignalSerializer, GeographyUnitSerialializer
 
 
 class SignalsListView(ListView):
@@ -91,6 +92,17 @@ class SignalsDetailView(DetailView):
 
     model = Signal
 
+    def get_context_data(self, **kwargs) -> Dict[str, Any]:
+        """
+        Get the context data for the view.
+
+        Returns:
+            Dict[str, Any]: The context data for the view.
+        """
+
+        context: Dict[str, Any] = super().get_context_data(**kwargs)
+        return context
+
 
 class SignalsListApiView(ListAPIView):
     """
@@ -113,3 +125,32 @@ class SignalsListApiView(ListAPIView):
         "source__name",
         "time_label",
     )
+
+
+class GeographyUnitListApiView(ListAPIView):
+    """
+    ListAPIView for retrieving a list of Signal objects via API.
+    """
+
+    queryset = GeographyUnit.objects.all()
+    serializer_class = GeographyUnitSerialializer
+    search_fields = ("name")
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = (
+        "name",
+        "display_name",
+        "geography__name"
+    )
+
+    def get_queryset(self):
+        search_term = self.request.GET.get('term')
+        if search_term:
+            queries: list[Q] = []
+            for field in ['name', 'display_name']:
+                queries.append(Q(**{f'{field}__icontains': search_term}))
+            query = queries.pop()
+
+            for item in queries:
+                query |= item
+            return GeographyUnit.objects.filter(query)
+        return super().get_queryset()

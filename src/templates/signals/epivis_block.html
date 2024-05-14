@@ -1,41 +1,41 @@
-<h5>Build chart</h5>
+<h5>Plot data</h5>
 <section class="section">
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <form class="margin-top-1rem">
+                <form class="margin-top-1rem" onsubmit="generateEpiVisLink(event)" id="epivis-form">
                     <div class="row">
                         <div class="col-2">
-                            <label for="inputState" class="form-label"
+                            <label for="source" class="form-label"
                                 >Data Source:</label
                             >
                         </div>
                         <div class="col-10">
-                            <select id="inputState" class="form-select" disabled>
+                            <select id="source" name="source" class="form-select" disabled>
                                 <option selected>{{ signal.source.name }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="row margin-top-1rem">
                         <div class="col-2">
-                            <label for="inputState" class="form-label"
+                            <label for="signal" class="form-label"
                                 >Data Signal:</label
                             >
                         </div>
                         <div class="col-10">
-                            <select id="inputState" class="form-select" disabled>
+                            <select id="signal" name="signal" class="form-select" disabled>
                                 <option selected>{{ signal.name }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="row margin-top-1rem">
                         <div class="col-2">
-                            <label for="inputState" class="form-label"
+                            <label for="geographic_type" class="form-label"
                                 >Geographic Type:</label
                             >
                         </div>
                         <div class="col-10">
-                            <select id="inputState" class="form-select">
+                            <select id="geographic_type" name="geographic_type" class="form-select">
                                 <option selected>Choose...</option>
                                 {% for geography in signal.available_geography.all %}
                                 <option>{{ geography }}</option>
@@ -45,22 +45,80 @@
                     </div>
                     <div class="row margin-top-1rem">
                         <div class="col-2">
-                            <label for="inputEmail3" class="col-form-label">Geographic Value:</label>
+                            <label for="geographic_value" class="col-form-label">Geographic Value:</label>
                         </div>
                         <div class="col-10">
-                          <input type="text" class="form-control" id="inputText">
+                            <select id="geographic_value" name="geographic_value" class="form-select select-responsive"></select>
                         </div>
                       </div>
-                    {% comment %} <div class="text-center">
-                        <button type="submit" class="btn btn-primary">
-                            Submit
+                    <div class="row">
+                        <button type="submit" value="Submit" class="btn btn-primary margin-top-1rem" id="show-chart">
+                            Show plot
                         </button>
-                        <button type="reset" class="btn btn-secondary">
-                            Reset
-                        </button>
-                    </div> {% endcomment %}
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
+<script>
+    $(document).ready(function () {
+        $('#geographic_value').select2({
+            ajax: {
+                url: '{% url 'geography_units_api' %}',
+                dataType: 'json',
+                data: function (params) {
+                    var geographic_type = document.getElementById('geographic_type');
+                    return {
+                        geography__name: geographic_type.value,
+                        term: params.term,
+                        limit: 50
+                    };
+                },
+                processResults: function (data) {
+                    return {
+                        results: $.map(data.results, function (item) {
+                            if (typeof item.geo_id === 'string') {
+                                return {
+                                    text: item.display_name,
+                                    id: item.geo_id.toLowerCase()
+                                }
+                            } else {
+                                return {
+                                    text: item.display_name,
+                                    id: item.geo_id
+                                }
+                            }
+                        })
+                    };
+                }
+            },
+            minimumInputLength: 1
+        });
+    });
+
+    document.getElementById('geographic_type').addEventListener("change", (event) => {
+        $('#geographic_value').val(null).trigger('change');
+    })
+
+
+    function generateEpiVisLink(event) {
+        event.preventDefault();
+        var dataSource = document.getElementById('source').value;
+        var dataSignal = document.getElementById('signal').value;
+
+        var geographicType = document.getElementById('geographic_type').value;
+        var geographicValue = document.getElementById('geographic_value').value;
+
+        var urlParamsEncoded = btoa(`{"datasets":[{"color":"#415742","title":"value","params":{"_endpoint":"covidcast","data_source":"${dataSource}","signal":"${dataSignal}","time_type":"day","geo_type":"${geographicType}","geo_value":"${geographicValue}"}}]}`);
+
+        var epiVisUrl = `https://deploy-preview-36--cmu-delphi-epivis.netlify.app/`;
+        
+        if (geographicType === 'Choose...' || geographicValue === '') {
+            window.open(epiVisUrl, '_blank').focus();
+        } else {
+            epiVisUrl += `#${urlParamsEncoded}`;
+            window.open(epiVisUrl, '_blank').focus();
+        }
+    }
+</script>

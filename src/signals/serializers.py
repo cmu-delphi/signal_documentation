@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
 from base.serializers import LinkSerializer
-from signals.models import Signal
+from signals.models import Signal, GeographyUnit
 
 
 class SignalBaseSerializer(ModelSerializer):
@@ -29,4 +29,16 @@ class SignalSerializer(ModelSerializer):
 
     class Meta:
         model = Signal
+        fields = '__all__'
+
+
+class GeographyUnitSerialializer(ModelSerializer):
+    """
+    Serializer for the GeographyUnit model.
+    """
+
+    category = SlugRelatedField(read_only=True, slug_field='name')
+
+    class Meta:
+        model = GeographyUnit
         fields = '__all__'

@@ -5,6 +5,7 @@ from signals.views import (
     SignalsDetailView,
     SignalsListApiView,
     SignalsListView,
+    GeographyUnitListApiView
 )
 
 urlpatterns: list[URLPattern] = [
@@ -13,5 +14,6 @@ urlpatterns: list[URLPattern] = [
     path('signals/<pk>/', SignalsDetailView.as_view(), name='signal'),
 
     # REST API
-    path('api/v1/signals/', SignalsListApiView.as_view(), name='signals_api')
+    path('api/v1/signals/', SignalsListApiView.as_view(), name='signals_api'),
+    path('api/v1/geography_units/', GeographyUnitListApiView.as_view(), name='geography_units_api')
 ]
