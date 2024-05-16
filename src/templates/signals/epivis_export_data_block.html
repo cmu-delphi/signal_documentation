@@ -99,7 +99,13 @@
     </div>
 </section>
 <script>
-    $(document).ready(function () {
+    function initGeographicValueSelect(mode) {
+        var maxSelectionLength = 1;
+        if (mode === 'epivis') {
+            maxSelectionLength = 1;
+        } else {
+            maxSelectionLength = 10;
+        }
         $('#geographic_value').select2({
             ajax: {
                 url: '{% url 'geography_units_api' %}',
@@ -131,8 +137,12 @@
                 }
             },
             minimumInputLength: 0,
-            maximumSelectionLength: 1,
+            maximumSelectionLength: maxSelectionLength,
         });
+    }
+
+    $(document).ready(function () {
+        initGeographicValueSelect('epivis');
     });
 
     document.getElementById('geographic_type').addEventListener("change", (event) => {
@@ -142,22 +152,23 @@
     document.getElementsByName('modes').forEach((el) => {
         el.addEventListener('change', (event) => {
             $('#geographic_value').val(null).trigger('change');
+            //$('#geographic_value').select2('destroy');
             if (event.target.value === 'epivis') {
-                $('#geographic_value').select2('destroy');
-                $('#geographic_value').select2({ maximumSelectionLength: 1 })
+                initGeographicValueSelect(event.target.value);
             } else {
-                $('#geographic_value').select2('destroy');
-                $('#geographic_value').select2({ maximumSelectionLength: 5 })
+                initGeographicValueSelect('export');
             }
-            //handleModeChange(event.target);
+            handleModeChange(event.target.value);
         });
     });
 
     var currentMode = 'epivis';
     
-    function handleModeChange(el) {
+    function handleModeChange(mode) {
+        document.getElementById("epivis-form").reset();
+        
         var choose_dates = document.getElementsByName('choose_date');
-        if (el.value === 'epivis') {
+        if (mode === 'epivis') {
             currentMode = 'epivis';
             choose_dates.forEach((el) => {
                 el.style.display = 'none';
@@ -168,6 +179,11 @@
                 el.style.display = 'flex';
             });
         }
+        document.getElementsByName("modes").forEach((el) => {
+            if (currentMode === el.value) {
+                el.checked = true;
+            }
+        });
     }
 
 
@@ -184,7 +200,7 @@
             return;
         }
 
-        /*if (currentMode === 'epivis') {
+        if (currentMode === 'epivis') {
             var epiVisUrl = "{{ epivis_url }}";
             var urlParamsEncoded = btoa(`{"datasets":[{"color":"#415742","title":"value","params":{"_endpoint":"covidcast","data_source":"${dataSource}","signal":"${dataSignal}","time_type":"day","geo_type":"${geographicType}","geo_value":"${geographicValue}"}}]}`);
 
@@ -203,9 +219,7 @@
             }
 
             dataExportUrl += `?signal=${dataSource}:${dataSignal}&start_day=${startDate}&end_day=${endDate}&geo_type=${geographicType}&geo_values=${geographicValue}`;
-
-        }*/
-
-        
+            window.open(dataExportUrl, '_blank').focus();
+        }
     }
 </script>
