@@ -187,15 +187,15 @@
             </div>
         </div>
         <div class="col-9">
-            <div class="row margin-bottom-1rem d-flex justify-content-between">
-                <div class="col-4">
+            <div class="row margin-bottom-1rem d-flex justify-content-end">
+                <!-- <div class="col-4">
                     <div class="btn-group" role="group">
                         <a href="https://delphi.cmu.edu/covidcast/export/" target="_blank" class="btn btn-primary" role="button">Export</a>
                         <a href="https://delphi.cmu.edu/epivis/" target="_blank" class="btn btn-primary" role="button">Chart</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-4">
-                    <div class="input-group mb-3">
+                    <div class="input-group mb-3 d-flex justify-content-end">
                         <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
                         {{ form.order_by|as_crispy_field }}
                     </div>
