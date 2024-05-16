@@ -42,16 +42,18 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            
+
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'signals' %}">
+              {% url 'signals' as signals_url %}
+              <a class="nav-link {% if request.path == signals_url %}active{% endif %}" href="{{ signals_url }}">
                 <i class="ri-stack-line"></i>
                 <span>Signals</span>
               </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'datasources' %}">
+              {% url 'datasources' as datasources_url %}
+                <a class="nav-link {% if request.path == datasources_url %}active{% endif %}" href="{{ datasources_url }}">
                   <i class="ri-stack-line"></i>
                   <span>Sources</span>
                 </a>
