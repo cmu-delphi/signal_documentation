@@ -209,6 +209,7 @@
                                 <tr>
                                     <th scope="col"></th>
                                     <th scope="col">Name</th>
+                                    <th scope="col">Active</th>
                                     <th scope="col">Data Source</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Pathogen/Disease Area</th>
@@ -224,6 +225,11 @@
                                             {{ form.id|as_crispy_field }}
                                         </td>
                                         <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
+                                        {% if signal.active == True %}
+                                        <td><i class="bi bi-circle-fill" style="color:green;" ></i></td>
+                                        {% else %}
+                                            <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
+                                        {% endif %}
                                         <td>{{ signal.source }}</td>
                                         <td>{{ signal.description }}</td>
                                         <td>
