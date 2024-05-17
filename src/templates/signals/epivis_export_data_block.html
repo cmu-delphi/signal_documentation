@@ -152,7 +152,6 @@
     document.getElementsByName('modes').forEach((el) => {
         el.addEventListener('change', (event) => {
             $('#geographic_value').val(null).trigger('change');
-            //$('#geographic_value').select2('destroy');
             if (event.target.value === 'epivis') {
                 initGeographicValueSelect(event.target.value);
             } else {
