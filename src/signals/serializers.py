@@ -1,7 +1,7 @@
 from rest_framework.serializers import ModelSerializer, SlugRelatedField
 
 from base.serializers import LinkSerializer
-from signals.models import Signal, GeographyUnit
+from signals.models import Signal
 
 
 class SignalBaseSerializer(ModelSerializer):
