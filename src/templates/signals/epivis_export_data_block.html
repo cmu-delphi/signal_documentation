@@ -4,6 +4,11 @@
         <div class="card">
             <div class="card-body">
                 <form class="margin-top-1rem" onsubmit="submitMode(event)" id="epivis-form">
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="warning-alert">
+                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    </div>
+
                     <div class="row">
                         <div class="col-2">
                             <label class="form-label"
@@ -99,70 +104,46 @@
     </div>
 </section>
 <script>
-    function initGeographicValueSelect(mode) {
-        var maxSelectionLength = 1;
+    var geoValues = [];
+    var currentMode = 'epivis';
+    
+    function getFilteredGeographicValues(geographicType) {
+        var data = geoValues.reduce((data, geoValue) => {
+            if (geoValue.geoType === geographicType) {
+                data.push(geoValue);
+            }
+            return data;
+        }, []);
+        return data;
+    }
+
+    function initGeographicValueSelect(mode, geographicType = null) {
+        var maximumSelectionLength = 1;
         if (mode === 'epivis') {
-            maxSelectionLength = 1;
+            maximumSelectionLength = 1;
         } else {
-            maxSelectionLength = 10;
+            maximumSelectionLength = 10;
         }
+
+        if (geographicType) {
+            var data = getFilteredGeographicValues(geographicType);
+        } else {
+            data = [];
+        }
+        
+
         $('#geographic_value').select2({
-            ajax: {
-                url: '{% url 'geography_units_api' %}',
-                dataType: 'json',
-                data: function (params) {
-                    var geographic_type = document.getElementById('geographic_type');
-                    return {
-                        geography__name: geographic_type.value,
-                        term: params.term,
-                        limit: 50
-                    };
-                },
-                processResults: function (data) {
-                    return {
-                        results: $.map(data.results, function (item) {
-                            if (typeof item.geo_id === 'string') {
-                                return {
-                                    text: item.display_name,
-                                    id: item.geo_id.toLowerCase()
-                                }
-                            } else {
-                                return {
-                                    text: item.display_name,
-                                    id: item.geo_id
-                                }
-                            }
-                        })
-                    };
-                }
-            },
+            data: data,
             minimumInputLength: 0,
-            maximumSelectionLength: maxSelectionLength,
+            maximumSelectionLength: maximumSelectionLength,
         });
     }
 
-    $(document).ready(function () {
-        initGeographicValueSelect('epivis');
-    });
-
     document.getElementById('geographic_type').addEventListener("change", (event) => {
-        $('#geographic_value').val(null).trigger('change');
+        $('#geographic_value').empty();
+        initGeographicValueSelect(currentMode, event.target.value);
     })
 
-    document.getElementsByName('modes').forEach((el) => {
-        el.addEventListener('change', (event) => {
-            $('#geographic_value').val(null).trigger('change');
-            if (event.target.value === 'epivis') {
-                initGeographicValueSelect(event.target.value);
-            } else {
-                initGeographicValueSelect('export');
-            }
-            handleModeChange(event.target.value);
-        });
-    });
-
-    var currentMode = 'epivis';
-    
     function handleModeChange(mode) {
         document.getElementById("epivis-form").reset();
         
@@ -185,17 +166,49 @@
         });
     }
 
+    document.getElementsByName('modes').forEach((el) => {
+        el.addEventListener('change', (event) => {
+            $('#geographic_value').empty();
+            currentMode = event.target.value;
+            initGeographicValueSelect(event.target.value)
+            handleModeChange(event.target.value);
+        });
+    });
+
+
+    $(document).ready(function () {
+        {% for geography in signal.available_geography.all %}
+            {% for unit in geography.geography_units.all %}
+                geoValues.push({'id': '{{ unit.geo_id }}', 'geoType': '{{ unit.geography }}', 'text': '{{ unit.display_name }}'});   
+            {% endfor %}
+        {% endfor %}
+
+        $('#geographic_value').select2({
+            data: [],
+            minimumInputLength: 0,
+            maximumSelectionLength: 1,
+        });
+    });
+
+    $("#warning-alert").hide();
+
+    function showWarningAlert(warningMessage) {
+        $("#warning-alert").html(warningMessage);
+        $("#warning-alert").fadeTo(2000, 500).slideUp(1000, function() {
+            $("#warning-alert").slideUp(1000);
+        });
+    }
 
     function submitMode(event) {
         event.preventDefault();
-
+        
         var dataSource = document.getElementById('source').value;
         var dataSignal = document.getElementById('signal').value;
         var geographicType = document.getElementById('geographic_type').value;
         var geographicValue = $('#geographic_value').select2('data').map((el) => el.id).join(',');
 
         if (geographicType === 'Choose...' || geographicValue === '') {
-            alert('Please select Geographic Type and Geographic Value!');
+            showWarningAlert("Geographic Type or Geographic Value is not selected.");
             return;
         }
 
@@ -205,7 +218,6 @@
 
             epiVisUrl += `#${urlParamsEncoded}`;
             window.open(epiVisUrl, '_blank').focus();
-            
         } else {
             var startDate = document.getElementById('start_date').value;
             var endDate = document.getElementById('end_date').value;
@@ -213,7 +225,7 @@
             var dataExportUrl = "{{ data_export_url }}";
 
             if (startDate === '' || endDate === '') {
-                alert('Please select start and end date');
+                showWarningAlert("Start Date or End Date is not selected.")
                 return;
             }
 
@@ -221,4 +233,5 @@
             window.open(dataExportUrl, '_blank').focus();
         }
     }
+
 </script>
