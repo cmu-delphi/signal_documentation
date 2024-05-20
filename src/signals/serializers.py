@@ -31,14 +31,3 @@ class SignalSerializer(ModelSerializer):
         model = Signal
         fields = '__all__'
 
-
-class GeographyUnitSerialializer(ModelSerializer):
-    """
-    Serializer for the GeographyUnit model.
-    """
-
-    category = SlugRelatedField(read_only=True, slug_field='name')
-
-    class Meta:
-        model = GeographyUnit
-        fields = '__all__'
