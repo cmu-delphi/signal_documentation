@@ -154,11 +154,6 @@ class GeographyUnit(TimeStampedModel):
         help_text=_('Display Name'),
         max_length=128
     )
-    postal: models.CharField = models.CharField(
-        help_text=_('Postal'),
-        max_length=128,
-        null=True,
-    )
     level: models.IntegerField = models.IntegerField(help_text=_('Level'))
 
     geography: models.ForeignKey = models.ForeignKey(
