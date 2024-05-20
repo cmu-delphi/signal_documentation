@@ -30,8 +30,3 @@ class SignalSerializer(ModelSerializer):
     class Meta:
         model = Signal
         fields = '__all__'
-
-
-
-
-
