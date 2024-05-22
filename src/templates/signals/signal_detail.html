@@ -73,10 +73,11 @@
                                         <td>
                                             <ul class="no-padding">
                                                 {% for pathogen in signal.pathogen.all %}
-                                                <span
-                                                    class="badge rounded-pill bg-dark"
-                                                    >{{ pathogen|title }}</span
-                                                >
+                                                <a href="{% url 'signals' %}?pathogen={{ pathogen.id }}">
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ pathogen|title }}
+                                                    </span>
+                                                </a>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -86,10 +87,11 @@
                                         <td>
                                             <ul class="no-padding">
                                                 {% for geography in signal.available_geography.all %}
-                                                <span
-                                                    class="badge rounded-pill bg-dark"
-                                                    >{{ geography }}</span
-                                                >
+                                                <a href="{% url 'signals' %}?available_geography={{ geography.id }}">
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ geography }}
+                                                    </span>
+                                                </a>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -99,10 +101,11 @@
                                         <td>
                                             <ul class="no-padding">
                                                 {% for signal_type in signal.signal_type.all %}
-                                                <span
-                                                    class="badge rounded-pill bg-dark"
-                                                    >{{ signal_type }}</span
-                                                >
+                                                <a href="{% url 'signals' %}?signal_type={{ signal_type.id }}">
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ signal_type }}
+                                                    </span>
+                                                </a>
                                                 {% endfor %}
                                             </ul>
                                         </td>
