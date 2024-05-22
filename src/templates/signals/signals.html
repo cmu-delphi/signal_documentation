@@ -229,7 +229,14 @@
                         <a href="https://delphi.cmu.edu/epivis/" target="_blank" class="btn btn-primary" role="button">Chart</a>
                     </div>
                 </div> -->
-                <div class="col-4">
+                <div class="col-6">
+                    <div class="input-group mb-3 d-flex justify-content-start">
+                        <span class="pt-05">
+                            Showing {{ signals|length }} row{{ signals|length|pluralize:"s" }}.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-6">
                     <div class="input-group mb-3 d-flex justify-content-end">
                         <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
                         {{ form.order_by|as_crispy_field }}
