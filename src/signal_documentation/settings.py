@@ -23,6 +23,9 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
 
+EPIVIS_URL = os.environ.get("EPIVIS_URL", "https://deploy-preview-36--cmu-delphi-epivis.netlify.app/")
+DATA_EXPORT_URL = os.environ.get("DATA_EXPORT_URL", "https://api.covidcast.cmu.edu/epidata/covidcast/csv")
+
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
     sentry_sdk.init(
@@ -45,7 +48,7 @@ BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
+DEBUG = True
 
 
 # SECURITY WARNING: keep the secret key used in production secret!

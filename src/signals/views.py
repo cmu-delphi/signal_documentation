@@ -91,6 +91,19 @@ class SignalsDetailView(DetailView):
 
     model = Signal
 
+    def get_context_data(self, **kwargs) -> Dict[str, Any]:
+        """
+        Get the context data for the view.
+
+        Returns:
+            Dict[str, Any]: The context data for the view.
+        """
+
+        context: Dict[str, Any] = super().get_context_data(**kwargs)
+        context["epivis_url"] = settings.EPIVIS_URL
+        context["data_export_url"] = settings.DATA_EXPORT_URL
+        return context
+
 
 class SignalsListApiView(ListAPIView):
     """
