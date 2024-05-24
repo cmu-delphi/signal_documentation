@@ -1,0 +1,237 @@
+<h5>Plot / Export data</h5>
+<section class="section">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form class="margin-top-1rem" onsubmit="submitMode(event)" id="epivis-form">
+
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="warning-alert">
+                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2">
+                            <label class="form-label"
+                                >Select mode:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="modes" id="epivis" value="epivis" checked>
+                                    <label class="form-check-label" for="epivis">Plot data</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="modes" id="export" value="export">
+                                    <label class="form-check-label" for="export">Export data</label>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="source" class="form-label"
+                                >Data Source:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <select id="source" name="source" class="form-select" disabled>
+                                <option selected>{{ signal.source.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="signal" class="form-label"
+                                >Data Signal:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <select id="signal" name="signal" class="form-select" disabled>
+                                <option selected>{{ signal.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="geographic_type" class="form-label"
+                                >Geographic Type:</label
+                            >
+                        </div>
+                        <div class="col-10">
+                            <select id="geographic_type" name="geographic_type" class="form-select">
+                                <option selected>Choose...</option>
+                                {% for geography in signal.available_geography.all %}
+                                <option>{{ geography }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem">
+                        <div class="col-2">
+                            <label for="geographic_value" class="col-form-label">Geographic Value:</label>
+                        </div>
+                        <div class="col-10">
+                            <select id="geographic_value" name="geographic_value" class="form-select" multiple="multiple"></select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem" name="choose_date" style="display: none;">
+                        <div class="col-2">
+                            <label for="start_date" class="form-label">
+                                Start Date:
+                            </label>
+                        </div>
+                        <div class="col-10">
+                            <input type="date" class="form-control" id="start_date" name="start_date">
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem" name="choose_date" style="display: none;">
+                        <div class="col-2">
+                            <label for="end_date" class="form-label">
+                                End Date:
+                            </label>
+                        </div>
+                        <div class="col-10">
+                            <input type="date" class="form-control" id="end_date" name="end_date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" value="Submit" class="btn btn-primary margin-top-1rem">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var geoValues = [];
+    var currentMode = 'epivis';
+    
+    function getFilteredGeographicValues(geographicType) {
+        var data = geoValues.reduce((data, geoValue) => {
+            if (geoValue.geoType === geographicType) {
+                data.push(geoValue);
+            }
+            return data;
+        }, []);
+        return data;
+    }
+
+    function initGeographicValueSelect(mode, geographicType = null) {
+        var maximumSelectionLength = 1;
+        if (mode === 'epivis') {
+            maximumSelectionLength = 1;
+        } else {
+            maximumSelectionLength = 10;
+        }
+
+        if (geographicType) {
+            var data = getFilteredGeographicValues(geographicType);
+        } else {
+            data = [];
+        }
+        
+
+        $('#geographic_value').select2({
+            data: data,
+            minimumInputLength: 0,
+            maximumSelectionLength: maximumSelectionLength,
+        });
+    }
+
+    document.getElementById('geographic_type').addEventListener("change", (event) => {
+        $('#geographic_value').empty();
+        initGeographicValueSelect(currentMode, event.target.value);
+    })
+
+    function handleModeChange(mode) {
+        document.getElementById("epivis-form").reset();
+        
+        var choose_dates = document.getElementsByName('choose_date');
+        if (mode === 'epivis') {
+            currentMode = 'epivis';
+            choose_dates.forEach((el) => {
+                el.style.display = 'none';
+            });
+        } else {
+            currentMode = 'export';
+            choose_dates.forEach((el) => {
+                el.style.display = 'flex';
+            });
+        }
+        document.getElementsByName("modes").forEach((el) => {
+            if (currentMode === el.value) {
+                el.checked = true;
+            }
+        });
+    }
+
+    document.getElementsByName('modes').forEach((el) => {
+        el.addEventListener('change', (event) => {
+            $('#geographic_value').empty();
+            currentMode = event.target.value;
+            initGeographicValueSelect(event.target.value)
+            handleModeChange(event.target.value);
+        });
+    });
+
+
+    $(document).ready(function () {
+        {% for geography in signal.available_geography.all %}
+            {% for unit in geography.geography_units.all %}
+                geoValues.push({'id': '{{ unit.geo_id }}', 'geoType': '{{ unit.geography }}', 'text': '{{ unit.display_name }}'});   
+            {% endfor %}
+        {% endfor %}
+
+        $('#geographic_value').select2({
+            data: [],
+            minimumInputLength: 0,
+            maximumSelectionLength: 1,
+        });
+    });
+
+    $("#warning-alert").hide();
+
+    function showWarningAlert(warningMessage) {
+        $("#warning-alert").html(warningMessage);
+        $("#warning-alert").fadeTo(2000, 500).slideUp(1000, function() {
+            $("#warning-alert").slideUp(1000);
+        });
+    }
+
+    function submitMode(event) {
+        event.preventDefault();
+        
+        var dataSource = document.getElementById('source').value;
+        var dataSignal = document.getElementById('signal').value;
+        var geographicType = document.getElementById('geographic_type').value;
+        var geographicValue = $('#geographic_value').select2('data').map((el) => el.id).join(',');
+
+        if (geographicType === 'Choose...' || geographicValue === '') {
+            showWarningAlert("Geographic Type or Geographic Value is not selected.");
+            return;
+        }
+
+        if (currentMode === 'epivis') {
+            var epiVisUrl = "{{ epivis_url }}";
+            var urlParamsEncoded = btoa(`{"datasets":[{"color":"#415742","title":"value","params":{"_endpoint":"covidcast","data_source":"${dataSource}","signal":"${dataSignal}","time_type":"day","geo_type":"${geographicType}","geo_value":"${geographicValue}"}}]}`);
+
+            epiVisUrl += `#${urlParamsEncoded}`;
+            window.open(epiVisUrl, '_blank').focus();
+        } else {
+            var startDate = document.getElementById('start_date').value;
+            var endDate = document.getElementById('end_date').value;
+
+            var dataExportUrl = "{{ data_export_url }}";
+
+            if (startDate === '' || endDate === '') {
+                showWarningAlert("Start Date or End Date is not selected.")
+                return;
+            }
+
+            dataExportUrl += `?signal=${dataSource}:${dataSignal}&start_day=${startDate}&end_day=${endDate}&geo_type=${geographicType}&geo_values=${geographicValue}`;
+            window.open(dataExportUrl, '_blank').focus();
+        }
+    }
+
+</script>
