@@ -193,22 +193,22 @@
                             </div>
                             <div class="accordion-item">
                               <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#time_label-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_time_label" class="form-label">
-                                        Time Label
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#time_label_modal">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#time_type-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                    <label for="id_time_type" class="form-label">
+                                        Time Type
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#time_type_modal">
                                             <i class="bi bi-info-circle"></i>
                                         </a>
                                     </label>
                                 </button>
                               </h2>
-                                {% if form.time_label.value %}
-                                  <div id="time_label-collapse" class="accordion-collapse" aria-labelledby="time_label-heading">
+                                {% if form.time_type.value %}
+                                  <div id="time_type-collapse" class="accordion-collapse" aria-labelledby="time_type-heading">
                                 {% else %}
-                                  <div id="time_label-collapse" class="accordion-collapse collapse" aria-labelledby="time_label-heading">
+                                  <div id="time_type-collapse" class="accordion-collapse collapse" aria-labelledby="time_type-heading">
                                 {% endif %}
                                 <div class="accordion-body">
-                                    {{ form.time_label|as_crispy_field }}
+                                    {{ form.time_type|as_crispy_field }}
                                 </div>
                               </div>
                             </div>
@@ -438,16 +438,16 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="time_label_modal" tabindex="-1" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="time_type_modal" tabindex="-1" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Time Label</h5>
+                    <h5 class="modal-title">Time Type</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.time_label }}
+                    {{ filters_descriptions.SignalFilter.time_type }}
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
