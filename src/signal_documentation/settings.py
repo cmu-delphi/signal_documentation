@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 import sys
+from distutils.util import strtobool
 from pathlib import Path
 from typing import Any
 
@@ -47,7 +48,7 @@ BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
