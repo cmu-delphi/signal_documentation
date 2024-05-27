@@ -14,7 +14,7 @@ from datasources.models import SourceSubdivision
 from signals.models import (
     FormatChoices,
     Signal,
-    TimeLabelChoices,
+    TimeTypeChoices,
 )
 
 
@@ -42,7 +42,7 @@ class SignalFilter(django_filters.FilterSet):
     )
     format_type = django_filters.MultipleChoiceFilter(choices=FormatChoices.choices)
     source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all())
-    time_type = django_filters.MultipleChoiceFilter(choices=TimeLabelChoices.choices)
+    time_type = django_filters.MultipleChoiceFilter(choices=TimeTypeChoices.choices)
 
     class Meta:
         model = Signal
