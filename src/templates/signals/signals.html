@@ -265,7 +265,7 @@
                                         {% else %}
                                             <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
                                         {% endif %}
-                                        <td>{{ signal.source }}</td>
+                                        <td>{{ signal.source.data_source }}</td>
                                         <td>{{ signal.description }}</td>
                                         <td>
                                             {% for pathogen in signal.pathogen.all %}
