@@ -25,9 +25,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pathogen-collapse" aria-expanded="true" aria-controls="pathogen-collapse">
                                     <label for="id_pathogen" class="form-label">
                                         Pathogen
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#pathogen_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Pathogen" data-bs-content="{{ filters_descriptions.SignalFilter.pathogen }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -50,9 +48,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#active-collapse" aria-expanded="false" aria-controls="active-collapse">
                                     <label for="id_active" class="form-label">
                                         Active
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#active_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Active" data-bs-content="{{ filters_descriptions.SignalFilter.active }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -71,9 +67,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#available_geography-collapse" aria-expanded="false" aria-controls="active-collapse">
                                     <label for="id_available_geography" class="form-label">
                                         Available Geography
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#available_geography_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Available Geography" data-bs-content="{{ filters_descriptions.SignalFilter.available_geography }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -96,9 +90,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#signal_type-collapse" aria-expanded="false" aria-controls="active-collapse">
                                     <label for="id_signal_type" class="form-label">
                                         Signal Type
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#signal_type_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Signal Type" data-bs-content="{{ filters_descriptions.SignalFilter.signal_type }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -121,9 +113,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false" aria-controls="active-collapse">
                                     <label for="id_category" class="form-label">
                                         Category
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#category_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Category" data-bs-content="{{ filters_descriptions.SignalFilter.category }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -146,9 +136,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#format_type-collapse" aria-expanded="false" aria-controls="active-collapse">
                                     <label for="id_format_type" class="form-label">
                                         Format Type
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#format_type_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Format Type" data-bs-content="{{ filters_descriptions.SignalFilter.format_type }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -171,9 +159,7 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#source-collapse" aria-expanded="false" aria-controls="active-collapse">
                                     <label for="id_source" class="form-label">
                                         Source
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#source_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Source" data-bs-content="{{ filters_descriptions.SignalFilter.source }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -193,12 +179,10 @@
                             </div>
                             <div class="accordion-item">
                               <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#time_type-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_time_type" class="form-label">
-                                        Time Type
-                                        <a href="#" data-bs-toggle="modal" data-bs-target="#time_type_modal">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#time_label-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                    <label for="id_time_label" class="form-label">
+                                        Time Label
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Time Label" data-bs-content="{{ filters_descriptions.SignalFilter.time_label }}"><i class="bi bi-info-circle"></i></a>
                                     </label>
                                 </button>
                               </h2>
@@ -223,12 +207,6 @@
         </div>
         <div class="col-9">
             <div class="row margin-bottom-1rem d-flex justify-content-end">
-                <!-- <div class="col-4">
-                    <div class="btn-group" role="group">
-                        <a href="https://delphi.cmu.edu/covidcast/export/" target="_blank" class="btn btn-primary" role="button">Export</a>
-                        <a href="https://delphi.cmu.edu/epivis/" target="_blank" class="btn btn-primary" role="button">Chart</a>
-                    </div>
-                </div> -->
                 <div class="col-6">
                     <div class="input-group mb-3 d-flex justify-content-start">
                         <span class="pt-05">
@@ -301,171 +279,22 @@
                 </div>
         </div>
     </div>
-    <div class="modal fade" id="pathogen_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Pathogen</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.pathogen }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="active_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Active</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.active }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="available_geography_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Available Geography</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.available_geography }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="signal_type_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Signal Type</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.signal_type }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="signal_type_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Signal Type</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.signal_type }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="category_modal" tabindex="-1" style="display: none;"aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Category</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.category }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="format_type_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Format Type</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.format_type }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="source_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Source</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.source }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="time_type_modal" tabindex="-1" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Time Type</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    {{ filters_descriptions.SignalFilter.time_type }}
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 </form>
 
 <script>
+
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+    var popoverOptions = {
+        trigger: "hover,click,focus",
+        container: "body",
+        delay: {
+            "show": 500,
+            "hide": 100
+        }
+    };
+    const popoverList = [...popoverTriggerList].map(
+        popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, popoverOptions));
 
     function showAllOptions(event, parentDiv) {
         event.preventDefault();
