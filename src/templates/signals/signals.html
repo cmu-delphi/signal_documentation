@@ -186,13 +186,13 @@
                                     </label>
                                 </button>
                               </h2>
-                                {% if form.time_label.value %}
-                                  <div id="time_label-collapse" class="accordion-collapse" aria-labelledby="time_label-heading">
+                                {% if form.time_type.value %}
+                                  <div id="time_type-collapse" class="accordion-collapse" aria-labelledby="time_type-heading">
                                 {% else %}
-                                  <div id="time_label-collapse" class="accordion-collapse collapse" aria-labelledby="time_label-heading">
+                                  <div id="time_type-collapse" class="accordion-collapse collapse" aria-labelledby="time_type-heading">
                                 {% endif %}
                                 <div class="accordion-body">
-                                    {{ form.time_label|as_crispy_field }}
+                                    {{ form.time_type|as_crispy_field }}
                                 </div>
                               </div>
                             </div>
@@ -207,7 +207,14 @@
         </div>
         <div class="col-9">
             <div class="row margin-bottom-1rem d-flex justify-content-end">
-                <div class="col-4">
+                <div class="col-6">
+                    <div class="input-group mb-3 d-flex justify-content-start">
+                        <span class="pt-05">
+                            Showing {{ signals|length }} row{{ signals|length|pluralize:"s" }}.
+                        </span>
+                    </div>
+                </div>
+                <div class="col-6">
                     <div class="input-group mb-3 d-flex justify-content-end">
                         <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
                         {{ form.order_by|as_crispy_field }}
@@ -216,7 +223,7 @@
             </div>
             <div class="row">
                 <div class="card signals-list-card no-padding">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header d-flex justify-content-between align-items-center table-responsive">
                         <table class="table table-borderless table-hover">
                             <thead>
                                 <tr>
@@ -243,7 +250,7 @@
                                         {% else %}
                                             <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
                                         {% endif %}
-                                        <td>{{ signal.source }}</td>
+                                        <td>{{ signal.source.data_source }}</td>
                                         <td>{{ signal.description }}</td>
                                         <td>
                                             {% for pathogen in signal.pathogen.all %}
@@ -252,7 +259,7 @@
                                         </td>
                                         <td>
                                             {% if signal.base %}
-                                            <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a>
+                                            <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
                                             {% else %}
                                             --/--
                                             {% endif %}
