@@ -274,7 +274,7 @@
                                         </td>
                                         <td>
                                             {% if signal.base %}
-                                            <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.id }}</a>
+                                            <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
                                             {% else %}
                                             --/--
                                             {% endif %}
