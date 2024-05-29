@@ -259,7 +259,11 @@
                                             <input type="checkbox" name="id" value="{{ signal.id }}">
                                             {{ form.id|as_crispy_field }}
                                         </td>
+                                        {% if signal.base %}
                                         <td><a href="{% url 'signal' pk=signal.base.id %}">{{ signal.base.display_name }}</a></td>
+                                        {% else %}
+                                            --/--
+                                        {% endif %}
                                         {% if signal.active == True %}
                                         <td><i class="bi bi-circle-fill" style="color:green;" ></i></td>
                                         {% else %}
