@@ -67,6 +67,10 @@
     padding: 0;
 }
 
+.pt-05 {
+    padding-top: 0.5rem;
+}
+
 .border-left {
     border-left: 1px solid #e4e4e4;
 }
@@ -125,4 +129,8 @@
 
 .select2-container .select2-selection--single .select2-selection__rendered {
     padding-left: 0px!important;
+}
+
+.popover {
+    max-width: 50%;
 }

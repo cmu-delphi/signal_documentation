@@ -48,7 +48,8 @@ BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
+# DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
+DEBUG = True
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
