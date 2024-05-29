@@ -3,11 +3,9 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <form class="margin-top-1rem" onsubmit="submitMode(event)" id="epivis-form">
+                <form class="margin-top-1rem" onsubmit="submitMode(event)" id="dataForm">
 
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="warning-alert">
-                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert" id="warning-alert"></div>
 
                     <div class="row">
                         <div class="col-2">
@@ -17,14 +15,18 @@
                         </div>
                         <div class="col-10">
                             <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="modes" id="epivis" value="epivis" checked>
-                                    <label class="form-check-label" for="epivis">Plot data</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="modes" id="export" value="export">
-                                    <label class="form-check-label" for="export">Export data</label>
-                                </div>
+                                <input class="form-check-input" type="radio" name="modes" id="preview" value="preview" checked>
+                                <label class="form-check-label" for="preview">Preview data</label>
                             </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="modes" id="epivis" value="epivis">
+                                <label class="form-check-label" for="epivis">Plot data</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="modes" id="export" value="export">
+                                <label class="form-check-label" for="export">Export data</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="row margin-top-1rem">
                         <div class="col-2">
@@ -73,7 +75,19 @@
                             <select id="geographic_value" name="geographic_value" class="form-select" multiple="multiple"></select>
                         </div>
                     </div>
-                    <div class="row margin-top-1rem" name="choose_date" style="display: none;">
+                    <div class="row margin-top-1rem" id="timeTypeDiv">
+                        <div class="col-2">
+                            <label for="time_type" class="form-label">
+                                Time Type:
+                            </label>
+                        </div>
+                        <div class="col-10">
+                            <select id="time_type" name="time_type" class="form-select" disabled>
+                                <option selected>{{ signal.time_type }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row margin-top-1rem" name="choose_date">
                         <div class="col-2">
                             <label for="start_date" class="form-label">
                                 Start Date:
@@ -83,7 +97,7 @@
                             <input type="date" class="form-control" id="start_date" name="start_date">
                         </div>
                     </div>
-                    <div class="row margin-top-1rem" name="choose_date" style="display: none;">
+                    <div class="row margin-top-1rem" name="choose_date">
                         <div class="col-2">
                             <label for="end_date" class="form-label">
                                 End Date:
@@ -98,6 +112,9 @@
                             Submit
                         </button>
                     </div>
+                    <div class="row margin-top-1rem">
+                        <pre class="margin-top-1rem"><code id="modeSubmitResult"></code></pre>
+                    </div>
                 </form>
             </div>
         </div>
@@ -105,7 +122,7 @@
 </section>
 <script>
     var geoValues = [];
-    var currentMode = 'epivis';
+    var currentMode = 'preview';
 
     function getFilteredGeographicValues(geographicType) {
         var data = geoValues.reduce((data, geoValue) => {
@@ -124,7 +141,6 @@
         } else {
             maximumSelectionLength = 10;
         }
-
         if (geographicType) {
             var data = getFilteredGeographicValues(geographicType);
         } else {
@@ -141,23 +157,38 @@
 
     document.getElementById('geographic_type').addEventListener("change", (event) => {
         $('#geographic_value').empty();
+        $('#modeSubmitResult').html('');
         initGeographicValueSelect(currentMode, event.target.value);
     })
 
     function handleModeChange(mode) {
-        document.getElementById("epivis-form").reset();
+        document.getElementById("dataForm").reset();
+        $('#geographic_value').empty();
+        $('#modeSubmitResult').html('');
 
         var choose_dates = document.getElementsByName('choose_date');
+        var time_type = document.getElementById('timeTypeDiv');
+
         if (mode === 'epivis') {
             currentMode = 'epivis';
             choose_dates.forEach((el) => {
                 el.style.display = 'none';
             });
-        } else {
+            $('#modeSubmitResult').html('');
+            time_type.style.display = 'none';
+        } else if (mode === 'export') {
             currentMode = 'export';
             choose_dates.forEach((el) => {
                 el.style.display = 'flex';
             });
+            $('#modeSubmitResult').html('');
+            time_type.style.display = 'none';
+        } else {
+            currentMode = 'preview';
+            choose_dates.forEach((el) => {
+                el.style.display = 'flex';
+            });
+            time_type.style.display = 'flex';
         }
         document.getElementsByName("modes").forEach((el) => {
             if (currentMode === el.value) {
@@ -168,10 +199,9 @@
 
     document.getElementsByName('modes').forEach((el) => {
         el.addEventListener('change', (event) => {
-            $('#geographic_value').empty();
             currentMode = event.target.value;
-            initGeographicValueSelect(event.target.value)
-            handleModeChange(event.target.value);
+            initGeographicValueSelect(currentMode)
+            handleModeChange(currentMode);
         });
     });
 
@@ -221,7 +251,7 @@
 
             epiVisUrl += `#${urlParamsEncoded}`;
             window.open(epiVisUrl, '_blank').focus();
-        } else {
+        } else if (currentMode === 'export') {
             var startDate = document.getElementById('start_date').value;
             var endDate = document.getElementById('end_date').value;
 
@@ -233,7 +263,42 @@
             }
 
             dataExportUrl += `?signal=${dataSource}:${dataSignal}&start_day=${startDate}&end_day=${endDate}&geo_type=${geographicType}&geo_values=${geographicValue}`;
+            $('#modeSubmitResult').html(`Manually fetch data: \n\nwget --content-disposition "${dataExportUrl}"`);
             window.open(dataExportUrl, '_blank').focus();
+        } else {
+            var timeType = document.getElementById('time_type').value;
+
+            var startDate = document.getElementById('start_date').value.replaceAll('-', '');
+            var endDate = document.getElementById('end_date').value.replaceAll('-', '');
+
+            var requestSent = false;
+
+            if (!requestSent) {
+                $.ajax({
+                    url: 'https://api.covidcast.cmu.edu/epidata/covidcast/',
+                    type: 'GET',
+                    data: {
+                        'time_type': timeType,
+                        'time_values': `${startDate}-${endDate}`,
+                        'data_source': dataSource,
+                        'signal': dataSignal,
+                        'geo_type': geographicType,
+                        'geo_values': geographicValue
+                    },
+                    success: function (result) {
+                        // Update the page with the response data.
+                        // This depends on the structure of your response data.
+                        // For example, if the response data is a string:
+                        if (result["epidata"].length > 1) {
+                            result = { epidata: result["epidata"].slice(0, 3), result: result["result"], message: result["message"] }
+                        } else {
+                            result = { epidata: result["epidata"], result: result["result"], message: result["message"] }
+                        }
+                        $('#modeSubmitResult').html(library.json.prettyPrint(result));
+                    }
+                });
+                requestSent = true;
+            };
         }
     }
 
