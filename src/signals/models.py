@@ -302,6 +302,13 @@ class Signal(TimeStampedModel):
         example_url = self.links.filter(link_type="example_url").first()
         return example_url.url if example_url else None
 
+    @property
+    def same_base_signals(self):
+        """
+        Returns the signals that have the same base signal.
+        """
+        return self.base.base_for.all() if self.base else None
+
     class Meta:
         unique_together = ['name', 'source']
         ordering: list[str] = ["modified"]
