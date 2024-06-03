@@ -264,23 +264,6 @@
                 </div>
             </section>
         {% endif %}
-        {% if signal.example_url != '' %}
-            <h5>Response Example</h5>
-            <section class="section">
-                <div class="row">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row margin-top-1rem">
-                                <p>Example URL:</p>
-                                <span>{{ signal.example_url }}</span>
-                                <button type="button" class="btn btn-primary margin-top-1rem" id="show-response">Show response</button>
-                                <pre class="margin-top-1rem"><code id="example-response" class="hidden"></code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        {% endif %}
         {% include "signals/data_visualization_export.html"%}
         <h5>Related links</h5>
         <section class="section">
