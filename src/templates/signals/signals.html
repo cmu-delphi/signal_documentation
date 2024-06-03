@@ -10,14 +10,15 @@
             <form method="GET" id="filters-form">
                 <div class="card">
                     <div class="form-group">
-                        <br>
                         <div class="card-body">
                             <h5 class="card-title">
                                 Search
                             </h5>
                             <div class="input-group">
-                                <input type="search" class="form-control border" name="{{ filter.form.search.name }}"
-                                id="example-search-input" placeholder="Search" title="Enter search keyword">
+                                <input class="form-control border" type="search" name="{{ filter.form.search.name }}" id="example-search-input"
+                                    placeholder="Search" title="Enter search keyword"
+                                    value="{% if filter.form.search.value %}{{ filter.form.search.value }}{% endif %}"
+                                >
                             </div>
                         </div>
                         <div class="accordion">
