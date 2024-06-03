@@ -53,7 +53,8 @@ class SignalsListView(ListView):
             else None,
             "format_type": [el for el in self.request.GET.getlist("format_type")],
             "source": [int(el) for el in self.request.GET.getlist("source")],
-            "time_type": [el for el in self.request.GET.getlist("time_type")]
+            "time_type": [el for el in self.request.GET.getlist("time_type")],
+            "base_signal": self.request.GET.get("base_signal"),
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():

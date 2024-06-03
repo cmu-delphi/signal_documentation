@@ -4,197 +4,254 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form method="GET" id="filters-form">
 <div class="container-fluid">
     <div class="row">
         <div class="col-3">
-            <div class="card">
+            <form method="GET" id="filters-form">
+                <div class="card">
                     <div class="form-group">
-                        <br />
+                        <br>
                         <div class="card-body">
-                            <h5 class="card-title">Search</h5>
+                            <h5 class="card-title">
+                                Search
+                            </h5>
                             <div class="input-group">
-                                <input class="form-control border" type="search" name="{{ filter.form.search.name }}" id="example-search-input"
-                                    placeholder="Search" title="Enter search keyword"
-                                >
+                                <input type="search" class="form-control border" name="{{ filter.form.search.name }}"
+                                id="example-search-input" placeholder="Search" title="Enter search keyword">
                             </div>
                         </div>
                         <div class="accordion">
                             <div class="accordion-item">
-                              <h2 class="accordion-header" id="pathogen-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pathogen-collapse" aria-expanded="true" aria-controls="pathogen-collapse">
-                                    <label for="id_pathogen" class="form-label">
-                                        Pathogen
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Pathogen" data-bs-content="{{ filters_descriptions.SignalFilter.pathogen }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.pathogen.value %}
-                                <div id="pathogen-collapse" class="accordion-collapse" aria-labelledby="pathogen-heading">
-                              {% else %}
-                                <div id="pathogen-collapse" class="accordion-collapse collapse" aria-labelledby="pathogen-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    <div id="div_id_pathogen" class="mb-3">
-                                        <div>
-                                            {{ form.pathogen|as_crispy_field }}
+                                <h2 class="accordion-header" id="pathogen-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#pathogen-collapse" aria-expanded="true" aria-controls="pathogen-collapse">
+                                        <label for="id_pathogen" class="form-label">
+                                            Pathogen
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Pathogen"
+                                            data-bs-content="{{ filter_descriptions.SignalFilter.pathogen }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.pathogen.value %}
+                                <div id="pathogen-collapse" class="accordion-collapse"
+                                aria-labelledby="pathogen-heading">
+                                {% else %}
+                                <div id="pathogen-collapse" class="accordion-collapse collapse"
+                                aria-labelledby="pathogen-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        <div id="div_id_pathogen" class="mb-3">
+                                            <div>
+                                                {{ form.pathogen|as_crispy_field }}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                              </div>
                             </div>
                             <div class="accordion-item">
-                              <h2 class="accordion-header" id="active-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#active-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_active" class="form-label">
-                                        Active
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Active" data-bs-content="{{ filters_descriptions.SignalFilter.active }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.active.value %}
-                                <div id="active-collapse" class="accordion-collapse" aria-labelledby="active-heading">
-                              {% else %}
-                                <div id="active-collapse" class="accordion-collapse collapse" aria-labelledby="active-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    {{ form.active|as_crispy_field }}
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#available_geography-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_available_geography" class="form-label">
-                                        Available Geography
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Available Geography" data-bs-content="{{ filters_descriptions.SignalFilter.available_geography }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.available_geography.value %}
-                                <div id="available_geography-collapse" class="accordion-collapse" aria-labelledby="available_geography-heading">
-                              {% else %}
-                                <div id="available_geography-collapse" class="accordion-collapse collapse" aria-labelledby="available_geography-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    <div class="bulk-select">
-                                        <input type="checkbox" class="form-check-input" id="select-all">
-                                        <label for="select-all">Select all</label>
+                                <div class="accordion-header" id="active-heading">
+                                    <h2 class="accordion-header" id="active-heading">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#active-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                            <label for="id_active" class="form-label">
+                                                Active
+                                                <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Active" data-bs-content="{{ filters_descriptions.SignalFilter.active }}"><i class="bi bi-info-circle"></i></a>
+                                            </label>
+                                        </button>
+                                    </h2>
+                                    {% if form.active.value %}
+                                    <div id="active-collapse" class="accordion-collapse" aria-labelledby="active-heading">
+                                    {% else %}
+                                    <div id="active-collapse" class="accordion-collapse collapse" aria-labelledby="active-heading">
+                                    {% endif %}
+                                        <div class="accordion-body">
+                                            {{ form.active|as_crispy_field}}
+                                        </div>
                                     </div>
-                                    {{ form.available_geography|as_crispy_field }}
                                 </div>
-                              </div>
                             </div>
                             <div class="accordion-item">
-                              <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#signal_type-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_signal_type" class="form-label">
-                                        Signal Type
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Signal Type" data-bs-content="{{ filters_descriptions.SignalFilter.signal_type }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.signal_type.value %}
+                                <div class="accordion-header" id="available_geography-heading">
+                                    <h2 class="accordion-header" id="active-heading">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#available_geography-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                            <label for="id_available_geography" class="form-label">
+                                                Available Geography
+                                                <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Available Geography" data-bs-content="{{ filters_descriptions.SignalFilter.available_geography }}"><i class="bi bi-info-circle"></i></a>
+                                            </label>
+                                        </button>
+                                    </h2>
+                                    {% if form.available_geography.value %}
+                                    <div id="available_geography-collapse" class="accordion-collapse" aria-labelledby="available_geography-heading">
+                                    {% else %}
+                                    <div id="available_geography-collapse" class="accordion-collapse collapse" aria-labelledby="available_geography-heading">
+                                    {% endif %}
+                                        <div class="accordion-body">
+                                            <div class="bulk-select">
+                                                <input type="checkbox" class="form-check-input" id="select-all">
+                                                <label for="select-all">Select all</label>
+                                            </div>
+                                            {{ form.available_geography|as_crispy_field }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="signal_type-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#signal_type-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                        <label for="id_signal_type" class="form-label">
+                                            Signal Type
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Signal Type"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.signal_type }}">
+                                            <i class="bi bi-info-circle"></i>
+                                        </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.signal_type.value %}
                                 <div id="signal_type-collapse" class="accordion-collapse" aria-labelledby="signal_type-heading">
-                              {% else %}
-                                <div id="signal_type-collapse" class="accordion-collapse collapse" aria-labelledby="signal_type-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    <div class="bulk-select">
-                                        <input type="checkbox" class="form-check-input" id="select-all">
-                                        <label for="select-all">Select all</label>
-                                    </div>
-                                    {{ form.signal_type|as_crispy_field }}
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_category" class="form-label">
-                                        Category
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Category" data-bs-content="{{ filters_descriptions.SignalFilter.category }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.category.value %}
-                                <div id="category-collapse" class="accordion-collapse" aria-labelledby="category-heading">
-                              {% else %}
-                                <div id="category-collapse" class="accordion-collapse collapse" aria-labelledby="category-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    <div class="bulk-select">
-                                        <input type="checkbox" class="form-check-input" id="select-all">
-                                        <label for="select-all">Select all</label>
-                                    </div>
-                                    {{ form.category|as_crispy_field }}
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#format_type-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_format_type" class="form-label">
-                                        Format Type
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Format Type" data-bs-content="{{ filters_descriptions.SignalFilter.format_type }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.format_type.value %}
-                                <div id="format_type-collapse" class="accordion-collapse" aria-labelledby="format_type-heading">
-                              {% else %}
-                                <div id="format_type-collapse" class="accordion-collapse collapse" aria-labelledby="format_type-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    <div class="bulk-select">
-                                        <input type="checkbox" class="form-check-input" id="select-all">
-                                        <label for="select-all">Select all</label>
-                                    </div>
-                                    {{ form.format_type|as_crispy_field }}
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#source-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_source" class="form-label">
-                                        Source
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Source" data-bs-content="{{ filters_descriptions.SignalFilter.source }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                              {% if form.source.value %}
-                                <div id="source-collapse" class="accordion-collapse" aria-labelledby="source-heading">
-                              {% else %}
-                                <div id="source-collapse" class="accordion-collapse collapse" aria-labelledby="source-heading">
-                              {% endif %}
-                                <div class="accordion-body">
-                                    <div class="bulk-select">
-                                        <input type="checkbox" class="form-check-input" id="select-all">
-                                        <label for="select-all">Select all</label>
-                                    </div>
-                                    {{ form.source|as_crispy_field }}
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="available_geography-heading">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#time_label-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_time_label" class="form-label">
-                                        Time Label
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Time Label" data-bs-content="{{ filters_descriptions.SignalFilter.time_label }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                                {% if form.time_type.value %}
-                                  <div id="time_type-collapse" class="accordion-collapse" aria-labelledby="time_type-heading">
                                 {% else %}
-                                  <div id="time_type-collapse" class="accordion-collapse collapse" aria-labelledby="time_type-heading">
+                                <div id="signal_type-collapse" class="accordion-collapse collapse" aria-labelledby="signal_type-heading">
                                 {% endif %}
-                                <div class="accordion-body">
-                                    {{ form.time_type|as_crispy_field }}
+                                    <div class="accordion-body">
+                                        <div class="bulk-select">
+                                            <input type="checkbox" class="form-check-input" id="select-all">
+                                            <label for="select-all">Select all</label>
+                                        </div>
+                                        {{ form.signal_type|as_crispy_field }}
+                                    </div>
                                 </div>
-                              </div>
+                            </div>
+                            <div class="accortion-item">
+                                <h2 class="accordion-header" id="category-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#category-collapse" aria-expanded="false"
+                                    aria-controls="active-collapse">
+                                        <label for="id_category" class="form-label">
+                                            Category
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Category"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.category }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.category.value %}
+                                <div id="category-collapse" class="accordion-collapse" aria-labelledby="category-heading">
+                                {% else %}
+                                <div id="category-collapse" class="accordion-collapse collapse" aria-labelledby="category-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        <div class="bulk-select">
+                                            <input type="checkbox" class="form-check-input" id="select-all">
+                                            <label for="select-all">Select all</label>
+                                        </div>
+                                        {{ form.category|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="format-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#format_type-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                        <label for="id_format_type" class="form-label">
+                                            Format Type
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Format Type"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.format_type }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.format_type.value %}
+                                <div id="format_type-collapse" class="accordion-collapse" aria-labelledby="format_type-heading">
+                                {% else %}
+                                <div id="format_type-collapse" class="accordion-collapse collapse" aria-labelledby="format_type-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        <div class="bulk-select">
+                                            <input type="checkbox" class="form-check-input" id="select-all">
+                                            <label for="select-all">Select all</label>
+                                        </div>
+                                        {{ form.format_type|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="source-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#source-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                        <label for="id_source" class="form-label">
+                                            Source
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Source"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.source }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.source.value %}
+                                <div id="source-collapse" class="accordion-collapse" aria-labelledby="source-heading">
+                                {% else %}
+                                <div id="source-collapse" class="accordion-collapse collapse" aria-labelledby="source-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        <div class="bulk-select">
+                                            <input type="checkbox" class="form-check-input" id="select-all">
+                                            <label for="select-all">Select all</label>
+                                        </div>
+                                        {{ form.source|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="available_geography-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#time_label-collapse" aria-expanded="false"aria-controls="active-collapse">
+                                        <label for="id_time_label" class="form-label">
+                                            Time Label
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Time Label"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.time_label }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.time_type.value %}
+                                <div id="time_type-collapse" class="accordion-collapse" aria-labelledby="time_type-heading">
+                                {% else %}
+                                <div id="time_type-collapse" class="accordion-collapse collapse" aria-labelledby="time_type-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        {{ form.time_type|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#base_signal-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                    <label for="id_base_signal" class="form-label">
+                                        Base Signal
+                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Base Signal" data-bs-content="{{ filters_descriptions.SignalFilter.base_signal }}"><i class="bi bi-info-circle"></i></a>
+                                    </label>
+                                </button>
+                              </h2>
+                                {% if form.base_signal.value %}
+                                  <div id="base_signal-collapse" class="accordion-collapse" aria-labelledby="base_signal-heading">
+                                {% else %}
+                                  <div id="base_signal-collapse" class="accordion-collapse collapse" aria-labelledby="base_signal-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        {{ form.base_signal|as_crispy_field }}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="card-body">
@@ -203,31 +260,34 @@
                             </div>
                         </div>
                     </div>
-            </div>
+                </div>
+            </form>
         </div>
         <div class="col-9">
-            <div class="row margin-bottom-1rem d-flex justify-content-end">
-                <div class="col-6">
-                    <div class="input-group mb-3 d-flex justify-content-start">
-                        <span class="pt-05">
-                            Showing {{ signals|length }} row{{ signals|length|pluralize:"s" }}.
-                        </span>
+            <form method="GET" id="orderByForm">
+                <div class="row margin-bottom-1rem d-flex justify-content-end">
+                    <div class="col-6">
+                        <div class="input-group mb-3 d-flex justify-content-start">
+                            <span class="pt-05">
+                                Showing {{ signals|length }} row{{ signals|length|pluralize:"s" }}.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-3 d-flex justify-content-end">
+                            <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
+                            {{ form.order_by|as_crispy_field }}
+                        </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="input-group mb-3 d-flex justify-content-end">
-                        <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
-                        {{ form.order_by|as_crispy_field }}
-                    </div>
-                </div>
-            </div>
+            </form>
             <div class="row">
                 <div class="card signals-list-card no-padding">
-                    <div class="card-header d-flex justify-content-between align-items-center table-responsive">
-                        <table class="table table-borderless table-hover">
+                    <div class="card-header d-flex justify-content-between align-items-center table-responsive" data-fl-scrolls='{"orientation": "horizontal"}'>
+                        <table class="table table-borderless table-hover signals-list-table">
                             <thead>
                                 <tr>
-                                    <th scope="col"></th>
+                                    <th scope="col" style="padding-left: 0px; padding-right: 0px;"></th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Active</th>
                                     <th scope="col">Data Source</th>
@@ -239,36 +299,44 @@
                             </thead>
                             <tbody>
                                 {% for signal in signals %}
-                                    <tr classs="clickable-table-row">
-                                        <td>
+                                    <tr>
+                                        <td style="padding-left: 0px; padding-right: 0px;">
                                             <input type="checkbox" name="id" value="{{ signal.id }}">
                                             {{ form.id|as_crispy_field }}
                                         </td>
-                                        <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
-                                        {% if signal.active == True %}
-                                        <td><i class="bi bi-circle-fill" style="color:green;" ></i></td>
-                                        {% else %}
-                                            <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
-                                        {% endif %}
-                                        <td>{{ signal.source.data_source }}</td>
-                                        <td>{{ signal.description }}</td>
-                                        <td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.display_name }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {% if signal.active == True%}
+                                            <i class="bi bi-circle-fill" style="color:green;"></i>
+                                            {% else %}
+                                            <i class="bi bi-circle-fill" style="color:red;"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.source.data_source }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.description}}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
                                             {% for pathogen in signal.pathogen.all %}
                                             <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
                                             {% endfor %}
                                         </td>
-                                        <td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
                                             {% if signal.base %}
                                             <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
                                             {% else %}
-                                            --/--
+                                            <span>--/--</span>
                                             {% endif %}
                                         </td>
-                                        <td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
                                             {% if signal.last_updated %}
-                                                {{ signal.last_updated|date:"Y-m-d" }}
+                                            {{ signal.last_updated|date:"Y-m-d" }}
                                             {% else %}
-                                                --/--
+                                            <span>--/--</span>
                                             {% endif %}
                                         </td>
                                     </tr>
@@ -278,10 +346,9 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
-</form>
-
 <script>
 
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
@@ -315,7 +382,7 @@
 
     // Add an event listener to the 'order_by' select element
     document.getElementById('id_order_by').addEventListener('change', function() {
-        document.getElementById('filters-form').submit();
+        document.getElementById('orderByForm').submit();
     });
 
 
@@ -350,6 +417,16 @@
             }
         });
     });
+
+    $(document).ready(function() {
+        $('#example-search-input').tooltip({
+            'trigger':'focus',
+            'placement': 'bottom',
+            'title': 'Search field is used to search for signals by name and description.'
+        });
+    });
+
+
 
 </script>
 
