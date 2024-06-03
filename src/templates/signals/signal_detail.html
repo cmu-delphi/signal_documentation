@@ -207,6 +207,80 @@
                 </div>
             </div>
         </section>
+        {% if signal.base %}
+            <h5>Signals with same base</h5>
+            <section class="section">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-borderless table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Active</th>
+                                        <th scope="col">Data Source</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Pathogen/Disease Area</th>
+                                        <th scope="col">Base Signal</th>
+                                        <th scope="col">Last Updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for signal in signal.same_base_signals %}
+                                        <tr classs="clickable-table-row">
+                                            <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
+                                            {% if signal.active == True %}
+                                            <td><i class="bi bi-circle-fill" style="color:green;" ></i></td>
+                                            {% else %}
+                                                <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
+                                            {% endif %}
+                                            <td>{{ signal.source.data_source }}</td>
+                                            <td>{{ signal.description }}</td>
+                                            <td>
+                                                {% for pathogen in signal.pathogen.all %}
+                                                <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% if signal.base %}
+                                                <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
+                                                {% else %}
+                                                --/--
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if signal.last_updated %}
+                                                    {{ signal.last_updated|date:"Y-m-d" }}
+                                                {% else %}
+                                                    --/--
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        {% if signal.example_url != '' %}
+            <h5>Response Example</h5>
+            <section class="section">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row margin-top-1rem">
+                                <p>Example URL:</p>
+                                <span>{{ signal.example_url }}</span>
+                                <button type="button" class="btn btn-primary margin-top-1rem" id="show-response">Show response</button>
+                                <pre class="margin-top-1rem"><code id="example-response" class="hidden"></code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
         {% include "signals/data_visualization_export.html"%}
         <h5>Related links</h5>
         <section class="section">
