@@ -207,24 +207,7 @@
                 </div>
             </div>
         </section>
-        {% if signal.example_url != '' %}
-            <h5>Response Example</h5>
-            <section class="section">
-                <div class="row">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row margin-top-1rem">
-                                <p>Example URL:</p>
-                                <span>{{ signal.example_url }}</span>
-                                <button type="button" class="btn btn-primary margin-top-1rem" id="show-response">Show response</button>
-                                <pre class="margin-top-1rem"><code id="example-response" class="hidden"></code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        {% endif %}
-        {% include "signals/epivis_export_data_block.html"%}
+        {% include "signals/data_visualization_export.html"%}
         <h5>Related links</h5>
         <section class="section">
             <div class="row">
@@ -285,30 +268,6 @@
                         .replace(jsonLine, library.json.replacer);
                 }
             };
-
-            var requestSent = false;
-
-            $(document).ready(function () {
-                $("#show-response").click(function () {
-                    if (!requestSent) {
-                        $.ajax({
-                            url: '{{ signal.example_url|safe }}',
-                            type: 'GET',
-                            success: function (result) {
-                                // Update the page with the response data.
-                                // This depends on the structure of your response data.
-                                // For example, if the response data is a string:
-                                if (result["epidata"].length > 5) {
-                                    result = { epidata: result["epidata"].slice(0, 5), result: result["result"], message: result["message"] }
-                                }
-                                $('#example-response').html(library.json.prettyPrint(result));
-                            }
-                        });
-                        requestSent = true;
-                    };
-                    $("#example-response").toggleClass("hidden");
-                });
-            });
 
             function readMore(button) {
                 var truncatedText = document.querySelector(".overview");
