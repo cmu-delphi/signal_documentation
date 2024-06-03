@@ -30,6 +30,7 @@ class SignalFilterForm(forms.ModelForm):
     format_type = forms.ChoiceField(choices=FormatChoices.choices, widget=forms.CheckboxSelectMultiple())
     source = forms.ModelMultipleChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
+    base_signal = forms.ChoiceField(choices=[('', _('All')), (True, _('Yes')), (False, _('No'))], required=False, widget=forms.RadioSelect())
 
     class Meta:
         model = Signal
@@ -79,6 +80,7 @@ class SignalFilterForm(forms.ModelForm):
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
+
         }
 
     def __init__(self, *args, **kwargs) -> None:
