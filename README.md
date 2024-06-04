@@ -200,8 +200,14 @@ Each environment is essentially a bunch of different services all governed by `d
 
 ### Basic workflow
 
-- A PR merged to either `development` or `master` will trigger CI to build container images that are then tagged (based on the branch name and ":latest" respectively) and stored in our GitHub Packages container image repository.
+- A PR merged to either `development`, `staging`, or `main` will trigger CI to build container images that are then tagged with the branch name (or ":latest", in the cast of `main`), and stored in our GitHub Packages container image repository.
 - CI triggers a webhook that tells the host systems to pull and run new container images and restart any services that have been updated.
+
+As a developer, your path to getting changes into production should be something like this:
+
+- Source your working branch from `development`, do work, PR and merge when complete
+- PR and merge to `staging` in order to get your changes deployed to https://staging.delphi.cmu.edu/signals for review
+- PR and merge to `main` to go to production
 
 **IMPORTANT!** - The CI/CD process uses Docker Compose to build the specific container images that will be used in external environments. Success of the the build-and-deploy workflow is dependent on constructed services in `docker-compose.yaml`. If considering making changes there, please have a PR reviewed by devops folks :pray: :pray: :pray:
 
