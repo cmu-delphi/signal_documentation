@@ -12,6 +12,7 @@ from datasources.models import DataSource, SourceSubdivision
 class SourceSubdivisionResource(resources.ModelResource):
     name = Field(attribute='name', column_name='Source Subdivision')
     display_name = Field(attribute='display_name', column_name='Source Subdivision')
+    external_name = Field(attribute='external_name', column_name='External Name')
     description = Field(attribute='description', column_name='Description')
     db_source = Field(attribute='db_source', column_name='DB Source')
     data_source = Field(

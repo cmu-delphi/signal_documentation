@@ -316,7 +316,7 @@
                                             {% endif %}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.source.data_source }}
+                                            {{ signal.source.external_name }}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
                                             {{ signal.description}}

@@ -17,9 +17,6 @@ class SourceSubdivisionAdmin(ImportExportModelAdmin):
     resource_classes: list[type[SourceSubdivisionResource]] = [SourceSubdivisionResource]
 
 
-data_source_search_fields_type = tuple[Literal['name'], Literal['source_subdivision__db_source'], Literal['source_subdivision__name'], Literal['description']]
-
-
 @admin.register(DataSource)
 class DataSourceAdmin(ImportExportModelAdmin):
     """

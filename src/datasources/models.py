@@ -17,6 +17,11 @@ class SourceSubdivision(TimeStampedModel):
         max_length=128,
         unique=True
     )
+    external_name: models.CharField = models.CharField(
+        help_text=_('External Name'),
+        max_length=128,
+        null=True,
+    )
     description: models.TextField = models.TextField(
         help_text=_('Source description'),
         max_length=1000,
