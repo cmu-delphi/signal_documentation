@@ -168,7 +168,52 @@ class Geography(TimeStampedModel):
         return str(self.name)
 
 
-class GeographicScope(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
+class GeographySignal(models.Model):
+    geography = models.ForeignKey('signals.Geography', on_delete=models.CASCADE, related_name='geography_signals')
+    signal = models.ForeignKey('signals.Signal', on_delete=models.CASCADE, related_name='geography_signals')
+    aggregated_by_delphi = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = ('geography', 'signal')
+
+
+class GeographyUnit(TimeStampedModel):
+    """
+    A model representing a geography (geo-level) unit.
+    """
+
+    geo_id: models.CharField = models.CharField(
+        help_text=_('Geo ID'),
+        max_length=128
+    )
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128
+    )
+    display_name: models.CharField = models.CharField(
+        help_text=_('Display Name'),
+        max_length=128
+    )
+    level: models.IntegerField = models.IntegerField(help_text=_('Level'))
+
+    geography: models.ForeignKey = models.ForeignKey(
+        'signals.Geography',
+        related_name='geography_units',
+        help_text=_('Geography'),
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the geography unit as a string.
+
+        :return: The name of the geography unit as a string.
+        :rtype: str
+        """
+        return str(self.name)
+
+
+class GeographicScope(TimeStampedModel):
     """
     A model representing a geographic scope.
     """
@@ -208,26 +253,35 @@ class DemographicScope(TimeStampedModel):
         return str(self.name)
 
 
-# class OrganisationsWithAccess(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
-#     """
-#     A model representing an access list.
-#     """
-#     organisation_name: models.CharField = models.CharField(
-#         help_text=_('Organisation Name'),
-#         max_length=128,
-#         unique=True
-#     )
+class Organisation(TimeStampedModel):
+    """
+    A model representing an access list.
+    """
+    organisation_name: models.CharField = models.CharField(
+        help_text=_('Organisation Name'),
+        max_length=128,
+        unique=True
+    )
 
 
-# class SharingOrganisation(TimeStampedModel):  # TODO: Requirements for this model are not clear. Need to be discussed.
-#     """
-#     A model representing a sharing organisation.
-#     """
-#     organisation_name: models.CharField = models.CharField(
-#         help_text=_('Organisation Name'),
-#         max_length=128,
-#         unique=True
-#     )
+class Licence(TimeStampedModel):
+    """
+    A model representing a licence.
+    """
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the licence as a string.
+
+        :return: The name of the licence as a string.
+        :rtype: str
+        """
+        return str(self.name)
 
 
 class Signal(TimeStampedModel):
@@ -297,6 +351,18 @@ class Signal(TimeStampedModel):
         choices=ReportingCadence.choices,
         null=True
     )
+    typical_reporting_lag: models.CharField = models.CharField(
+        help_text=_('Typical Reporting Lag'),
+        max_length=128,
+        null=True,
+        blank=True
+    )
+    typical_revision_cadence: models.CharField = models.CharField(
+        help_text=_('Typical Revision Cadence'),
+        max_length=512,
+        null=True,
+        blank=True
+    )
     demographic_scope: models.ManyToManyField = models.ManyToManyField(
         'signals.DemographicScope',
         help_text=_('Demographic Scope'),
@@ -320,9 +386,34 @@ class Signal(TimeStampedModel):
         help_text=_('Signal links'),
         related_name="signals"
     )
+    geographic_scope: models.ManyToManyField = models.ManyToManyField(
+        'signals.GeographicScope',
+        help_text=_('Geographic Scope')
+    )
     available_geography: models.ManyToManyField = models.ManyToManyField(
         'signals.Geography',
-        help_text=_('Available geography')
+        help_text=_('Available geography'),
+        through='signals.GeographySignal'
+    )
+    temporal_scope_start: models.DateField = models.DateField(
+        help_text=_('Temporal Scope Start'),
+        null=True,
+        blank=True
+    )
+    temporal_scope_start_note = models.TextField(
+        help_text=_('Temporal Scope Start Note'),
+        null=True,
+        blank=True
+    )
+    temporal_scope_end: models.DateField = models.DateField(
+        help_text=_('Temporal Scope End'),
+        null=True,
+        blank=True
+    )
+    temporal_scope_end_note = models.TextField(
+        help_text=_('Temporal Scope End Note'),
+        null=True,
+        blank=True
     )
     gender_breakdown: models.BooleanField = models.BooleanField(
         help_text=_('Gender Breakdown'),
@@ -379,15 +470,29 @@ class Signal(TimeStampedModel):
         null=True,
         blank=True
     )
-    # organisations_access_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
-    #     'signals.OrganisationsAccess',
-    #     help_text=_('Organisations Access List')
-    # )
+    organisations_access_list: models.ManyToManyField = models.ManyToManyField(
+        'signals.Organisation',
+        help_text=_('Organisations Access List. Who may access this signal?'),
+        related_name='accessed_signals'
+    )
 
-    # organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(  # TODO: Requirements for this field are not clear. Need to be discussed.
-    #     'signals.SharingOrganisation',
-    #     help_text=_('Organisations Sharing List')
-    # )
+    organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(
+        'signals.Organisation',
+        help_text=_('Organisations Sharing List. Who may be told about this signal?'),
+        related_name='shared_signals'
+    )
+
+    licence: models.ManyToManyField = models.ManyToManyField(
+        'signals.Licence',
+        help_text=_('Licence'),
+        related_name='signals'
+    )
+
+    restrictions: models.TextField = models.TextField(
+        help_text=_('Restrictions'),
+        null=True,
+        blank=True
+    )
 
     last_updated: models.DateField = models.DateField(
         help_text=_('Last Updated'),
@@ -404,6 +509,25 @@ class Signal(TimeStampedModel):
         null=True,
         blank=True
     )
+
+    @property
+    def is_access_public(self) -> bool:
+        """
+        Returns True if the signal is public, False otherwise.
+
+        :return: True if the signal is public, False otherwise.
+        :rtype: bool
+        """
+        return self.organisations_access_list.count() == 0
+
+    def is_sharing_public(self) -> bool:
+        """
+        Returns True if the signal is public, False otherwise.
+
+        :return: True if the signal is public, False otherwise.
+        :rtype: bool
+        """
+        return self.organisations_sharing_list.count() == 0
 
     @property
     def example_url(self) -> str | None:

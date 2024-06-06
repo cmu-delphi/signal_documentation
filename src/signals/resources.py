@@ -10,6 +10,9 @@ from datasources.models import SourceSubdivision
 from signals.models import (
     DemographicScope,
     Geography,
+    GeographySignal,
+    Licence,
+    Organisation,
     Pathogen,
     Signal,
     SignalCategory,
@@ -62,7 +65,7 @@ class SignalResource(resources.ModelResource):
     display_name = Field(attribute='display_name', column_name='Name')
     pathogen = Field(
         attribute='pathogen',
-        column_name='Pathogen/ Disease Area',
+        column_name='Pathogen/\nDisease Area',
         widget=widgets.ManyToManyWidget(Pathogen, field='name', separator=','),
     )
     signal_type = Field(
@@ -76,10 +79,15 @@ class SignalResource(resources.ModelResource):
     format_type = Field(attribute='format_type', column_name='Format')
     time_type = Field(attribute='time_type', column_name='Time Type')
     time_label = Field(attribute='time_label', column_name='Time Label')
+    typical_reporting_lag = Field(attribute='typical_reporting_lag', column_name='Typical Reporting Lag')
+    typical_revision_cadence = Field(attribute='typical_revision_cadence', column_name='Typical Revision Cadence')
     reporting_cadence = Field(attribute='reporting_cadence', column_name='Reporting Cadence')
-    demographic_scope = Field(attribute='demographic_scope', column_name='Demographic Scope')
+    demographic_scope = Field(
+        attribute='demographic_scope',
+        column_name='Demographic Scope',
+        widget=widgets.ManyToManyWidget(DemographicScope, field='name', separator=','),
+    )
     severenity_pyramid_rungs = Field(attribute='severenity_pyramid_rungs', column_name='Severity Pyramid Rungs')
-
     category = Field(
         attribute='category',
         column_name='Category',
@@ -90,6 +98,11 @@ class SignalResource(resources.ModelResource):
         column_name='Available Geography',
         widget=widgets.ManyToManyWidget(Geography, field='name', separator=','),
     )
+    # delphi_aggregated_geography = Field(
+    #     attribute='delphi_aggregated_geography',
+    #     column_name='Delphi-Aggregated Geography',
+    #     widget=widgets.ManyToManyWidget(Geography, field='name', separator=','),
+    # )
     is_smoothed = Field(attribute='is_smoothed', column_name='Is Smoothed')
     is_weighted = Field(attribute='is_weighted', column_name='Is Weighted')
     is_cumulative = Field(attribute='is_cumulative', column_name='Is Cumulative')
@@ -101,16 +114,32 @@ class SignalResource(resources.ModelResource):
         column_name='Source Subdivision',
         widget=widgets.ForeignKeyWidget(SourceSubdivision, field='name'),
     )
+    data_censoring = Field(attribute='data_censoring', column_name='Data Censoring')
+    missingness = Field(attribute='missingness', column_name='Missingness')
+    organisations_access_list = Field(
+        attribute='organisations_access_list',
+        column_name='Who may access this signal?',
+        widget=widgets.ManyToManyWidget(Organisation, field='organisation_name', separator=','),
+    )
+    organisations_sharing_list = Field(
+        attribute='organisations_sharing_list',
+        column_name='Who may be told about this signal?',
+        widget=widgets.ManyToManyWidget(Organisation, field='organisation_name', separator=','),
+    )
+    restrictions = Field(attribute='restrictions', column_name='Use Restrictions')
+    licence = Field(
+        attribute='licence',
+        column_name='Licence',
+        widget=widgets.ForeignKeyWidget(Licence, field='name'),
+    )
     links = Field(
         attribute='links',
         column_name='Links',
         widget=widgets.ManyToManyWidget(Link, field='url', separator='|'),
     )
-    data_censoring = Field(attribute='data_censoring', column_name='Data Censoring')
-    missingness = Field(attribute='missingness', column_name='Missingness')
-    gender_breakdown = Field(attribute='gender_breakdown', column_name='Gender Breakdown')
-    race_breakdown = Field(attribute='race_breakdown', column_name='Race Breakdown')
-    age_breakdown = Field(attribute='age_breakdown', column_name='Age Breakdown')
+    # gender_breakdown = Field(attribute='gender_breakdown', column_name='Gender Breakdown')
+    # race_breakdown = Field(attribute='race_breakdown', column_name='Race Breakdown')
+    # age_breakdown = Field(attribute='age_breakdown', column_name='Age Breakdown')
 
     class Meta:
         model = Signal
@@ -139,9 +168,9 @@ class SignalResource(resources.ModelResource):
             'links',
             'data_censoring',
             'missingness',
-            'gender_breakdown',
-            'race_breakdown',
-            'age_breakdown',
+            # 'gender_breakdown',
+            # 'race_breakdown',
+            # 'age_breakdown',
         ]
         import_id_fields: list[str] = ['name', 'source', 'display_name']
 
@@ -157,8 +186,8 @@ class SignalResource(resources.ModelResource):
             'Is Cumulative',
             'Has StdErr',
             'Has Sample Size',
-            'gender_breakdown',
-            'race_breakdown',
+            # 'gender_breakdown',
+            # 'race_breakdown',
         ])
         self.process_links(row)
         self.process_pathogen(row)
@@ -217,8 +246,8 @@ class SignalResource(resources.ModelResource):
         Processes pathogen.
         """
 
-        if row['Pathogen/ Disease Area']:
-            pathogens: str = row['Pathogen/ Disease Area'].split(',')
+        if row['Pathogen/\nDisease Area']:
+            pathogens: str = row['Pathogen/\nDisease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
 
@@ -228,6 +257,68 @@ class SignalResource(resources.ModelResource):
         """
 
         if row['Demographic Scope']:
-            demographic_scopes: str = row['Demographic Scope'].split(',')
-            for demographic_scope in demographic_scopes:
-                DemographicScope.objects.get_or_create(name=demographic_scope.strip())
+            if row['Demographic Scope'] == 'All':
+                DemographicScope.objects.all()
+            else:
+                demographic_scopes: str = row['Demographic Scope'].split(',')
+                for demographic_scope in demographic_scopes:
+                    DemographicScope.objects.get_or_create(name=demographic_scope.strip())
+
+    def process_severenity_pyramid_rungs(self, row) -> None:
+        """
+        Processes severenity pyramid rungs.
+        """
+
+        if row['Severity Pyramid Rungs']:
+            if row['Severity Pyramid Rungs'].startswith('None'):
+                row['Severity Pyramid Rungs'] = None
+
+    def process_organisations_access_list(self, row):
+        """
+        Processes organisations access list.
+        """
+
+        if row['Who may access this signal?']:
+            if row['Who may access this signal?'] == 'public':
+                organisations = []
+            else:
+                organisations: str = row['Who may access this signal?'].split(',')
+            for organisation in organisations:
+                Organisation.objects.get_or_create(organisation_name=organisation.strip())
+
+    def process_organisations_sharing_list(self, row):
+        """
+        Processes organisations sharing list.
+        """
+
+        if row['Who may be told about this signal?']:
+            if row['Who may be told about this signal?'] == 'public':
+                organisations = []
+            else:
+                organisations: str = row['Who may be told about this signal?'].split(',')
+            for organisation in organisations:
+                Organisation.objects.get_or_create(organisation_name=organisation.strip())
+
+    def process_licence(self, row):
+        """
+        Processes licence.
+        """
+
+        if row['Licence']:
+            Licence.objects.get_or_create(name=row['Licence'])
+
+    def process_available_geography(self, row):
+        """
+        Processes available geography.
+        """
+
+        if row['Available Geography']:
+            geographies: str = row['Available Geography'].split(',')
+            delphi_aggregated_geographies: str = row['Delphi-Aggregated Geography'].split(',')
+            for geography in geographies:
+                geography_instance = Geography.objects.get_or_create(name=geography.strip())
+                if geography in delphi_aggregated_geographies:
+                    signal = Signal.objects.get(name=row['Signal'])
+                    signal_geography = GeographySignal.objects.filter(geography=geography_instance, signal=signal).first()
+                    signal_geography.delphi_aggregated = True
+                    signal_geography.save()
