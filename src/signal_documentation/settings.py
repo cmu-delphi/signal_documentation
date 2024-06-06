@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
+import sys
+from distutils.util import strtobool
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +22,9 @@ import sentry_sdk
 #   changed by modifying env vars.
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
+
+EPIVIS_URL = os.environ.get("EPIVIS_URL", "https://deploy-preview-36--cmu-delphi-epivis.netlify.app/")
+DATA_EXPORT_URL = os.environ.get("DATA_EXPORT_URL", "https://api.covidcast.cmu.edu/epidata/covidcast/csv")
 
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
@@ -43,7 +48,8 @@ BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG: bool = True
+# DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
+DEBUG = True
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -92,7 +98,6 @@ EXTERNAL_APPS: list[str] = [
     'docs',
     'crispy_forms',
     'crispy_bootstrap5',
-    'django_htmx',
 ]
 
 LOCAL_APPS: list[str] = [
@@ -112,7 +117,6 @@ MIDDLEWARE: list[str] = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 
@@ -188,6 +192,38 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
+
+# Logging
+# https://docs.djangoproject.com/en/4.2/topics/logging/
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '[%(asctime)s] %(levelname)s | %(name)s | %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+            'stream': sys.stdout,
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
+
+if DEBUG:
+    for logger in LOGGING['loggers']:
+        LOGGING['loggers'][logger]['handlers'] = ['console']
 
 
 # DRF Spectacular settings

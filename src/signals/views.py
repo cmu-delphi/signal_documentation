@@ -1,7 +1,6 @@
 from typing import Any, Dict
 
 from django.conf import settings
-from django.core.paginator import Page, Paginator
 from django.views.generic import DetailView, ListView
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
@@ -54,7 +53,8 @@ class SignalsListView(ListView):
             else None,
             "format_type": [el for el in self.request.GET.getlist("format_type")],
             "source": [int(el) for el in self.request.GET.getlist("source")],
-            "time_label": [el for el in self.request.GET.getlist("time_label")]
+            "time_type": [el for el in self.request.GET.getlist("time_type")],
+            "base_signal": self.request.GET.get("base_signal"),
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():
@@ -80,17 +80,9 @@ class SignalsListView(ListView):
         context["form"] = SignalFilterForm(initial=url_params_dict)
         context["url_params_str"] = url_params_str
         context["filter"] = SignalFilter(self.request.GET, queryset=self.get_queryset())
-        paginator = Paginator(self.get_queryset(), self.paginate_by)
-        page_number: str | None = self.request.GET.get("page")
-        page_obj: Page = paginator.get_page(page_number)
 
-        context["signals"] = page_obj
+        context["signals"] = self.get_queryset()
         return context
-
-    def get_template_names(self) -> list[str]:
-        if getattr(self.request, 'htmx', False):
-            return ["signals/signals_list.html"]
-        return [self.template_name]
 
 
 class SignalsDetailView(DetailView):
@@ -99,6 +91,19 @@ class SignalsDetailView(DetailView):
     """
 
     model = Signal
+
+    def get_context_data(self, **kwargs) -> Dict[str, Any]:
+        """
+        Get the context data for the view.
+
+        Returns:
+            Dict[str, Any]: The context data for the view.
+        """
+
+        context: Dict[str, Any] = super().get_context_data(**kwargs)
+        context["epivis_url"] = settings.EPIVIS_URL
+        context["data_export_url"] = settings.DATA_EXPORT_URL
+        return context
 
 
 class SignalsListApiView(ListAPIView):

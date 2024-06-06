@@ -6,6 +6,7 @@ from import_export.admin import ImportExportModelAdmin
 from signals.models import (
     DemographicScope,
     Geography,
+    GeographyUnit,
     Pathogen,
     Signal,
     SignalCategory,
@@ -21,6 +22,15 @@ class SignalCategoryAdmin(admin.ModelAdmin):
     """
     list_display: tuple[Literal['name']] = ('name',)
     search_fields: tuple[Literal['name']] = ('name',)
+
+
+@admin.register(GeographyUnit)
+class GeographyUnitAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing geography unit objects.
+    """
+    list_display: tuple[Literal['name']] = ('name', 'geo_id', 'geography',)
+    search_fields: tuple[Literal['name']] = ('name', 'display_name', 'geo_id',)
 
 
 @admin.register(Geography)

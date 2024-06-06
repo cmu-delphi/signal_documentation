@@ -73,10 +73,11 @@
                                         <td>
                                             <ul class="no-padding">
                                                 {% for pathogen in signal.pathogen.all %}
-                                                <span
-                                                    class="badge rounded-pill bg-dark"
-                                                    >{{ pathogen|title }}</span
-                                                >
+                                                <a href="{% url 'signals' %}?pathogen={{ pathogen.id }}">
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ pathogen|title }}
+                                                    </span>
+                                                </a>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -86,10 +87,11 @@
                                         <td>
                                             <ul class="no-padding">
                                                 {% for geography in signal.available_geography.all %}
-                                                <span
-                                                    class="badge rounded-pill bg-dark"
-                                                    >{{ geography }}</span
-                                                >
+                                                <a href="{% url 'signals' %}?available_geography={{ geography.id }}">
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ geography }}
+                                                    </span>
+                                                </a>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -99,10 +101,11 @@
                                         <td>
                                             <ul class="no-padding">
                                                 {% for signal_type in signal.signal_type.all %}
-                                                <span
-                                                    class="badge rounded-pill bg-dark"
-                                                    >{{ signal_type }}</span
-                                                >
+                                                <a href="{% url 'signals' %}?signal_type={{ signal_type.id }}">
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ signal_type }}
+                                                    </span>
+                                                </a>
                                                 {% endfor %}
                                             </ul>
                                         </td>
@@ -204,23 +207,64 @@
                 </div>
             </div>
         </section>
-        {% if signal.example_url != '' %}
-            <h5>Response Example</h5>
+        {% if signal.base %}
+            <h5>Signals with same base</h5>
             <section class="section">
                 <div class="row">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row margin-top-1rem">
-                                <p>Example URL:</p>
-                                <span>{{ signal.example_url }}</span>
-                                <button type="button" class="btn btn-primary margin-top-1rem" id="show-response">Show response</button>
-                                <pre class="margin-top-1rem"><code id="example-response" class="hidden"></code></pre>
-                            </div>
+                            <table class="table table-borderless table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Active</th>
+                                        <th scope="col">Data Source</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Pathogen/Disease Area</th>
+                                        <th scope="col">Base Signal</th>
+                                        <th scope="col">Last Updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for signal in signal.same_base_signals %}
+                                        <tr classs="clickable-table-row">
+                                            <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
+                                            {% if signal.active == True %}
+                                            <td><i class="bi bi-circle-fill" style="color:green;" ></i></td>
+                                            {% else %}
+                                                <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
+                                            {% endif %}
+                                            <td>{{ signal.source.data_source }}</td>
+                                            <td>{{ signal.description }}</td>
+                                            <td>
+                                                {% for pathogen in signal.pathogen.all %}
+                                                <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
+                                                {% endfor %}
+                                            </td>
+                                            <td>
+                                                {% if signal.base %}
+                                                <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
+                                                {% else %}
+                                                --/--
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {% if signal.last_updated %}
+                                                    {{ signal.last_updated|date:"Y-m-d" }}
+                                                {% else %}
+                                                    --/--
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </section>
         {% endif %}
+        {% include "signals/data_visualization_export.html"%}
         <h5>Related links</h5>
         <section class="section">
             <div class="row">
@@ -281,30 +325,6 @@
                         .replace(jsonLine, library.json.replacer);
                 }
             };
-
-            var requestSent = false;
-
-            $(document).ready(function () {
-                $("#show-response").click(function () {
-                    if (!requestSent) {
-                        $.ajax({
-                            url: '{{ signal.example_url|safe }}',
-                            type: 'GET',
-                            success: function (result) {
-                                // Update the page with the response data.
-                                // This depends on the structure of your response data.
-                                // For example, if the response data is a string:
-                                if (result["epidata"].length > 5) {
-                                    result = { epidata: result["epidata"].slice(0, 5), result: result["result"], message: result["message"] }
-                                }
-                                $('#example-response').html(library.json.prettyPrint(result));
-                            }
-                        });
-                        requestSent = true;
-                    };
-                    $("#example-response").toggleClass("hidden");
-                });
-            });
 
             function readMore(button) {
                 var truncatedText = document.querySelector(".overview");

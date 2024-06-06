@@ -7,7 +7,7 @@ from signals.models import (
     FormatChoices,
     Pathogen,
     Signal,
-    TimeLabelChoices,
+    TimeTypeChoices,
 )
 
 
@@ -29,7 +29,8 @@ class SignalFilterForm(forms.ModelForm):
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
     format_type = forms.ChoiceField(choices=FormatChoices.choices, widget=forms.CheckboxSelectMultiple())
     source = forms.ModelMultipleChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
-    time_label = forms.ChoiceField(choices=TimeLabelChoices.choices, widget=forms.CheckboxSelectMultiple())
+    time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
+    base_signal = forms.ChoiceField(choices=[('', _('All')), (True, _('Yes')), (False, _('No'))], required=False, widget=forms.RadioSelect())
 
     class Meta:
         model = Signal
@@ -44,7 +45,7 @@ class SignalFilterForm(forms.ModelForm):
             'format_type',
             'signal_type',
             'source',
-            'time_label',
+            'time_type',
         ]
 
         widgets = {
@@ -79,6 +80,7 @@ class SignalFilterForm(forms.ModelForm):
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
+
         }
 
     def __init__(self, *args, **kwargs) -> None:
