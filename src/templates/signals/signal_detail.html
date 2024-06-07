@@ -100,13 +100,11 @@
                                         <th scope="row">Signal Type</th>
                                         <td>
                                             <ul class="no-padding">
-                                                {% for signal_type in signal.signal_type.all %}
-                                                <a href="{% url 'signals' %}?signal_type={{ signal_type.id }}">
+                                                <a href="{% url 'signals' %}?signal_type={{ signal.signal_type.id }}">
                                                     <span class="badge rounded-pill bg-dark">
-                                                        {{ signal_type }}
+                                                        {{ signal.signal_type }}
                                                     </span>
                                                 </a>
-                                                {% endfor %}
                                             </ul>
                                         </td>
                                     </tr>

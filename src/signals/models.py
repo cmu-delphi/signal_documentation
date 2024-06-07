@@ -264,26 +264,6 @@ class Organisation(TimeStampedModel):
     )
 
 
-class Licence(TimeStampedModel):
-    """
-    A model representing a licence.
-    """
-    name: models.CharField = models.CharField(
-        help_text=_('Name'),
-        max_length=128,
-        unique=True
-    )
-
-    def __str__(self) -> str:
-        """
-        Returns the name of the licence as a string.
-
-        :return: The name of the licence as a string.
-        :rtype: str
-        """
-        return str(self.name)
-
-
 class Signal(TimeStampedModel):
     """
     A model representing a signal.
@@ -309,10 +289,12 @@ class Signal(TimeStampedModel):
         related_name='signals',
         help_text=_('Pathogen/Disease Area'),
     )
-    signal_type: models.ManyToManyField = models.ManyToManyField(
-        'signals.SignalType',
+    signal_type: models.ForeignKey = models.ForeignKey(
+        'signals.signalType',
         related_name='signals',
-        help_text=_('Signal Type')
+        help_text=_('Source Type'),
+        on_delete=models.PROTECT,
+        null=True
     )
     active: models.BooleanField = models.BooleanField(
         help_text=_('Active'),
@@ -482,10 +464,12 @@ class Signal(TimeStampedModel):
         related_name='shared_signals'
     )
 
-    licence: models.ManyToManyField = models.ManyToManyField(
-        'signals.Licence',
-        help_text=_('Licence'),
-        related_name='signals'
+    license: models.ForeignKey = models.ForeignKey(
+        'base.License',
+        related_name='signals',
+        help_text=_('License'),
+        on_delete=models.PROTECT,
+        null=True
     )
 
     restrictions: models.TextField = models.TextField(
@@ -508,6 +492,19 @@ class Signal(TimeStampedModel):
         help_text=_('To Date'),
         null=True,
         blank=True
+    )
+
+    temporal_scope_start: models.CharField = models.CharField(
+        help_text=_('Temporal Scope Start'),
+        null=True,
+        blank=True,
+        max_length=128
+    )
+    temporal_scope_end: models.CharField = models.CharField(
+        help_text=_('Temporal Scope End'),
+        null=True,
+        blank=True,
+        max_length=128
     )
 
     @property

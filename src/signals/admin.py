@@ -11,6 +11,7 @@ from signals.models import (
     Signal,
     SignalCategory,
     SignalType,
+    GeographySignal,
 )
 from signals.resources import SignalBaseResource, SignalResource
 
@@ -40,6 +41,15 @@ class GeographyAdmin(admin.ModelAdmin):
     """
     list_display: tuple[Literal['name']] = ('name',)
     search_fields: tuple[Literal['name']] = ('name',)
+
+
+@admin.register(GeographySignal)
+class GeographySignalAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing signal geography objects.
+    """
+    list_display: tuple[Literal['geography']] = ('geography', 'signal', 'aggregated_by_delphi')
+    search_fields: tuple[Literal['geography']] = ('geography', 'signal', 'aggregated_by_delphi')
 
 
 @admin.register(Pathogen)

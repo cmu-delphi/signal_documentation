@@ -5,13 +5,12 @@ from urllib.parse import urlparse
 from import_export import resources
 from import_export.fields import Field, widgets
 
-from base.models import Link, LinkTypeChoices
+from base.models import Link, LinkTypeChoices, License
 from datasources.models import SourceSubdivision
 from signals.models import (
     DemographicScope,
     Geography,
     GeographySignal,
-    Licence,
     Organisation,
     Pathogen,
     Signal,
@@ -65,13 +64,13 @@ class SignalResource(resources.ModelResource):
     display_name = Field(attribute='display_name', column_name='Name')
     pathogen = Field(
         attribute='pathogen',
-        column_name='Pathogen/\nDisease Area',
+        column_name='Pathogen/ Disease Area',
         widget=widgets.ManyToManyWidget(Pathogen, field='name', separator=','),
     )
     signal_type = Field(
         attribute='signal_type',
         column_name='Signal Type',
-        widget=widgets.ManyToManyWidget(SignalType, field='name', separator=','),
+        widget=widgets.ForeignKeyWidget(SignalType, field='name'),
     )
     active = Field(attribute='active', column_name='Active')
     short_description = Field(attribute='short_description', column_name='Short Description')
@@ -127,15 +126,23 @@ class SignalResource(resources.ModelResource):
         widget=widgets.ManyToManyWidget(Organisation, field='organisation_name', separator=','),
     )
     restrictions = Field(attribute='restrictions', column_name='Use Restrictions')
-    licence = Field(
-        attribute='licence',
-        column_name='Licence',
-        widget=widgets.ForeignKeyWidget(Licence, field='name'),
+    license = Field(
+        attribute='license',
+        column_name='License',
+        widget=widgets.ForeignKeyWidget(License, field='name'),
     )
     links = Field(
         attribute='links',
         column_name='Links',
         widget=widgets.ManyToManyWidget(Link, field='url', separator='|'),
+    )
+    temporal_scope_start = Field(
+        attribute='temporal_scope_start',
+        column_name='Temporal Scope Start',
+    )
+    temporal_scope_end = Field(
+        attribute='temporal_scope_end',
+        column_name='Temporal Scope End',
     )
     # gender_breakdown = Field(attribute='gender_breakdown', column_name='Gender Breakdown')
     # race_breakdown = Field(attribute='race_breakdown', column_name='Race Breakdown')
@@ -168,11 +175,14 @@ class SignalResource(resources.ModelResource):
             'links',
             'data_censoring',
             'missingness',
+            'temporal_scope_start',
+            'temporal_scope_end',
             # 'gender_breakdown',
             # 'race_breakdown',
             # 'age_breakdown',
         ]
         import_id_fields: list[str] = ['name', 'source', 'display_name']
+        store_instance = True
 
     def before_import_row(self, row, **kwargs) -> None:
         """
@@ -191,6 +201,9 @@ class SignalResource(resources.ModelResource):
         ])
         self.process_links(row)
         self.process_pathogen(row)
+        self.process_license(row)
+        self.process_signal_category(row)
+        self.process_signal_type(row)
         self.process_demographic_scope(row)
 
     def is_url_in_domain(self, url, domain) -> Any:
@@ -246,8 +259,8 @@ class SignalResource(resources.ModelResource):
         Processes pathogen.
         """
 
-        if row['Pathogen/\nDisease Area']:
-            pathogens: str = row['Pathogen/\nDisease Area'].split(',')
+        if row['Pathogen/ Disease Area']:
+            pathogens: str = row['Pathogen/ Disease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
 
@@ -299,26 +312,57 @@ class SignalResource(resources.ModelResource):
             for organisation in organisations:
                 Organisation.objects.get_or_create(organisation_name=organisation.strip())
 
-    def process_licence(self, row):
+    def process_license(self, row):
         """
-        Processes licence.
-        """
-
-        if row['Licence']:
-            Licence.objects.get_or_create(name=row['Licence'])
-
-    def process_available_geography(self, row):
-        """
-        Processes available geography.
+        Processes license.
         """
 
-        if row['Available Geography']:
-            geographies: str = row['Available Geography'].split(',')
-            delphi_aggregated_geographies: str = row['Delphi-Aggregated Geography'].split(',')
-            for geography in geographies:
-                geography_instance = Geography.objects.get_or_create(name=geography.strip())
-                if geography in delphi_aggregated_geographies:
-                    signal = Signal.objects.get(name=row['Signal'])
-                    signal_geography = GeographySignal.objects.filter(geography=geography_instance, signal=signal).first()
-                    signal_geography.delphi_aggregated = True
-                    signal_geography.save()
+        if row['License']:
+            license, created = License.objects.get_or_create(name=row['License'])
+            license.use_restrictions = row['Use Restrictions']
+            license.save()
+            row['License'] = license
+
+    def process_signal_category(self, row):
+        """
+        Processes signal category.
+        """
+
+        if row['Category']:
+            category, created = SignalCategory.objects.get_or_create(name=row['Category'])
+            row['Category'] = category
+
+    def process_signal_type(self, row):
+        if row['Signal Type']:
+            signal_type, created = SignalType.objects.get_or_create(name=row['Signal Type'])
+            row['Signal Type'] = signal_type
+
+    def after_import_row(self, row, row_result, **kwargs) -> None:
+        """
+        Post-processes each row after importing.
+        """
+        geographies: str = row['Available Geography'].split(',')
+        delphi_aggregated_geographies: str = row['Delphi-Aggregated Geography'].split(',')
+        for geography in geographies:
+            geography_instance, _ = Geography.objects.get_or_create(name=geography.strip())
+            if geography in delphi_aggregated_geographies:
+                signal = Signal.objects.get(id=row_result.object_id)
+                geography_signal, _ = GeographySignal.objects.get_or_create(geography=geography_instance, signal=signal)
+                geography_signal.aggregated_by_delphi = True
+                geography_signal.save()
+
+    # def process_available_geography(self, row):
+    #     """
+    #     Processes available geography.
+    #     """
+
+    #     if row['Available Geography']:
+    #         geographies: str = row['Available Geography'].split(',')
+    #         delphi_aggregated_geographies: str = row['Delphi-Aggregated Geography'].split(',')
+    #         for geography in geographies:
+    #             geography_instance = Geography.objects.get_or_create(name=geography.strip())
+    #             if geography in delphi_aggregated_geographies:
+    #                 signal = Signal.objects.get(name=row['Signal'])
+    #                 signal_geography = GeographySignal.objects.filter(geography=geography_instance, signal=signal).first()
+    #                 signal_geography.delphi_aggregated = True
+    #                 signal_geography.save()
