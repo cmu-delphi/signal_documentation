@@ -16,6 +16,7 @@ from signals.models import (
     Signal,
     SignalCategory,
     SignalType,
+    GeographicScope,
 )
 
 
@@ -144,6 +145,11 @@ class SignalResource(resources.ModelResource):
         attribute='temporal_scope_end',
         column_name='Temporal Scope End',
     )
+    geographic_scope = Field(
+        attribute='geographic_scope',
+        column_name='Geographic Scope',
+        widget=widgets.ForeignKeyWidget(GeographicScope, field='name'),
+    )
     # gender_breakdown = Field(attribute='gender_breakdown', column_name='Gender Breakdown')
     # race_breakdown = Field(attribute='race_breakdown', column_name='Race Breakdown')
     # age_breakdown = Field(attribute='age_breakdown', column_name='Age Breakdown')
@@ -177,6 +183,7 @@ class SignalResource(resources.ModelResource):
             'missingness',
             'temporal_scope_start',
             'temporal_scope_end',
+            'geographic_scope',
             # 'gender_breakdown',
             # 'race_breakdown',
             # 'age_breakdown',
@@ -204,6 +211,7 @@ class SignalResource(resources.ModelResource):
         self.process_license(row)
         self.process_signal_category(row)
         self.process_signal_type(row)
+        self.process_geographic_scope(row)
         self.process_demographic_scope(row)
 
     def is_url_in_domain(self, url, domain) -> Any:
@@ -336,6 +344,11 @@ class SignalResource(resources.ModelResource):
         if row['Signal Type']:
             signal_type, created = SignalType.objects.get_or_create(name=row['Signal Type'])
             row['Signal Type'] = signal_type
+
+    def process_geographic_scope(self, row):
+        if row['Geographic Scope']:
+            geographic_scope, created = GeographicScope.objects.get_or_create(name=row['Geographic Scope'])
+            row['Geographic Scope'] = geographic_scope
 
     def after_import_row(self, row, row_result, **kwargs) -> None:
         """

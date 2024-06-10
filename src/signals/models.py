@@ -368,9 +368,11 @@ class Signal(TimeStampedModel):
         help_text=_('Signal links'),
         related_name="signals"
     )
-    geographic_scope: models.ManyToManyField = models.ManyToManyField(
+    geographic_scope: models.ForeignKey = models.ForeignKey(
         'signals.GeographicScope',
-        help_text=_('Geographic Scope')
+        help_text=_('Geographic Scope'),
+        on_delete=models.SET_NULL,
+        null=True
     )
     available_geography: models.ManyToManyField = models.ManyToManyField(
         'signals.Geography',
