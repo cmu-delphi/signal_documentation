@@ -5,6 +5,7 @@ server {
     location /static/ {
         autoindex on;
         alias /staticfiles/;
+        add_header X-Content-Type-Options nosniff;
     }
 
     location / {
