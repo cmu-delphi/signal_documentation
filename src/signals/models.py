@@ -12,6 +12,14 @@ class TimeTypeChoices(models.TextChoices):
     WEEK = 'week', _('Week')
 
 
+class ReportingCadence(models.TextChoices):
+    """
+    A class representing choices for reporting cadences.
+    """
+    DAILY = 'daily', _('Daily')
+    WEEKLY = 'weekly', _('Weekly')
+
+
 class TimeLabelChoices(models.TextChoices):
     """
     A class representing choices for time labels.
@@ -47,6 +55,29 @@ class ActiveChoices(models.TextChoices):
     """
     ACTIVE = True, _('Active')
     HISTORICAL = False, _('Historical')
+
+
+class SeverityPyramidRungsChoices(models.TextChoices):
+    """
+    A class representing choices for severity pyramid rungs.
+    """
+    POPULATION = 'population', _('Population')
+    INFECTED = 'infected', _('Infected')
+    SYMPTOMATIC = 'symptomatic', _('Symptomatic')
+    OUTPATIENT_VISIT = 'outpatient_visit', _('Outpatient visit')
+    ASCERTAINED = 'ascertained', _('Ascertained (case)')
+    HOSPITALIZED = 'hospitalized', _('Hospitalized')
+    ICU = 'icu', _('ICU')
+    DEAD = 'dead', _('Dead')
+
+
+class AgeBreakdownChoices(models.TextChoices):
+    """
+    A class representing choices for age breakdown.
+    """
+    CILDREN = '0-17', '0-17'
+    ADULTS = '18-64', '18-64'
+    SENIORS = '65+', '65+'
 
 
 class SignalCategory(TimeStampedModel):
@@ -137,6 +168,25 @@ class Geography(TimeStampedModel):
         return str(self.name)
 
 
+class GeographySignal(models.Model):
+    geography = models.ForeignKey('signals.Geography', on_delete=models.CASCADE, related_name='geography_signals')
+    signal = models.ForeignKey('signals.Signal', on_delete=models.CASCADE, related_name='geography_signals')
+    aggregated_by_delphi = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = ('geography', 'signal')
+
+    @property
+    def display_name(self) -> str:
+        """
+        Returns the display name of the geography signal.
+
+        :return: The display name of the geography signal.
+        :rtype: str
+        """
+        return f'{self.geography.name} (by Delphi)' if self.aggregated_by_delphi else self.geography.name
+
+
 class GeographyUnit(TimeStampedModel):
     """
     A model representing a geography (geo-level) unit.
@@ -173,6 +223,57 @@ class GeographyUnit(TimeStampedModel):
         return str(self.name)
 
 
+class GeographicScope(TimeStampedModel):
+    """
+    A model representing a geographic scope.
+    """
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the geographic scope as a string.
+
+        :return: The name of the geographic scope as a string.
+        :rtype: str
+        """
+        return str(self.name)
+
+
+class DemographicScope(TimeStampedModel):
+    """
+    A model representing a demographic scope.
+    """
+    name: models.CharField = models.CharField(
+        help_text=_('Name'),
+        max_length=128,
+        unique=True
+    )
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the demographic scope as a string.
+
+        :return: The name of the demographic scope as a string.
+        :rtype: str
+        """
+        return str(self.name)
+
+
+class Organisation(TimeStampedModel):
+    """
+    A model representing an access list.
+    """
+    organisation_name: models.CharField = models.CharField(
+        help_text=_('Organisation Name'),
+        max_length=128,
+        unique=True
+    )
+
+
 class Signal(TimeStampedModel):
     """
     A model representing a signal.
@@ -198,10 +299,12 @@ class Signal(TimeStampedModel):
         related_name='signals',
         help_text=_('Pathogen/Disease Area'),
     )
-    signal_type: models.ManyToManyField = models.ManyToManyField(
-        'signals.SignalType',
+    signal_type: models.ForeignKey = models.ForeignKey(
+        'signals.signalType',
         related_name='signals',
-        help_text=_('Signal Type')
+        help_text=_('Source Type'),
+        on_delete=models.PROTECT,
+        null=True
     )
     active: models.BooleanField = models.BooleanField(
         help_text=_('Active'),
@@ -234,6 +337,35 @@ class Signal(TimeStampedModel):
         max_length=128,
         choices=TimeLabelChoices.choices
     )
+    reporting_cadence: models.CharField = models.CharField(
+        help_text=_('Reporting Cadence'),
+        max_length=128,
+        choices=ReportingCadence.choices,
+        null=True
+    )
+    typical_reporting_lag: models.CharField = models.CharField(
+        help_text=_('Typical Reporting Lag'),
+        max_length=128,
+        null=True,
+        blank=True
+    )
+    typical_revision_cadence: models.CharField = models.CharField(
+        help_text=_('Typical Revision Cadence'),
+        max_length=512,
+        null=True,
+        blank=True
+    )
+    demographic_scope: models.ManyToManyField = models.ManyToManyField(
+        'signals.DemographicScope',
+        help_text=_('Demographic Scope'),
+        related_name='signals',
+    )
+    severenity_pyramid_rungs: models.CharField = models.CharField(
+        help_text=_('Severity Pyramid Rungs'),
+        max_length=128,
+        choices=SeverityPyramidRungsChoices.choices,
+        null=True
+    )
     category: models.ForeignKey = models.ForeignKey(
         'signals.SignalCategory',
         related_name='signals',
@@ -246,9 +378,50 @@ class Signal(TimeStampedModel):
         help_text=_('Signal links'),
         related_name="signals"
     )
+    geographic_scope: models.ForeignKey = models.ForeignKey(
+        'signals.GeographicScope',
+        help_text=_('Geographic Scope'),
+        on_delete=models.SET_NULL,
+        null=True
+    )
     available_geography: models.ManyToManyField = models.ManyToManyField(
         'signals.Geography',
-        help_text=_('Available geography')
+        help_text=_('Available geography'),
+        through='signals.GeographySignal'
+    )
+    temporal_scope_start: models.DateField = models.DateField(
+        help_text=_('Temporal Scope Start'),
+        null=True,
+        blank=True
+    )
+    temporal_scope_start_note = models.TextField(
+        help_text=_('Temporal Scope Start Note'),
+        null=True,
+        blank=True
+    )
+    temporal_scope_end: models.DateField = models.DateField(
+        help_text=_('Temporal Scope End'),
+        null=True,
+        blank=True
+    )
+    temporal_scope_end_note = models.TextField(
+        help_text=_('Temporal Scope End Note'),
+        null=True,
+        blank=True
+    )
+    gender_breakdown: models.BooleanField = models.BooleanField(
+        help_text=_('Gender Breakdown'),
+        default=False
+    )
+    race_breakdown: models.BooleanField = models.BooleanField(
+        help_text=_('Race Breakdown'),
+        default=False,
+    )
+    age_breakdown: models.CharField = models.CharField(
+        help_text=_('Age Breakdown'),
+        max_length=128,
+        choices=AgeBreakdownChoices.choices,
+        null=True,
     )
     is_smoothed: models.BooleanField = models.BooleanField(
         help_text=_('Is Smoothed'),
@@ -281,6 +454,42 @@ class Signal(TimeStampedModel):
         help_text=_('Source Subdivision'),
         on_delete=models.PROTECT,
     )
+    data_censoring: models.TextField = models.TextField(
+        help_text=_('Data Censoring'),
+        null=True,
+        blank=True
+    )
+    missingness: models.TextField = models.TextField(
+        help_text=_('Missingness'),
+        null=True,
+        blank=True
+    )
+    organisations_access_list: models.ManyToManyField = models.ManyToManyField(
+        'signals.Organisation',
+        help_text=_('Organisations Access List. Who may access this signal?'),
+        related_name='accessed_signals'
+    )
+
+    organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(
+        'signals.Organisation',
+        help_text=_('Organisations Sharing List. Who may be told about this signal?'),
+        related_name='shared_signals'
+    )
+
+    license: models.ForeignKey = models.ForeignKey(
+        'base.License',
+        related_name='signals',
+        help_text=_('License'),
+        on_delete=models.PROTECT,
+        null=True
+    )
+
+    restrictions: models.TextField = models.TextField(
+        help_text=_('Restrictions'),
+        null=True,
+        blank=True
+    )
+
     last_updated: models.DateField = models.DateField(
         help_text=_('Last Updated'),
         null=True,
@@ -297,17 +506,58 @@ class Signal(TimeStampedModel):
         blank=True
     )
 
+    temporal_scope_start: models.CharField = models.CharField(
+        help_text=_('Temporal Scope Start'),
+        null=True,
+        blank=True,
+        max_length=128
+    )
+    temporal_scope_end: models.CharField = models.CharField(
+        help_text=_('Temporal Scope End'),
+        null=True,
+        blank=True,
+        max_length=128
+    )
+
     @property
-    def example_url(self):
+    def is_access_public(self) -> bool:
+        """
+        Returns True if the signal is public, False otherwise.
+
+        :return: True if the signal is public, False otherwise.
+        :rtype: bool
+        """
+        return self.organisations_access_list.count() == 0
+
+    def is_sharing_public(self) -> bool:
+        """
+        Returns True if the signal is public, False otherwise.
+
+        :return: True if the signal is public, False otherwise.
+        :rtype: bool
+        """
+        return self.organisations_sharing_list.count() == 0
+
+    @property
+    def example_url(self) -> str | None:
+        """
+        Returns the example URL of the signal.
+
+        :return: The example URL of the signal.
+        :rtype: str | None
+        """
         example_url = self.links.filter(link_type="example_url").first()
         return example_url.url if example_url else None
 
     @property
-    def same_base_signals(self):
+    def has_all_demographic_scopes(self) -> bool:
         """
-        Returns the signals that have the same base signal.
+        Returns True if the signal has all demographic scopes, False otherwise.
+
+        :return: True if the signal has all demographic scopes, False otherwise.
+        :rtype: bool
         """
-        return self.base.base_for.all() if self.base else None
+        return self.demographic_scope.count() == DemographicScope.objects.count()
 
     class Meta:
         unique_together = ['name', 'source']

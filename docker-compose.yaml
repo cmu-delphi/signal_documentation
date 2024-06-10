@@ -35,6 +35,7 @@ services:
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/pathogens.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_types.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/signal_categories.json &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/demographic_scopes.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/county.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/hhs.json &&
                     python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/hrr.json &&
