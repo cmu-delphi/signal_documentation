@@ -78,10 +78,15 @@ class DataSource(TimeStampedModel):
         null=True,
         blank=True
     )
-    source_license: models.CharField = models.CharField(
+
+    source_license: models.ForeignKey = models.ForeignKey(
+        'base.License',
+        related_name='data_sources',
         help_text=_('License'),
-        max_length=128
+        on_delete=models.PROTECT,
+        null=True
     )
+
     links: models.ManyToManyField = models.ManyToManyField(
         'base.Link',
         help_text=_('DataSource links'),

@@ -5,7 +5,7 @@ from django.db.models import QuerySet
 from import_export import resources
 from import_export.fields import Field, widgets
 
-from base.models import Link, LinkTypeChoices
+from base.models import Link, LinkTypeChoices, License
 from datasources.models import DataSource, SourceSubdivision
 
 
@@ -40,6 +40,7 @@ class SourceSubdivisionResource(resources.ModelResource):
         any additional links specified in 'DUA' or 'Link' columns.
         """
         self.process_links(row)
+        self.process_licenses(row)
         self.process_datasource(row)
 
     def process_links(self, row) -> None:
@@ -58,6 +59,13 @@ class SourceSubdivisionResource(resources.ModelResource):
             link, created = Link.objects.get_or_create(url=link_url, link_type=link_type)
             row['Links'] += row['Links'] + f'|{link.url}'
 
+    def process_licenses(self, row) -> None:
+        if row['License']:
+            license: License
+            created: bool
+            license, created = License.objects.get_or_create(name=row['License'])
+            row['License'] = license
+
     def process_datasource(self, row) -> None:
         if row['Name']:
             data_source: DataSource
@@ -71,4 +79,6 @@ class SourceSubdivisionResource(resources.ModelResource):
                 }
             )
             links: QuerySet[Link] = Link.objects.filter(url__in=row['Links'].split('|')).values_list('id', flat=True)
+            license: License = License.objects.filter(name=row['License']).first()
             data_source.links.add(*links)
+            data_source.source_license = license
