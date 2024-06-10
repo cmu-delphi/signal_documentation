@@ -176,6 +176,16 @@ class GeographySignal(models.Model):
     class Meta:
         unique_together = ('geography', 'signal')
 
+    @property
+    def display_name(self) -> str:
+        """
+        Returns the display name of the geography signal.
+
+        :return: The display name of the geography signal.
+        :rtype: str
+        """
+        return f'{self.geography.name} (by Delphi)' if self.aggregated_by_delphi else self.geography.name
+
 
 class GeographyUnit(TimeStampedModel):
     """
