@@ -15,6 +15,7 @@ from signals.models import (
     FormatChoices,
     Signal,
     TimeTypeChoices,
+    GeographicScope,
 )
 
 
@@ -45,6 +46,11 @@ class SignalFilter(django_filters.FilterSet):
     time_type = django_filters.MultipleChoiceFilter(choices=TimeTypeChoices.choices)
     base_signal = django_filters.BooleanFilter(lookup_expr='isnull', field_name='base_for')
 
+    def __init__(self, data, *args, **kwargs):
+        data = data.copy()
+        data.setdefault('geographic_scope', GeographicScope.objects.get(name='USA').id)
+        super().__init__(data, *args, **kwargs)
+
     class Meta:
         model = Signal
         fields: list[str] = [
@@ -55,7 +61,7 @@ class SignalFilter(django_filters.FilterSet):
             'available_geography',
             'signal_type',
             'category',
-            'format_type',
+            'geographic_scope',
             'source',
             'time_type',
             'base_signal',

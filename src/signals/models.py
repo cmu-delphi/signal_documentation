@@ -53,8 +53,7 @@ class ActiveChoices(models.TextChoices):
     """
     A class representing choices for active signals.
     """
-    ACTIVE = True, _('Active')
-    HISTORICAL = False, _('Historical')
+    ACTIVE = True, _('Current Surveillance Only')
 
 
 class SeverityPyramidRungsChoices(models.TextChoices):
