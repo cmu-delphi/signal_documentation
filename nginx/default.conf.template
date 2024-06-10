@@ -4,6 +4,7 @@ server {
 
     location /static/ {
         autoindex on;
+        include /etc/nginx/mime.types
         alias /staticfiles/;
     }
 
