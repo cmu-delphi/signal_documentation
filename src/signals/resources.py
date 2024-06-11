@@ -187,6 +187,7 @@ class SignalResource(resources.ModelResource):
             'typical_reporting_lag',
             'license',
             'restrictions',
+            'typical_revision_cadence',
             # 'gender_breakdown',
             # 'race_breakdown',
             # 'age_breakdown',
