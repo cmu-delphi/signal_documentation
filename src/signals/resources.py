@@ -40,7 +40,7 @@ class SignalBaseResource(resources.ModelResource):
 
     class Meta:
         model = Signal
-        fields: list[str] = ['base']
+        fields: list[str] = ['base', 'name', 'source', 'display_name']
         import_id_fields: list[str] = ['name', 'source', 'display_name']
 
     def before_import_row(self, row, **kwargs) -> None:
