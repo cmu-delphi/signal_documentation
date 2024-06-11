@@ -153,6 +153,13 @@ class Geography(TimeStampedModel):
         unique=True
     )
 
+    display_name: models.CharField = models.CharField(
+        help_text=_('Display Name'),
+        max_length=128,
+        null=True,
+        blank=True
+    )
+
     class Meta:
         verbose_name_plural: str = "geographies"
         ordering: list[str] = ["name"]
@@ -164,7 +171,7 @@ class Geography(TimeStampedModel):
         :return: The name of the available geography as a string.
         :rtype: str
         """
-        return str(self.name)
+        return str(self.display_name)
 
 
 class GeographySignal(models.Model):

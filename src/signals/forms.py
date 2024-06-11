@@ -8,6 +8,7 @@ from signals.models import (
     Signal,
     TimeTypeChoices,
     GeographicScope,
+    SeverityPyramidRungsChoices,
 )
 
 
@@ -31,6 +32,7 @@ class SignalFilterForm(forms.ModelForm):
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
     base_signal = forms.ChoiceField(choices=[('', _('All')), (True, _('Yes')), (False, _('No'))], required=False, widget=forms.RadioSelect())
     geographic_scope = forms.ModelMultipleChoiceField(queryset=GeographicScope.objects.all(), widget=forms.CheckboxSelectMultiple())
+    severenity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
 
     class Meta:
         model = Signal
@@ -41,7 +43,7 @@ class SignalFilterForm(forms.ModelForm):
             'pathogen',
             'active',
             'available_geography',
-            'signal_type',
+            'severenity_pyramid_rungs',
             'source',
             'time_type',
             'geographic_scope',
@@ -55,11 +57,6 @@ class SignalFilterForm(forms.ModelForm):
             }),
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Enter search term')}),
             'available_geography': forms.CheckboxSelectMultiple(attrs={
-                'class': 'form-select',
-                'data-bs-toggle': 'tooltip',
-                'data-bs-placement': 'bottom',
-            }),
-            'signal_type': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',

@@ -16,6 +16,7 @@ from signals.models import (
     Signal,
     TimeTypeChoices,
     GeographicScope,
+    SeverityPyramidRungsChoices,
 )
 
 
@@ -42,6 +43,7 @@ class SignalFilter(django_filters.FilterSet):
         )
     )
     format_type = django_filters.MultipleChoiceFilter(choices=FormatChoices.choices)
+    severenity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
     source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all())
     time_type = django_filters.MultipleChoiceFilter(choices=TimeTypeChoices.choices)
     base_signal = django_filters.BooleanFilter(lookup_expr='isnull', field_name='base_for')
@@ -59,7 +61,7 @@ class SignalFilter(django_filters.FilterSet):
             'pathogen',
             'active',
             'available_geography',
-            'signal_type',
+            'severenity_pyramid_rungs',
             'category',
             'geographic_scope',
             'source',
