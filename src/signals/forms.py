@@ -30,7 +30,6 @@ class SignalFilterForm(forms.ModelForm):
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
     source = forms.ModelMultipleChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
-    base_signal = forms.ChoiceField(choices=[('', _('All')), (True, _('Yes')), (False, _('No'))], required=False, widget=forms.RadioSelect())
     geographic_scope = forms.ModelMultipleChoiceField(queryset=GeographicScope.objects.all(), widget=forms.CheckboxSelectMultiple())
     severenity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
 

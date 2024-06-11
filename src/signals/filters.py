@@ -50,7 +50,6 @@ class SignalFilter(django_filters.FilterSet):
     severenity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
     source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all())
     time_type = django_filters.MultipleChoiceFilter(choices=TimeTypeChoices.choices)
-    base_signal = django_filters.BooleanFilter(lookup_expr='isnull', field_name='base_for')
 
     def __init__(self, data, *args, **kwargs):
         data = data.copy()
@@ -73,7 +72,6 @@ class SignalFilter(django_filters.FilterSet):
             'geographic_scope',
             'source',
             'time_type',
-            'base_signal',
         ]
 
     def filter_search(self, queryset, name, value) -> Any:
