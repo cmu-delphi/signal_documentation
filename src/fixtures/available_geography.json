@@ -4,7 +4,7 @@
       "pk": 1,
       "fields": {
         "name": "county",
-        "display_name": "L2 division (e.g. U.S. counties)",
+        "display_name": "ADM2 (e.g. U.S. counties)",
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -24,7 +24,7 @@
       "pk": 3,
       "fields": {
         "name": "hrr",
-        "display_name": "Hospital Referral Regions (HRAs)",
+        "display_name": "Hospital Referral Regions (HRRs)",
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -54,7 +54,7 @@
       "pk": 6,
       "fields": {
         "name": "state",
-        "display_name": "L1 division (e.g. U.S. states)",
+        "display_name": "ADM1 (e.g. U.S. states)",
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
