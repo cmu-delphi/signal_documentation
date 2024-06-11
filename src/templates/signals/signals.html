@@ -60,6 +60,31 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
+                                <h2 class="accordion-header" id="geographic_scope-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#geographic_scope-collapse" aria-expanded="false"
+                                    aria-controls="active-collapse">
+                                        <label for="id_geographic_scope" class="form-label">
+                                            Country
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Country"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.geographic_scope }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.geographic_scope.value %}
+                                <div id="geographic_scope-collapse" class="accordion-collapse" aria-labelledby="geographic_scope-heading">
+                                {% else %}
+                                <div id="geographic_scope-collapse" class="accordion-collapse collapse" aria-labelledby="geographic_scope-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        {{ form.geographic_scope|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
                                 <div class="accordion-header" id="available_geography-heading">
                                     <h2 class="accordion-header" id="active-heading">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#available_geography-collapse" aria-expanded="false" aria-controls="active-collapse">
@@ -109,31 +134,6 @@
                                             <label class="form-check-label" for="select-all">Select all</label>
                                         </div>
                                         {{ form.severenity_pyramid_rungs|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="geographic_scope-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#geographic_scope-collapse" aria-expanded="false"
-                                    aria-controls="active-collapse">
-                                        <label for="id_geographic_scope" class="form-label">
-                                            Country
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Country"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.geographic_scope }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.geographic_scope.value %}
-                                <div id="geographic_scope-collapse" class="accordion-collapse" aria-labelledby="geographic_scope-heading">
-                                {% else %}
-                                <div id="geographic_scope-collapse" class="accordion-collapse collapse" aria-labelledby="geographic_scope-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        {{ form.geographic_scope|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
