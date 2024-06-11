@@ -29,7 +29,7 @@ class SourceSubdivisionResource(resources.ModelResource):
     class Meta:
         model = SourceSubdivision
         fields: tuple[Literal['name'], Literal['display_name'], Literal['description'],
-                      Literal['data_source'], Literal['reference_signal'], Literal['links']]
+                      Literal['data_source'], Literal['reference_signal'], Literal['links'], Literal['external_name']]
         fields = ('name', 'display_name', 'description', 'data_source', 'reference_signal', 'links')
         import_id_fields: list[str] = ['name']
         skip_unchanged = True
