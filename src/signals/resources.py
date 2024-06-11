@@ -184,6 +184,7 @@ class SignalResource(resources.ModelResource):
             'temporal_scope_start',
             'temporal_scope_end',
             'geographic_scope',
+            'typical_reporting_lag',
             # 'gender_breakdown',
             # 'race_breakdown',
             # 'age_breakdown',
