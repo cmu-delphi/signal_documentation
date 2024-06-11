@@ -12,6 +12,7 @@ from signals.models import (
     SignalCategory,
     SignalType,
     GeographySignal,
+    GeographicScope,
 )
 from signals.resources import SignalBaseResource, SignalResource
 
@@ -100,3 +101,12 @@ class SignalAdmin(ImportExportModelAdmin):
         'has_sample_size',
     )
     resource_classes: list[type] = [SignalResource, SignalBaseResource]
+
+
+@admin.register(GeographicScope)
+class GeographicScopeAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing signal type objects.
+    """
+    list_display: tuple[Literal['name']] = ('name',)
+    search_fields: tuple[Literal['name']] = ('name',)
