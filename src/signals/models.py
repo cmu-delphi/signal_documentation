@@ -63,7 +63,7 @@ class SeverityPyramidRungsChoices(models.TextChoices):
     POPULATION = 'population', _('Population')
     INFECTED = 'infected', _('Infected')
     SYMPTOMATIC = 'symptomatic', _('Symptomatic')
-    OUTPATIENT_VISIT = 'outpatient_visit', _('Outpatient visit')
+    OUTPATIENT_VISIT = 'outpatient_visit', _('Outpatient / ED')
     ASCERTAINED = 'ascertained', _('Ascertained (case)')
     HOSPITALIZED = 'hospitalized', _('Hospitalized')
     ICU = 'icu', _('ICU')
