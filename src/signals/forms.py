@@ -79,3 +79,5 @@ class SignalFilterForm(forms.ModelForm):
             field.required = False
             field.help_text = ''
             field.label = ''
+            if field_name == "available_geography":
+                field.queryset = field.queryset.order_by("order_id")

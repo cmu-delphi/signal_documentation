@@ -160,6 +160,12 @@ class Geography(TimeStampedModel):
         blank=True
     )
 
+    order_id: models.IntegerField = models.IntegerField(
+        help_text=_('Order ID'),
+        null=True,
+        blank=True
+    )
+
     class Meta:
         verbose_name_plural: str = "geographies"
         ordering: list[str] = ["name"]
