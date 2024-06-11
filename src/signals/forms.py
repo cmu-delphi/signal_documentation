@@ -4,10 +4,11 @@ from django.utils.translation import gettext_lazy as _
 from datasources.models import SourceSubdivision
 from signals.models import (
     ActiveChoices,
-    FormatChoices,
     Pathogen,
     Signal,
     TimeTypeChoices,
+    GeographicScope,
+    SeverityPyramidRungsChoices,
 )
 
 
@@ -27,10 +28,11 @@ class SignalFilterForm(forms.ModelForm):
     search = forms.CharField(min_length=3)
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple())
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
-    format_type = forms.ChoiceField(choices=FormatChoices.choices, widget=forms.CheckboxSelectMultiple())
     source = forms.ModelMultipleChoiceField(queryset=SourceSubdivision.objects.all(), widget=forms.CheckboxSelectMultiple())
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
     base_signal = forms.ChoiceField(choices=[('', _('All')), (True, _('Yes')), (False, _('No'))], required=False, widget=forms.RadioSelect())
+    geographic_scope = forms.ModelMultipleChoiceField(queryset=GeographicScope.objects.all(), widget=forms.CheckboxSelectMultiple())
+    severenity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
 
     class Meta:
         model = Signal
@@ -41,11 +43,10 @@ class SignalFilterForm(forms.ModelForm):
             'pathogen',
             'active',
             'available_geography',
-            'category',
-            'format_type',
-            'signal_type',
+            'severenity_pyramid_rungs',
             'source',
             'time_type',
+            'geographic_scope',
         ]
 
         widgets = {
@@ -56,21 +57,6 @@ class SignalFilterForm(forms.ModelForm):
             }),
             'search': forms.TextInput(attrs={'class': 'form-control', 'placeholder': _('Enter search term')}),
             'available_geography': forms.CheckboxSelectMultiple(attrs={
-                'class': 'form-select',
-                'data-bs-toggle': 'tooltip',
-                'data-bs-placement': 'bottom',
-            }),
-            'signal_type': forms.CheckboxSelectMultiple(attrs={
-                'class': 'form-select',
-                'data-bs-toggle': 'tooltip',
-                'data-bs-placement': 'bottom',
-            }),
-            'category': forms.CheckboxSelectMultiple(attrs={
-                'class': 'form-select',
-                'data-bs-toggle': 'tooltip',
-                'data-bs-placement': 'bottom',
-            }),
-            'format_type': forms.CheckboxSelectMultiple(attrs={
                 'class': 'form-select',
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
