@@ -8,7 +8,7 @@ from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Signal
+from signals.models import Signal, GeographicScope
 from signals.serializers import SignalSerializer
 
 
@@ -45,13 +45,12 @@ class SignalsListView(ListView):
             ]
             if self.request.GET.get("available_geography")
             else None,
-            "signal_type": [int(el) for el in self.request.GET.getlist("signal_type")]
-            if self.request.GET.get("signal_type")
+            "severenity_pyramid_rungs": [el for el in self.request.GET.getlist("severenity_pyramid_rungs")]
+            if self.request.GET.get("severenity_pyramid_rungs")
             else None,
-            "category": self.request.GET.getlist("category")
-            if self.request.GET.get("category")
+            "geographic_scope": [el for el in self.request.GET.getlist("geographic_scope")]
+            if self.request.GET.get("geographic_scope")
             else None,
-            "format_type": [el for el in self.request.GET.getlist("format_type")],
             "source": [int(el) for el in self.request.GET.getlist("source")],
             "time_type": [el for el in self.request.GET.getlist("time_type")],
             "base_signal": self.request.GET.get("base_signal"),
@@ -76,6 +75,8 @@ class SignalsListView(ListView):
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         url_params_dict, url_params_str = self.get_url_params()
+        if not url_params_dict.get("geographic_scope"):
+            url_params_dict["geographic_scope"] = [GeographicScope.objects.get(name="USA").id]
         context["url_params_dict"] = url_params_dict
         context["form"] = SignalFilterForm(initial=url_params_dict)
         context["url_params_str"] = url_params_str
@@ -120,10 +121,9 @@ class SignalsListApiView(ListAPIView):
         "display_name",
         "pathogen__name",
         "available_geography__name",
-        "signal_type__name",
-        "category__name",
-        "format_type",
+        "severenity_pyramid_rungs",
         "base",
         "source__name",
         "time_label",
+        "geographic_scope__name",
     )
