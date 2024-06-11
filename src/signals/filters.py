@@ -1,4 +1,5 @@
 from typing import Any
+import logging
 
 import django_filters
 from django.db.models import Q
@@ -18,6 +19,9 @@ from signals.models import (
     GeographicScope,
     SeverityPyramidRungsChoices,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 class NumberInFilter(BaseInFilter, NumberFilter):
@@ -50,7 +54,10 @@ class SignalFilter(django_filters.FilterSet):
 
     def __init__(self, data, *args, **kwargs):
         data = data.copy()
-        data.setdefault('geographic_scope', GeographicScope.objects.get(name='USA').id)
+        try:
+            data.setdefault('geographic_scope', GeographicScope.objects.get(name='USA').id)
+        except GeographicScope.DoesNotExist:
+            logger.warning("Default Geographic Scope was not found in the database. Using an empty list.")
         super().__init__(data, *args, **kwargs)
 
     class Meta:
