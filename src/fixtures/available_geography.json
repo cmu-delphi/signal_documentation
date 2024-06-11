@@ -4,7 +4,8 @@
       "pk": 1,
       "fields": {
         "name": "county",
-        "display_name": "L2 division (e.g. U.S. counties)",
+        "display_name": "ADM2 (e.g. U.S. counties)",
+        "order_id": 3,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -15,6 +16,7 @@
       "fields": {
         "name": "hhs",
         "display_name": "HHS Regions",
+        "order_id": 4,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -24,7 +26,8 @@
       "pk": 3,
       "fields": {
         "name": "hrr",
-        "display_name": "Hospital Referral Regions (HRAs)",
+        "display_name": "Hospital Referral Regions (HRRs)",
+        "order_id": 6,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -35,6 +38,7 @@
       "fields": {
         "name": "msa",
         "display_name": "Metropolitan Statistical Areas (MSAs)",
+        "order_id": 5,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -45,6 +49,7 @@
       "fields": {
         "name": "nation",
         "display_name": "National",
+        "order_id": 1,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -54,7 +59,8 @@
       "pk": 6,
       "fields": {
         "name": "state",
-        "display_name": "L1 division (e.g. U.S. states)",
+        "display_name": "ADM1 (e.g. U.S. states)",
+        "order_id": 2,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }
@@ -65,6 +71,7 @@
       "fields": {
         "name": "dma",
         "display_name": "Designated Market Areas (DMAs)",
+        "order_id": 7,
         "created": "2023-08-09T19:23:22.597131",
         "modified": "2023-08-09T19:23:22.597131"
       }

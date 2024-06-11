@@ -1,4 +1,5 @@
 from typing import Any, Dict
+import logging
 
 from django.conf import settings
 from django.views.generic import DetailView, ListView
@@ -10,6 +11,9 @@ from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
 from signals.models import Signal, GeographicScope
 from signals.serializers import SignalSerializer
+
+
+logger = logging.getLogger(__name__)
 
 
 class SignalsListView(ListView):
@@ -53,7 +57,6 @@ class SignalsListView(ListView):
             else None,
             "source": [int(el) for el in self.request.GET.getlist("source")],
             "time_type": [el for el in self.request.GET.getlist("time_type")],
-            "base_signal": self.request.GET.get("base_signal"),
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():
@@ -76,7 +79,12 @@ class SignalsListView(ListView):
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         url_params_dict, url_params_str = self.get_url_params()
         if not url_params_dict.get("geographic_scope"):
-            url_params_dict["geographic_scope"] = [GeographicScope.objects.get(name="USA").id]
+            default_geographic_scope = []
+            try:
+                default_geographic_scope = [GeographicScope.objects.get(name="USA").id]
+            except GeographicScope.DoesNotExist:
+                logger.warning("Default Geographic Scope was not found in the database. Using an empty list.")
+            url_params_dict["geographic_scope"] = default_geographic_scope
         context["url_params_dict"] = url_params_dict
         context["form"] = SignalFilterForm(initial=url_params_dict)
         context["url_params_str"] = url_params_str
