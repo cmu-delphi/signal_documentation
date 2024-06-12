@@ -181,15 +181,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Available Since</th>
+                                        <th scope="row">Temporal Scope Start</th>
                                         <td>
-                                            {{ signal.from_date }}
+                                            {{ signal.temporal_scope_start }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Available Until</th>
+                                        <th scope="row">Temporal Scope End</th>
                                         <td>
-                                            {{ signal.to_date }}
+                                            {{ signal.temporal_scope_end }}
                                         </td>
                                     </tr>
                                     <tr>
@@ -218,40 +218,96 @@
                                         <th scope="col">Active</th>
                                         <th scope="col">Data Source</th>
                                         <th scope="col">Description</th>
-                                        <th scope="col">Pathogen/Disease Area</th>
-                                        <th scope="col">Base Signal</th>
-                                        <th scope="col">Last Updated</th>
+                                        <th scope="col">Geographic Scope</th>
+                                        <th scope="col">Geographic Granularity, aka Geo-Level</th>
+                                        <th scope="col">Available Since</th>
+                                        <th scope="col">Available Until</th>
+                                        <th scope="col">Temporal Granularity</th>
+                                        <th scope="col">Reporting Cadence</th>
+                                        <th scope="col">Reporting Lag(nominal)</th>
+                                        <th scope="col">Revision Cadence</th>
+                                        <th scope="col">Demographic Scope</th>
+                                        <!--<th scope="col">Demographic Disaggregation</th> -->
+                                        <th scope="col">Pathogen / Syndrome</th>
+                                        <th scope="col">Severity Pyramid Rungs</th>
+                                        <th scope="col">Missingness</th>
+                                        <th scope="col">License / Data Use Restrictions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for signal in signal.same_base_signals %}
-                                        <tr classs="clickable-table-row">
-                                            <td onClick="location.href='{% url 'signal' pk=signal.id %}';" class="clickable-table-cell">{{ signal.display_name }}</td>
-                                            {% if signal.active == True %}
-                                            <td><i class="bi bi-circle-fill" style="color:green;" ></i></td>
-                                            {% else %}
-                                                <td><i class="bi bi-circle-fill" style="color:red;" ></i></td>
-                                            {% endif %}
-                                            <td>{{ signal.source.data_source }}</td>
-                                            <td>{{ signal.description }}</td>
-                                            <td>
-                                                {% for pathogen in signal.pathogen.all %}
-                                                <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
+                                        <tr>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.display_name }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {% if signal.active == True%}
+                                                <i class="bi bi-circle-fill" style="color:green;"></i>
+                                                {% else %}
+                                                <i class="bi bi-circle-fill" style="color:red;"></i>
+                                                {% endif %}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.source.external_name }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.description }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.geographic_scope.name }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {% for geography in signal.geography_signals.all %}
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ geography.display_name }}
+                                                    </span>
                                                 {% endfor %}
                                             </td>
-                                            <td>
-                                                {% if signal.base %}
-                                                <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
-                                                {% else %}
-                                                --/--
-                                                {% endif %}
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.temporal_scope_start }}
                                             </td>
-                                            <td>
-                                                {% if signal.last_updated %}
-                                                    {{ signal.last_updated|date:"Y-m-d" }}
-                                                {% else %}
-                                                    --/--
-                                                {% endif %}
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.temporal_scope_end }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.time_type }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.reporting_cadence }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.typical_reporting_lag }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.typical_revision_cadence }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {% for demographic_scope in signal.demographic_scope.all %}
+                                                    <span>
+                                                        {{ demographic_scope }}
+                                                    </span>
+                                                {% endfor %}
+                                            </td>
+                                            <!-- <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                Place for Demographic Disaggregation
+                                            </td> -->
+                                            <td cla ss="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {% for pathogen in signal.pathogen.all %}
+                                                    <span class="badge rounded-pill bg-dark">
+                                                        {{ pathogen|title }}
+                                                    </span>
+                                                {% endfor %}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.severenity_pyramid_rungs }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.missingness }}
+                                            </td>
+                                            <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                                {{ signal.license }}
+                                                <br>
+                                                {{ signal.restrictions }}
                                             </td>
                                         </tr>
                                     {% endfor %}

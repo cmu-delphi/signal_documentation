@@ -571,6 +571,13 @@ class Signal(TimeStampedModel):
         """
         return self.demographic_scope.count() == DemographicScope.objects.count()
 
+    @property
+    def same_base_signals(self):
+        """
+        Returns the signals that have the same base signal.
+        """
+        return self.base.base_for.all() if self.base else None
+
     class Meta:
         unique_together = ['name', 'source']
         ordering: list[str] = ["modified"]
