@@ -83,13 +83,13 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th scope="row">Geography</th>
+                                        <th scope="row">Geographic Granularity, aka Geo-Level</th>
                                         <td>
                                             <ul class="no-padding">
-                                                {% for geography in signal.available_geography.all %}
+                                                {% for geography in signal.geography_signals.all %}
                                                 <a href="{% url 'signals' %}?available_geography={{ geography.id }}">
                                                     <span class="badge rounded-pill bg-dark">
-                                                        {{ geography }}
+                                                        {{ geography.display_name }}
                                                     </span>
                                                 </a>
                                                 {% endfor %}
