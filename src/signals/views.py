@@ -55,7 +55,7 @@ class SignalsListView(ListView):
             "geographic_scope": [el for el in self.request.GET.getlist("geographic_scope")]
             if self.request.GET.get("geographic_scope")
             else None,
-            "source": [int(el) for el in self.request.GET.getlist("source")],
+            "source": [el for el in self.request.GET.getlist("source")],
             "time_type": [el for el in self.request.GET.getlist("time_type")],
         }
         url_params_str = ""

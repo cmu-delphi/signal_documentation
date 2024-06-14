@@ -28,7 +28,10 @@ class SignalFilterForm(forms.ModelForm):
     search = forms.CharField(min_length=3)
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple())
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
-    source = forms.MultipleChoiceField(choices=SourceSubdivision.objects.values_list('id', 'external_name'), widget=forms.CheckboxSelectMultiple())
+    source = forms.MultipleChoiceField(
+        choices=set(SourceSubdivision.objects.values_list('external_name', 'external_name')),
+        widget=forms.CheckboxSelectMultiple()
+    )
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
     geographic_scope = forms.ModelMultipleChoiceField(queryset=GeographicScope.objects.all(), widget=forms.CheckboxSelectMultiple())
     severenity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
