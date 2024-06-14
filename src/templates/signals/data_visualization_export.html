@@ -62,7 +62,7 @@
                             <select id="geographic_type" name="geographic_type" class="form-select">
                                 <option selected>Choose...</option>
                                 {% for geography in signal.available_geography.all %}
-                                <option>{{ geography }}</option>
+                                <option value="{{ geography.name }}">{{ geography }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -209,7 +209,7 @@
     $(document).ready(function () {
         {% for geography in signal.available_geography.all %}
             {% for unit in geography.geography_units.all %}
-                geoValues.push({'id': '{{ unit.geo_id }}', 'geoType': '{{ unit.geography }}', 'text': '{{ unit.display_name }}'});
+                geoValues.push({'id': '{{ unit.geo_id }}', 'geoType': '{{ unit.geography.name }}', 'text': '{{ unit.display_name }}'});
             {% endfor %}
         {% endfor %}
 
