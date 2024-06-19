@@ -28,8 +28,8 @@ class SignalFilterForm(forms.ModelForm):
     search = forms.CharField(min_length=3)
     pathogen = forms.ModelChoiceField(queryset=Pathogen.objects.all(), widget=forms.CheckboxSelectMultiple())
     active = forms.TypedMultipleChoiceField(choices=ActiveChoices.choices, coerce=bool, widget=forms.CheckboxSelectMultiple())
-    source = forms.ModelMultipleChoiceField(
-        queryset=SourceSubdivision.objects.values_list('external_name', 'external_name').distinct(),
+    source = forms.MultipleChoiceField(
+        choices=[],
         widget=forms.CheckboxSelectMultiple()
     )
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
@@ -78,9 +78,12 @@ class SignalFilterForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         # Set required attribute to False and disable helptext for all fields
+        self.fields["available_geography"].queryset = self.fields["available_geography"].queryset.order_by("order_id")
+        try:
+            self.fields["source"].choices = set(SourceSubdivision.objects.values_list('external_name', 'external_name'))
+        except SourceSubdivision.DoesNotExist:
+            self.fields["source"].choices = []
         for field_name, field in self.fields.items():
             field.required = False
             field.help_text = ''
             field.label = ''
-            if field_name == "available_geography":
-                field.queryset = field.queryset.order_by("order_id")
