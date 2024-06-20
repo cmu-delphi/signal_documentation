@@ -7,7 +7,7 @@ from rest_framework.status import is_client_error, is_server_error
 from signal_documentation.celery import BaseTaskWithRetry, app
 from signals.tools import SignalLastUpdatedParser
 
-COVID_CAST_META_URL = os.environ.get('COVID_CAST_META_URL', 'https://api.covidcast.cmu.edu/epidata/covidcast/meta')
+COVID_CAST_META_URL = os.environ.get('COVID_CAST_META_URL', 'https://api.delphi.cmu.edu/epidata/covidcast/meta')
 
 
 @app.task(bind=BaseTaskWithRetry)
