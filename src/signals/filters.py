@@ -52,6 +52,9 @@ class SignalFilter(django_filters.FilterSet):
                                                       field_name="source_id__external_name",
                                                       to_field_name='external_name')
     time_type = django_filters.MultipleChoiceFilter(choices=TimeTypeChoices.choices)
+    from_date = django_filters.DateFilter(field_name='from_date', lookup_expr='gte')
+    to_date = django_filters.DateFilter(field_name='to_date', lookup_expr='lte')
+    signal_availability_days = django_filters.NumberFilter(field_name='signal_availability_days', lookup_expr='gte')
 
     def __init__(self, data, *args, **kwargs):
         data = data.copy()
@@ -74,6 +77,9 @@ class SignalFilter(django_filters.FilterSet):
             'geographic_scope',
             'source',
             'time_type',
+            'from_date',
+            'to_date',
+            'signal_availability_days',
         ]
 
     def filter_search(self, queryset, name, value) -> Any:

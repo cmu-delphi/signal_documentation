@@ -36,6 +36,10 @@ class SignalFilterForm(forms.ModelForm):
     geographic_scope = forms.ModelMultipleChoiceField(queryset=GeographicScope.objects.all(), widget=forms.CheckboxSelectMultiple())
     severenity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
 
+    from_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
+    to_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
+    signal_availability_days = forms.IntegerField(required=False)
+
     class Meta:
         model = Signal
         fields: list[str] = [
@@ -49,6 +53,9 @@ class SignalFilterForm(forms.ModelForm):
             'source',
             'time_type',
             'geographic_scope',
+            'from_date',
+            'to_date',
+            'signal_availability_days',
         ]
 
         widgets = {
@@ -68,7 +75,6 @@ class SignalFilterForm(forms.ModelForm):
                 'data-bs-toggle': 'tooltip',
                 'data-bs-placement': 'bottom',
             }),
-
         }
 
     def __init__(self, *args, **kwargs) -> None:
@@ -87,3 +93,6 @@ class SignalFilterForm(forms.ModelForm):
             field.required = False
             field.help_text = ''
             field.label = ''
+        self.fields['from_date'].label = _('Available Since')
+        self.fields['to_date'].label = _('Available Until')
+        self.fields['signal_availability_days'].label = _('Available for at least (days)')

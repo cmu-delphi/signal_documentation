@@ -518,6 +518,12 @@ class Signal(TimeStampedModel):
         blank=True
     )
 
+    signal_availability_days: models.IntegerField = models.IntegerField(
+        help_text=_('Number of days the signal is available for'),
+        null=True,
+        blank=True
+    )
+
     temporal_scope_start: models.CharField = models.CharField(
         help_text=_('Temporal Scope Start'),
         null=True,
