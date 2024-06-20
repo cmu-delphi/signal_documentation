@@ -82,11 +82,14 @@ Open `http://localhost:8000` to view it in the browser
 Though probably not necessary in most cases, if you want to test/modify/emulate how this will run in production you can:
 
 - In `.env` set:
-```
+
+```shell
 DEBUG = 'False'
 ```
+
 - Modify the app container's command in `docker-compose.yaml` to run:
-```
+
+```shell
 gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
 
 *(Essentially you'll replace just the last line of the command, switching out the "runserver" line)
@@ -95,6 +98,10 @@ gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
 Open `http://localhost` to view it in the browser. In this usage your request will be serviced by Nginx instead of the application directly.
 
 The primary use case for this will be when making changes to the Nginx container image that runs in production and hosts the static file content, or also if making changes to the Gunicorn config.
+
+Additionally, though again not required for local development, you can also specify an env var of `MAIN_PAGE = $name`, and the app will be served at `http://localhost:8000/$name` (if running in debug mode), or if you've set `DEBUG = 'False'` to run it in Nginx/production mode at `http://localhost/$name/`. Note the ending slash when in Nginx/production mode _and_ using the `MAIN_PAGE` env var.
+
+The primary use case is so that we have flexibility to serve the application at something other than the "bare" URL, though doing this is not necessary for local development.
 
 Changes of this sort should be carefully evaluated as they may require interaction with systems managed by devops folks.
 
