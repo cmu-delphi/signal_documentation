@@ -112,6 +112,7 @@ class SignalsDetailView(DetailView):
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         context["epivis_url"] = settings.EPIVIS_URL
         context["data_export_url"] = settings.DATA_EXPORT_URL
+        context["covidcast_url"] = settings.COVIDCAST_URL
         return context
 
 
