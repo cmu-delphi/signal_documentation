@@ -275,7 +275,7 @@
 
             if (!requestSent) {
                 $.ajax({
-                    url: 'https://api.delphi.cmu.edu/epidata/covidcast/',
+                    url: '{{ covidcast_url }}',
                     type: 'GET',
                     data: {
                         'time_type': timeType,
