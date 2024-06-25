@@ -57,6 +57,9 @@ class SignalsListView(ListView):
             else None,
             "source": [el for el in self.request.GET.getlist("source")],
             "time_type": [el for el in self.request.GET.getlist("time_type")],
+            "from_date": self.request.GET.get("from_date"),
+            "to_date": self.request.GET.get("to_date"),
+            "signal_availability_days": self.request.GET.get("signal_availability_days"),
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():

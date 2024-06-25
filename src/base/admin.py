@@ -12,7 +12,7 @@ from base.models import (
 
 class DescriptedFilterFieldInline(admin.TabularInline):
     model = DescriptedFilterField
-    fields = ('description',)
+    fields = ('description', 'filter_field')
     extra = 0
     can_create = False
 

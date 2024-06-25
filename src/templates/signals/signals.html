@@ -189,6 +189,32 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="signal_availability-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#signal_availability-collapse" aria-expanded="false" aria-controls="signal_availability-collapse">
+                                        <label for="id_signal_availability" class="form-label">
+                                            Signal Availability
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Availability"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.signal_availability }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.from_date.value  or form.to_date.value or form.signal_availability_days.value %}
+                                <div id="signal_availability-collapse" class="accordion-collapse" aria-labelledby="signal_availability-heading">
+                                {% else %}
+                                <div id="signal_availability-collapse" class="accordion-collapse collapse" aria-labelledby="signal_availability-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        {{ form.from_date|as_crispy_field }}
+                                        {{ form.to_date|as_crispy_field }}
+                                        {{ form.signal_availability_days|as_crispy_field }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="d-grid gap-2 mt-3">
