@@ -261,6 +261,8 @@ CACHES: dict[str, dict[str, str]] = {
     }
 }
 
+CACHE_TIME = int(os.environ.get('CACHE_TIME', 60 * 60 * 24))  # 24 hours
+
 
 # Celery
 # https://docs.celeryq.dev/en/stable/index.html
