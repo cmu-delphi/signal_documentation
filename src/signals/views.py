@@ -93,7 +93,17 @@ class SignalsListView(ListView):
         context["url_params_str"] = url_params_str
         context["filter"] = SignalFilter(self.request.GET, queryset=self.get_queryset())
 
-        context["signals"] = self.get_queryset()
+        context["signals"] = self.get_queryset().prefetch_related(
+            "pathogen",
+            "available_geography",
+            "geographic_scope",
+            "source",
+        ).select_related(
+            "base",
+            "signal_type",
+            "category",
+            "license"
+        )
         return context
 
 
