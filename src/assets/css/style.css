@@ -1245,3 +1245,10 @@ h6 {
 .bulk-select > a:nth-child(2):hover {
   color: #0d6efd;
 }
+
+
+/*# custom styles */
+
+.margin-top-1rem {
+  margin-top: 1rem;
+}

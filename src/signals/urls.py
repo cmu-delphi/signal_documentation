@@ -11,6 +11,7 @@ from signal_documentation.settings import CACHE_TIME
 
 urlpatterns: list[URLPattern] = [
     path('', cache_page(CACHE_TIME)(SignalsListView.as_view()), name='signals'),
+    path('', SignalsListView.as_view(), name='signals'),
     path('signals/<int:pk>/', SignalsDetailView.as_view(), name='signal'),
     path('signals/<pk>/', SignalsDetailView.as_view(), name='signal'),
 

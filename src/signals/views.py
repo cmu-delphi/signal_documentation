@@ -7,6 +7,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import SearchFilter
 from rest_framework.generics import ListAPIView
 
+
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
 from signals.models import Signal, GeographicScope
