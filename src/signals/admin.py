@@ -4,12 +4,15 @@ from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
 from signals.models import (
+    DemographicScope,
     Geography,
     GeographyUnit,
     Pathogen,
     Signal,
     SignalCategory,
     SignalType,
+    GeographySignal,
+    GeographicScope,
 )
 from signals.resources import SignalBaseResource, SignalResource
 
@@ -41,6 +44,15 @@ class GeographyAdmin(admin.ModelAdmin):
     search_fields: tuple[Literal['name']] = ('name',)
 
 
+@admin.register(GeographySignal)
+class GeographySignalAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing signal geography objects.
+    """
+    list_display: tuple[Literal['geography']] = ('geography', 'signal', 'aggregated_by_delphi')
+    search_fields: tuple[Literal['geography']] = ('geography', 'signal', 'aggregated_by_delphi')
+
+
 @admin.register(Pathogen)
 class PathogenAdmin(admin.ModelAdmin):
     """
@@ -54,6 +66,15 @@ class PathogenAdmin(admin.ModelAdmin):
 class SignalTypeAdmin(admin.ModelAdmin):
     """
     Admin interface for managing signal type objects.
+    """
+    list_display: tuple[Literal['name']] = ('name',)
+    search_fields: tuple[Literal['name']] = ('name',)
+
+
+@admin.register(DemographicScope)
+class DemographicScopeAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing demographic scope objects.
     """
     list_display: tuple[Literal['name']] = ('name',)
     search_fields: tuple[Literal['name']] = ('name',)
@@ -80,3 +101,12 @@ class SignalAdmin(ImportExportModelAdmin):
         'has_sample_size',
     )
     resource_classes: list[type] = [SignalResource, SignalBaseResource]
+
+
+@admin.register(GeographicScope)
+class GeographicScopeAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing signal type objects.
+    """
+    list_display: tuple[Literal['name']] = ('name',)
+    search_fields: tuple[Literal['name']] = ('name',)

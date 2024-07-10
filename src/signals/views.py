@@ -1,4 +1,5 @@
 from typing import Any, Dict
+import logging
 
 from django.conf import settings
 from django.views.generic import DetailView, ListView
@@ -8,8 +9,11 @@ from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Signal
+from signals.models import Signal, GeographicScope
 from signals.serializers import SignalSerializer
+
+
+logger = logging.getLogger(__name__)
 
 
 class SignalsListView(ListView):
@@ -45,16 +49,17 @@ class SignalsListView(ListView):
             ]
             if self.request.GET.get("available_geography")
             else None,
-            "signal_type": [int(el) for el in self.request.GET.getlist("signal_type")]
-            if self.request.GET.get("signal_type")
+            "severenity_pyramid_rungs": [el for el in self.request.GET.getlist("severenity_pyramid_rungs")]
+            if self.request.GET.get("severenity_pyramid_rungs")
             else None,
-            "category": self.request.GET.getlist("category")
-            if self.request.GET.get("category")
+            "geographic_scope": [el for el in self.request.GET.getlist("geographic_scope")]
+            if self.request.GET.get("geographic_scope")
             else None,
-            "format_type": [el for el in self.request.GET.getlist("format_type")],
-            "source": [int(el) for el in self.request.GET.getlist("source")],
+            "source": [el for el in self.request.GET.getlist("source")],
             "time_type": [el for el in self.request.GET.getlist("time_type")],
-            "base_signal": self.request.GET.get("base_signal"),
+            "from_date": self.request.GET.get("from_date"),
+            "to_date": self.request.GET.get("to_date"),
+            "signal_availability_days": self.request.GET.get("signal_availability_days"),
         }
         url_params_str = ""
         for param_name, param_value in url_params_dict.items():
@@ -76,12 +81,29 @@ class SignalsListView(ListView):
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         url_params_dict, url_params_str = self.get_url_params()
+        if not url_params_dict.get("geographic_scope"):
+            default_geographic_scope = []
+            try:
+                default_geographic_scope = [GeographicScope.objects.get(name="USA").id]
+            except GeographicScope.DoesNotExist:
+                logger.warning("Default Geographic Scope was not found in the database. Using an empty list.")
+            url_params_dict["geographic_scope"] = default_geographic_scope
         context["url_params_dict"] = url_params_dict
         context["form"] = SignalFilterForm(initial=url_params_dict)
         context["url_params_str"] = url_params_str
         context["filter"] = SignalFilter(self.request.GET, queryset=self.get_queryset())
 
-        context["signals"] = self.get_queryset()
+        context["signals"] = self.get_queryset().prefetch_related(
+            "pathogen",
+            "available_geography",
+            "geographic_scope",
+            "source",
+        ).select_related(
+            "base",
+            "signal_type",
+            "category",
+            "license"
+        )
         return context
 
 
@@ -103,6 +125,7 @@ class SignalsDetailView(DetailView):
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         context["epivis_url"] = settings.EPIVIS_URL
         context["data_export_url"] = settings.DATA_EXPORT_URL
+        context["covidcast_url"] = settings.COVIDCAST_URL
         return context
 
 
@@ -120,10 +143,9 @@ class SignalsListApiView(ListAPIView):
         "display_name",
         "pathogen__name",
         "available_geography__name",
-        "signal_type__name",
-        "category__name",
-        "format_type",
+        "severenity_pyramid_rungs",
         "base",
         "source__name",
         "time_label",
+        "geographic_scope__name",
     )

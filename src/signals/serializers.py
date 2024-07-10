@@ -21,7 +21,7 @@ class SignalSerializer(ModelSerializer):
 
     links = LinkSerializer(many=True)
     pathogen = SlugRelatedField(many=True, read_only=True, slug_field='name')
-    signal_type = SlugRelatedField(many=True, read_only=True, slug_field='name')
+    signal_type = SlugRelatedField(read_only=True, slug_field='name')
     available_geography = SlugRelatedField(many=True, read_only=True, slug_field='name')
     category = SlugRelatedField(read_only=True, slug_field='name')
     source = SlugRelatedField(read_only=True, slug_field='name')

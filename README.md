@@ -82,11 +82,14 @@ Open `http://localhost:8000` to view it in the browser
 Though probably not necessary in most cases, if you want to test/modify/emulate how this will run in production you can:
 
 - In `.env` set:
-```
+
+```shell
 DEBUG = 'False'
 ```
+
 - Modify the app container's command in `docker-compose.yaml` to run:
-```
+
+```shell
 gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
 
 *(Essentially you'll replace just the last line of the command, switching out the "runserver" line)
@@ -95,6 +98,10 @@ gunicorn signal_documentation.wsgi:application --bind 0.0.0.0:8000"
 Open `http://localhost` to view it in the browser. In this usage your request will be serviced by Nginx instead of the application directly.
 
 The primary use case for this will be when making changes to the Nginx container image that runs in production and hosts the static file content, or also if making changes to the Gunicorn config.
+
+Additionally, though again not required for local development, you can also specify an env var of `MAIN_PAGE = $name`, and the app will be served at `http://localhost:8000/$name` (if running in debug mode), or if you've set `DEBUG = 'False'` to run it in Nginx/production mode at `http://localhost/$name/`. Note the ending slash when in Nginx/production mode _and_ using the `MAIN_PAGE` env var.
+
+The primary use case is so that we have flexibility to serve the application at something other than the "bare" URL, though doing this is not necessary for local development.
 
 Changes of this sort should be carefully evaluated as they may require interaction with systems managed by devops folks.
 
@@ -200,8 +207,14 @@ Each environment is essentially a bunch of different services all governed by `d
 
 ### Basic workflow
 
-- A PR merged to either `development` or `master` will trigger CI to build container images that are then tagged (based on the branch name and ":latest" respectively) and stored in our GitHub Packages container image repository.
+- A PR merged to either `development`, `staging`, or `main` will trigger CI to build container images that are then tagged with the branch name (or ":latest", in the cast of `main`), and stored in our GitHub Packages container image repository.
 - CI triggers a webhook that tells the host systems to pull and run new container images and restart any services that have been updated.
+
+As a developer, your path to getting changes into production should be something like this:
+
+- Source your working branch from `development`, do work, PR and merge when complete
+- PR and merge to `staging` in order to get your changes deployed to https://staging.delphi.cmu.edu/signals for review
+- PR and merge to `main` to go to production
 
 **IMPORTANT!** - The CI/CD process uses Docker Compose to build the specific container images that will be used in external environments. Success of the the build-and-deploy workflow is dependent on constructed services in `docker-compose.yaml`. If considering making changes there, please have a PR reviewed by devops folks :pray: :pray: :pray:
 

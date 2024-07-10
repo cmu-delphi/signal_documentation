@@ -1,4 +1,5 @@
 from typing import Any
+import logging
 
 import django_filters
 from django.db.models import Q
@@ -15,7 +16,12 @@ from signals.models import (
     FormatChoices,
     Signal,
     TimeTypeChoices,
+    GeographicScope,
+    SeverityPyramidRungsChoices,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 class NumberInFilter(BaseInFilter, NumberFilter):
@@ -41,9 +47,22 @@ class SignalFilter(django_filters.FilterSet):
         )
     )
     format_type = django_filters.MultipleChoiceFilter(choices=FormatChoices.choices)
-    source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all())
+    severenity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
+    source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all(),
+                                                      field_name="source_id__external_name",
+                                                      to_field_name='external_name')
     time_type = django_filters.MultipleChoiceFilter(choices=TimeTypeChoices.choices)
-    base_signal = django_filters.BooleanFilter(lookup_expr='isnull', field_name='base_for')
+    from_date = django_filters.DateFilter(field_name='from_date', lookup_expr='gte')
+    to_date = django_filters.DateFilter(field_name='to_date', lookup_expr='lte')
+    signal_availability_days = django_filters.NumberFilter(field_name='signal_availability_days', lookup_expr='gte')
+
+    def __init__(self, data, *args, **kwargs):
+        data = data.copy()
+        try:
+            data.setdefault('geographic_scope', GeographicScope.objects.get(name='USA').id)
+        except GeographicScope.DoesNotExist:
+            logger.warning("Default Geographic Scope was not found in the database. Using an empty list.")
+        super().__init__(data, *args, **kwargs)
 
     class Meta:
         model = Signal
@@ -53,12 +72,14 @@ class SignalFilter(django_filters.FilterSet):
             'pathogen',
             'active',
             'available_geography',
-            'signal_type',
+            'severenity_pyramid_rungs',
             'category',
-            'format_type',
+            'geographic_scope',
             'source',
             'time_type',
-            'base_signal',
+            'from_date',
+            'to_date',
+            'signal_availability_days',
         ]
 
     def filter_search(self, queryset, name, value) -> Any:

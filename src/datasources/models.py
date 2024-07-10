@@ -17,6 +17,11 @@ class SourceSubdivision(TimeStampedModel):
         max_length=128,
         unique=True
     )
+    external_name: models.CharField = models.CharField(
+        help_text=_('External Name'),
+        max_length=128,
+        null=True,
+    )
     description: models.TextField = models.TextField(
         help_text=_('Source description'),
         max_length=1000,
@@ -73,10 +78,15 @@ class DataSource(TimeStampedModel):
         null=True,
         blank=True
     )
-    source_license: models.CharField = models.CharField(
+
+    source_license: models.ForeignKey = models.ForeignKey(
+        'base.License',
+        related_name='data_sources',
         help_text=_('License'),
-        max_length=128
+        on_delete=models.PROTECT,
+        null=True
     )
+
     links: models.ManyToManyField = models.ManyToManyField(
         'base.Link',
         help_text=_('DataSource links'),

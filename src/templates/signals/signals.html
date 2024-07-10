@@ -20,6 +20,9 @@
                                     value="{% if filter.form.search.value %}{{ filter.form.search.value }}{% endif %}"
                                 >
                             </div>
+                            <div class="input-group margin-top-1rem">
+                                {{ form.active|as_crispy_field}}
+                            </div>
                         </div>
                         <div class="accordion">
                             <div class="accordion-item">
@@ -27,10 +30,10 @@
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#pathogen-collapse" aria-expanded="true" aria-controls="pathogen-collapse">
                                         <label for="id_pathogen" class="form-label">
-                                            Pathogen
+                                            Pathogen / Syndrome
                                             <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Pathogen"
-                                            data-bs-content="{{ filter_descriptions.SignalFilter.pathogen }}">
+                                            data-bs-title="Pathogen / Syndrome"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.pathogen }}">
                                                 <i class="bi bi-info-circle"></i>
                                             </a>
                                         </label>
@@ -44,6 +47,10 @@
                                 aria-labelledby="pathogen-heading">
                                 {% endif %}
                                     <div class="accordion-body">
+                                        <div class="bulk-select form-check">
+                                            <input type="checkbox" class="form-check-input" id="select-all">
+                                            <label class="form-check-label" for="select-all">Select all</label>
+                                        </div>
                                         <div id="div_id_pathogen" class="mb-3">
                                             <div>
                                                 {{ form.pathogen|as_crispy_field }}
@@ -53,23 +60,27 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <div class="accordion-header" id="active-heading">
-                                    <h2 class="accordion-header" id="active-heading">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#active-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                            <label for="id_active" class="form-label">
-                                                Active
-                                                <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Active" data-bs-content="{{ filters_descriptions.SignalFilter.active }}"><i class="bi bi-info-circle"></i></a>
-                                            </label>
-                                        </button>
-                                    </h2>
-                                    {% if form.active.value %}
-                                    <div id="active-collapse" class="accordion-collapse" aria-labelledby="active-heading">
-                                    {% else %}
-                                    <div id="active-collapse" class="accordion-collapse collapse" aria-labelledby="active-heading">
-                                    {% endif %}
-                                        <div class="accordion-body">
-                                            {{ form.active|as_crispy_field}}
-                                        </div>
+                                <h2 class="accordion-header" id="geographic_scope-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#geographic_scope-collapse" aria-expanded="false"
+                                    aria-controls="active-collapse">
+                                        <label for="id_geographic_scope" class="form-label">
+                                            Country
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Country"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.geographic_scope }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.geographic_scope.value %}
+                                <div id="geographic_scope-collapse" class="accordion-collapse" aria-labelledby="geographic_scope-heading">
+                                {% else %}
+                                <div id="geographic_scope-collapse" class="accordion-collapse collapse" aria-labelledby="geographic_scope-heading">
+                                {% endif %}
+                                    <div class="accordion-body">
+                                        {{ form.geographic_scope|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
@@ -78,8 +89,8 @@
                                     <h2 class="accordion-header" id="active-heading">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#available_geography-collapse" aria-expanded="false" aria-controls="active-collapse">
                                             <label for="id_available_geography" class="form-label">
-                                                Available Geography
-                                                <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Available Geography" data-bs-content="{{ filters_descriptions.SignalFilter.available_geography }}"><i class="bi bi-info-circle"></i></a>
+                                                Geo-level
+                                                <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Geo-level" data-bs-content="{{ filters_descriptions.SignalFilter.available_geography }}"><i class="bi bi-info-circle"></i></a>
                                             </label>
                                         </button>
                                     </h2>
@@ -89,9 +100,9 @@
                                     <div id="available_geography-collapse" class="accordion-collapse collapse" aria-labelledby="available_geography-heading">
                                     {% endif %}
                                         <div class="accordion-body">
-                                            <div class="bulk-select">
+                                            <div class="bulk-select form-check">
                                                 <input type="checkbox" class="form-check-input" id="select-all">
-                                                <label for="select-all">Select all</label>
+                                                <label class="form-check-label" for="select-all">Select all</label>
                                             </div>
                                             {{ form.available_geography|as_crispy_field }}
                                         </div>
@@ -99,87 +110,30 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="signal_type-heading">
+                                <h2 class="accordion-header" id="severenity_pyramid_rungs-heading">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#signal_type-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                        <label for="id_signal_type" class="form-label">
-                                            Signal Type
+                                    data-bs-target="#severenity_pyramid_rungs-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                        <label for="id_severenity_pyramid_rungs" class="form-label">
+                                            Severity Pyramid
                                             <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Signal Type"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.signal_type }}">
+                                            data-bs-title="Severity Pyramid"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.severenity_pyramid_rungs }}">
                                             <i class="bi bi-info-circle"></i>
                                         </a>
                                         </label>
                                     </button>
                                 </h2>
-                                {% if form.signal_type.value %}
-                                <div id="signal_type-collapse" class="accordion-collapse" aria-labelledby="signal_type-heading">
+                                {% if form.severenity_pyramid_rungs.value %}
+                                <div id="severenity_pyramid_rungs-collapse" class="accordion-collapse" aria-labelledby="severenity_pyramid_rungs-heading">
                                 {% else %}
-                                <div id="signal_type-collapse" class="accordion-collapse collapse" aria-labelledby="signal_type-heading">
+                                <div id="severenity_pyramid_rungs-collapse" class="accordion-collapse collapse" aria-labelledby="severenity_pyramid_rungs-heading">
                                 {% endif %}
                                     <div class="accordion-body">
-                                        <div class="bulk-select">
+                                        <div class="bulk-select form-check">
                                             <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label for="select-all">Select all</label>
+                                            <label class="form-check-label" for="select-all">Select all</label>
                                         </div>
-                                        {{ form.signal_type|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accortion-item">
-                                <h2 class="accordion-header" id="category-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#category-collapse" aria-expanded="false"
-                                    aria-controls="active-collapse">
-                                        <label for="id_category" class="form-label">
-                                            Category
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Category"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.category }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.category.value %}
-                                <div id="category-collapse" class="accordion-collapse" aria-labelledby="category-heading">
-                                {% else %}
-                                <div id="category-collapse" class="accordion-collapse collapse" aria-labelledby="category-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        <div class="bulk-select">
-                                            <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label for="select-all">Select all</label>
-                                        </div>
-                                        {{ form.category|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="format-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#format_type-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                        <label for="id_format_type" class="form-label">
-                                            Format Type
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Format Type"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.format_type }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.format_type.value %}
-                                <div id="format_type-collapse" class="accordion-collapse" aria-labelledby="format_type-heading">
-                                {% else %}
-                                <div id="format_type-collapse" class="accordion-collapse collapse" aria-labelledby="format_type-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        <div class="bulk-select">
-                                            <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label for="select-all">Select all</label>
-                                        </div>
-                                        {{ form.format_type|as_crispy_field }}
+                                        {{ form.severenity_pyramid_rungs|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
@@ -188,9 +142,9 @@
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#source-collapse" aria-expanded="false" aria-controls="active-collapse">
                                         <label for="id_source" class="form-label">
-                                            Source
+                                            Data Source
                                             <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Source"
+                                            data-bs-title="Data Source"
                                             data-bs-content="{{ filters_descriptions.SignalFilter.source }}">
                                                 <i class="bi bi-info-circle"></i>
                                             </a>
@@ -203,23 +157,23 @@
                                 <div id="source-collapse" class="accordion-collapse collapse" aria-labelledby="source-heading">
                                 {% endif %}
                                     <div class="accordion-body">
-                                        <div class="bulk-select">
+                                        <div class="bulk-select form-check">
                                             <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label for="select-all">Select all</label>
+                                            <label class="form-check-label" for="select-all">Select all</label>
                                         </div>
                                         {{ form.source|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
-                                <h2 class="accordion-header" id="available_geography-heading">
+                                <h2 class="accordion-header" id="time_type-heading">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#time_label-collapse" aria-expanded="false"aria-controls="active-collapse">
-                                        <label for="id_time_label" class="form-label">
-                                            Time Label
+                                    data-bs-target="#time_type-collapse" aria-expanded="false" aria-controls="active-collapse">
+                                        <label for="id_time_type" class="form-label">
+                                            Temporal Granularity
                                             <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Time Label"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.time_label }}">
+                                            data-bs-title="Temporal Granularity"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.time_type }}">
                                                 <i class="bi bi-info-circle"></i>
                                             </a>
                                         </label>
@@ -236,21 +190,28 @@
                                 </div>
                             </div>
                             <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#base_signal-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                    <label for="id_base_signal" class="form-label">
-                                        Base Signal
-                                        <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Base Signal" data-bs-content="{{ filters_descriptions.SignalFilter.base_signal }}"><i class="bi bi-info-circle"></i></a>
-                                    </label>
-                                </button>
-                              </h2>
-                                {% if form.base_signal.value %}
-                                  <div id="base_signal-collapse" class="accordion-collapse" aria-labelledby="base_signal-heading">
+                                <h2 class="accordion-header" id="signal_availability-heading">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#signal_availability-collapse" aria-expanded="false" aria-controls="signal_availability-collapse">
+                                        <label for="id_signal_availability" class="form-label">
+                                            Signal Availability
+                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
+                                            data-bs-title="Availability"
+                                            data-bs-content="{{ filters_descriptions.SignalFilter.signal_availability }}">
+                                                <i class="bi bi-info-circle"></i>
+                                            </a>
+                                        </label>
+                                    </button>
+                                </h2>
+                                {% if form.from_date.value  or form.to_date.value or form.signal_availability_days.value %}
+                                <div id="signal_availability-collapse" class="accordion-collapse" aria-labelledby="signal_availability-heading">
                                 {% else %}
-                                  <div id="base_signal-collapse" class="accordion-collapse collapse" aria-labelledby="base_signal-heading">
+                                <div id="signal_availability-collapse" class="accordion-collapse collapse" aria-labelledby="signal_availability-heading">
                                 {% endif %}
                                     <div class="accordion-body">
-                                        {{ form.base_signal|as_crispy_field }}
+                                        {{ form.from_date|as_crispy_field }}
+                                        {{ form.to_date|as_crispy_field }}
+                                        {{ form.signal_availability_days|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
@@ -288,20 +249,31 @@
                         <table class="table table-borderless table-hover signals-list-table">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="padding-left: 0px; padding-right: 0px;"></th>
+                                    <th scope="col"></th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Active</th>
                                     <th scope="col">Data Source</th>
                                     <th scope="col">Description</th>
-                                    <th scope="col">Pathogen/Disease Area</th>
-                                    <th scope="col">Base Signal</th>
-                                    <th scope="col">Last Updated</th>
+                                    <th scope="col">Geographic Scope</th>
+                                    <th scope="col">Geographic Granularity, aka Geo-Level</th>
+                                    <th scope="col">Available Since</th>
+                                    <th scope="col">Available Until</th>
+                                    <th scope="col">Temporal Granularity</th>
+                                    <th scope="col">Reporting Cadence</th>
+                                    <th scope="col">Reporting Lag(nominal)</th>
+                                    <th scope="col">Revision Cadence</th>
+                                    <th scope="col">Demographic Scope</th>
+                                    <!--<th scope="col">Demographic Disaggregation</th> -->
+                                    <th scope="col">Pathogen / Syndrome</th>
+                                    <th scope="col">Severity Pyramid Rungs</th>
+                                    <th scope="col">Missingness</th>
+                                    <th scope="col">License / Data Use Restrictions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for signal in signals %}
                                     <tr>
-                                        <td style="padding-left: 0px; padding-right: 0px;">
+                                        <td>
                                             <input type="checkbox" name="id" value="{{ signal.id }}">
                                             {{ form.id|as_crispy_field }}
                                         </td>
@@ -316,29 +288,66 @@
                                             {% endif %}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.source.data_source }}
+                                            {{ signal.source.external_name }}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.description}}
+                                            {{ signal.description }}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% for pathogen in signal.pathogen.all %}
-                                            <span class="badge rounded-pill bg-dark">{{ pathogen|title }}</span>
+                                            {{ signal.geographic_scope.name }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {% for geography in signal.geography_signals.all %}
+                                                <span class="badge rounded-pill bg-dark">
+                                                    {{ geography.display_name }}
+                                                </span>
                                             {% endfor %}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% if signal.base %}
-                                            <a href="{% url 'signal' pk=signal.base.id %}">{{ signal.display_name }}</a>
-                                            {% else %}
-                                            <span>--/--</span>
-                                            {% endif %}
+                                            {{ signal.temporal_scope_start }}
                                         </td>
                                         <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% if signal.last_updated %}
-                                            {{ signal.last_updated|date:"Y-m-d" }}
-                                            {% else %}
-                                            <span>--/--</span>
-                                            {% endif %}
+                                            {{ signal.temporal_scope_end }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.time_type }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.reporting_cadence }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.typical_reporting_lag }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.typical_revision_cadence }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {% for demographic_scope in signal.demographic_scope.all %}
+                                                <span>
+                                                    {{ demographic_scope }}
+                                                </span>
+                                            {% endfor %}
+                                        </td>
+                                        <!-- <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            Place for Demographic Disaggregation
+                                        </td> -->
+                                        <td cla ss="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {% for pathogen in signal.pathogen.all %}
+                                                <span class="badge rounded-pill bg-dark">
+                                                    {{ pathogen|title }}
+                                                </span>
+                                            {% endfor %}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.severenity_pyramid_rungs }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.missingness }}
+                                        </td>
+                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                            {{ signal.license }}
+                                            <br>
+                                            {{ signal.restrictions }}
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -354,7 +363,7 @@
 
     const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
     var popoverOptions = {
-        trigger: "hover,click,focus",
+        trigger: "hover",
         container: "body",
         delay: {
             "show": 500,

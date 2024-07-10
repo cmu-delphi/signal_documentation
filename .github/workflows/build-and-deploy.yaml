@@ -6,7 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     # CI/CD will run on these branches
     if: >
-      github.ref == 'refs/heads/master' ||
+      github.ref == 'refs/heads/main' ||
+      github.ref == 'refs/heads/staging' ||
       github.ref == 'refs/heads/development'
     strategy:
       matrix:
@@ -27,7 +28,7 @@ jobs:
           baseRef="${GITHUB_REF#*/}"
           baseRef="${baseRef#*/}"
           case "${baseRef}" in
-          master)
+          main)
             image_tag="latest"
             ;;
           *)

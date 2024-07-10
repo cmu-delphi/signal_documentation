@@ -12,12 +12,9 @@ class SourceSubdivisionAdmin(ImportExportModelAdmin):
     """
     Admin interface for managing source subdivision objects.
     """
-    list_display: tuple[Literal['name'], Literal['db_source']] = ('name', 'db_source')
+    list_display: tuple[Literal['name'], Literal['db_source'], Literal['external_name']] = ('name', 'db_source', 'external_name')
     search_fields: tuple[Literal['name'], Literal['db_source']] = ('name', 'db_source')
     resource_classes: list[type[SourceSubdivisionResource]] = [SourceSubdivisionResource]
-
-
-data_source_search_fields_type = tuple[Literal['name'], Literal['source_subdivision__db_source'], Literal['source_subdivision__name'], Literal['description']]
 
 
 @admin.register(DataSource)

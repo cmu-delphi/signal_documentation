@@ -1,10 +1,9 @@
 server {
     listen 80;
     server_name sdnginx;
-
-    location /static/ {
+    location ~* /static/(.*)$ {
         autoindex on;
-        alias /staticfiles/;
+        alias /staticfiles/$1;
     }
 
     location / {

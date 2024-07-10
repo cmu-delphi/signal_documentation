@@ -123,3 +123,20 @@ class Link(TimeStampedModel):
             return {
                 'description': _('No description available'),
             }
+
+
+class License(models.Model):
+    """
+    A model representing a License.
+    """
+    name: models.CharField = models.CharField(help_text=_('License'), max_length=256, unique=True)
+    use_restrictions: models.TextField = models.TextField(help_text=_('Use Restrictions'), blank=True, null=True)
+
+    def __str__(self) -> str:
+        """
+        Returns the name of the license as a string.
+
+        :return: The name of the license as a string.
+        :rtype: str
+        """
+        return self.name

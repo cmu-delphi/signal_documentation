@@ -5,13 +5,14 @@ from django.db.models import QuerySet
 from import_export import resources
 from import_export.fields import Field, widgets
 
-from base.models import Link, LinkTypeChoices
+from base.models import Link, LinkTypeChoices, License
 from datasources.models import DataSource, SourceSubdivision
 
 
 class SourceSubdivisionResource(resources.ModelResource):
     name = Field(attribute='name', column_name='Source Subdivision')
     display_name = Field(attribute='display_name', column_name='Source Subdivision')
+    external_name = Field(attribute='external_name', column_name='External Name')
     description = Field(attribute='description', column_name='Description')
     db_source = Field(attribute='db_source', column_name='DB Source')
     data_source = Field(
@@ -28,8 +29,8 @@ class SourceSubdivisionResource(resources.ModelResource):
     class Meta:
         model = SourceSubdivision
         fields: tuple[Literal['name'], Literal['display_name'], Literal['description'],
-                      Literal['data_source'], Literal['reference_signal'], Literal['links']]
-        fields = ('name', 'display_name', 'description', 'data_source', 'reference_signal', 'links')
+                      Literal['data_source'], Literal['reference_signal'], Literal['links'], Literal['external_name']]
+        fields = ('name', 'display_name', 'description', 'data_source', 'reference_signal', 'links', 'external_name')
         import_id_fields: list[str] = ['name']
         skip_unchanged = True
 
@@ -39,6 +40,7 @@ class SourceSubdivisionResource(resources.ModelResource):
         any additional links specified in 'DUA' or 'Link' columns.
         """
         self.process_links(row)
+        self.process_licenses(row)
         self.process_datasource(row)
 
     def process_links(self, row) -> None:
@@ -57,6 +59,13 @@ class SourceSubdivisionResource(resources.ModelResource):
             link, created = Link.objects.get_or_create(url=link_url, link_type=link_type)
             row['Links'] += row['Links'] + f'|{link.url}'
 
+    def process_licenses(self, row) -> None:
+        if row['License']:
+            license: License
+            created: bool
+            license, created = License.objects.get_or_create(name=row['License'])
+            row['License'] = license
+
     def process_datasource(self, row) -> None:
         if row['Name']:
             data_source: DataSource
@@ -70,4 +79,6 @@ class SourceSubdivisionResource(resources.ModelResource):
                 }
             )
             links: QuerySet[Link] = Link.objects.filter(url__in=row['Links'].split('|')).values_list('id', flat=True)
+            license: License = License.objects.filter(name=row['License']).first()
             data_source.links.add(*links)
+            data_source.source_license = license

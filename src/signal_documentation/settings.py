@@ -24,7 +24,8 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
 
 EPIVIS_URL = os.environ.get("EPIVIS_URL", "https://deploy-preview-36--cmu-delphi-epivis.netlify.app/")
-DATA_EXPORT_URL = os.environ.get("DATA_EXPORT_URL", "https://api.covidcast.cmu.edu/epidata/covidcast/csv")
+DATA_EXPORT_URL = os.environ.get("DATA_EXPORT_URL", "https://api.delphi.cmu.edu/epidata/covidcast/csv")
+COVIDCAST_URL = os.environ.get("COVIDCAST_URL", "https://api.delphi.cmu.edu/epidata/covidcast/")
 
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
@@ -48,8 +49,7 @@ BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
-DEBUG = True
+DEBUG = bool(strtobool(os.getenv('DEBUG', 'True')))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -260,6 +260,8 @@ CACHES: dict[str, dict[str, str]] = {
         'LOCATION': REDIS_URL,
     }
 }
+
+CACHE_TIME = int(os.environ.get('CACHE_TIME', 60 * 60 * 24))  # 24 hours
 
 
 # Celery

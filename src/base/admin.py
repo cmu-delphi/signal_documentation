@@ -6,12 +6,13 @@ from base.models import (
     DescriptedFilter,
     DescriptedFilterField,
     Link,
+    License
 )
 
 
 class DescriptedFilterFieldInline(admin.TabularInline):
     model = DescriptedFilterField
-    fields = ('description',)
+    fields = ('description', 'filter_field')
     extra = 0
     can_create = False
 
@@ -27,3 +28,12 @@ class LinkAdmin(admin.ModelAdmin):
     Admin interface for managing link objects.
     """
     list_display: tuple[Literal['url'], Literal['link_type']] = ('url', 'link_type')
+
+
+@admin.register(License)
+class GeographyAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing license objects.
+    """
+    list_display: tuple[Literal['name'], Literal['use_restrictions']] = ('name', 'use_restrictions')
+    search_fields: tuple[Literal['name']] = ('name',)
