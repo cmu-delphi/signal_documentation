@@ -65,7 +65,7 @@ class SignalResource(resources.ModelResource):
     display_name = Field(attribute='display_name', column_name='Name')
     pathogen = Field(
         attribute='pathogen',
-        column_name='Pathogen/ Disease Area',
+        column_name='Pathogen/\nDisease Area',
         widget=widgets.ManyToManyWidget(Pathogen, field='name', separator=','),
     )
     signal_type = Field(
@@ -271,8 +271,8 @@ class SignalResource(resources.ModelResource):
         Processes pathogen.
         """
 
-        if row['Pathogen/ Disease Area']:
-            pathogens: str = row['Pathogen/ Disease Area'].split(',')
+        if row['Pathogen/\nDisease Area']:
+            pathogens: str = row['Pathogen/\nDisease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
 
