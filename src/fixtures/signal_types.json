@@ -1,0 +1,101 @@
+[
+    {
+      "model": "signals.SignalType",
+      "pk": 1,
+      "fields": {
+        "name": "Public Behavior",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 2,
+      "fields": {
+        "name": "Inpatient insurance claims",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 3,
+      "fields": {
+        "name": "Outpatient insurance claims",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 4,
+      "fields": {
+        "name": "Testing",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 5,
+      "fields": {
+        "name": "Vaccines",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 6,
+      "fields": {
+        "name": "Self-reported (survey)",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 7,
+      "fields": {
+        "name": "Cases",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 8,
+      "fields": {
+        "name": "Deaths",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 9,
+      "fields": {
+        "name": "Prescription/pharmacy",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 10,
+      "fields": {
+        "name": "EMR",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalType",
+      "pk": 11,
+      "fields": {
+        "name": "Health department-sourced information",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    }
+  ]

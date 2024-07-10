@@ -3,29 +3,36 @@ version: '3.8'
 services:
 
   db:
-    image: postgres:latest
+    image: mysql:latest
     container_name: signal_documentation-db
     restart: always
     env_file:
-     - ./.env
+      - ./.env
     environment:
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_HOST: ${POSTGRES_HOST}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - mysql:/var/lib/mysql/
     ports:
-      - "5432:5432"
+      - "3306:3306"
 
-  webapp:
-    build: .
+  # Production service - "service", "image", and "container_name" should all contain the same
+  # reference, based on the name of the service.
+  sdwebapp:
+    image: ${REGISTRY}signal_documentation-sdwebapp${TAG}
+    build:
+      context: .
+
     env_file:
-     - ./.env
-    container_name: signal_documentation-web
-    command: sh -c "python /usr/src/signal_documentation/src/manage.py migrate --noinput &&
-                    python /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
-                    python /usr/src/signal_documentation/src/manage.py runserver 0.0.0.0:8000"
+      - ./.env
+    container_name: signal_documentation-sdwebapp
+    restart: on-failure
+    command: sh -c "python3 /usr/src/signal_documentation/src/manage.py migrate --noinput &&
+                    python3 /usr/src/signal_documentation/src/manage.py collectstatic --noinput &&
+                    python3 /usr/src/signal_documentation/src/manage.py loaddata ./fixtures/* &&
+                    python3 /usr/src/signal_documentation/src/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/usr/src/signal_documentation
     ports:
@@ -33,6 +40,75 @@ services:
     depends_on:
       - db
 
+  redis:
+    image: redis
+    container_name: signal_documentation-redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  # Production service - "service", "image", and "container_name" should all contain the same
+  # reference, based on the name of the service.
+  sdnginx:
+    image: ${REGISTRY}signal_documentation-sdnginx${TAG}
+    build: ./nginx
+    env_file:
+      - ./.env
+    container_name: signal_documentation-sdnginx
+    restart: on-failure
+    volumes:
+      - ./src/staticfiles:/staticfiles
+    ports:
+      - "80:80"
+    depends_on:
+      - sdwebapp
+
+  celery:
+    build: .
+    env_file:
+      - ./.env
+    container_name: signal_documentation-celery
+    working_dir: /usr/src/signal_documentation/src
+    command: celery -A signal_documentation worker -l info
+    volumes:
+      - .:/usr/src/signal_documentation
+    depends_on:
+      - db
+      - redis
+
+  celery-beat:
+    build: .
+    env_file:
+      - ./.env
+    container_name: signal_documentation-celery-beat
+    working_dir: /usr/src/signal_documentation/src
+    command: celery -A signal_documentation beat -l info
+    volumes:
+      - .:/usr/src/signal_documentation
+    depends_on:
+      - db
+      - redis
+
+  flower:
+    build: .
+    env_file:
+      - ./.env
+    image: mher/flower
+    container_name: signal_documentation-flower
+    working_dir: /usr/src/signal_documentation/src
+    command: celery -A signal_documentation flower -l info
+    volumes:
+      - .:/usr/src/signal_documentation
+    ports:
+      - "5555:5555"
+    depends_on:
+      - redis
+      - celery
+      - celery-beat
+
 volumes:
-  postgres:
-  webapp:
+  mysql:
+  sdwebapp:
+  static:
+  celery:
+  celery-beat:

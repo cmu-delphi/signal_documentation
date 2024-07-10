@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+
+{% load i18n %}
+
+{% block content %}
+    {% for datasource in datasource_list %}
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">{{ datasource.display_name }}</h5>
+                <p class="card-text">{{ datasource.description }}</p>
+            </div>
+            {% for subdivision in datasource.source_subdivisions.all %}
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <a  href="{% url 'signals' %}?source={{ subdivision.pk }}">
+                            <div>{{ subdivision }}</div>
+                        </a>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endblock %}

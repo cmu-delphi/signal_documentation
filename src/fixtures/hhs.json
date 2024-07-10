@@ -1,0 +1,132 @@
+[
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3225,
+        "fields": {
+            "geo_id": "1",
+            "name": "Boston",
+            "display_name": "HHS Region 1 Boston",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.651343Z",
+            "modified": "2024-05-02T15:08:51.651343Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3226,
+        "fields": {
+            "geo_id": "2",
+            "name": "New York",
+            "display_name": "HHS Region 2 New York",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.651343Z",
+            "modified": "2024-05-02T15:08:51.651343Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3227,
+        "fields": {
+            "geo_id": "3",
+            "name": "Philadelphia",
+            "display_name": "HHS Region 3 Philadelphia",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.651343Z",
+            "modified": "2024-05-02T15:08:51.651343Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3228,
+        "fields": {
+            "geo_id": "4",
+            "name": "Atlanta",
+            "display_name": "HHS Region 4 Atlanta",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.651343Z",
+            "modified": "2024-05-02T15:08:51.651343Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3229,
+        "fields": {
+            "geo_id": "5",
+            "name": "Chicago",
+            "display_name": "HHS Region 5 Chicago",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.651343Z",
+            "modified": "2024-05-02T15:08:51.652340Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3230,
+        "fields": {
+            "geo_id": "6",
+            "name": "Dallas",
+            "display_name": "HHS Region 6 Dallas",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.652340Z",
+            "modified": "2024-05-02T15:08:51.652340Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3231,
+        "fields": {
+            "geo_id": "7",
+            "name": "Kansas City",
+            "display_name": "HHS Region 7 Kansas City",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.652340Z",
+            "modified": "2024-05-02T15:08:51.652340Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3232,
+        "fields": {
+            "geo_id": "8",
+            "name": "Denver",
+            "display_name": "HHS Region 8 Denver",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.652340Z",
+            "modified": "2024-05-02T15:08:51.652340Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3233,
+        "fields": {
+            "geo_id": "9",
+            "name": "San Francisco",
+            "display_name": "HHS Region 9 San Francisco",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.652340Z",
+            "modified": "2024-05-02T15:08:51.652340Z"
+        }
+    },
+    {
+        "model": "signals.GeographyUnit",
+        "pk": 3234,
+        "fields": {
+            "geo_id": "10",
+            "name": "Seattle",
+            "display_name": "HHS Region 10 Seattle",
+            "level": 2,
+            "geography": 2,
+            "created": "2024-05-02T15:08:51.652340Z",
+            "modified": "2024-05-02T15:08:51.652340Z"
+        }
+    }
+]

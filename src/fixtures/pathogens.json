@@ -1,0 +1,29 @@
+[
+    {
+      "model": "signals.Pathogen",
+      "pk": 1,
+      "fields": {
+        "name": "covid",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.Pathogen",
+      "pk": 2,
+      "fields": {
+        "name": "flu",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.Pathogen",
+      "pk": 3,
+      "fields": {
+        "name": "pneumonia",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    }
+  ]

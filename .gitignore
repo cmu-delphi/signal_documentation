@@ -1,7 +1,9 @@
 .env
+.secrets
 /.vscode/
 /src/media/
-/src/static/
+/src/staticfiles/
+*log
 *.mo
 *.pyc
 htmlcov/
@@ -9,3 +11,4 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
+celerybeat-schedule.*

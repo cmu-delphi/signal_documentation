@@ -1,0 +1,38 @@
+[
+    {
+      "model": "signals.SignalCategory",
+      "pk": 1,
+      "fields": {
+        "name": "public",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalCategory",
+      "pk": 2,
+      "fields": {
+        "name": "early",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalCategory",
+      "pk": 3,
+      "fields": {
+        "name": "cases_testing",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    },
+    {
+      "model": "signals.SignalCategory",
+      "pk": 4,
+      "fields": {
+        "name": "late",
+        "created": "2023-08-09T19:23:22.597131",
+        "modified": "2023-08-09T19:23:22.597131"
+      }
+    }
+  ]
