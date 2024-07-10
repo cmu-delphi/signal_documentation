@@ -28,7 +28,7 @@ jobs:
           baseRef="${GITHUB_REF#*/}"
           baseRef="${baseRef#*/}"
           case "${baseRef}" in
-          master)
+          main)
             image_tag="latest"
             ;;
           *)
