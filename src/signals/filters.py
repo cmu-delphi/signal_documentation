@@ -47,7 +47,7 @@ class SignalFilter(django_filters.FilterSet):
         )
     )
     format_type = django_filters.MultipleChoiceFilter(choices=FormatChoices.choices)
-    severenity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
+    severity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
     source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all(),
                                                       field_name="source_id__external_name",
                                                       to_field_name='external_name')
@@ -72,7 +72,7 @@ class SignalFilter(django_filters.FilterSet):
             'pathogen',
             'active',
             'available_geography',
-            'severenity_pyramid_rungs',
+            'severity_pyramid_rungs',
             'category',
             'geographic_scope',
             'source',

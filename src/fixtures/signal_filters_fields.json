@@ -49,7 +49,7 @@
     "pk": 6,
     "fields": {
         "filter": 1,
-        "filter_field": "severenity_pyramid_rungs",
+        "filter_field": "severity_pyramid_rungs",
         "description": null
     }
 },

@@ -131,12 +131,12 @@
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-heading_{{ form.severenity_pyramid_rungs.auto_id }}">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.severity_pyramid_rungs.auto_id }}">
                                 <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
                                     data-mdb-toggle="collapse"
-                                    data-mdb-target="#flush-collapse_{{ form.severenity_pyramid_rungs.auto_id }}"
+                                    data-mdb-target="#flush-collapse_{{ form.severity_pyramid_rungs.auto_id }}"
                                     aria-expanded="false"
-                                    aria-controls="flush-collapse_{{ form.severenity_pyramid_rungs.auto_id }}">
+                                    aria-controls="flush-collapse_{{ form.severity_pyramid_rungs.auto_id }}">
                                     Severity Pyramid
                                     <a
                                         tabindex="0"
@@ -147,22 +147,22 @@
                                         data-mdb-popover-init
                                         data-mdb-trigger="hover"
                                         data-mdb-placement="right"
-                                        data-mdb-content="{{ filters_descriptions.SignalFilter.severenity_pyramid_rungs }}"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.severity_pyramid_rungs }}"
                                         >
                                         <i class="far fa-circle-question"></i>
                                     </a>
                                 </button>
                             </h2>
-                            <div id="flush-collapse_{{ form.severenity_pyramid_rungs.auto_id }}"
-                                class="accordion-collapse {% if form.severenity_pyramid_rungs.value %} {% else %}collapse{% endif %}"
-                                aria-labelledby="flush-heading_{{ form.severenity_pyramid_rungs.auto_id }}"
+                            <div id="flush-collapse_{{ form.severity_pyramid_rungs.auto_id }}"
+                                class="accordion-collapse {% if form.severity_pyramid_rungs.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.severity_pyramid_rungs.auto_id }}"
                                 data-mdb-parent="#accordionSignalFilters">
                                 <div class="accordion-body margin-top-1rem">
                                     <div class="bulk-select form-check">
                                         <input type="checkbox" class="form-check-input" id="select-all">
                                         <label class="form-check-label" for="select-all">Select all</label>
                                     </div>
-                                    {{ form.severenity_pyramid_rungs|as_crispy_field }}
+                                    {{ form.severity_pyramid_rungs|as_crispy_field }}
                                 </div>
                             </div>
                         </div>
@@ -405,7 +405,7 @@
                                     </td>
                                     <td class="clickable-table-cell"
                                         onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                        {{ signal.severenity_pyramid_rungs }}
+                                        {{ signal.severity_pyramid_rungs }}
                                     </td>
                                     <td class="clickable-table-cell"
                                         onClick="location.href='{% url 'signal' pk=signal.id %}';">

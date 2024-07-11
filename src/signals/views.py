@@ -50,8 +50,8 @@ class SignalsListView(ListView):
             ]
             if self.request.GET.get("available_geography")
             else None,
-            "severenity_pyramid_rungs": [el for el in self.request.GET.getlist("severenity_pyramid_rungs")]
-            if self.request.GET.get("severenity_pyramid_rungs")
+            "severity_pyramid_rungs": [el for el in self.request.GET.getlist("severity_pyramid_rungs")]
+            if self.request.GET.get("severity_pyramid_rungs")
             else None,
             "geographic_scope": [el for el in self.request.GET.getlist("geographic_scope")]
             if self.request.GET.get("geographic_scope")
@@ -144,7 +144,7 @@ class SignalsListApiView(ListAPIView):
         "display_name",
         "pathogen__name",
         "available_geography__name",
-        "severenity_pyramid_rungs",
+        "severity_pyramid_rungs",
         "base",
         "source__name",
         "time_label",

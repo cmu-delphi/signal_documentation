@@ -34,7 +34,7 @@ class SignalFilterForm(forms.ModelForm):
     )
     time_type = forms.ChoiceField(choices=TimeTypeChoices.choices, widget=forms.CheckboxSelectMultiple())
     geographic_scope = forms.ModelMultipleChoiceField(queryset=GeographicScope.objects.all(), widget=forms.CheckboxSelectMultiple())
-    severenity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
+    severity_pyramid_rungs = forms.ChoiceField(choices=SeverityPyramidRungsChoices.choices, widget=forms.CheckboxSelectMultiple())
 
     from_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
     to_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=False)
@@ -49,7 +49,7 @@ class SignalFilterForm(forms.ModelForm):
             'pathogen',
             'active',
             'available_geography',
-            'severenity_pyramid_rungs',
+            'severity_pyramid_rungs',
             'source',
             'time_type',
             'geographic_scope',
