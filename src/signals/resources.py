@@ -366,7 +366,7 @@ class SignalResource(resources.ModelResource):
     def after_import_row(self, row, row_result, **kwargs) -> None:
         """
         Post-processes each row after importing.
-        """        
+        """
         geographies: str = row['Available Geography'].split(',')
         delphi_aggregated_geographies: str = row['Delphi-Aggregated Geography'].split(',')
         for geography in geographies:
