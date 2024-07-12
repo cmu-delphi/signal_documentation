@@ -23,7 +23,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "pathogen",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "description": "Pathogen, syndrome, or disease area for which the signal applies."
     }
 },
 {
@@ -41,7 +41,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "available_geography",
-        "description": null
+        "description": "Spatial resolution of the signal (e.g., county, hospital referral region, metropolitan statistical area, designated market area, state)."
     }
 },
 {
@@ -50,7 +50,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "severity_pyramid_rungs",
-        "description": null
+        "description": "One or more rungs to which this signal best relates. See https://delphi.cmu.edu/epidemic-signals/."
     }
 },
 {
@@ -68,7 +68,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "geographic_scope",
-        "description": null
+        "description": "Country for which signal is available."
     }
 },
 {
@@ -77,7 +77,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "source",
-        "description": null
+        "description": "The owner or supplier of the raw data."
     }
 },
 {
@@ -86,7 +86,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "time_type",
-        "description": null
+        "description": "Units of time available for a given signal, e.g., day and week."
     }
 },
 {
@@ -140,7 +140,7 @@
     "fields": {
         "filter": 1,
         "filter_field": "signal_availability",
-        "description": ""
+        "description": "Allows filtering by specific dates or by duration available."
     }
 }
 ]

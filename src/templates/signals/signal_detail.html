@@ -58,6 +58,10 @@
                                     <td>{{ signal.name }}</td>
                                 </tr>
                                 <tr>
+                                    <th scope="row">Short Description</th>
+                                    <td>{{ signal.short_description }}</td>
+                                </tr>
+                                <tr>
                                     <th scope="row">Pathogen</th>
                                     <td>
                                         <ul class="no-padding">
@@ -96,6 +100,18 @@
                                             </a>
                                         </ul>
                                     </td>
+                                </tr>
+                                <tr>
+                                    <th scopr="row">Reporting Cadence</th>
+                                    <td>{{ signal.reporting_cadence|capfirst }}</td>
+                                </tr>
+                                <tr>
+                                    <th scopr="row">Typiacl Revision Cadence</th>
+                                    <td>{{ signal.typical_revision_cadence }}</td>
+                                </tr>
+                                <tr>
+                                    <th scopr="row">Typiacl Reporting Lag</th>
+                                    <td>{{ signal.typical_reporting_lag }}</td>
                                 </tr>
                                 <tr>
                                     <th scope="row">Format</th>
@@ -161,6 +177,12 @@
                                     <th scope="row">Last Updated</th>
                                     <td>
                                         {{ signal.last_updated }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Available For</th>
+                                    <td>
+                                        {{ signal.signal_availability_days }} day{{ signal.signal_availability_days|pluralize:"s" }}
                                     </td>
                                 </tr>
                             </tbody>
