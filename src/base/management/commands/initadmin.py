@@ -3,8 +3,8 @@ from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
 
 
-ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
-ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@andrew.cmu.edu")
+ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")  # Default username
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@andrew.cmu.edu")  # Default email
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin123")  # Default password
 
 
