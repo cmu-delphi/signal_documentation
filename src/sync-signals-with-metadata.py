@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 SQLALCHEMY_DATABASE_URI = os.environ.get(
     "SQLALCHEMY_DATABASE_URI",
-    "mysql+mysqlconnector://root:Njcnth_1234@localhost:3306/mysql_database",
+    "mysql+mysqlconnector://root:ROOT_PASSWORD@localhost:3306/mysql_database",
 )
 engine: Engine = create_engine(
     SQLALCHEMY_DATABASE_URI, execution_options={"engine_id": "default"}
