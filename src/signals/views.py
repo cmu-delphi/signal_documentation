@@ -10,7 +10,7 @@ from rest_framework.generics import ListAPIView
 
 from signals.filters import SignalFilter
 from signals.forms import SignalFilterForm
-from signals.models import Signal, GeographicScope
+from signals.models import Signal
 from signals.serializers import SignalSerializer
 
 
@@ -82,13 +82,6 @@ class SignalsListView(ListView):
 
         context: Dict[str, Any] = super().get_context_data(**kwargs)
         url_params_dict, url_params_str = self.get_url_params()
-        if not url_params_dict.get("geographic_scope"):
-            default_geographic_scope = []
-            try:
-                default_geographic_scope = [GeographicScope.objects.get(name="USA").id]
-            except GeographicScope.DoesNotExist:
-                logger.warning("Default Geographic Scope was not found in the database. Using an empty list.")
-            url_params_dict["geographic_scope"] = default_geographic_scope
         context["url_params_dict"] = url_params_dict
         context["form"] = SignalFilterForm(initial=url_params_dict)
         context["url_params_str"] = url_params_str
