@@ -8,8 +8,7 @@ jobs:
     if: >
       github.ref == 'refs/heads/main' ||
       github.ref == 'refs/heads/staging' ||
-      github.ref == 'refs/heads/development' ||
-      github.ref == 'refs/heads/integrate-db-update-script'
+      github.ref == 'refs/heads/development'
 
     strategy:
       matrix:
