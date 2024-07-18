@@ -53,7 +53,7 @@ class ActiveChoices(models.TextChoices):
     """
     A class representing choices for active signals.
     """
-    ACTIVE = True, _('Current Surveillance Only')
+    ACTIVE = True, _('Ongoing Surveillance Only')
 
 
 class SeverityPyramidRungsChoices(models.TextChoices):
@@ -319,7 +319,7 @@ class Signal(TimeStampedModel):
         null=True
     )
     active: models.BooleanField = models.BooleanField(
-        help_text=_('Active'),
+        help_text=_('Ongoing'),
         default=False
     )
     short_description: models.TextField = models.TextField(
