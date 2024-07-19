@@ -34,9 +34,9 @@ if SENTRY_DSN:
         integrations=[DjangoIntegration(), RedisIntegration(max_data_size=0)],
         traces_sample_rate=float(os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0)),
         profiles_sample_rate=float(os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0)),
-        environment=str(os.environ.get('SENTRY_ENVIRONMENT', 'development')),
-        debug=str(os.environ.get('SENTRY_DEBUG', 'True')),
-        attach_stacktrace=str(os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True'))
+        environment=(os.environ.get('SENTRY_ENVIRONMENT', 'development')),
+        debug=(os.environ.get('SENTRY_DEBUG', 'True')),
+        attach_stacktrace=(os.environ.get('SENTRY_ATTACH_STACKTRACE', 'True'))
     )
 
 
