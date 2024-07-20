@@ -10,7 +10,6 @@ jobs:
       github.ref == 'refs/heads/staging' ||
       github.ref == 'refs/heads/development'
 
-
     strategy:
       matrix:
         # Specify the docker-compose services to build images from
