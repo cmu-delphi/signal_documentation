@@ -8,8 +8,7 @@ jobs:
     if: >
       github.ref == 'refs/heads/main' ||
       github.ref == 'refs/heads/staging' ||
-      github.ref == 'refs/heads/development' ||
-      github.ref == 'refs/heads/update-static-files-config'
+      github.ref == 'refs/heads/development'
 
 
     strategy:
