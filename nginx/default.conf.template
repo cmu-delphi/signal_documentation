@@ -1,7 +1,12 @@
 server {
     listen 80;
     server_name sdnginx;
-    
+
+    location ~* /static/assets(.*)$ {
+        autoindex on;
+        alias /staticfiles/$1;
+    }
+
     location ~* /static/(.*)$ {
         autoindex on;
         alias /staticfiles/$1;
