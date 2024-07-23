@@ -57,10 +57,12 @@
                                     <th scope="row">Signal Name</th>
                                     <td>{{ signal.name }}</td>
                                 </tr>
+                                {% if signal.short_description %}
                                 <tr>
                                     <th scope="row">Short Description</th>
                                     <td>{{ signal.short_description }}</td>
                                 </tr>
+                                {% endif %}
                                 <tr>
                                     <th scope="row">Pathogen</th>
                                     <td>
@@ -173,18 +175,22 @@
                                         {{ signal.temporal_scope_end }}
                                     </td>
                                 </tr>
+                                {% if signal.last_updated %}
                                 <tr>
                                     <th scope="row">Last Updated</th>
                                     <td>
                                         {{ signal.last_updated }}
                                     </td>
                                 </tr>
+                                {% endif %}
+                                {% if signal.signal_availability_days %}
                                 <tr>
                                     <th scope="row">Available For</th>
                                     <td>
                                         {{ signal.signal_availability_days }} day{{ signal.signal_availability_days|pluralize:"s" }}
                                     </td>
                                 </tr>
+                                {% endif %}
                             </tbody>
                         </table>
                     </div>
@@ -346,7 +352,7 @@
                                     </td>
                                     <td>{{ link.get_preview.description }}</td>
                                     <td>
-                                        <a href="{{ link.url }}">{{ link.url|truncatechars:50 }}</a>
+                                        <a href="{{ link.url }}">{{ link.url|truncatechars:100 }}</a>
                                     </td>
                                 </tr>
                                 {% endif %}
