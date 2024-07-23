@@ -229,12 +229,38 @@
         });
     }
 
+    function getDateYearWeek(date) {
+        const currentDate =
+            (typeof date === 'object') ? date : new Date();
+        const januaryFirst =
+            new Date(currentDate.getFullYear(), 0, 1);
+        const daysToNextMonday =
+            (januaryFirst.getDay() === 1) ? 0 :
+            (7 - januaryFirst.getDay()) % 7;
+        const nextMonday =
+            new Date(currentDate.getFullYear(), 0,
+            januaryFirst.getDate() + daysToNextMonday);
+
+        var weekNumber = (currentDate < nextMonday) ? 52 :
+        (currentDate > nextMonday ? Math.ceil(
+        (currentDate - nextMonday) / (24 * 3600 * 1000) / 7) : 1);
+
+        if (weekNumber < 10) {
+            weekNumber = `0${weekNumber}`;
+        }
+
+        const year = currentDate.getFullYear()
+
+        return `${year}${weekNumber}`;
+    }
+
     function submitMode(event) {
         event.preventDefault();
 
         var dataSource = document.getElementById('source').value;
         var dataSignal = document.getElementById('signal').value;
         var geographicType = document.getElementById('geographic_type').value;
+        var timeType = "{{ signal.time_type }}";
         // geographicValue is a comma separated string of geographic values. type can be string or integer
         // in case of string, it should be converted to lowercase
         // else it will be treated as integer
@@ -247,13 +273,18 @@
 
         if (currentMode === 'epivis') {
             var epiVisUrl = "{{ epivis_url }}";
-            var urlParamsEncoded = btoa(`{"datasets":[{"color":"#415742","title":"value","params":{"_endpoint":"covidcast","data_source":"${dataSource}","signal":"${dataSignal}","time_type":"day","geo_type":"${geographicType}","geo_value":"${geographicValue}"}}]}`);
+            var urlParamsEncoded = btoa(`{"datasets":[{"color":"#415742","title":"value","params":{"_endpoint":"covidcast","data_source":"${dataSource}","signal":"${dataSignal}","time_type":"${timeType}","geo_type":"${geographicType}","geo_value":"${geographicValue}"}}]}`);
 
             epiVisUrl += `#${urlParamsEncoded}`;
             window.open(epiVisUrl, '_blank').focus();
         } else if (currentMode === 'export') {
             var startDate = document.getElementById('start_date').value;
             var endDate = document.getElementById('end_date').value;
+
+            if (timeType === "week") {
+                startDate = getDateYearWeek(new Date(startDate));
+                endDate = getDateYearWeek(new Date(endDate));
+            };
 
             var dataExportUrl = "{{ data_export_url }}";
 
@@ -268,8 +299,13 @@
         } else {
             var timeType = document.getElementById('time_type').value;
 
-            var startDate = document.getElementById('start_date').value.replaceAll('-', '');
-            var endDate = document.getElementById('end_date').value.replaceAll('-', '');
+            var startDate = document.getElementById('start_date').value;
+            var endDate = document.getElementById('end_date').value;
+
+            if (timeType === "week") {
+                startDate = getDateYearWeek(new Date(startDate));
+                endDate = getDateYearWeek(new Date(endDate));
+            };
 
             var requestSent = false;
 
