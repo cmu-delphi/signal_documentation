@@ -67,39 +67,6 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 99999;
-  background: #4154f1;
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  transition: all 0.4s;
-}
-
-.back-to-top i {
-  font-size: 24px;
-  color: #fff;
-  line-height: 0;
-}
-
-.back-to-top:hover {
-  background: #6776f4;
-  color: #fff;
-}
-
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
 # Override some default Bootstrap stylings
 --------------------------------------------------------------*/
 /* Dropdown menus */
@@ -1389,3 +1356,10 @@ h6 {
 .filter-description-popover {
     margin-left: 1rem;
 }
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+  }
