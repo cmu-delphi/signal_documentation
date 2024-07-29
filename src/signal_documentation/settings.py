@@ -30,13 +30,13 @@ COVIDCAST_URL = os.environ.get("COVIDCAST_URL", "https://api.delphi.cmu.edu/epid
 SENTRY_DSN = os.environ.get('SENTRY_DSN')
 if SENTRY_DSN:
     sentry_sdk.init(
-        dsn = SENTRY_DSN,
-        integrations = [DjangoIntegration(), RedisIntegration(max_data_size=0)],
-        traces_sample_rate = float(os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0)),
-        profiles_sample_rate = float(os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0)),
-        environment = (os.environ.get('SENTRY_ENVIRONMENT', 'development')),
-        attach_stacktrace = os.environ.get('SENTRY_ATTACH_STACKTRACE', 'False').lower() in ('true', '1', 't'),
-        debug = os.environ.get('SENTRY_DEBUG', 'False').lower() in ('true', '1', 't')
+        dsn=SENTRY_DSN,
+        integrations=[DjangoIntegration(), RedisIntegration(max_data_size=0)],
+        traces_sample_rate=float(os.environ.get('SENTRY_TRACES_SAMPLE_RATE', 1.0)),
+        profiles_sample_rate=float(os.environ.get('SENTRY_PROFILES_SAMPLE_RATE', 1.0)),
+        environment=(os.environ.get('SENTRY_ENVIRONMENT', 'development')),
+        attach_stacktrace=os.environ.get('SENTRY_ATTACH_STACKTRACE', 'False').lower() in ('true', '1', 't'),
+        debug=os.environ.get('SENTRY_DEBUG', 'False').lower() in ('true', '1', 't')
     )
 
 
@@ -262,17 +262,6 @@ CACHES: dict[str, dict[str, str]] = {
 }
 
 CACHE_TIME = int(os.environ.get('CACHE_TIME', 60 * 60 * 24))  # 24 hours
-
-
-# Celery
-# https://docs.celeryq.dev/en/stable/index.html
-CELERY_BROKER_URL = f"{REDIS_URL}{REDIS_DB}"
-
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TASK_SERIALIZER = 'json'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

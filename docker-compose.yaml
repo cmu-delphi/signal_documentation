@@ -63,52 +63,7 @@ services:
     depends_on:
       - sdwebapp
 
-  celery:
-    build: .
-    env_file:
-      - ./.env
-    container_name: signal_documentation-celery
-    working_dir: /usr/src/signal_documentation/src
-    command: celery -A signal_documentation worker -l info
-    volumes:
-      - .:/usr/src/signal_documentation
-    depends_on:
-      - db
-      - redis
-
-  celery-beat:
-    build: .
-    env_file:
-      - ./.env
-    container_name: signal_documentation-celery-beat
-    working_dir: /usr/src/signal_documentation/src
-    command: celery -A signal_documentation beat -l info
-    volumes:
-      - .:/usr/src/signal_documentation
-    depends_on:
-      - db
-      - redis
-
-  flower:
-    build: .
-    env_file:
-      - ./.env
-    image: mher/flower
-    container_name: signal_documentation-flower
-    working_dir: /usr/src/signal_documentation/src
-    command: celery -A signal_documentation flower -l info
-    volumes:
-      - .:/usr/src/signal_documentation
-    ports:
-      - "5555:5555"
-    depends_on:
-      - redis
-      - celery
-      - celery-beat
-
 volumes:
   mysql:
   sdwebapp:
   static:
-  celery:
-  celery-beat:
