@@ -4,254 +4,305 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-3">
-            <form method="GET" id="filters-form">
-                <div class="card">
-                    <div class="form-group">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Search
-                            </h5>
-                            <div class="input-group">
-                                <input class="form-control border" type="search" name="{{ filter.form.search.name }}" id="example-search-input"
-                                    placeholder="Search" title="Enter search keyword"
-                                    value="{% if filter.form.search.value %}{{ filter.form.search.value }}{% endif %}"
-                                >
-                            </div>
-                            <div class="input-group margin-top-1rem">
-                                {{ form.active|as_crispy_field}}
-                            </div>
-                        </div>
-                        <div class="accordion">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="pathogen-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#pathogen-collapse" aria-expanded="true" aria-controls="pathogen-collapse">
-                                        <label for="id_pathogen" class="form-label">
-                                            Pathogen / Syndrome
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Pathogen / Syndrome"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.pathogen }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.pathogen.value %}
-                                <div id="pathogen-collapse" class="accordion-collapse"
-                                aria-labelledby="pathogen-heading">
-                                {% else %}
-                                <div id="pathogen-collapse" class="accordion-collapse collapse"
-                                aria-labelledby="pathogen-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        <div class="bulk-select form-check">
-                                            <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label class="form-check-label" for="select-all">Select all</label>
+
+<div class="row">
+    <div class="col-3">
+        <form method="GET" id="filterSignalsForm">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Search</h5>
+                    <div class="input-group">
+                        <input class="form-control border" data-mdb-ripple-init data-mdb-tooltip-init
+                            data-mdb-placement="bottom"
+                            title="Search field is used to search for signals by name and description." type="search"
+                            name="{{ filter.form.search.name }}" id="searchSignalInput" placeholder="Search"
+                            title="Enter search keyword"
+                            value="{% if filter.form.search.value %}{{ filter.form.search.value }}{% endif %}" />
+                    </div>
+                    <div class="input-group margin-top-1rem">
+                        {{ form.active|as_crispy_field}}
+                    </div>
+                    <div class="accordion accordion-flush" id="accordionSignalFilters">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.pathogen.auto_id }}">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#flush-collapse_{{ form.pathogen.auto_id }}" aria-expanded="false"
+                                    aria-controls="flush-collapse_{{ form.pathogen.auto_id }}">
+                                    Pathogen / Syndrome
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.pathogen }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_{{ form.pathogen.auto_id }}"
+                                class="accordion-collapse {% if form.pathogen.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.pathogen.auto_id }}"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    <div class="bulk-select form-check">
+                                        <input type="checkbox" class="form-check-input" id="select-all">
+                                        <label class="form-check-label" for="select-all">Select all</label>
+                                    </div>
+                                    <div id="div_id_pathogen" class="mb-3">
+                                        <div>
+                                            {{ form.pathogen|as_crispy_field }}
                                         </div>
-                                        <div id="div_id_pathogen" class="mb-3">
-                                            <div>
-                                                {{ form.pathogen|as_crispy_field }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="geographic_scope-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#geographic_scope-collapse" aria-expanded="false"
-                                    aria-controls="active-collapse">
-                                        <label for="id_geographic_scope" class="form-label">
-                                            Country
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Country"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.geographic_scope }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.geographic_scope.value %}
-                                <div id="geographic_scope-collapse" class="accordion-collapse" aria-labelledby="geographic_scope-heading">
-                                {% else %}
-                                <div id="geographic_scope-collapse" class="accordion-collapse collapse" aria-labelledby="geographic_scope-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        {{ form.geographic_scope|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <div class="accordion-header" id="available_geography-heading">
-                                    <h2 class="accordion-header" id="active-heading">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#available_geography-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                            <label for="id_available_geography" class="form-label">
-                                                Geo-level
-                                                <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover" data-bs-title="Geo-level" data-bs-content="{{ filters_descriptions.SignalFilter.available_geography }}"><i class="bi bi-info-circle"></i></a>
-                                            </label>
-                                        </button>
-                                    </h2>
-                                    {% if form.available_geography.value %}
-                                    <div id="available_geography-collapse" class="accordion-collapse" aria-labelledby="available_geography-heading">
-                                    {% else %}
-                                    <div id="available_geography-collapse" class="accordion-collapse collapse" aria-labelledby="available_geography-heading">
-                                    {% endif %}
-                                        <div class="accordion-body">
-                                            <div class="bulk-select form-check">
-                                                <input type="checkbox" class="form-check-input" id="select-all">
-                                                <label class="form-check-label" for="select-all">Select all</label>
-                                            </div>
-                                            {{ form.available_geography|as_crispy_field }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="severenity_pyramid_rungs-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#severenity_pyramid_rungs-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                        <label for="id_severenity_pyramid_rungs" class="form-label">
-                                            Severity Pyramid
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Severity Pyramid"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.severenity_pyramid_rungs }}">
-                                            <i class="bi bi-info-circle"></i>
-                                        </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.severenity_pyramid_rungs.value %}
-                                <div id="severenity_pyramid_rungs-collapse" class="accordion-collapse" aria-labelledby="severenity_pyramid_rungs-heading">
-                                {% else %}
-                                <div id="severenity_pyramid_rungs-collapse" class="accordion-collapse collapse" aria-labelledby="severenity_pyramid_rungs-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        <div class="bulk-select form-check">
-                                            <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label class="form-check-label" for="select-all">Select all</label>
-                                        </div>
-                                        {{ form.severenity_pyramid_rungs|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="source-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#source-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                        <label for="id_source" class="form-label">
-                                            Data Source
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Data Source"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.source }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.source.value %}
-                                <div id="source-collapse" class="accordion-collapse" aria-labelledby="source-heading">
-                                {% else %}
-                                <div id="source-collapse" class="accordion-collapse collapse" aria-labelledby="source-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        <div class="bulk-select form-check">
-                                            <input type="checkbox" class="form-check-input" id="select-all">
-                                            <label class="form-check-label" for="select-all">Select all</label>
-                                        </div>
-                                        {{ form.source|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="time_type-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#time_type-collapse" aria-expanded="false" aria-controls="active-collapse">
-                                        <label for="id_time_type" class="form-label">
-                                            Temporal Granularity
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Temporal Granularity"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.time_type }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.time_type.value %}
-                                <div id="time_type-collapse" class="accordion-collapse" aria-labelledby="time_type-heading">
-                                {% else %}
-                                <div id="time_type-collapse" class="accordion-collapse collapse" aria-labelledby="time_type-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        {{ form.time_type|as_crispy_field }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="signal_availability-heading">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#signal_availability-collapse" aria-expanded="false" aria-controls="signal_availability-collapse">
-                                        <label for="id_signal_availability" class="form-label">
-                                            Signal Availability
-                                            <a tabindex="0" role="button" class="info-button" data-bs-toggle="popover"
-                                            data-bs-title="Availability"
-                                            data-bs-content="{{ filters_descriptions.SignalFilter.signal_availability }}">
-                                                <i class="bi bi-info-circle"></i>
-                                            </a>
-                                        </label>
-                                    </button>
-                                </h2>
-                                {% if form.from_date.value  or form.to_date.value or form.signal_availability_days.value %}
-                                <div id="signal_availability-collapse" class="accordion-collapse" aria-labelledby="signal_availability-heading">
-                                {% else %}
-                                <div id="signal_availability-collapse" class="accordion-collapse collapse" aria-labelledby="signal_availability-heading">
-                                {% endif %}
-                                    <div class="accordion-body">
-                                        {{ form.from_date|as_crispy_field }}
-                                        {{ form.to_date|as_crispy_field }}
-                                        {{ form.signal_availability_days|as_crispy_field }}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            <div class="d-grid gap-2 mt-3">
-                                <button id="filter-submit" type="submit" class="btn btn-primary">{% trans 'Apply Filters' %}</button>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.geographic_scope.auto_id }}">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#flush-collapse_{{ form.geographic_scope.auto_id }}"
+                                    aria-expanded="false"
+                                    aria-controls="flush-collapse_{{ form.geographic_scope.auto_id }}">
+                                    Country
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.geographic_scope }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_{{ form.geographic_scope.auto_id }}"
+                                class="accordion-collapse {% if form.geographic_scope.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.geographic_scope.auto_id }}"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    {{ form.geographic_scope|as_crispy_field }}
+                                </div>
                             </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.available_geography.auto_id }}">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#flush-collapse_{{ form.available_geography.auto_id }}"
+                                    aria-expanded="false"
+                                    aria-controls="flush-collapse_{{ form.available_geography.auto_id }}">
+                                    Geo-level
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.available_geography }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_{{ form.available_geography.auto_id }}"
+                                class="accordion-collapse {% if form.available_geography.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.available_geography.auto_id }}"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    <div class="bulk-select form-check">
+                                        <input type="checkbox" class="form-check-input" id="select-all">
+                                        <label class="form-check-label" for="select-all">Select all</label>
+                                    </div>
+                                    {{ form.available_geography|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.severity_pyramid_rungs.auto_id }}">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#flush-collapse_{{ form.severity_pyramid_rungs.auto_id }}"
+                                    aria-expanded="false"
+                                    aria-controls="flush-collapse_{{ form.severity_pyramid_rungs.auto_id }}">
+                                    Severity Pyramid
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.severity_pyramid_rungs }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_{{ form.severity_pyramid_rungs.auto_id }}"
+                                class="accordion-collapse {% if form.severity_pyramid_rungs.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.severity_pyramid_rungs.auto_id }}"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    <div class="bulk-select form-check">
+                                        <input type="checkbox" class="form-check-input" id="select-all">
+                                        <label class="form-check-label" for="select-all">Select all</label>
+                                    </div>
+                                    {{ form.severity_pyramid_rungs|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.source.auto_id }}">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#flush-collapse_{{ form.source.auto_id }}" aria-expanded="false"
+                                    aria-controls="flush-collapse_{{ form.source.auto_id }}">
+                                    Data Source
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.source }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_{{ form.source.auto_id }}"
+                                class="accordion-collapse {% if form.source.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.source.auto_id }}"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    <div class="bulk-select form-check">
+                                        <input type="checkbox" class="form-check-input" id="select-all">
+                                        <label class="form-check-label" for="select-all">Select all</label>
+                                    </div>
+                                    {{ form.source|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_{{ form.time_type.auto_id }}">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse"
+                                    data-mdb-target="#flush-collapse_{{ form.time_type.auto_id }}" aria-expanded="false"
+                                    aria-controls="flush-collapse_{{ form.time_type.auto_id }}">
+                                    Temporal Granularity
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.time_type }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_{{ form.time_type.auto_id }}"
+                                class="accordion-collapse {% if form.time_type.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_{{ form.time_type.auto_id }}"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    {{ form.time_type|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-heading_id_signal_availability">
+                                <button data-mdb-collapse-init class="accordion-button collapsed" type="button"
+                                    data-mdb-toggle="collapse" data-mdb-target="#flush-collapse_id_signal_availability"
+                                    aria-expanded="false" aria-controls="flush-collapse_id_signal_availability">
+                                    Signal Availability
+                                    <a
+                                        tabindex="0"
+                                        type="button"
+                                        class="info-button filter-description-popover"
+                                        data-mdb-container="body"
+                                        data-mdb-ripple-init
+                                        data-mdb-popover-init
+                                        data-mdb-trigger="hover"
+                                        data-mdb-placement="right"
+                                        data-mdb-content="{{ filters_descriptions.SignalFilter.signal_availability }}"
+                                        >
+                                        <i class="far fa-circle-question"></i>
+                                    </a>
+                                </button>
+                            </h2>
+                            <div id="flush-collapse_id_signal_availability"
+                                class="accordion-collapse {% if form.from_date.value or form.to_date.value or form.signal_availability_days.value %} {% else %}collapse{% endif %}"
+                                aria-labelledby="flush-heading_id_signal_availability"
+                                data-mdb-parent="#accordionSignalFilters">
+                                <div class="accordion-body margin-top-1rem">
+                                    {{ form.from_date|as_crispy_field }}
+                                    {{ form.to_date|as_crispy_field }}
+                                    {{ form.signal_availability_days|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-grid gap-2 mt-3">
+                            <button id="filter-submit" type="submit" class="btn btn-primary">{% trans 'Apply Filters' %}</button>
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="col-9">
-            <form method="GET" id="orderByForm">
-                <div class="row margin-bottom-1rem d-flex justify-content-end">
-                    <div class="col-6">
-                        <div class="input-group mb-3 d-flex justify-content-start">
-                            <span class="pt-05">
-                                Showing {{ signals|length }} row{{ signals|length|pluralize:"s" }}.
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="input-group mb-3 d-flex justify-content-end">
-                            <label class="input-group-text form-label" for="id_order_by" id="order_by_label">Sort By</label>
-                            {{ form.order_by|as_crispy_field }}
-                        </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-9">
+        <form methog="GET" id="orderByForm">
+            <div class="row d-flex justify-content-end">
+                <div class="col-6">
+                    <div class="input-group mb-3 d-flex justify-content-start">
+                        <span class="pt-05">
+                            Showing {{ signals|length }} row{{ signals|length|pluralize:"s" }}.
+                        </span>
                     </div>
                 </div>
-            </form>
-            <div class="row">
-                <div class="card signals-list-card no-padding">
-                    <div class="card-header d-flex justify-content-between align-items-center table-responsive" data-fl-scrolls='{"orientation": "horizontal"}'>
-                        <table class="table table-borderless table-hover signals-list-table">
+                <div class="col-6">
+                    <div class="input-group mb-3 d-flex justify-content-end">
+                        <label class="input-group-text form-label" for="id_order_by" id="order_by_label"
+                            style="height: auto;">Sort By</label>
+                        {{ form.order_by|as_crispy_field }}
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive" data-fl-scrolls='{"orientation": "horizontal"}'>
+                        <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col"></th>
                                     <th scope="col">Name</th>
-                                    <th scope="col">Active</th>
+                                    <th scope="col">Ongoing</th>
                                     <th scope="col">Data Source</th>
                                     <th scope="col">Description</th>
                                     <th scope="col">Geographic Scope</th>
@@ -272,84 +323,101 @@
                             </thead>
                             <tbody>
                                 {% for signal in signals %}
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" name="id" value="{{ signal.id }}">
-                                            {{ form.id|as_crispy_field }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.display_name }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% if signal.active == True%}
-                                            <i class="bi bi-circle-fill" style="color:green;"></i>
-                                            {% else %}
-                                            <i class="bi bi-circle-fill" style="color:red;"></i>
-                                            {% endif %}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.source.external_name }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.description }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.geographic_scope.name }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% for geography in signal.geography_signals.all %}
-                                                <span class="badge rounded-pill bg-dark">
-                                                    {{ geography.display_name }}
-                                                </span>
-                                            {% endfor %}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.temporal_scope_start }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.temporal_scope_end }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.time_type }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.reporting_cadence }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.typical_reporting_lag }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.typical_revision_cadence }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% for demographic_scope in signal.demographic_scope.all %}
-                                                <span>
-                                                    {{ demographic_scope }}
-                                                </span>
-                                            {% endfor %}
-                                        </td>
-                                        <!-- <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="id" value="{{ signal.id }}">
+                                        {{ form.id|as_crispy_field }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.display_name }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {% if signal.active == True%}
+                                        <i class="fas fa-circle" style="color:green;"></i>
+                                        {% else %}
+                                        <i class="fas fa-circle" style="color:red;"></i>
+                                        {% endif %}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.source.external_name }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.description }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.geographic_scope.name }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {% for geography in signal.geography_signals.all %}
+                                        <span class="badge rounded-pill bg-dark">
+                                            {{ geography.display_name }}
+                                        </span>
+                                        {% endfor %}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.temporal_scope_start }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.temporal_scope_end }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.time_type }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.reporting_cadence }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.typical_reporting_lag }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.typical_revision_cadence }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {% for demographic_scope in signal.demographic_scope.all %}
+                                        <span>
+                                            {{ demographic_scope }}
+                                        </span>
+                                        {% endfor %}
+                                    </td>
+                                    <!-- <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
                                             Place for Demographic Disaggregation
                                         </td> -->
-                                        <td cla ss="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {% for pathogen in signal.pathogen.all %}
-                                                <span class="badge rounded-pill bg-dark">
-                                                    {{ pathogen|title }}
-                                                </span>
-                                            {% endfor %}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.severenity_pyramid_rungs }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.missingness }}
-                                        </td>
-                                        <td class="clickable-table-cell" onClick="location.href='{% url 'signal' pk=signal.id %}';">
-                                            {{ signal.license }}
-                                            <br>
-                                            {{ signal.restrictions }}
-                                        </td>
-                                    </tr>
+                                    <td cla ss="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {% for pathogen in signal.pathogen.all %}
+                                        <span class="badge rounded-pill bg-dark">
+                                            {{ pathogen|title }}
+                                        </span>
+                                        {% endfor %}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.severity_pyramid_rungs }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.missingness }}
+                                    </td>
+                                    <td class="clickable-table-cell"
+                                        onClick="location.href='{% url 'signal' pk=signal.id %}';">
+                                        {{ signal.license }}
+                                        <br>
+                                        {{ signal.restrictions }}
+                                    </td>
+                                </tr>
                                 {% endfor %}
                             </tbody>
                         </table>
@@ -359,20 +427,8 @@
         </div>
     </div>
 </div>
+
 <script>
-
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
-    var popoverOptions = {
-        trigger: "hover",
-        container: "body",
-        delay: {
-            "show": 500,
-            "hide": 100
-        }
-    };
-    const popoverList = [...popoverTriggerList].map(
-        popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, popoverOptions));
-
     function showAllOptions(event, parentDiv) {
         event.preventDefault();
         var childDivs = parentDiv.querySelectorAll('.form-check');
@@ -435,9 +491,6 @@
             'title': 'Search field is used to search for signals by name and description.'
         });
     });
-
-
-
 </script>
 
 {% endblock %}

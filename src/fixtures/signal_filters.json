@@ -1,0 +1,9 @@
+[
+{
+    "model": "base.descriptedfilter",
+    "pk": 1,
+    "fields": {
+        "filter_name": "signals.filters.SignalFilter"
+    }
+}
+]
