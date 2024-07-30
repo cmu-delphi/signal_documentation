@@ -26,7 +26,7 @@ class TimeLabelChoices(models.TextChoices):
     """
     DAY = 'day', _('Day')
     DATE = 'date', _('Date')
-    WEEK = 'week', _('Week')
+    WEEK = 'dseek', _('Week')
 
 
 class FormatChoices(models.TextChoices):
@@ -53,7 +53,7 @@ class ActiveChoices(models.TextChoices):
     """
     A class representing choices for active signals.
     """
-    ACTIVE = True, _('Current Surveillance Only')
+    ACTIVE = True, _('Ongoing Surveillance Only')
 
 
 class SeverityPyramidRungsChoices(models.TextChoices):
@@ -63,8 +63,8 @@ class SeverityPyramidRungsChoices(models.TextChoices):
     POPULATION = 'population', _('Population')
     INFECTED = 'infected', _('Infected')
     SYMPTOMATIC = 'symptomatic', _('Symptomatic')
-    OUTPATIENT_VISIT = 'outpatient_visit', _('Outpatient / ED')
-    ASCERTAINED = 'ascertained', _('Ascertained (case)')
+    OUTPATIENT_VISIT = 'outpatient visit', _('Outpatient / ED')
+    ASCERTAINED = 'ascertained (case)', _('Ascertained (case)')
     HOSPITALIZED = 'hospitalized', _('Hospitalized')
     ICU = 'icu', _('ICU')
     DEAD = 'dead', _('Dead')
@@ -319,7 +319,7 @@ class Signal(TimeStampedModel):
         null=True
     )
     active: models.BooleanField = models.BooleanField(
-        help_text=_('Active'),
+        help_text=_('Ongoing'),
         default=False
     )
     short_description: models.TextField = models.TextField(
@@ -372,7 +372,7 @@ class Signal(TimeStampedModel):
         help_text=_('Demographic Scope'),
         related_name='signals',
     )
-    severenity_pyramid_rungs: models.CharField = models.CharField(
+    severity_pyramid_rungs: models.CharField = models.CharField(
         help_text=_('Severity Pyramid Rungs'),
         max_length=128,
         choices=SeverityPyramidRungsChoices.choices,
@@ -434,6 +434,7 @@ class Signal(TimeStampedModel):
         max_length=128,
         choices=AgeBreakdownChoices.choices,
         null=True,
+        blank=True
     )
     is_smoothed: models.BooleanField = models.BooleanField(
         help_text=_('Is Smoothed'),
@@ -479,13 +480,15 @@ class Signal(TimeStampedModel):
     organisations_access_list: models.ManyToManyField = models.ManyToManyField(
         'signals.Organisation',
         help_text=_('Organisations Access List. Who may access this signal?'),
-        related_name='accessed_signals'
+        related_name='accessed_signals',
+        blank=True
     )
 
     organisations_sharing_list: models.ManyToManyField = models.ManyToManyField(
         'signals.Organisation',
         help_text=_('Organisations Sharing List. Who may be told about this signal?'),
-        related_name='shared_signals'
+        related_name='shared_signals',
+        blank=True
     )
 
     license: models.ForeignKey = models.ForeignKey(

@@ -5,11 +5,9 @@ name = "pypi"
 
 [packages]
 'sentry-sdk[django]' = "*"
-celery = {version = "*", extras = ["redis"]}
 coverage = "*"
 crispy-bootstrap5 = "*"
 django = "*"
-django-celery-beat = "*"
 django-cors-headers = "*"
 django-coverage-plugin = "*"
 django-crispy-forms = "*"

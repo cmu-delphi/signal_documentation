@@ -1,0 +1,146 @@
+[
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 1,
+    "fields": {
+        "filter": 1,
+        "filter_field": "id",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 2,
+    "fields": {
+        "filter": 1,
+        "filter_field": "search",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 3,
+    "fields": {
+        "filter": 1,
+        "filter_field": "pathogen",
+        "description": "Pathogen, syndrome, or disease area for which the signal applies."
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 4,
+    "fields": {
+        "filter": 1,
+        "filter_field": "active",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 5,
+    "fields": {
+        "filter": 1,
+        "filter_field": "available_geography",
+        "description": "Spatial resolution of the signal (e.g., county, hospital referral region, metropolitan statistical area, designated market area, state)."
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 6,
+    "fields": {
+        "filter": 1,
+        "filter_field": "severity_pyramid_rungs",
+        "description": "One or more rungs to which this signal best relates. See https://delphi.cmu.edu/epidemic-signals/."
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 7,
+    "fields": {
+        "filter": 1,
+        "filter_field": "category",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 8,
+    "fields": {
+        "filter": 1,
+        "filter_field": "geographic_scope",
+        "description": "Country for which signal is available."
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 9,
+    "fields": {
+        "filter": 1,
+        "filter_field": "source",
+        "description": "The owner or supplier of the raw data."
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 10,
+    "fields": {
+        "filter": 1,
+        "filter_field": "time_type",
+        "description": "Units of time available for a given signal, e.g., day and week."
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 11,
+    "fields": {
+        "filter": 1,
+        "filter_field": "from_date",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 12,
+    "fields": {
+        "filter": 1,
+        "filter_field": "to_date",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 13,
+    "fields": {
+        "filter": 1,
+        "filter_field": "signal_availability_days",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 14,
+    "fields": {
+        "filter": 1,
+        "filter_field": "order_by",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 15,
+    "fields": {
+        "filter": 1,
+        "filter_field": "format_type",
+        "description": null
+    }
+},
+{
+    "model": "base.descriptedfilterfield",
+    "pk": 16,
+    "fields": {
+        "filter": 1,
+        "filter_field": "signal_availability",
+        "description": "Allows filtering by specific dates or by duration available."
+    }
+}
+]

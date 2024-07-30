@@ -16,7 +16,6 @@ from signals.models import (
     FormatChoices,
     Signal,
     TimeTypeChoices,
-    GeographicScope,
     SeverityPyramidRungsChoices,
 )
 
@@ -47,7 +46,7 @@ class SignalFilter(django_filters.FilterSet):
         )
     )
     format_type = django_filters.MultipleChoiceFilter(choices=FormatChoices.choices)
-    severenity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
+    severity_pyramid_rungs = django_filters.MultipleChoiceFilter(choices=SeverityPyramidRungsChoices.choices)
     source = django_filters.ModelMultipleChoiceFilter(queryset=SourceSubdivision.objects.all(),
                                                       field_name="source_id__external_name",
                                                       to_field_name='external_name')
@@ -55,14 +54,6 @@ class SignalFilter(django_filters.FilterSet):
     from_date = django_filters.DateFilter(field_name='from_date', lookup_expr='gte')
     to_date = django_filters.DateFilter(field_name='to_date', lookup_expr='lte')
     signal_availability_days = django_filters.NumberFilter(field_name='signal_availability_days', lookup_expr='gte')
-
-    def __init__(self, data, *args, **kwargs):
-        data = data.copy()
-        try:
-            data.setdefault('geographic_scope', GeographicScope.objects.get(name='USA').id)
-        except GeographicScope.DoesNotExist:
-            logger.warning("Default Geographic Scope was not found in the database. Using an empty list.")
-        super().__init__(data, *args, **kwargs)
 
     class Meta:
         model = Signal
@@ -72,7 +63,7 @@ class SignalFilter(django_filters.FilterSet):
             'pathogen',
             'active',
             'available_geography',
-            'severenity_pyramid_rungs',
+            'severity_pyramid_rungs',
             'category',
             'geographic_scope',
             'source',

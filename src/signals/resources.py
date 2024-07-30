@@ -65,7 +65,7 @@ class SignalResource(resources.ModelResource):
     display_name = Field(attribute='display_name', column_name='Name')
     pathogen = Field(
         attribute='pathogen',
-        column_name='Pathogen/ Disease Area',
+        column_name='Pathogen/\nDisease Area',
         widget=widgets.ManyToManyWidget(Pathogen, field='name', separator=','),
     )
     signal_type = Field(
@@ -87,7 +87,7 @@ class SignalResource(resources.ModelResource):
         column_name='Demographic Scope',
         widget=widgets.ManyToManyWidget(DemographicScope, field='name', separator=','),
     )
-    severenity_pyramid_rungs = Field(attribute='severenity_pyramid_rungs', column_name='Severity Pyramid Rungs')
+    severity_pyramid_rungs = Field(attribute='severity_pyramid_rungs', column_name='Severity Pyramid Rungs')
     category = Field(
         attribute='category',
         column_name='Category',
@@ -169,7 +169,7 @@ class SignalResource(resources.ModelResource):
             'time_label',
             'reporting_cadence',
             'demographic_scope',
-            'severenity_pyramid_rungs',
+            'severity_pyramid_rungs',
             'available_geography',
             'is_smoothed',
             'is_weighted',
@@ -188,6 +188,7 @@ class SignalResource(resources.ModelResource):
             'license',
             'restrictions',
             'typical_revision_cadence',
+            'category',
             # 'gender_breakdown',
             # 'race_breakdown',
             # 'age_breakdown',
@@ -213,6 +214,8 @@ class SignalResource(resources.ModelResource):
         self.process_links(row)
         self.process_pathogen(row)
         self.process_license(row)
+        self.process_severity_pyramid_rungs(row)
+        self.process_time_label(row)
         self.process_signal_category(row)
         self.process_signal_type(row)
         self.process_geographic_scope(row)
@@ -237,6 +240,10 @@ class SignalResource(resources.ModelResource):
             if row[k] == 'FALSE' or row[k] == '':
                 row[k] = False
         return row
+
+    def process_time_label(self, row) -> Any:
+        if row['Time Label']:
+            row['Time Label'] = row['Time Label'].lower()
 
     def process_links(self, row) -> Any:
         """
@@ -271,8 +278,8 @@ class SignalResource(resources.ModelResource):
         Processes pathogen.
         """
 
-        if row['Pathogen/ Disease Area']:
-            pathogens: str = row['Pathogen/ Disease Area'].split(',')
+        if row['Pathogen/\nDisease Area']:
+            pathogens: str = row['Pathogen/\nDisease Area'].split(',')
             for pathogen in pathogens:
                 Pathogen.objects.get_or_create(name=pathogen.strip())
 
@@ -289,7 +296,7 @@ class SignalResource(resources.ModelResource):
                 for demographic_scope in demographic_scopes:
                     DemographicScope.objects.get_or_create(name=demographic_scope.strip())
 
-    def process_severenity_pyramid_rungs(self, row) -> None:
+    def process_severity_pyramid_rungs(self, row) -> None:
         """
         Processes severenity pyramid rungs.
         """
@@ -297,6 +304,8 @@ class SignalResource(resources.ModelResource):
         if row['Severity Pyramid Rungs']:
             if row['Severity Pyramid Rungs'].startswith('None'):
                 row['Severity Pyramid Rungs'] = None
+            else:
+                row['Severity Pyramid Rungs'] = row['Severity Pyramid Rungs'].lower()
 
     def process_organisations_access_list(self, row):
         """
