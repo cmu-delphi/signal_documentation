@@ -61,7 +61,7 @@ class Signal(Base):
     race_breakdown = sqlalchemy.Column(sqlalchemy.Integer)
     reporting_cadence = sqlalchemy.Column(sqlalchemy.String)
     restrictions = sqlalchemy.Column(sqlalchemy.Text)
-    severenity_pyramid_rungs = sqlalchemy.Column(sqlalchemy.String)
+    severity_pyramid_rungs = sqlalchemy.Column(sqlalchemy.String)
     temporal_scope_end = sqlalchemy.Column(sqlalchemy.String)
     temporal_scope_end_note = sqlalchemy.Column(sqlalchemy.Text)
     temporal_scope_start = sqlalchemy.Column(sqlalchemy.String)
@@ -148,9 +148,15 @@ class SignalLastUpdatedParser:
                             )
                         )
                         session.commit()
-                        logger.info(f"Signal {signal_data['signal']} successfully updated.")
+                        logger.info(
+                            f"Signal {signal_data['signal']} successfully updated."
+                        )
                     except AttributeError:
-                        logger.error(f"Failed to update signal {signal_data['signal']}. Probably the issue is with the source or source with name {signal_data['source']} does not exist.")
+                        logger.error(
+                            f"""Failed to update signal {signal_data['signal']}.
+                            Probably the issue is with the source or source with name
+                            {signal_data['source']} does not exist."""
+                        )
 
 
 def main():
