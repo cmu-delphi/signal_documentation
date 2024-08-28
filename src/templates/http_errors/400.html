@@ -1,0 +1,16 @@
+{% extends "http_errors/error.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+
+    <section class="section error-404 min-vh-100 d-flex flex-column align-items-center justify-content-center">
+      <h1>400</h1>
+      <h2>Sorry, the request could not be understood by the server due to malformed syntax.</h2>
+      <a class="btn" href="{% url 'signals' %}">Back to home</a>
+    </section>
+
+  </div>
+{% endblock %}
+
