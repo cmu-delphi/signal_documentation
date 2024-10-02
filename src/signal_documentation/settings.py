@@ -23,7 +23,7 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.redis import RedisIntegration
 
-EPIVIS_URL = os.environ.get("EPIVIS_URL", "https://deploy-preview-36--cmu-delphi-epivis.netlify.app/")
+EPIVIS_URL = os.environ.get("EPIVIS_URL", "https://delphi.cmu.edu/epivis/")
 DATA_EXPORT_URL = os.environ.get("DATA_EXPORT_URL", "https://api.delphi.cmu.edu/epidata/covidcast/csv")
 COVIDCAST_URL = os.environ.get("COVIDCAST_URL", "https://api.delphi.cmu.edu/epidata/covidcast/")
 
