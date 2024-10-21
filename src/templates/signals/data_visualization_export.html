@@ -330,6 +330,7 @@
                         } else {
                             result = { epidata: result["epidata"], result: result["result"], message: result["message"] }
                         }
+                        console.log('Request sent to: ' + this.url);
                         $('#modeSubmitResult').html(library.json.prettyPrint(result));
                     }
                 });
