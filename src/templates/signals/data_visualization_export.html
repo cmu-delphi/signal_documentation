@@ -315,7 +315,7 @@
                     type: 'GET',
                     data: {
                         'time_type': timeType,
-                        'time_values': `${startDate}-${endDate}`,
+                        'time_values': `${startDate}--${endDate}`,
                         'data_source': dataSource,
                         'signal': dataSignal,
                         'geo_type': geographicType,
@@ -330,6 +330,7 @@
                         } else {
                             result = { epidata: result["epidata"], result: result["result"], message: result["message"] }
                         }
+                        console.log('Request sent to: ' + this.url);
                         $('#modeSubmitResult').html(library.json.prettyPrint(result));
                     }
                 });
